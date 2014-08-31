@@ -4,6 +4,22 @@ hexo-theme-yilia
 hexo-theme-yilia 是为 [hexo](https://github.com/tommy351/hexo) 制作的主题。     
 响应式设计，风格简约， 你可以点击 [我的博客](http://litten.github.io/) 查看效果。    
 
+##外观
+
+####**宽屏**
+![宽屏](littendomo.sinaapp.com/yilia/yilia-pc1.PNG)           
+####**宽屏文字**
+![宽屏文字](littendomo.sinaapp.com/yilia/yilia-pc2.PNG)   
+####**窄屏**
+![窄屏](littendomo.sinaapp.com/yilia/yilia-pc3.PNG)     
+####**同步instagram**
+![同步instagram](littendomo.sinaapp.com/yilia/yilia-pc4.PNG)
+
+####**移动端**
+![移动端](littendomo.sinaapp.com/yilia/yilia-mobile.jpg)        
+
+####**移动端文字**
+![移动端](littendomo.sinaapp.com/yilia/yilia-mobile2.jpg)   
 
 ##配置
 
