@@ -6,9 +6,9 @@ menu:
 
 # SubNav
 subnav:
-  github: "https://github.com/litten"
-  weibo: "http://weibo.com/litten225"
-  rss: "http://feed.feedsky.com/litten"
+  github: "#"
+  weibo: "#"
+  rss: "#"
   # facebook: "/"
   # google: "/"
   # twitter: "/"
@@ -26,4 +26,4 @@ favicon: /favicon.png
 
 avatar: "https://avatars2.githubusercontent.com/u/2024949?v=2&s=150"
 share: true
-duoshuo: "xxx"
+duoshuo: "your duoshuo pro name"
