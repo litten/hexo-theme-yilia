@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no">
+	<title>礼物 - 3.8</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/zepto.min.js"></script>
+	<script src="js/shake.js"></script>
+</head>
+<body>
+	<!-- <div id="my_player"></div> -->
+	<header>
+		<p>3.8节礼物，来了…</p>
+		<div class="paper-t"></div>
+		<div class="main">
+			<div class="main-top top2">
+				<section id="se1">
+					<p>首先，你要输入我的生日</p>
+					<input id="myBir" type="text" placeholder="4位数，格式为:mmdd"/>
+					<p>接着，摇一摇…</p>
+					<img src="img/shake.png"/>
+					<p>最后，这就是见证奇迹的时刻…</p>
+				</section>
+				<section id="se2" class="hide">
+					<p>3.8节快乐！</p>
+					<p>祝身体健康,平安长乐</p>
+					<p>请打开音量收听…</p>
+				</section>
+			</div>
+		</div>
+		<div class="paper-b"></div>
+	</header>
+</body>
+	<script>
+		var Main = (function() {
+			function playAudio(src) {
+			    if (typeof Audio != "undefined") { 
+			        new Audio(src).play() ;
+			    } else if (typeof device != "undefined") {
+			        if (device.platform == 'Android') {
+			            console.log(src);
+			        }
+			        var mediaRes = new Media(src,
+			            function onSuccess() {
+			                mediaRes.release();
+			            },
+			            function onError(e){
+			                console.log("error playing sound: " + JSON.stringify(e));
+			            });
+			        mediaRes.play();
+
+			    } else {
+			        alert("no sound API to play: " + src);
+			    }
+			}
+			window.addEventListener('shake', autoRun, false);
+			function autoRun(){
+				if($("#myBir").val() == "0425"){
+					$("#se1").hide();
+					$("#se2").show();
+					playAudio("media/gift.ogg");
+				}else{
+					alert("生日错误");
+				}
+				
+			}
+			var init = function() {
+				
+			}
+			return {
+				init: init
+			}
+		})();
+
+		$(Main.init());
+	</script>
+</html>
