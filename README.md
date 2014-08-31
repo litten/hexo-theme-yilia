@@ -12,7 +12,7 @@ hexo-theme-yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的�
 $ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 ```
 
-#### 使用
+#### 配置
 
 修改hexo根目录下的 `_config.yml` ： `theme: yilia`
 
@@ -26,19 +26,20 @@ git pull
 ##二、外观
 
 ####**宽屏**
-![宽屏](littendomo.sinaapp.com/yilia/yilia-pc1.PNG)           
+![宽屏](http://littendomo.sinaapp.com/yilia/yilia-pc1.png)        
+
 ####**宽屏文字**
-![宽屏文字](littendomo.sinaapp.com/yilia/yilia-pc2.PNG)   
+![宽屏文字](http://littendomo.sinaapp.com/yilia/yilia-pc2.png)   
+
 ####**窄屏**
-![窄屏](littendomo.sinaapp.com/yilia/yilia-pc3.PNG)     
+![窄屏](http://littendomo.sinaapp.com/yilia/yilia-pc3.png)     
+
 ####**同步instagram**
-![同步instagram](littendomo.sinaapp.com/yilia/yilia-pc4.PNG)
+![同步instagram](http://littendomo.sinaapp.com/yilia/yilia-pc4.png)
 
 ####**移动端**
-![移动端](littendomo.sinaapp.com/yilia/yilia-mobile.jpg)        
-
-####**移动端文字**
-![移动端](littendomo.sinaapp.com/yilia/yilia-mobile2.jpg)   
+![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile.png)
+![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile2.png)   
 
 ##三、配置
 
