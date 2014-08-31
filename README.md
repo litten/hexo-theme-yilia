@@ -9,7 +9,7 @@ hexo-theme-yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的�
 #### 安装
 
 ``` bash
-$ git clone https://github.com/hexojs/hexo-theme-yilia.git themes/yilia
+$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 ```
 
 #### 使用
