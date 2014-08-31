@@ -4,6 +4,14 @@ hexo-theme-yilia
 hexo-theme-yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。     
 响应式设计，风格简约， 你可以点击 [我的博客](http://litten.github.io/) 查看效果。    
 
+关于主题：
+
+1. 我喜欢简约。所以标签云，搜索框都拿掉了    
+2. 接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn       
+3. 让大家把注意力放到内容上。这是本主题设计初衷      
+4. 主题不支持IE6，7，8。以后也不会        
+
+
 ##一、使用
 
 #### 安装
