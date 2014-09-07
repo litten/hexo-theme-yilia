@@ -39,10 +39,16 @@ var Instagram = (function(){
 	}
 
 	var replacer = function(str){
-		var url = "http://photos-g.ak.instagram.com/hphotos-ak-xpf1/";
-		var arr = str.split("/");
-
-		return url+arr[arr.length-1];
+		if(str.indexOf("outbound-distilleryimage") >= 0 ){
+			var cdnNum = str.match(/outbound-distilleryimage([\s\S]*?)\//)[1];
+			var arr = str.split("/");
+			return "http://distilleryimage"+cdnNum+".ak.instagram.com/"+arr[arr.length-1];
+		}else{
+			var url = "http://photos-g.ak.instagram.com/hphotos-ak-xpf1/";
+			var arr = str.split("/");
+			return url+arr[arr.length-1];
+		}
+		
 	}
 
 	var ctrler = function(data){
@@ -85,7 +91,6 @@ var Instagram = (function(){
 					if(next){
 						getList(next);
 					}else{
-						console.log(_collection);
 						$(".open-ins").html("图片来自instagram，点此访问");
 						ctrler(_collection);
 					}
@@ -115,7 +120,14 @@ var Instagram = (function(){
 
 	return {
 		init:function(){
-			getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
+			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
+			var insid = $(".instagram").attr("data-client-id");
+			if(!insid){
+				alert("Didn't set your instagram client_id.\nPlease see the info on the console of your brower.");
+				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
+				return;
+			}
+			getList("https://api.instagram.com/v1/users/438522285/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}
