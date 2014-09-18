@@ -83,51 +83,39 @@
     }
     .archive-article-date{
      cursor: default;
+     font-size: 12px;
+     margin-bottom: 5px;
      time{
       &:before {
         content: "\f073";
         color: #555;
         position: relative;
         margin-right: 10px;
-        font: 1.3em FontAwesome;font: 1.3em FontAwesome;
+        font: 14px FontAwesome;
       }
      }
     }
-    .article-tag-list{
-      margin-top: 10px;
-      padding-left: 0px;
-      &:before{
-        margin-top: 2px;
-        content: "\f02c";
-        color: #999;
-        position: relative;
-        margin-right: 10px;
-        font: 1.3em FontAwesome;font: 1.3em FontAwesome;
-      }
-    }
     .article-category{
-      margin-bottom: 10px;
-      display: inline-block;
-      font-size: 14px;
-      margin-top: 9px;
-      float: left;
-      margin-right: 10px;
-      &:before {
-        content: "\f02d";
-        color: #999;
-        position: relative;
-        margin-right: 9px;
-        font: 1.3em FontAwesome;
-        font: 1.3em FontAwesome;
+      &:before{
+        float: left;
+        margin-top: 1px;
+        left: 15px;
+      }
+      .article-category-link{
+        width: auto;
+        max-width: 83px;
+        padding-left: 10px;
       }
     }
-    .article-tag-list-item{
-      float: right;
-      padding-left: 0;
-      width: auto;
-    }
-    .article-tag-list-link:hover{
-      color: #4d4d4d;
+    .article-tag-list{
+      margin-top: 0px;
+      .article-tag-list-item{
+        display: inline-block;
+        width: auto;
+        max-width: 83px;
+        padding-left: 10px;
+        font-size: 12px;
+      }
     }
   }
 }
