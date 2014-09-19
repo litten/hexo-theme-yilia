@@ -120,11 +120,23 @@
 			cursor: default;
 		}
 	}
+	.switch-area{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		min-height: 500px;
+	}
+	.turn-left{
+	    transform: translate3d(-100%, 0, 0 );
+	}
 	.header-nav{
-		margin-top:10px;
-		text-align: center;
+		width: 100%;
+		position: absolute;
+		transition: -webkit-transform .3s ease-in;
 		.social {
 			margin-right:15px;
+			margin-top:10px;
+			text-align: center;
 			a {
 				-webkit-border-radius:50%;
 				-moz-border-radius:50%;
@@ -200,6 +212,84 @@
 				}
 			}
 		}
+	}
+	.tagcloud{
+		a{
+			display:inline-block;  
+		    text-decoration:none;  
+		    font-size:10px;  
+		    color:#333;   
+		    height:18px;  
+		    line-height:18px;  
+		    padding:0 2px 0 12px;  
+		    position:relative;  
+		    border-radius:0 5px 5px 0; 
+		    margin: 5px 9px 5px 8px;
+		    font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+			&:hover{
+				opacity: 0.8;
+			}
+		    &:before{
+			    content: " ";
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				top: 0;
+				left: -18px;
+				border: 9px solid transparent;
+		    }
+		    &:after{  
+			    content:" ";  
+			    width:4px;  
+			    height:4px;  
+			    background-color:#fff;  
+			    border-radius:4px;  
+			    box-shadow:0px 0px 0px 1px rgba(0,0,0,.3);  
+			    position:absolute;  
+			    top: 7px;
+				left: 2px;
+			}  
+		}
+		a.color1{
+			background: #8aabca;
+			&:before{
+				border-right-color:#8aabca;  
+			}
+		}
+		a.color2{
+			background: #99d1d2;
+			&:before{
+				border-right-color:#99d1d2;  
+			}
+		}
+		a.color3{
+			background: #fcd9c6;
+			&:before{
+				border-right-color:#fcd9c6;  
+			}
+		}
+		a.color4{
+			background: #fde0a6;
+			&:before{
+				border-right-color:#fde0a6;  
+			}
+		}
+		a.color5{
+			background: #c9e5e8;
+			&:before{
+				border-right-color:#c9e5e8;  
+			}
+		}
+	}
+	.first-part{
+		transition: -webkit-transform .3s ease-in;
+	}
+	.second-part{
+		transition: -webkit-transform .3s ease-in;
+		left: 100%;
+		width: 100%;
+		top: 20px;
+		position: absolute;
 	}
 }
 

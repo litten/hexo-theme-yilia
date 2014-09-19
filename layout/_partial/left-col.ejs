@@ -12,19 +12,42 @@
 		<% if (theme.subtitle){ %>
 		<p class="header-subtitle"><%=theme.subtitle%></p>
 		<%}%>
-		<nav class="header-menu">
-			<ul>
-			<% for (var i in theme.menu){ %>
-				<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-	        <%}%>
-			</ul>
-		</nav>
-		<nav class="header-nav">
-			<div class="social">
-				<% for (var i in theme.subnav){ %>
-					<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
-		        <%}%>
+
+		<%if(theme.tagcloud){%>
+			<div class="onoffswitch">
+			    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+			    <label class="onoffswitch-label" for="myonoffswitch">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
 			</div>
-		</nav>
+		<%}%>
+
+		<div class="switch-area">
+			<section class="first-part">
+				<nav class="header-menu">
+					<ul>
+					<% for (var i in theme.menu){ %>
+						<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+			        <%}%>
+					</ul>
+				</nav>
+				<nav class="header-nav">
+					<div class="social">
+						<% for (var i in theme.subnav){ %>
+							<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
+				        <%}%>
+					</div>
+				</nav>
+			</section>
+			
+			<%if(theme.tagcloud){%>
+			<section class="second-part">
+				<div class="widget tagcloud">
+					<%- tagcloud() %>
+				</div>
+			</section>
+			<%}%>
+		</div>
 	</header>				
 </div>

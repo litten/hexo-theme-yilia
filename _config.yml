@@ -9,10 +9,10 @@ subnav:
   github: "#"
   weibo: "#"
   rss: "#"
-  # facebook: "/"
-  # google: "/"
-  # twitter: "/"
-  # linkedin: "/"
+  facebook: "#"
+  # google: "#"
+  # twitter: "#"
+  # linkedin: "#"
 
 rss: /atom.xml
 
@@ -24,6 +24,11 @@ fancybox: true
 
 favicon: /favicon.png
 
+#你的头像
 avatar: "https://avatars2.githubusercontent.com/u/2024949?v=2&s=150"
+#是否开启分享
 share: true
-duoshuo: "your duoshuo pro name"
+#是否开启多说评论，填写你在多说申请的项目名称
+duoshuo: true
+#是否开启云标签
+tagcloud: true

@@ -6,7 +6,7 @@ hexo-theme-yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的�
 
 关于主题：
 
-1. 我喜欢简约。所以标签云，搜索框都拿掉了    
+1. 我喜欢简约。所以近期文章，搜索框都拿掉了    
 2. 接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn       
 3. 让大家把注意力放到内容上。这是本主题设计初衷      
 4. 主题不支持IE6，7，8。以后也不会        
@@ -30,8 +30,11 @@ $ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 cd themes/yilia
 git pull
 ```
+##二、近期更新
 
-##二、外观
+2014.9.19 - 云标签挂件
+
+##三、外观
 
 ####**宽屏**
 ![宽屏](http://littendomo.sinaapp.com/yilia/yilia-pc1.png)        
@@ -49,7 +52,7 @@ git pull
 ![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile.png)
 ![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile2.png)   
 
-##三、配置
+##四、配置
 
 主题配置文件在主目录下的`_config.yml`：
 
@@ -62,13 +65,13 @@ menu:
 
 # SubNav
 subnav:
-  github: "https://github.com/litten"
-  weibo: "http://weibo.com/litten225"
-  rss: "http://feed.feedsky.com/litten"
-  # facebook: "/"
-  # google: "/"
-  # twitter: "/"
-  # linkedin: "/"
+  github: "#"
+  weibo: "#"
+  rss: "#"
+  facebook: "#"
+  # google: "#"
+  # twitter: "#"
+  # linkedin: "#"
 
 rss: /atom.xml
 
@@ -80,11 +83,16 @@ fancybox: true
 
 favicon: /favicon.png
 
+#你的头像
 avatar: "https://avatars2.githubusercontent.com/u/2024949?v=2&s=150"
+#是否开启分享
 share: true
+#是否开启多说评论，填写你在多说申请的项目名称
 duoshuo: true
+#是否开启云标签
+tagcloud: true
 ```
-##四、同步你的instagram图片
+##五、同步你的instagram图片
 
 如果喜欢instagram，Yilia可以帮助您同步图片。
 
