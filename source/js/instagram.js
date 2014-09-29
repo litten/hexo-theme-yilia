@@ -59,7 +59,10 @@ var Instagram = (function(){
 			var m = d.getMonth()+1;
 			var src = replacer(data[i].images.low_resolution.url);
 			var bigSrc = replacer(data[i].images.standard_resolution.url);
-			var text = data[i].caption.text;
+			var text = "";
+			if(data[i].caption && data[i].caption.text){
+				text = data[i].caption.text;
+			}
 			var key = y+"-"+m;
 			if(imgObj[key]){
 				imgObj[key].srclist.push(src);

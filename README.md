@@ -96,6 +96,7 @@ tagcloud: true
 ##五、同步你的instagram图片
 
 如果喜欢instagram，Yilia可以帮助您同步图片。
+（目前由于HongKong问题，ins被禁…暂不可用）
 
 1. 新建页面
 
