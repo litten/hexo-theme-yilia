@@ -33,12 +33,16 @@
 	min-height: 149px;
 	padding-top: 17px;
 	border-bottom: 1px solid #ddd;
+	list-style: none;
 }
 .instagram .album li{
 	position: relative;
 	display: inline-block;
 	min-width: 157px;
 	margin: 0;
+	&:before{
+		display: none;
+	}
 }
 @media screen and (max-width:600px) {
 	.instagram .album ul {
