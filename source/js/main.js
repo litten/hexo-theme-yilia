@@ -28,10 +28,24 @@ var Main = (function(){
 		})
 	}
 
+	var fancyInit = function(){
+		var isFancy = $(".isFancy");
+		if(isFancy.length != 0){
+			var imgArr = $(".article-inner img");
+			for(var i=0,len=imgArr.length;i<len;i++){
+				var src = imgArr.eq(i).attr("src");
+				var title = imgArr.eq(i).attr("alt");
+				imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' title='"+title+"'></a>");
+			}
+			$(".article-inner .fancy-ctn").fancybox();
+		}
+	}
+
 	return {
 		init: function(){
 			resetTags();
 			bind();
+			fancyInit();
 		}
 	}
 })();

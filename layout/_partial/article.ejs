@@ -7,6 +7,9 @@
     </div>
   <%}%>
   <div class="article-inner">
+    <% if (theme.fancybox){ %>
+      <input type="hidden" class="isFancy" />
+    <% } %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
