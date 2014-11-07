@@ -14,40 +14,92 @@
 		<%}%>
 
 		<%if(theme.tagcloud){%>
-			<div class="onoffswitch">
-			    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-			    <label class="onoffswitch-label" for="myonoffswitch">
-			        <span class="onoffswitch-inner"></span>
-			        <span class="onoffswitch-switch"></span>
-			    </label>
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						<%if(theme.friends && theme.friends.length != 0){%>
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						<%}%>
+						<%if(theme.aboutme){%>
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						<%}%>
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						<%if(theme.friends && theme.friends.length != 0){%>
+						<li>友情链接</li>
+						<%}%>
+						<%if(theme.aboutme){%>
+						<li>关于我</li>
+						<%}%>
+					</ul>
+				</div>
 			</div>
 		<%}%>
 
 		<div class="switch-area">
-			<section class="first-part">
-				<nav class="header-menu">
-					<ul>
-					<% for (var i in theme.menu){ %>
-						<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-			        <%}%>
-					</ul>
-				</nav>
-				<nav class="header-nav">
-					<div class="social">
-						<% for (var i in theme.subnav){ %>
-							<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						<% for (var i in theme.menu){ %>
+							<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
 				        <%}%>
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							<% for (var i in theme.subnav){ %>
+								<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
+					        <%}%>
+						</div>
+					</nav>
+				</section>
+				
+				<%if(theme.tagcloud){%>
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud">
+						<%- tagcloud() %>
 					</div>
-				</nav>
-			</section>
-			
-			<%if(theme.tagcloud){%>
-			<section class="second-part">
-				<div class="widget tagcloud">
-					<%- tagcloud() %>
-				</div>
-			</section>
-			<%}%>
+				</section>
+				<%}%>
+				
+				<%if(theme.friends && theme.friends.length != 0){%>
+				<section class="switch-part switch-part3">
+					<% for (var i in theme.friends){ %>
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a>
+			        <% } %>
+				</section>
+				<%}%>
+
+				<%if(theme.aboutme){%>
+				<%if(!theme.friends){%>
+				<section class="switch-part switch-part3">
+				<%}else{%>
+				<section class="switch-part switch-part4">
+				<%}%>
+					<%=theme.aboutme%>
+				</section>
+				<%}%>
+			</div>
 		</div>
 	</header>				
 </div>

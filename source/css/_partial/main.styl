@@ -122,6 +122,10 @@
 		width: 100%;
 		overflow: hidden;
 		min-height: 500px;
+		.switch-wrap{
+			transition: transform .3s ease-in;
+			position: relative;
+		}
 	}
 	.turn-left{
 	    transform: translate(-100%, 0 );
@@ -274,15 +278,34 @@
 			}
 		}
 	}
-	.first-part{
-		transition: transform .3s ease-in;
-	}
-	.second-part{
-		transition: transform .3s ease-in;
-		left: 100%;
+	.switch-part{
 		width: 100%;
-		top: 20px;
 		position: absolute;
+	}
+	.switch-part1{
+		left: 0;
+	}
+	.switch-part2{
+		left: 100%;
+		top: 20px;
+	}
+	.switch-part3{
+		left: 200%;
+		line-height: 30px;
+		.switch-friends-link{
+			margin-right: 9px;
+			border-radius: 3px;
+			padding: 5px;
+			&:hover{
+				background: #88acdb;
+				color: #fff;
+			}
+		}
+	}
+	.switch-part4{
+		left: 300%;
+		text-align: left;
+		line-height: 30px;
 	}
 }
 

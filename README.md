@@ -12,8 +12,14 @@ hexo-theme-yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的�
 3. 让大家把注意力放到内容上。这是本主题设计初衷      
 4. 主题不支持IE6，7，8。以后也不会        
 
+##一、近期更新
 
-##一、使用
+2014.11.7 - 增加“友情链接”“关于我”
+2014.10.22 - 优化fancybox展示
+2014.10.16 - 增加表格样式
+2014.9.19 - 云标签挂件
+
+##二、使用
 
 #### 安装
 
@@ -31,9 +37,6 @@ $ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
 cd themes/yilia
 git pull
 ```
-##二、近期更新
-
-2014.9.19 - 云标签挂件
 
 ##三、外观
 
@@ -92,6 +95,25 @@ share: true
 duoshuo: true
 #是否开启云标签
 tagcloud: true
+
+#是否开启友情链接
+#不开启——
+#friends: false
+#开启——
+friends:
+  奥巴马的博客: http://localhost:4000/
+  卡卡的美丽传说: http://localhost:4000/
+  本泽马的博客: http://localhost:4000/
+  吉格斯的博客: http://localhost:4000/
+  习大大大不同: http://localhost:4000/
+  托蒂的博客: http://localhost:4000/
+
+#是否开启“关于我”。
+#不开启——
+#aboutme: false
+#开启——
+aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+
 ```
 ##五、同步你的instagram图片
 
