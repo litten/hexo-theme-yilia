@@ -19,6 +19,7 @@ rss: /atom.xml
 # Content
 excerpt_link: more
 fancybox: true
+mathjax: true
 
 # Miscellaneous
 google_analytics: ''
