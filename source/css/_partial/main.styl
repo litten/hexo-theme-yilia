@@ -16,6 +16,7 @@
 				position: relative;
 			}
 			.header-menu{
+				height: auto;
 				margin: 10px;
 				ul{
 					text-align: center;
@@ -105,13 +106,17 @@
 	}
 	.header-menu{
 		font-weight: 300;
-		margin-left: 74px;
-		margin-top: 40px;
-		margin-bottom: 40px;
 		line-height: 35px;
 		cursor: pointer;
 		text-transform: uppercase;
 		float:none;
+		height: 150px;
+		margin-left: -12px;
+		text-align: center;
+		display: -webkit-box;
+		-webkit-box-orient: horizontal;
+		-webkit-box-pack: center;
+		-webkit-box-align: center;
 		li{
 			cursor: default;
 			a{
@@ -222,6 +227,8 @@
 	.switch-part2{
 		left: 100%;
 		top: 20px;
+		overflow-y: scroll;
+		max-height: 200px;
 	}
 	.switch-part3{
 		left: 200%;

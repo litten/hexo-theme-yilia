@@ -23,6 +23,7 @@
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
+          <hr/>
           <p class="article-more-link">
             <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
           </p>
