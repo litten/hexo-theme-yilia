@@ -76,7 +76,7 @@
 }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	background-image: url('fancybox_sprite.png');
+	background-image: url(fancybox_sprite.png);
 }
 
 #fancybox-loading {
@@ -94,7 +94,7 @@
 #fancybox-loading div {
 	width: 44px;
 	height: 44px;
-	background: url('fancybox_loading.gif') center center no-repeat;
+	background: url(fancybox_loading.gif) center center no-repeat;
 }
 
 .fancybox-close {
@@ -114,7 +114,7 @@
 	height: 100%;
 	cursor: pointer;
 	text-decoration: none;
-	background: transparent url('blank.gif'); /* helps IE */
+	background: transparent url(blank.gif); /* helps IE */
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	z-index: 8040;
 }
@@ -156,7 +156,6 @@
 	position: absolute;
 	top: -99999px;
 	left: -99999px;
-	visibility: hidden;
 	max-width: 99999px;
 	max-height: 99999px;
 	overflow: visible !important;
@@ -165,7 +164,7 @@
 /* Overlay helper */
 
 .fancybox-lock {
-    overflow: hidden !important;
+    overflow: visible !important;
     width: auto;
 }
 
@@ -184,7 +183,7 @@
 	overflow: hidden;
 	display: none;
 	z-index: 8010;
-	background: url('fancybox_overlay.png');
+	background: url(fancybox_overlay.png);
 }
 
 .fancybox-overlay-fixed {
@@ -234,7 +233,7 @@
 	color: #FFF;
 	font-weight: bold;
 	line-height: 24px;
-	white-space: nowrap;
+	text-align: left;
 }
 
 .fancybox-title-outside-wrap {
@@ -263,12 +262,12 @@
 	   only screen and (min-device-pixel-ratio: 1.5){
 
 	#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-		background-image: url('fancybox_sprite@2x.png');
+		background-image: url(fancybox_sprite@2x.png);
 		background-size: 44px 152px; /*The size of the normal image, half the size of the hi-res image*/
 	}
 
 	#fancybox-loading div {
-		background-image: url('fancybox_loading@2x.gif');
+		background-image: url(fancybox_loading@2x.gif);
 		background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
 	}
 }

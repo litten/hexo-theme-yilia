@@ -64,6 +64,9 @@
 }
 
 .archive-article-inner{
+  .archive-article-header{
+    position: relative;
+  }
   .article-meta{
     position: relative;
     float: right;
@@ -85,13 +88,14 @@
      cursor: default;
      font-size: 12px;
      margin-bottom: 5px;
+     margin-top: -10px;
      time{
       &:before {
         content: "\f073";
-        color: #555;
+        color: #999;
         position: relative;
         margin-right: 10px;
-        font: 14px FontAwesome;
+        font: 16px FontAwesome;
       }
      }
     }

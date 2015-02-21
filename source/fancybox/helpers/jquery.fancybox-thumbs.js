@@ -14,7 +14,7 @@
  *     });
  *
  */
-(function ($) {
+;(function ($) {
 	//Shortcut for fancyBox object
 	var F = $.fancybox;
 
@@ -62,7 +62,8 @@
 
 			//Load each thumbnail
 			$.each(obj.group, function (i) {
-				var href = thumbSource( obj.group[ i ] );
+				var el   = obj.group[ i ],
+					href = thumbSource( el );
 
 				if (!href) {
 					return;
@@ -105,7 +106,9 @@
 
 					$(this).hide().appendTo(parent).fadeIn(300);
 
-				}).attr('src', href);
+				})
+				.attr('src',   href)
+				.attr('title', el.title);
 			});
 
 			//Set initial width

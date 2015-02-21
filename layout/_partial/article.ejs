@@ -2,8 +2,6 @@
   <%if(post.noDate != "true"){%>
     <div class="article-meta">
       <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-      <%- partial('post/category') %>
-      <%- partial('post/tag') %>
     </div>
   <%}%>
   <div class="article-inner">
@@ -14,6 +12,12 @@
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
+      <% if (!index){ %>
+      <div class="article-info alignright">
+        <%- partial('post/tag') %>
+        <%- partial('post/category') %>
+      </div>
+      <% } %>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
@@ -27,6 +31,12 @@
         <%- post.content %>
       <% } %>
     </div>
+    <% if (index){ %>
+    <div class="article-info">
+      <%- partial('post/tag') %>
+      <%- partial('post/category') %>
+    </div>
+    <% } %>
   </div>
   <% if (!index){ %>
     <%- partial('post/nav') %>

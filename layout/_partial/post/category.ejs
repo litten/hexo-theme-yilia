@@ -1,10 +1,10 @@
 <% if (post.categories && post.categories.length){ %>
-  <div class="article-category">
-    <%- list_categories(post.categories, {
-      show_count: false,
-      class: 'article-category',
-      style: 'none',
-      separator: ''
-    }) %>
-  </div>
+	<div class="article-category tagcloud">
+	<%- list_categories(post.categories, {
+	  show_count: false,
+	  class: 'article-category',
+	  style: 'none',
+	  separator: ''
+	}) %>
+	</div>
 <% } %>

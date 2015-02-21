@@ -221,3 +221,121 @@
         }
     }
 }
+
+.tagcloud{
+    a{
+        display:inline-block;  
+        text-decoration:none;  
+        font-weight: normal;
+        font-size:10px;  
+        color:#333;   
+        height:18px;  
+        line-height:18px;  
+        float: left;
+        padding:0 2px 0px 10px;  
+        position:relative;  
+        border-radius:0 5px 5px 0; 
+        margin: 5px 9px 5px 8px;
+        font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+        &:hover{
+            opacity: 0.8;
+        }
+        &:before{
+            content: " ";
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            top: 0;
+            left: -18px;
+            border: 9px solid transparent;
+        }
+        &:after{  
+            content:" ";  
+            width:4px;  
+            height:4px;  
+            background-color:#fff;  
+            border-radius:4px;  
+            box-shadow:0px 0px 0px 1px rgba(0,0,0,.3);  
+            position:absolute;  
+            top: 7px;
+            left: 2px;
+        }  
+    }
+    a.color1{
+        background: #8aabca;
+        &:before{
+            border-right-color:#8aabca;  
+        }
+    }
+    a.color2{
+        background: #99d1d2;
+        &:before{
+            border-right-color:#99d1d2;  
+        }
+    }
+    a.color3{
+        background: #fcd9c6;
+        &:before{
+            border-right-color:#fcd9c6;  
+        }
+    }
+    a.color4{
+        background: #fde0a6;
+        &:before{
+            border-right-color:#fde0a6;  
+        }
+    }
+    a.color5{
+        background: #c9e5e8;
+        &:before{
+            border-right-color:#c9e5e8;  
+        }
+    }
+}
+
+.article-tag-list{
+    .article-tag-list-item{
+        float: left;
+    }
+}
+.article-tag{
+    float: left;
+    .article-tag-list{
+        float: left;
+    }
+    &:before{
+        float: left;
+        color: #999;
+        content: "\f06c";
+        font: 16px FontAwesome;
+        float: left;
+        margin-right: 10px;
+        margin-top: 9px;
+    }
+    &:after{
+        float: left;
+        content: "";
+        margin-right: 20px;
+        margin-top: 9px;
+        float: left;
+    }
+}
+.article-category{
+    float: left;
+    &:before{
+        float: left;
+        color: #999;
+        content: "\f02d";
+        font: 16px FontAwesome;
+        float: left;
+        margin-right: 10px;
+        margin-top: 9px;
+    }
+    &:after{
+        float: left;
+        content: "";
+        margin-right: 20px;
+        margin-top: 9px;
+        float: left;
+    }
+}

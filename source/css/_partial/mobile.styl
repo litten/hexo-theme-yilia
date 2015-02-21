@@ -4,13 +4,26 @@
 .mid-col {
     left: 0;
 }
+.article-header{
+    border-bottom: none;
+    padding: 0;
+    width: 180px;
+    h1{
+        margin-bottom: 10px;
+    }
+}
 .header-subtitle{
     padding: 0 24px;
+}
+.article-info{
+    display: none;
+    margin-left: 0;
 }
 .article{
     padding: 10px;
     margin: 10px;
     .article-entry{
+        padding-left: 0;
         padding-right: 0;
         padding-top: 10px;
     }
@@ -25,10 +38,8 @@
     .article-meta{
         width: 100%;
         border-bottom: 1px dotted #ddd;
-        left: 0;
-        top: 45px;
-        text-align: left;
         height: 30px;
+        margin-top: -5px;
         position: ralative;
         .article-date{
             font-size: 12px;
@@ -43,6 +54,8 @@
             margin-left: 10px;
             time{
                 width: auto;
+                float: right;
+                margin-right: 10px;
             }
         }
         .article-tag-list{
@@ -114,12 +127,14 @@
     top: -45px;
     color: #aaa;
 }
-
+.info-on-right{
+    float: initial;
+}
 .archives-wrap{
     margin: 10px 10px 0px;
     padding: 10px;
     .archive-article-title{
-        font-size: 14px;
+        font-size: 16px;
     }
     .archive-year-wrap{
         position: relative;
@@ -129,9 +144,9 @@
         }
     }
     .article-meta{
-        display: none;
         .archive-article-date{
             font-size: 12px;
+            margin-right: 10px;
         }
         .article-tag-list-link{
             font-size: 12px;
