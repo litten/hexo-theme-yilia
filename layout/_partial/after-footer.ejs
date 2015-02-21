@@ -1,10 +1,12 @@
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <% if (theme.fancybox){ %>
   <%- css('fancybox/jquery.fancybox') %>
   <%- js('fancybox/jquery.fancybox.pack') %>
-  <%- js('js/main') %>
 <% } %>
+
+<%- js('js/main') %>
+<%- partial('google-analytics') %>
 
 <% if (theme.mathjax){ %>
 <%- partial('mathjax') %>
 <% } %>
-<%- js('js/script') %>
