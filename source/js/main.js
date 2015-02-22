@@ -114,7 +114,7 @@ var Main = (function(){
 			fancyInit();
 			Tips.init();
 			new Mobile({
-				ctn: document.getElementsByClassName("profilepic")[1]
+				ctn: document.getElementsByClassName("slider-trigger")[0]
 			});
 		}
 	}

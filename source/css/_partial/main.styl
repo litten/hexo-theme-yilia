@@ -8,12 +8,18 @@
 			position: absolute;
 			width: 100%;
 			background: #4d4d4d;
+			&.fixed{
+		        position: fixed;
+		        height: 42px;
+		        z-index: 99;
+		    }
 		}
 		#header{
 			padding: 10px 0 0 0;
 			.profilepic{
 				display: block;
 				position: relative;
+				z-index: 100;
 			}
 			.header-menu{
 				height: auto;
@@ -66,7 +72,13 @@
 		@import "_partial/mobile"
 	}
 }
-
+.header-author{
+	text-align: center;
+	margin: 0.67em 0;
+	font-family: Roboto, "Roboto", serif;
+	font-size: 30px;
+	transition: 0.3s;
+}
 #header{
 	width:100%;
 	padding:20% 0% 0% 15%;
@@ -81,18 +93,12 @@
 		text-align: center;
 		display: block;
 		img{
-			border-radius:50%;
+			border-radius:300px;
 			width: 128px;
 			height: 128px;
 			border: 2px solid white;
 			background: #88acdb;
 		}
-	}
-	.header-author{
-		text-align: center;
-		margin: 0.67em 0;
-		font-family: Roboto, "Roboto", serif;
-		font-size: 30px;
 	}
 	.header-subtitle{
 		text-align: center;

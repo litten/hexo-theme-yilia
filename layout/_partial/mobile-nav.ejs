@@ -1,14 +1,16 @@
 <nav id="mobile-nav">
-  	<div class="overlay"></div>
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide"><%=theme.author%></h1>
+  	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<img src="<%=theme.avatar%>">
+				<hgroup>
+				  <h1 class="header-author"><%=theme.author%></h1>
+				</hgroup>
 			</div>
-
-			<hgroup>
-			  <h1 class="header-author"><a href="/"><%=theme.author%></a></h1>
-			</hgroup>
 			<% if (theme.subtitle){ %>
 			<p class="header-subtitle"><%=theme.subtitle%></p>
 			<%}%>

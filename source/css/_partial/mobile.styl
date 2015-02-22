@@ -9,6 +9,37 @@
         position: relative;
     }
 }
+.header-author{
+    &.fixed{
+        position: fixed;
+        top: -13px;
+        width: 100%;
+        color: #ddd;
+    }
+}
+.overlay{
+    .slider-trigger{
+        position: absolute;
+        z-index: 101;
+        bottom: 0;
+        left: 0;
+        width: 42px;
+        height: 42px;
+        &:hover{
+            background: #444;
+        }
+        &:before{
+            color: #ddd;
+            content: "\f00b";
+            font: 16px FontAwesome;
+            width: 16px;
+            height: 16px;
+            margin-left: 9px;
+            margin-top: 14px;
+            display: block;
+        }
+    }
+}
 .article-header{
     border: none;
     padding: 0;
@@ -129,7 +160,7 @@
 
 .instagram .open-ins{
     left: 2px;
-    top: -45px;
+    top: -30px;
     color: #aaa;
 }
 .info-on-right{

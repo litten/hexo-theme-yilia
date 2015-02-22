@@ -14,14 +14,12 @@
 	position: absolute;
 	right: 28px;
 	top: -75px;
-	z-index: 1000;
 	color: #333;
 	&:hover{
 		color: #657b83;
 	}
 }
 .instagram .year{
-	margin-left: 20px;
 	display: inline;
 }
 .instagram .album h1 em{
@@ -44,16 +42,7 @@
 		display: none;
 	}
 }
-@media screen and (max-width:600px) {
-	.instagram .album ul {
-		margin-left: 0;
-		padding:15px 0;
-		text-align: center;
-	}
-	.instagram .album li {
-		width: 300px;
-	}
-}
+
 
 .instagram .album div.img-box{
 	position: relative;
@@ -89,4 +78,17 @@
 	width: 100%;
 	height: auto;
 	display: block;
+}
+@media screen and (max-width:600px) {
+	.instagram .album ul {
+		margin-left: 0;
+		padding: 0;
+		text-align: center;
+	}
+	.instagram .album li {
+		max-width: 300px;
+	}
+	.instagram .album div.img-box{
+		margin: 0;
+	}
 }

@@ -73,12 +73,20 @@
 			self.wrap.className = "anm-swipe";
 		},0);
 		_isShow = true;
+		document.ontouchstart=function(e){
+			if(e.target.tagName != "A"){
+				return false;
+			}
+		}
 	}
 
 	Mobile.prototype.hide = function(){
 		var self = this;
 		document.getElementById("viewer-box").className = "";
 		_isShow = false;
+		document.ontouchstart=function(){
+			return true;
+		}
 	}
 
 	//第四步 -- 绑定 DOM 事件
@@ -98,15 +106,45 @@
 			
 		}, false);
 
-		//点击隐藏
+		//点击展示和隐藏
 		self.ctn.addEventListener("touchend", function(){
 			self.show();
 		}, false);
 
-		document.getElementsByClassName("viewer-box-r")[0].addEventListener("touchend", function(){
-			self.hide();
+		var $right = document.getElementsByClassName("viewer-box-r")[0];
+		var touchStartTime;
+		var touchEndTime;
+		$right.addEventListener("touchstart", function(){
+			touchStartTime = + new Date();
+		}, false);
+		$right.addEventListener("touchend", function(){
+			touchEndTime = + new Date();
+			if(touchEndTime - touchStartTime < 300){
+				self.hide();
+			}
+			touchStartTime = 0;
+			touchEndTime = 0;
 		}, false);
 
+		//滚动样式
+		var $overlay = $("#mobile-nav .overlay");
+		var $header = $(".js-mobile-header");
+		window.onscroll = function(){
+		    var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
+		    if(scrollTop >= 69){
+		    	$overlay.addClass("fixed");
+		    }else{
+		    	$overlay.removeClass("fixed");
+		    }
+		    if(scrollTop >= 160){
+		    	$header.removeClass("hide").addClass("fixed");
+		    }else{
+		    	$header.addClass("hide").removeClass("fixed");
+		    }
+		};
+		$header[0].addEventListener("touchstart", function(){
+			$('html, body').animate({scrollTop:0}, 'slow');
+		}, false);
 	};
 	
 	return Mobile;
