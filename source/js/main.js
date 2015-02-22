@@ -113,6 +113,9 @@ var Main = (function(){
 			bind();
 			fancyInit();
 			Tips.init();
+			new Mobile({
+				ctn: document.getElementsByClassName("profilepic")[1]
+			});
 		}
 	}
 })();

@@ -76,7 +76,7 @@
 				
 				<%if(theme.tagcloud){%>
 				<section class="switch-part switch-part2">
-					<div class="widget tagcloud">
+					<div class="widget tagcloud" id="js-tagcloud">
 						<%- tagcloud() %>
 					</div>
 				</section>
@@ -84,9 +84,11 @@
 				
 				<%if(theme.friends && theme.friends.length != 0){%>
 				<section class="switch-part switch-part3">
+					<div id="js-friends">
 					<% for (var i in theme.friends){ %>
 			          <a target="_blank" class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a>
 			        <% } %>
+			        </div>
 				</section>
 				<%}%>
 
@@ -96,7 +98,7 @@
 				<%}else{%>
 				<section class="switch-part switch-part4">
 				<%}%>
-					<%=theme.aboutme%>
+					<div id="js-aboutme"><%=theme.aboutme%></div>
 				</section>
 				<%}%>
 			</div>
