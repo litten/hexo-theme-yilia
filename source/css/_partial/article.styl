@@ -57,7 +57,7 @@
   padding: 15px 0px 15px 30px;
 }
 .article-info{
-  margin: -30px 0 45px 30px;
+  margin: -30px 0 10px 30px;
   &.info-on-right{
     margin: 0;
     float: right;
@@ -110,6 +110,9 @@
     font-size: 1.3em;
     color: #574C4C;
     border-bottom: 1px solid #ddd;
+  }
+  video{
+    max-width: 100%;
   }
   strong {
     font-weight: bold;
@@ -210,6 +213,9 @@
     transition: background 0.3s;
     &:hover{
       background: #3c3c3c;
+    }
+    &.hidden{
+      visibility: hidden;
     }
   }
 }

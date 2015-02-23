@@ -41,9 +41,9 @@
     }
 }
 .article-header{
-    border: none;
+    border-left: none;
     padding: 0;
-    width: 180px;
+    border-bottom: 1px dotted #ddd;
     h1{
         margin-bottom: 10px;
     }
@@ -52,8 +52,13 @@
     padding: 0 24px;
 }
 .article-info{
-    display: none;
-    margin-left: 0;
+    margin: 10px 0 0px 0;
+    padding-bottom: 1px;
+}
+.article-more-link{
+    a{
+        float:right;
+    }
 }
 .article{
     padding: 10px;
@@ -65,15 +70,12 @@
     }
     .article-title{
         font-size: 18px;
-        height: 28px;
-        overflow: hidden;
+        max-width: 185px;
         display: block;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        margin: 0;
     }
     .article-meta{
-        width: 100%;
-        border-bottom: 1px dotted #ddd;
+        width: auto;
         height: 30px;
         margin-top: -5px;
         position: ralative;
@@ -170,7 +172,7 @@
     margin: 10px 10px 0px;
     padding: 10px;
     .archive-article-title{
-        font-size: 16px;
+        font-size: 14px;
     }
     .archive-year-wrap{
         position: relative;
@@ -183,6 +185,7 @@
         .archive-article-date{
             font-size: 12px;
             margin-right: 10px;
+            margin-top: -5px;
         }
         .article-tag-list-link{
             font-size: 12px;

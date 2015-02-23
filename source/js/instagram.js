@@ -39,7 +39,7 @@ var Instagram = (function(){
 	}
 
 	var replacer = function(str){
-		/*if(str.indexOf("outbound-distilleryimage") >= 0 ){
+		if(str.indexOf("outbound-distilleryimage") >= 0 ){
 			var cdnNum = str.match(/outbound-distilleryimage([\s\S]*?)\//)[1];
 			var arr = str.split("/");
 			return "http://distilleryimage"+cdnNum+".ak.instagram.com/"+arr[arr.length-1];
@@ -47,9 +47,7 @@ var Instagram = (function(){
 			var url = "http://photos-g.ak.instagram.com/hphotos-ak-xpf1/";
 			var arr = str.split("/");
 			return url+arr[arr.length-1];
-		}*/
-		var arr = str.split("/");
-		return "/assets/ins/"+arr[arr.length-1];
+		}
 	}
 
 	var ctrler = function(data){
@@ -63,7 +61,7 @@ var Instagram = (function(){
 			var text = data[i].caption.text;
 			var key = y+"-"+m;
 			if(imgObj[key]){
-				imgObj[key].srclist.push(bigSrc);
+				imgObj[key].srclist.push(src);
 				imgObj[key].bigSrclist.push(bigSrc);
 				imgObj[key].text.push(text);
 			}else{
