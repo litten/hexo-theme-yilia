@@ -29,6 +29,13 @@
         </p>
       <% } else { %>
         <%- post.content %>
+        <% if (index){ %>
+          <!-- show an end symbol if the article is fully displayed -->
+          <hr/>
+          <p class="article-more-link">
+            <a>end</a>
+          </p>
+        <% } %>
       <% } %>
     </div>
     <% if (index){ %>
