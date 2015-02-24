@@ -13,7 +13,7 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 
 如果你想体验手机浏览效果，可以扫一下二维码：
 
-![liantu](https://cloud.githubusercontent.com/assets/2024949/6349194/df7f3bec-bc62-11e4-8860-5b27d2259ceb.png)
+![liantu](https://cloud.githubusercontent.com/assets/2024949/6349266/b47bf1aa-bc63-11e4-85cc-4fee498961fc.png)
 
 —————————————————————
 
