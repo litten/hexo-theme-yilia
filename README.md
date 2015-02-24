@@ -1,19 +1,33 @@
 hexo-theme-yilia
 ================
 
-hexo-theme-yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。     
-响应式设计，风格简约， 你可以点击 [我的博客](http://litten.github.io/) 查看效果。            
-如有问题或需求，请提issue给我；或在这篇文章下留言[Hexo主题Yilia](http://litten.github.io/2014/08/31/hexo-theme-yilia/)。我都会看到并处理。
+Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
+崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://litten.github.io/) 查看效果。           
+ 
+如遇到问题或有需求，可以：
+* 提issue给我
+* 在这篇文章下留言[Hexo主题Yilia](http://litten.github.io/2014/08/31/hexo-theme-yilia/)
+* 移动端问题留言[Yilia在移动端适配的一些事](http://litten.github.io/2015/02/23/yilia-on-mobile/)
+
+我都会看到并处理。
+
+如果你想体验手机浏览效果，可以扫一下二维码：
+
+![liantu](https://cloud.githubusercontent.com/assets/2024949/6349194/df7f3bec-bc62-11e4-8860-5b27d2259ceb.png)
+
+—————————————————————
 
 关于主题：
 
 1. 我喜欢简约。所以近期文章，搜索框都拿掉了    
 2. 接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn       
+3. 追求移动端的体验
 3. 让大家把注意力放到内容上。这是本主题设计初衷      
 4. 主题不支持IE6，7，8。以后也不会        
 
 ##一、近期更新
 
+2015.2.21 - 移动侧重构&布局bug修改
 2014.11.7 - 增加“友情链接”“关于我”               
 2014.10.22 - 优化fancybox展示               
 2014.10.16 - 增加表格样式                 
@@ -72,26 +86,31 @@ subnav:
   github: "#"
   weibo: "#"
   rss: "#"
-  facebook: "#"
-  # google: "#"
-  # twitter: "#"
-  # linkedin: "#"
+  zhihu: "#"
+  #douban: "#"
+  #mail: "#"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
 
 rss: /atom.xml
 
 # Content
 excerpt_link: more
 fancybox: true
+mathjax: true
 
 # Miscellaneous
-
+google_analytics: ''
 favicon: /favicon.png
 
-#你的头像
-avatar: "https://avatars2.githubusercontent.com/u/2024949?v=2&s=150"
+#你的头像url
+avatar: ""
 #是否开启分享
 share: true
-#是否开启多说评论，填写你在多说申请的项目名称
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
 duoshuo: true
 #是否开启云标签
 tagcloud: true
@@ -113,43 +132,7 @@ friends:
 #aboutme: false
 #开启——
 aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
-
 ```
-##五、同步你的instagram图片
+##五、其他
 
-如果喜欢instagram，Yilia可以帮助您同步图片。
-（目前由于HongKong问题，ins被禁…暂不可用）
-
-1. 新建页面
-
-    执行命令：
-    ```
-    hexo new page "instagram"
-```
-2. 修改文件
-
-	在目录**yourBlog\source\instagram**下，修改index.md内容为：
-    ```
-    ---
-    layout: post
-    slug: "instagram"
-    title: "相册"
-    noDate: "true"
-    ---
-
-    <div class="instagram" data-client-id="956dd096b6e5496aba6662165b9b8443" data-user-id="438522285">
-        <a href="http://instagram.com/litten225" target="_blank" class="open-ins">图片来自instagram，正在加载中…</a>
-    </div>
-    <script src="/js/jquery.lazyload.js"></script>
-    <script src="/js/instagram.js"></script>
-    ```
-    注意其中的**data-client-id**属性，是你instagram上的client-id(不是用户id)。                    
-    具体可到[instagram-manage](http://instagram.com/developer/clients/manage/)网站上去获得。                       
-    **data-user-id**属性，需要到[lookup-user-id](http://jelled.com/instagram/lookup-user-id#)查找并填写。                          
-    
-    有了这两个参数，就可以获取到instagram的图片了。                        
-    
-    如遇到疑问，也可以参考这篇文章[《instagram图片拉取小经验》](http://litten.github.io/2014/03/03/instagram-api-ex/)并留言。
-    
-    另外，Yilia实现了图片异常处理，会将instagram图片的cdn路径替换成源服务器路径。因而你不必担心图片在天朝被墙的情况。
-
+[同步你的instagram图片](https://github.com/litten/hexo-theme-yilia/wiki/%E5%90%8C%E6%AD%A5%E4%BD%A0%E7%9A%84instagram%E5%9B%BE%E7%89%87)
