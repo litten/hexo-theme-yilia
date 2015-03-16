@@ -56,12 +56,20 @@
   border-left: 5px solid;
   padding: 15px 0px 15px 30px;
 }
-.article-info{
-  margin: -30px 0 10px 30px;
-  &.info-on-right{
-    margin: 0;
-    float: right;
-  }
+
+.article-info.info-on-right{
+  margin: 10px 0 0 0;
+  float: right;
+}
+.article-info-index.article-info{
+  padding-top: 20px;
+  margin: 30px 30px 0 30px;
+  border-top: 1px solid #ddd;
+}
+.article-info-post.article-info{
+  padding: 0
+  border: none;
+  margin: -30px 0 20px 30px;
 }
 .article-entry{
   line-height: 2;
@@ -211,6 +219,7 @@ h4,h5,h6{
 }
 
 .article-more-link{
+  margin-top: 5px;
   text-align: right;
   a{
     background: #4d4d4d;
