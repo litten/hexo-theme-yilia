@@ -3,6 +3,7 @@
   position: relative;
   border: 1px solid #ddd;
   background: #fff;
+  max-width: 1000px;
   img{
     max-width: 100%;
   }
@@ -84,7 +85,7 @@
     background: #ddd;
     border: 1px solid #ccc;
     font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
-	word-wrap: break-word;
+    word-wrap: break-word;
   }
   blockquote {
     background: #ddd;
@@ -112,36 +113,39 @@
       display: inline-block;
       margin-right: 10px;
       float: left;
-      margin-top: 10px;
+      margin-top: 12px;
     }
   }
-li ul{
-        margin-left: 30px;
-}
-li ol{
-        margin-left: 30px;
-}
+  li{
+    ul,ol{
+      margin-left: 30px;
+      li:before{
+        content: "";
+        background: #dedede;
+      }
+    }
+  }
   h2{
     margin-top: 10px;
-    font-weight: bold;
+    font-weight: 300;
     color: #574C4C;
     border-bottom: 1px solid #ddd;
   }
   h3{
     margin-top: 5px;
-    font-weight: bold;
+    font-weight: 300;
     color: #574C4C;
     border-bottom: 1px solid #ddd;
   }
 h4,h5,h6{
-    font-weight: bold;
+    font-weight: 300;
     color: #574C4C;
   }
   video{
     max-width: 100%;
   }
   strong {
-    font-weight: bold;
+    font-weight: 300;
   }
   .caption{
     display: block;
