@@ -26,6 +26,7 @@ mathjax: true
 
 # Miscellaneous
 google_analytics: ''
+baidu_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
