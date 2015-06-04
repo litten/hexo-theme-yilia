@@ -2,22 +2,23 @@
 menu:
   主页: /
   所有文章: /archives
+  技术笔记: /tags/技术笔记
   # 随笔: /tags/随笔
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
-  #douban: "#"
-  #mail: "#"
-  #facebook: "#"
-  #google: "#"
-  #twitter: "#"
-  #linkedin: "#"
+  github: "https://github.com/lujiaying"
+  # weibo: "#"
+  # rss: "#"
+  zhihu: "http://www.zhihu.com/people/lu-jia-ying-93"
+  douban: "http://www.douban.com/people/54173822/"
+  mail: "mailto:lujiaying93@foxmail.com"
+  # facebook: "#"
+  # google: "#"
+  # twitter: "#"
+  linkedin: "https://cn.linkedin.com/in/lujiaying93"
 
-rss: /atom.xml
+# rss: /atom.xml
 
 # Content
 excerpt_link: more
@@ -26,10 +27,10 @@ mathjax: true
 
 # Miscellaneous
 google_analytics: ''
-favicon: /favicon.png
+# favicon: /favicon.png
 
-#你的头像url
-avatar: ""
+# 头像
+avatar: "https://avatars3.githubusercontent.com/u/5207337?v=3&s=460"
 #是否开启分享
 share: true
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
@@ -40,18 +41,13 @@ tagcloud: true
 
 #是否开启友情链接
 #不开启——
-#friends: false
+# friends: false
 #开启——
 friends:
-  奥巴马的博客: http://localhost:4000/
-  卡卡的美丽传说: http://localhost:4000/
-  本泽马的博客: http://localhost:4000/
-  吉格斯的博客: http://localhost:4000/
-  习大大大不同: http://localhost:4000/
-  托蒂的博客: http://localhost:4000/
+Javee's Blog: http://jayveehe.github.io/
 
 #是否开启“关于我”。
 #不开启——
 #aboutme: false
 #开启——
-aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+aboutme: 不想忘记生命中的那些美好
