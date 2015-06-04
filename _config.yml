@@ -44,7 +44,7 @@ tagcloud: true
 # friends: false
 #开启——
 friends:
-Javee's Blog: http://jayveehe.github.io/
+  Javee's Blog: http://jayveehe.github.io/
 
 #是否开启“关于我”。
 #不开启——
