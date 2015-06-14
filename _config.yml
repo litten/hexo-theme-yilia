@@ -24,12 +24,18 @@ excerpt_link: more
 fancybox: true
 mathjax: true
 
+# 是否开启动画效果
+animate: true
+
+# 是否在新窗口打开链接
+open_in_new: false
+
 # Miscellaneous
 google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: ""
+avatar: "http://ww1.sinaimg.cn/bmiddle/93f8d29djw1et3ttarl67j20sg12ak8g.jpg"
 #是否开启分享
 share: true
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key

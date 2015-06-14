@@ -1,15 +1,20 @@
+.body-wrap{
+  margin-bottom: 80px;
+}
 .article {
-  margin: 30px 40px 30px 40px;
+  margin: 30px;
   position: relative;
   border: 1px solid #ddd;
   background: #fff;
-  visibility: hidden;
   -webkit-transition: all 0.2s ease-in;
   &.show{
     visibility: visible;
     -webkit-animation: cd-bounce-1 0.6s;
     -moz-animation: cd-bounce-1 0.6s;
     animation: cd-bounce-1 0.6s;
+  }
+  &.hidden{
+    visibility: hidden;
   }
   img{
     max-width: 100%;
@@ -206,7 +211,7 @@
     max-width: 100%;
   }
   strong {
-    font-weight: 300;
+    font-weight: bold;
   }
   .caption{
     display: block;
@@ -233,6 +238,9 @@
     border: 1px solid #ccc;
     text-shadow: 0 1px #444;
     font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+    code{
+      font-size: 14px;
+    }
   }
   table{
     width:100%;
