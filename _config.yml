@@ -35,7 +35,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: "http://ww1.sinaimg.cn/bmiddle/93f8d29djw1et3ttarl67j20sg12ak8g.jpg"
+avatar: 
 #是否开启分享
 share: true
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
