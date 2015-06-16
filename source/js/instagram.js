@@ -58,7 +58,7 @@ var Instagram = (function(){
 			var m = d.getMonth()+1;
 			var src = replacer(data[i].images.low_resolution.url);
 			var bigSrc = replacer(data[i].images.standard_resolution.url);
-			var text = data[i].caption.text;
+			var text = data[i].caption ? data[i].caption.text : ''; // data[i].caption 有可能为 null
 			var key = y+"-"+m;
 			if(imgObj[key]){
 				imgObj[key].srclist.push(src);
@@ -121,12 +121,14 @@ var Instagram = (function(){
 		init:function(){
 			//getList("https://api.instagram.com/v1/users/438522285/media/recent/?access_token=438522285.2082eef.ead70f432f444a2e8b1b341617637bf6&count=100");
 			var insid = $(".instagram").attr("data-client-id");
+            var userId = $(".instagram").attr("data-user-id");
+
 			if(!insid){
 				alert("Didn't set your instagram client_id.\nPlease see the info on the console of your brower.");
 				console.log("Please open 'http://instagram.com/developer/clients/manage/' to get your client-id.");
 				return;
 			}
-			getList("https://api.instagram.com/v1/users/438522285/media/recent/?client_id="+insid+"&count=100");
+			getList("https://api.instagram.com/v1/users/"+ userId +"/media/recent/?client_id="+insid+"&count=100");
 			bind();
 		}
 	}
