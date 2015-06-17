@@ -1,4 +1,9 @@
 <% if (pagination == 2){ %>
+  <% page.posts.data = page.posts.data.sort(function(prev, next) { %>
+    <% if (next.top && !prev.top) { %>
+      <% return true; %>
+    <% } %>
+  <% }); %>
   <% page.posts.each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>

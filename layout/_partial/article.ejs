@@ -29,6 +29,11 @@
     </div>
     <% if (index){ %>
     <div class="article-info article-info-index">
+      <%if(post.top){%>
+        <div class="article-pop-out tagcloud">
+          <a class="">置顶</a>
+        </div>
+      <% } %>
       <%- partial('post/tag') %>
       <%- partial('post/category') %>
       <% if (post.excerpt && index){ %>
