@@ -1,5 +1,20 @@
 require([], function (){
 
+	var isMobileInit = false;
+	var loadMobile = function(){
+		require(['/js/mobile.js'], function(mobile){
+			mobile.init();
+			isMobileInit = true;
+		});
+	}
+	var isPCInit = false;
+	var loadPC = function(){
+		require(['/js/pc.js'], function(pc){
+			pc.init();
+			isPCInit = true;
+		});
+	}
+
 	var browser={
 	    versions:function(){
 	    var u = window.navigator.userAgent;
@@ -19,15 +34,23 @@ require([], function (){
 	    }()
 	}
 
-	if(browser.versions.mobile === true){
-		require(['/js/mobile.js'], function(mobile){
-			mobile.init();
-		});
-		
+	$(window).bind("resize", function(){
+		if(isMobileInit && isPCInit){
+			$(window).unbind("resize");
+			return;
+		}
+		var w = $(window).width();
+		if(w >= 700){
+			loadPC();
+		}else{
+			loadMobile();
+		}
+	});
+
+	if(browser.versions.mobile === true || $(window).width() < 700){
+		loadMobile();
 	}else{
-		require(['/js/pc.js'], function(pc){
-			pc.init();
-		});
+		loadPC();
 	}
 
 	//是否使用fancybox

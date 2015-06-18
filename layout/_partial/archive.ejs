@@ -1,9 +1,4 @@
 <% if (pagination == 2){ %>
-  <% page.posts.data = page.posts.data.sort(function(prev, next) { %>
-    <% if (next.top && !prev.top) { %>
-      <% return true; %>
-    <% } %>
-  <% }); %>
   <% page.posts.each(function(post){ %>
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
@@ -35,4 +30,14 @@
   <% if (page.posts.length){ %>
     </div></section>
   <% } %>
+
+    <% if (page.total > 1){ %>
+    <nav id="page-nav">
+      <%- paginator({
+        prev_text: '&laquo; Prev',
+        next_text: 'Next &raquo;'
+      }) %>
+    </nav>
+  <% } %>
+
 <% } %>
