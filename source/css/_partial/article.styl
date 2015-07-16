@@ -17,7 +17,13 @@
     visibility: hidden;
   }
   img{
+    border-radius: 20px;
+    border-width: 0.6em;
+    border-color: #e0dfcc;
+    border-style: solid;
     max-width: 100%;
+    display: block;
+    margin: auto;
   }
 }
 @-webkit-keyframes cd-bounce-1 {
@@ -356,4 +362,19 @@
   #article-nav-older{
     float: right;
   }
+}
+
+#scroll2Top-btn {
+    width: 40px;
+    height: 40px;
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    z-index: 5;
+    background : url(http://img.mukewang.com/535e0dc100010e9c00400080.jpg) no-repeat left top;
+}
+
+#scroll2Top-btn:hover {
+    background:url(http://img.mukewang.com/535e0dc100010e9c00400080.jpg) no-repeat 0 -39px;
 }
