@@ -88,13 +88,44 @@ define([], function(){
 		});
 	}
 
-	
+	var Scroll2Top = function(){
+	    var obtn = document.getElementById('scroll2Top-btn');
+		//获取页面可视区的高度
+		var timer = null;
+		var isTop = true;
+	    window.onscroll = function(){
+	    	var osTop = document.body.scrollTop;
+	    	var clientHeight = document.documentElement.clientHeight;
+	    	if(osTop >= clientHeight){
+	    		obtn.style.display="block";
+	    	} else {
+	    		obtn.style.display="none";
+	    	}
+	        if(!isTop){
+	            clearInterval(timer);
+	        }
+	        isTop = false;
+	    }
+		obtn.onclick = function(){
+			//设置定时器
+			timer = setInterval(function(){
+				var osTop = document.body.scrollTop;
+				var ispeed = Math.floor(-osTop / 5);
+				document.documentElement.scrollTop = document.body.scrollTop = osTop + ispeed;
+				isTop = true;
+				if (osTop == 0){
+					clearInterval(timer);
+				}
+			},30);
+		}
+	}
 
 	return {
 		init: function(){
 			resetTags();
 			bind();
 			Tips.init();
+			Scroll2Top();
 		}
 	}
 });
