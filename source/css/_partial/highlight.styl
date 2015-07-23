@@ -1,45 +1,42 @@
 // https://github.com/chriskempson/tomorrow-theme
-highlight-background = #272822
-highlight-current-line = #393939
-highlight-selection = #515151
-highlight-foreground = #ffffff
-highlight-comment = #a6e22e
-highlight-red = #f2777a
-highlight-orange = #66d9ef
-highlight-yellow = #ffcc66
-highlight-green = #e6db74
-highlight-aqua = #66cccc
-highlight-blue = #6699cc
-highlight-purple = #f92672
+
+code-bgc = #272822
+code-tag = #F92672
+code-attr = #A6E22E
+code-word = #FFFFFF
+code-value = #E6DB74
+code-number = #7163D7
+code-keyword = #66D9EF
+code-comment = #75715E
+code-argument = #FD971F
 
 $code-block
-  background: #4D4D4D
+  background: code-bgc
   margin: 10px 0
   padding: 10px 10px
   overflow: auto
   color: #4C4C4C
   line-height: font-size * line-height
+  border-radius: 4px
 
 $line-numbers
   color: #666
-  font-size: 0.85em
 
 .article-entry
   pre, code
     font-family: font-mono
   code
     background: color-background
-    text-shadow: 0 1px #fff
     padding: 0 0.3em
     border: none
   pre
     @extend $code-block
-    color: #EEF8FC
+    color: code-word
     code
       background: none
       text-shadow: none
       padding: 0
-      color: #EEF8FC
+      color: code-word
   .highlight
     @extend $code-block
     pre
@@ -67,14 +64,14 @@ $line-numbers
       .line
         text-shadow: none
     .line
-      font-size: font-size
-      height: font-size * line-height
+      font-size: 15px
+      height: 15px
   .gist
     margin: 0 article-padding * -1
     border-style: solid
     border-color: color-border
     border-width: 1px 0
-    background: highlight-background
+    background: code-bgc
     padding: 15px article-padding 15px 0
     .gist-file
       border: none
@@ -95,7 +92,7 @@ $line-numbers
         padding: 0
         border: none
       .gist-meta
-        background: highlight-background
+        background: code-bgc
         color: highlight-comment
         font: 0.85em font-sans
         text-shadow: 0 0
@@ -110,51 +107,41 @@ $line-numbers
 
 pre
   .comment
-    color: #ddd
-  .title
-    color: highlight-comment
-  .variable
-  .attribute
-  .tag
-  .regexp
-  .ruby .constant
-  .xml .tag .title
-  .xml .pi
-  .xml .doctype
-  .html .doctype
-  .css .id
-  .css .class
-  .css .pseudo
-    color: highlight-red
-  .number
-  .preprocessor
-  .built_in
-  .literal
-  .params
-  .constant
-    color: highlight-orange
-  .class
-  .ruby .class .title
-  .css .rules .attribute
-    color: highlight-green
-  .string
-  .value
-  .inheritance
-  .header
-  .ruby .symbol
-  .xml .cdata
-    color: highlight-green
-  .css .hexcolor
-    color: highlight-aqua
-  .function
-  .python .decorator
-  .python .title
-  .ruby .function .title
-  .ruby .title .keyword
-  .perl .sub
-  .javascript .title
-  .coffeescript .title
-    color: highlight-blue
+    color: code-comment
+
   .keyword
-  .javascript .function
-    color: highlight-purple
+  .function .keyword
+  .class .params
+    color: #66D9EF
+   
+  .tag
+  .doctype
+  .params
+  .function
+    color: code-word
+
+  .css ~ * .tag
+  .title
+  .at_rule
+  .at_rule .keyword
+  .preprocessor
+  .preprocessor .keyword
+    color: code-tag
+
+  .attribute
+  .built_in
+  .class
+  .css ~ * .class
+  .function .title
+    color: code-attr
+
+  .value
+  .string
+    color: code-value
+
+  .number
+    color: #7163D7
+
+  .id
+  .css ~ * .id
+    color: code-argument
