@@ -99,7 +99,12 @@ require([], function (){
 			});
 			showArticle();
 		}
-		
+		else{ 
+			function showArticle(){ 
+				$(".article").addClass("show");
+			}
+			showArticle();
+		}
 	}
 	
 	//是否新窗口打开链接
