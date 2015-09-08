@@ -49,8 +49,8 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-    daige: http://daige.me
-    itxuye: http://www.itxuye.com
+  daige: http://daige.me
+  itxuye: http://www.itxuye.com
 
 #是否开启“关于我”。
 #不开启——
