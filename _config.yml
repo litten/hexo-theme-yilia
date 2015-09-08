@@ -9,7 +9,7 @@ subnav:
   github: "https://github.com/robinxb"
   weibo: "http://weibo.com/robin1991"
   rss: "/atom.xml"
-  zhihu: "#"
+  #zhihu: "#"
   #douban: "#"
   #mail: "#"
   #facebook: "#"
