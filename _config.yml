@@ -32,7 +32,7 @@ open_in_new: false
 
 # Miscellaneous
 google_analytics: "UA-52270258-1"
-favicon: /favicon.png
+favicon: /favicon.ico
 
 #你的头像url
 avatar: "http://www.fancycoding.com/imgs/head.png"
