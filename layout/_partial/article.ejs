@@ -12,18 +12,31 @@
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
-      <% if (!index){ %>
-      <div class="article-info article-info-post">
-        <%- partial('post/tag') %>
-        <%- partial('post/category') %>
-        <div class="clearfix"></div>
-      </div>
+      <% if (!index){ %>        
+        <div class="article-info article-info-post">
+          <%- partial('post/tag') %>
+          <%- partial('post/category') %>
+          <div class="clearfix"></div>
+        </div>
       <% } %>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
       <% } else { %>
+        <% if (!index){ %>
+          <% if (toc(post.content)){ %>            
+            <div id="toc" class="article-toc">
+            <h2>目录</h2>
+              <%- toc(post.content) %>  
+            </div>
+            <script type="text/javascript">
+              var _article = document.getElementsByClassName('article')[0];
+              setTimeout("_article.style.marginRight = '211px'",0); 
+              setTimeout("document.getElementById('toc').style.right = '15px'", 0);                
+            </script>
+          <% } %>
+        <% } %>
         <%- post.content %>
       <% } %>
     </div>
@@ -75,6 +88,7 @@
       dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
+    $
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </section>
