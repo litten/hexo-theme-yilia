@@ -2,6 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <% if (theme.baidu_analytics){ %>
+    <%- partial('baidu-analytics') %>
+  <% } %>
   <%
   var title = page.title;
 

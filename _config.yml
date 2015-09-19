@@ -58,6 +58,8 @@ friends:
 #开启——
 aboutme: 90后重庆人，被代码黏在了广州，做游戏，玩游戏，在快乐中成长。
 
-cnzz_analytics:
-  id: 1256387159
-  webid: 1256387159
+#cnzz_analytics:
+#  id: 1256387159
+#  webid: 1256387159
+
+baidu_analytics: 8c67224b90c2122e0df473510e1f2564
