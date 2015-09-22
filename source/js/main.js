@@ -34,17 +34,27 @@ require([], function (){
 	    }()
 	}
 
+  var resize_video = function (){ //iframe高度自适应
+    var w = $(window).width();
+    for(var ilength=0;ilength<=document.getElementsByTagName("iframe").length;ilength++){
+      document.getElementsByTagName("iframe")[ilength].height = bodyw*9/16;//16:9
+    }
+  }
+
+  $(window).bind("onload", resize_video);
+
 	$(window).bind("resize", function(){
-		if(isMobileInit && isPCInit){
-			$(window).unbind("resize");
-			return;
-		}
+		//if(isMobileInit && isPCInit){
+		//	$(window).unbind("resize");
+		//	return;
+		//}
 		var w = $(window).width();
 		if(w >= 700){
 			loadPC();
 		}else{
 			loadMobile();
 		}
+    resize_video();
 	});
 
 	if(browser.versions.mobile === true || $(window).width() < 700){
