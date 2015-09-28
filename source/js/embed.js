@@ -662,6 +662,8 @@ function(e, t, s) {
       avatarUrl: function(e) {
         if (e.avatar_url) {
           e.avatar_url = e.avatar_url.replace(/^http\:\/\//, "https://www.fancycoding.com/proxy/");
+	}else{
+          rt.data.default_avatar_url = rt.data.default_avatar_url.replace(/^http\:\/\//, "https://www.fancycoding.com/proxy/");
 	}
         return e.avatar_url || rt.data.default_avatar_url
       },
