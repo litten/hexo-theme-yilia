@@ -1703,7 +1703,6 @@ function(e, t, s) {
         }
       },
       S.addSmilies = function(e, t) {
-	if (e != "WordPress") return;
         var s = S.smiliesTooltip;
         s && s.el.find("ul.ds-smilies-tabs").append("<li><a>" + e + "</a></li>"),
         S.smilies[e] = t
