@@ -50,8 +50,12 @@
   <% } %>
 </article>
 
-<% if (!index && theme.share){ %>
-<%- partial('post/share') %>
+<% if (!index && theme.share_jia){ %>
+<%- partial('post/share_jia') %>
+<% } %>
+
+<% if (!index && theme.share_addthis){ %>
+<%- partial('post/share_addthis') %>
 <% } %>
 
 <% if (!index && theme.duoshuo && post.comments){ %>
