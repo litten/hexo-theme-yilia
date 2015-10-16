@@ -117,9 +117,8 @@
   border-left: 5px solid;
   padding: 15px 8.2em 15px 25px;
 }
-.article-info.info-on-right{
+.article-info.info-on-archive{
   margin: 10px 0 0 0;
-  float: right;
 }
 .article-info-index.article-info{
   padding-top: 20px;
@@ -291,8 +290,9 @@
     &:before{
       color: #999;
       content: "\f073";
-      font: 17px FontAwesome;
-      margin-right: 10px;
+      font: 1em FontAwesome;
+      margin-right: 4px;
+      margin-top: 0px;
     }
   }
 }
@@ -301,17 +301,19 @@
   margin-top: 5px;
   float: right;
   a{
-    background: #4d4d4d;
+    background: #88acdb;
     color: #fff;
-    font-size: 12px;
-    padding: 2px 8px 4px;
-    line-height: 16px;
+    font-size: .9em;
+    padding: 2px 4px;
+    line-height: 1em;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
     transition: background 0.3s;
+    opacity: 0.6;
     &:hover{
-      background: #3c3c3c;
+      background: #9c9;
+      opacity: 1;
     }
     &.hidden{
       visibility: hidden;
