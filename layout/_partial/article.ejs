@@ -56,7 +56,7 @@
 
 <% if (!index && theme.duoshuo && post.comments){ %>
 <%- partial('post/duoshuo', {
-    key: post.slug,
+    key: post.path,
     title: post.title,
     url: config.url+url_for(post.path)
   }) %>

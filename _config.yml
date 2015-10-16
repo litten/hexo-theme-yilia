@@ -36,11 +36,15 @@ favicon: /favicon.png
 
 #你的头像url
 avatar: 
+
 #是否开启分享
 share: true
-#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: true
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
+#duoshuo: 
+
 #是否开启云标签
 tagcloud: true
 
