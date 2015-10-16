@@ -1,7 +1,7 @@
 .archives-wrap{
   position: relative;
   margin: 0 30px;
-  padding-right: 60px;
+  padding-right: 1.5em;
   border-bottom: 1px solid #eee;
   background: #fff;
   &:first-child{
@@ -14,7 +14,7 @@
     line-height: 35px;
     width: 200px;
     position: absolute;
-    padding-top: 15px;
+    padding-top: 20px;
     font-size: 1.8em;
   }
   .archive-year-wrap a{
@@ -30,13 +30,14 @@
     border: none;
   }
   .archive-article {
-    margin-left:200px;
-    padding:20px 0;
+    margin-left:160px;
+    padding:0.5em 0;
     border-bottom: 1px solid #eee;
     border-top: 1px solid #fff;
     position: relative;
     &:first-child{
-      border-top: none;
+      border-top: 1em;
+      padding-top: 20px;
     }
     &:last-child{
       border-bottom: none;
@@ -44,7 +45,7 @@
   }
 
   .archive-article-title {
-    font-size: 16px;
+    font-size: 18px;
     color: #333;
     transition: color 0.3s;
     &:hover{
@@ -88,7 +89,7 @@
       }
     }
     .archive-article-date, .article-tag-list{
-      margin-right: 30px;
+      margin-right: 1em;
       display: -moz-inline-stack;
       display: inline-block;
       vertical-align: middle;
@@ -98,7 +99,7 @@
     }
     .archive-article-date{
      cursor: default;
-     font-size: 12px;
+     font-size: 14px;
      margin-bottom: 5px;
      margin-top: -10px;
      time{
@@ -136,5 +137,12 @@
         font-size: 12px;
       }
     }
+  }
+}
+
+.archives-wrap {
+  background: rgba(255,255,255,.4);
+  .archives {
+    background: transparent;
   }
 }
