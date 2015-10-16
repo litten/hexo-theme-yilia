@@ -1,44 +1,56 @@
 // https://github.com/chriskempson/tomorrow-theme
-
-code-bgc = #272822
-code-tag = #F92672
-code-attr = #A6E22E
-code-word = #FFFFFF
-code-value = #E6DB74
-code-number = #7163D7
-code-keyword = #66D9EF
-code-comment = #75715E
-code-argument = #FD971F
+highlight-background = #4d4d4d
+highlight-current-line = #393939
+highlight-selection = #515151
+highlight-foreground = #cccccc
+highlight-comment = #999999
+highlight-red = #f2777a
+highlight-orange = #f99157
+highlight-yellow = #ffcc66
+highlight-green = #99cc99
+highlight-aqua = #66cccc
+highlight-blue = #6699cc
+highlight-purple = #cc99cc
 
 $code-block
-  background: code-bgc
-  margin: 10px 0
-  padding: 10px 10px
+  background: highlight-background
+  margin: auto
+  padding: 0.5em article-padding
+  border-style: solid
+  border-color: color-border
+  border-width: 1px 0
   overflow: auto
-  color: #4C4C4C
+  color: highlight-foreground
   line-height: font-size * line-height
 
 $line-numbers
   color: #666
+  font-size: 0.85em
 
 .article-entry
   pre, code
-    font-family: font-mono
+    font-family: "Microsoft YaHei", Inconsolata, Menlo, Monaco, "Hiragino Sans GB ", "SimHei" arial;
+    font-size: 1em
+    
   code
-    background: color-background
+    color: gray
+    background: rgba(248, 237, 223, .5)
     padding: 0 0.3em
-    border: none
+    border-radius: 7px
+
   pre
     @extend $code-block
-    color: code-word
     code
       background: none
       text-shadow: none
       padding: 0
-      color: code-word
   .highlight
     @extend $code-block
-    border-radius: 4px
+    border-radius: 5px
+    max-height: 50em
+    margin-top: .5em
+    margin-bottom: 1em
+    overflow: auto
     pre
       border: none
       margin: 0
@@ -61,17 +73,14 @@ $line-numbers
       @extend $line-numbers
       text-align: right
       padding-right: 20px
-      .line
-        text-shadow: none
     .line
-      font-size: 15px
-      height: 15px
+      height: font-size * line-height
   .gist
     margin: 0 article-padding * -1
     border-style: solid
     border-color: color-border
     border-width: 1px 0
-    background: code-bgc
+    background: highlight-background
     padding: 15px article-padding 15px 0
     .gist-file
       border: none
@@ -92,7 +101,7 @@ $line-numbers
         padding: 0
         border: none
       .gist-meta
-        background: code-bgc
+        background: highlight-background
         color: highlight-comment
         font: 0.85em font-sans
         text-shadow: 0 0
@@ -107,41 +116,50 @@ $line-numbers
 
 pre
   .comment
-    color: code-comment
-
-  .keyword
-  .function .keyword
-  .class .params
-    color: #66D9EF
-   
-  .tag
-  .doctype
-  .params
-  .function
-    color: code-word
-
-  .css ~ * .tag
   .title
-  .at_rule
-  .at_rule .keyword
-  .preprocessor
-  .preprocessor .keyword
-    color: code-tag
-
+    color: highlight-comment
+  .variable
   .attribute
-  .built_in
-  .class
-  .css ~ * .class
-  .function .title
-    color: code-attr
-
-  .value
-  .string
-    color: code-value
-
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo
+    color: highlight-red
   .number
-    color: #7163D7
-
-  .id
-  .css ~ * .id
-    color: code-argument
+  .preprocessor
+  .built_in
+  .literal
+  .params
+  .constant
+    color: highlight-orange
+  .class
+  .ruby .class .title
+  .css .rules .attribute
+    color: highlight-green
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+    color: highlight-green
+  .css .hexcolor
+    color: highlight-aqua
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title
+    color: highlight-blue
+  .keyword
+  .javascript .function
+    color: highlight-purple
