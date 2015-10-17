@@ -331,3 +331,31 @@
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 	};
 }
+.scroll {
+	z-index: 999;
+	position: fixed;
+	top: 61.8%;
+	right: 0px;
+	text-align: center;
+	a {
+		display: block;
+		width: 29px;
+		font-size: 28px;
+		background: rgba(215, 216, 215, .4);
+		border-bottom: 1px solid white;
+    	&:last-child {
+      		border-bottom: none;
+    	};
+	}
+	.fa {
+		color: rgba(255, 255, 255, .8);
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+	a:hover {
+		background: rgba(147, 181, 224, .3); 
+		.fa {
+		color: white;
+		}
+	}
+}
