@@ -418,15 +418,14 @@ li:hover {
 .article-entry > ol:last-child {
   > li:nth-child(2n) {
     background: rgba(158, 188, 226, .12);
-    &:hover {
-        background: #F0F0F0
-      };
   };
-  > li {
+  li {
     word-break: break-all;
   };
+  li:hover {
+      background: #F0F0F0;
+  };
 }
-
 /*toc*/
 #tocButton {
   position: fixed;
@@ -517,3 +516,4 @@ li:hover {
     };
   }
 }
+

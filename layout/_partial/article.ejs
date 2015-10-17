@@ -25,9 +25,6 @@
         <%- post.excerpt %>
       <% } else { %>
         <%- post.content %>
-          <% if (!index && post.toc != false){ %>
-          <%- partial('_partial/toc') %>
-          <% } %>
       <% } %>
     </div>
     <% if (index){ %>
@@ -52,7 +49,9 @@
     <%- partial('post/nav') %>
   <% } %>
 </article>
-
+<% if (!index && post.toc != false){ %>
+<%- partial('_partial/toc') %>
+<% } %>
 <% if (!index && theme.share){ %>
 <%- partial('post/share') %>
 <% } %>
