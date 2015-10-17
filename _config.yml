@@ -62,3 +62,7 @@ friends:
 #aboutme: false
 #开启——
 aboutme: 专注于前端
+
+#是否显示边栏中的搜索框 
+#Search Box in left column
+#search_box: true

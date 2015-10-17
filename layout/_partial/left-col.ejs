@@ -16,6 +16,10 @@
 		<% if (theme.subtitle){ %>
 		<p class="header-subtitle"><%=theme.subtitle%></p>
 		<%}%>
+		<% if (theme.search_box){ %>
+		<form><input type="text" class="search" placeholder=" Search..."></form>
+		<%}%>		
+
 
 		<%if(theme.tagcloud){%>
 			<div id="switch-btn" class="switch-btn">
