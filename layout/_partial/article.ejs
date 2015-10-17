@@ -25,6 +25,9 @@
         <%- post.excerpt %>
       <% } else { %>
         <%- post.content %>
+          <% if (!index && post.toc != false){ %>
+          <%- partial('_partial/toc') %>
+          <% } %>
       <% } %>
     </div>
     <% if (index){ %>
