@@ -26,6 +26,9 @@
       <% } else { %>
         <%- post.content %>
       <% } %>
+      <% if (page.path === "tags/index.html"){ %>
+        <%- partial('_partial/page-tags') %>
+      <% } %>
     </div>
     <% if (index){ %>
     <div class="article-info article-info-index">
