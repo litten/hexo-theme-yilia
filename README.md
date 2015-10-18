@@ -16,6 +16,7 @@ Theme **Yelee** relies on [Hexo-Theme-Yilia][1], thanks for the author [Litten][
 [5]: http://moxfive.xyz/2015/08/20/blog-building/ "个人博客站点建设历程"
 [6]: http://moxfive.xyz
 
+![QR](http://i11.tietuku.com/f9ce6d6bb62921d4.png)
 
 ### Installation 安装主题
 
@@ -74,7 +75,6 @@ hexo new page 404
 And then set `permalink: /404` in `/source/404/index.md` front matter.
 
 > - [在 Hexo 中创建匹配主题的404页面](http://moxfive.xyz/2015/10/16/hexo-404-page/)
-> 
 
 #### Comment 多说评论:
 在 `themes/yelee/_config.yml` 中，按 `duoshuo: duoshuo-key` 填写。
@@ -82,3 +82,20 @@ And then set `permalink: /404` in `/source/404/index.md` front matter.
 注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
 
 > - [多说样式折腾记录 — 添加 UA 浏览器标识、旋转头像等](http://moxfive.xyz/2015/09/29/duoshuo-style/)
+
+#### Table of Contents 文章目录:
+
+Remove toc and the button via putting `toc: false` before "---" at [post].md.
+
+文章中默认显示目录和对应切换按钮，在文章 “---” 前输入 `toc: false` 关闭目录。
+
+#### Copyright info. 文章版权信息:
+
+Hide this  via putting `original: false` to post's front-matter.
+
+在文章顶部插入行 `original: false` 关闭文章版权声明框
+
+#### RSS feed 文章订阅:
+
+Install plugin: [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
+
