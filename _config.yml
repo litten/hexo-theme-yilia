@@ -4,6 +4,7 @@ menu:
   所有文章: /archives
   # 随笔: /tags/随笔
   标签云: /tags
+  关于我: /about
 
 # SubNav
 subnav:
@@ -32,7 +33,7 @@ animate: true
 open_in_new: false
 
 # Miscellaneous
-google_analytics: ''
+#google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
