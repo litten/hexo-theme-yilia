@@ -114,10 +114,4 @@ require([], function (){
 	$("#container .left-col .overlay").css({"background-color": colorList[id],"opacity": .3});
 	//移动端
 	$("#container #mobile-nav .overlay").css({"background-color": colorList[id],"opacity": .7});
-
-	//随机背景图片
-	var backgroundList = ["url(/background/bg-1.jpg)", "url(/background/bg-2.jpg)","url(/background/bg-3.jpg)","url(/background/bg-4.jpg)","url(/background/bg-5.jpg)"];
-	var background = Math.floor(Math.random() * backgroundList.length);
-	$("body").css({"background": backgroundList[background], "background-attachment": "fixed", "background-size": "cover"});
-	
 });

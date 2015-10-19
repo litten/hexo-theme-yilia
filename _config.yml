@@ -21,6 +21,9 @@ subnav:
 
 rss: /atom.xml
 
+# true: 个性图片背景, false: 淳朴灰白背景
+background_image: true
+
 # Content
 excerpt_link: more
 fancybox: true

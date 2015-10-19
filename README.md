@@ -67,6 +67,18 @@ hexo new page about
 hexo new page tags
 ```
 
+#### Background image 网页背景:
+
+Change image list in: 修改背景图地址：
+
+> `themes/yelee/layout/_partial/background.ejs` 
+
+Remove background image and use white-gray theme by: 
+
+取消网页背景图，使用淳朴的灰白主题 
+
+> `themes/yelee/_config.yml` - `background_image: false`
+
 #### 404 Page:
 
 ```
@@ -97,7 +109,7 @@ Hide this  via putting `original: false` to post's front-matter.
 
 在文章顶部插入行 `original: false` 关闭文章版权声明框
 
-#### RSS feed 文章订阅:
+#### RSS Feed 文章订阅:
 
 Install plugin: [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
@@ -107,7 +119,7 @@ Install plugin: [hexo-generator-seo-friendly-sitemap](https://github.com/ludovic
 
 百度专用: [hexo-generator-baidu-sitemap](https://github.com/coneycode/hexo-generator-baidu-sitemap)
 
-#### Apple touch icon 苹果图标:
+#### Apple Touch icon 苹果图标:
 
 替换路径: `/yelee/source/apple-touch-icon.png`
 
