@@ -81,6 +81,8 @@ And then set `permalink: /404` in `/source/404/index.md` front matter.
 
 注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
 
+> - [保留使用 Yilia 主题时的多说用户评论](https://github.com/MOxFIVE/hexo-theme-yelee/issues/1)
+
 > - [多说样式折腾记录 — 添加 UA 浏览器标识、旋转头像等](http://moxfive.xyz/2015/09/29/duoshuo-style/)
 
 #### Table of Contents 文章目录:
@@ -99,3 +101,8 @@ Hide this  via putting `original: false` to post's front-matter.
 
 Install plugin: [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
+#### Sitemap for SEO 站点地图:
+
+Install plugin: [hexo-generator-seo-friendly-sitemap](https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap)
+
+百度专用: [hexo-generator-baidu-sitemap](https://github.com/coneycode/hexo-generator-baidu-sitemap)
