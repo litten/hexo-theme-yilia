@@ -106,3 +106,9 @@ Install plugin: [hexo-generator-feed](https://github.com/hexojs/hexo-generator-f
 Install plugin: [hexo-generator-seo-friendly-sitemap](https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap)
 
 百度专用: [hexo-generator-baidu-sitemap](https://github.com/coneycode/hexo-generator-baidu-sitemap)
+
+#### Apple touch icon 苹果图标:
+
+替换路径: `/yelee/source/apple-touch-icon.png`
+
+[Recommended size: 180*180](https://realfavicongenerator.net/blog/apple-touch-icon-the-good-the-bad-the-ugly/)
