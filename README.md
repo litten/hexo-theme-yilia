@@ -52,7 +52,7 @@ git pull
 
 ### Configuration 配置
 
-#### About Page 关于我页面: 
+#### 1. About Page 关于我页面: 
 cd to your hexo folder and run this code:
 
 使用以下代码添加一个新页面：
@@ -61,15 +61,15 @@ cd to your hexo folder and run this code:
 hexo new page about
 ```
 
-#### Tags Cloud Page 标签云页面:
+#### 2. Tags Cloud Page 标签云页面:
 
 ```
 hexo new page tags
 ```
 
-#### Background image 网页背景:
+#### 3. Background image 网页背景:
 
-Change image list in: 修改背景图地址：
+Change image list in: 修改背景图地址
 
 > `themes/yelee/layout/_partial/background.ejs` 
 
@@ -79,16 +79,7 @@ Remove background image and use white-gray theme by:
 
 > `themes/yelee/_config.yml` - `background_image: false`
 
-#### 404 Page:
-
-```
-hexo new page 404
-```
-And then set `permalink: /404` in `/source/404/index.md` front matter.
-
-> - [在 Hexo 中创建匹配主题的404页面](http://moxfive.xyz/2015/10/16/hexo-404-page/)
-
-#### Comment 多说评论:
+#### 4. Comment 多说评论:
 在 `themes/yelee/_config.yml` 中，按 `duoshuo: duoshuo-key` 填写。
 
 注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
@@ -97,29 +88,38 @@ And then set `permalink: /404` in `/source/404/index.md` front matter.
 
 > - [多说样式折腾记录 — 添加 UA 浏览器标识、旋转头像等](http://moxfive.xyz/2015/09/29/duoshuo-style/)
 
-#### Table of Contents 文章目录:
+#### 5. Table of Contents 文章目录:
 
 Remove toc and the button via putting `toc: false` before "---" at [post].md.
 
 文章中默认显示目录和对应切换按钮，在文章 “---” 前输入 `toc: false` 关闭目录。
 
-#### Copyright info. 文章版权信息:
+#### 6. Copyright info. 文章版权信息:
 
 Hide this  via putting `original: false` to post's front-matter.
 
 在文章顶部插入行 `original: false` 关闭文章版权声明框
 
-#### RSS Feed 文章订阅:
+#### 7. 404 Page:
+
+```
+hexo new page 404
+```
+And then set `permalink: /404` in `/source/404/index.md` front matter.
+
+> - [在 Hexo 中创建匹配主题的404页面](http://moxfive.xyz/2015/10/16/hexo-404-page/)
+
+#### 8. RSS Feed 文章订阅:
 
 Install plugin: [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
-#### Sitemap for SEO 站点地图:
+#### 9. Sitemap for SEO 站点地图:
 
 Install plugin: [hexo-generator-seo-friendly-sitemap](https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap)
 
 百度专用: [hexo-generator-baidu-sitemap](https://github.com/coneycode/hexo-generator-baidu-sitemap)
 
-#### Apple Touch icon 苹果图标:
+#### 10. Apple Touch icon 苹果图标:
 
 替换路径: `/yelee/source/apple-touch-icon.png`
 
