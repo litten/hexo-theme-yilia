@@ -74,11 +74,11 @@
 						</ul>
 					</nav>
 					<nav class="header-nav">
-						<div class="social">
+						<ul class="social">
 							<% for (var i in theme.subnav){ %>
-								<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
+								<li id="<%= i %>"><a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"></a></li>
 					        <%}%>
-						</div>
+						</ul>
 					</nav>
 				</section>
 				

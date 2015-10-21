@@ -8,17 +8,27 @@ menu:
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
-  #douban: "#"
-  #mail: "#"
-  #facebook: "#"
-  #google: "#"
-  #twitter: "#"
-  #linkedin: "#"
+  # RSS plugin: https://github.com/hexojs/hexo-generator-feed
+  # Encrypt email 加密邮件地址 http://tool.chacuo.net/commonhideinfo
+  Email: "mailto:123@123.com"
+  #新浪微博: "sina weibo"
+  GitHub: "#"
+  #V2EX: "#"
+  RSS: "/atom.xml"
+  #知乎: "zhihu"
+  #豆瓣: "douban"
+  #Facebook: "#"
+  #Google: "#"
+  #Twitter: "#"
+  #LinkedIn: "#"
+  #QQ: "#"
+  #微信: "Wechat"
+  #PayPal: "#"
+  #StackOverflow: "#"
+  #Instagram: "#"
+  #Flickr: "#"
 
+# Customize feed link 自定义订阅地址
 rss: /atom.xml
 
 # true: 个性图片背景, false: 淳朴灰白背景
