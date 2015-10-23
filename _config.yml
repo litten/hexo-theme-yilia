@@ -3,21 +3,36 @@ menu:
   主页: /
   所有文章: /archives
   # 随笔: /tags/随笔
+  标签云: /tags
+  关于我: /about
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
-  #douban: "#"
-  #mail: "#"
-  #facebook: "#"
-  #google: "#"
-  #twitter: "#"
-  #linkedin: "#"
+  # RSS plugin: https://github.com/hexojs/hexo-generator-feed
+  # Encrypt email 加密邮件地址 http://tool.chacuo.net/commonhideinfo
+  Email: "mailto:123@123.com"
+  #新浪微博: "sina weibo"
+  GitHub: "#"
+  #V2EX: "#"
+  RSS: "/atom.xml"
+  #知乎: "zhihu"
+  #豆瓣: "douban"
+  #Facebook: "#"
+  #Google: "#"
+  #Twitter: "#"
+  #LinkedIn: "#"
+  #QQ: "#"
+  #微信: "Wechat"
+  #PayPal: "#"
+  #StackOverflow: "#"
+  #Instagram: "#"
+  #Flickr: "#"
 
+# Customize feed link 自定义订阅地址
 rss: /atom.xml
+
+# true: 个性图片背景, false: 淳朴灰白背景
+background_image: true
 
 # Content
 excerpt_link: more
@@ -31,16 +46,20 @@ animate: true
 open_in_new: false
 
 # Miscellaneous
-google_analytics: ''
+#google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: 
+avatar: /img/avatar.png
+
 #是否开启分享
 share: true
-#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: true
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
+#duoshuo: 
+
 #是否开启云标签
 tagcloud: true
 
@@ -49,15 +68,16 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  奥巴马的博客: http://localhost:4000/
-  卡卡的美丽传说: http://localhost:4000/
-  本泽马的博客: http://localhost:4000/
-  吉格斯的博客: http://localhost:4000/
-  习大大大不同: http://localhost:4000/
-  托蒂的博客: http://localhost:4000/
+  Hexo: https://hexo.io
+  GitHub: https://pages.github.com/
+  MOxFIVE: http://moxfive.xyz/
 
 #是否开启“关于我”。
 #不开启——
 #aboutme: false
 #开启——
-aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+aboutme: 专注于前端
+
+#是否显示边栏中的搜索框 
+#Search Box in left column
+#search_box: true

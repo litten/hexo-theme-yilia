@@ -16,9 +16,13 @@
 		<% if (theme.subtitle){ %>
 		<p class="header-subtitle"><%=theme.subtitle%></p>
 		<%}%>
+		<% if (theme.search_box){ %>
+		<form><input type="text" class="search" placeholder=" Search..."></form>
+		<%}%>		
+
 
 		<%if(theme.tagcloud){%>
-			<div class="switch-btn">
+			<div id="switch-btn" class="switch-btn">
 				<div class="icon">
 					<div class="icon-ctn">
 						<div class="icon-wrap icon-house" data-idx="0">
@@ -59,7 +63,7 @@
 			</div>
 		<%}%>
 
-		<div class="switch-area">
+		<div id="switch-area" class="switch-area">
 			<div class="switch-wrap">
 				<section class="switch-part switch-part1">
 					<nav class="header-menu">
@@ -70,11 +74,11 @@
 						</ul>
 					</nav>
 					<nav class="header-nav">
-						<div class="social">
+						<ul class="social">
 							<% for (var i in theme.subnav){ %>
-								<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
+								<li id="<%= i %>"><a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"></a></li>
 					        <%}%>
-						</div>
+						</ul>
 					</nav>
 				</section>
 				

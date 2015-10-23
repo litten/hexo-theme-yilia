@@ -12,9 +12,12 @@
 .header-author{
     &.fixed{
         position: fixed;
-        top: -13px;
+        top: -8px;
         width: 100%;
         color: #ddd;
+        a {
+          color: white;
+        }
     }
 }
 .overlay{
@@ -71,7 +74,7 @@
     font-size: 14px;
 }
 .article{
-    padding: 10px;
+/*    padding: 10px;*/
     margin: 10px;
     font-size: 14px;
     .article-entry{
@@ -81,7 +84,8 @@
     }
     .article-title{
         font-size: 18px;
-        max-width: 185px;
+        /*max-width: 185px;*/
+        padding-right: 5em;
         display: block;
         margin: 0;
     }
@@ -141,18 +145,17 @@
             }
         }
     }
-    .article-nav-link-wrap{
-        margin: 5px 0;
-        strong{
-            float: left;
-            margin-right: 5px;
-        }
-    }
-    #article-nav-older{
-        float: none;
-        display: block;
-    }
 }
+
+.article-meta {
+  padding: 12px;
+
+}
+.article-inner {
+  padding: 12px;
+}
+
+
 .share{
     padding: 3px 10px;
 }
@@ -218,4 +221,94 @@
     .footer-right{
         float: initial;
     }
+}
+.article-category::before{
+  display: none;
+}
+.article-tag::before {
+  display: none;
+}
+.article-meta time:before {
+  display: none;
+}
+.visit {
+  margin-top: 1em;
+}
+
+#tocButton {
+  z-index: 100;
+  position: fixed;
+  left: 0.5em;
+  top: auto; /*In order to cover style in article.styl*/
+  bottom: 10px;
+  background: rgba(255, 255, 255, .7);
+  font-size: 1em;
+  font-weight: bold;
+  color: gray;
+  padding: 0.2em 0.4em;
+  border-radius: 6px;
+  border-style : outset;
+  &:hover {
+    color: #88acdb;
+    font-size: 1em;
+  }
+}
+.toc-article {
+  display: none;
+  z-index: 99
+  left: 0;
+  background: none;
+  font-size: 1em;
+  border-radius: 2.8%;
+  margin-left: 0;
+  top: 38%;
+  padding: 10px;
+  padding-left: 0;
+  bottom: 1em;
+  height: auto;
+  max-height: 58%;
+  width: auto;
+  min-width: 7em;
+  max-width: 38%;
+  overflow: auto;
+  .toc-title {
+    display: none;
+  }
+  ol {
+    background: rgba(255, 255, 255, .75);
+    padding: 0.5em;
+    border-radius: 5px;
+    margin: 0;
+    ol {
+      padding: 0.1em 0;
+      padding-left: 1.5em;
+    }
+  };
+  a {
+    color: #767676;
+  }
+}
+.copyright {
+  width: 90%;
+  padding: .5em 1.3em;
+}
+.scroll {
+  right: 1.2em;
+  li {
+  font-size: 1.7em;
+  }
+}
+.hide-labels {
+  position: fixed;
+  left: 42px;
+  top: 78px;
+  color: white;
+  opacity: .6;
+  &:hover {
+    color: none;
+    opacity: 1; 
+  }
+}
+.post-nav-button {
+  display: none;
 }

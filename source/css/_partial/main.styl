@@ -36,7 +36,7 @@
 		}
 	}
 	.left-col {
-		background: #fff;
+		background: rgba(255,255,255,.85);
 		width: 300px;
 		position:fixed;
 		opacity:1;
@@ -50,18 +50,21 @@
 			position: absolute;
 			opacity: 0.7;
 		}
-
 		.intrude-less {
 			width: 76%;
 			text-align: center;
 			margin: 112px auto 0;
 		}
+		li:hover {
+			background: none;
+			font-weight: bold;
+		};
 	}
 	.mid-col {
 		position:absolute;
 		right:0;
 		min-height:100%;
-		background:#eaeaea;
+		background: rgba(255,255,255,.8);
 		left: 300px;
 		width: auto;
 	}
@@ -74,7 +77,7 @@
 }
 .header-author{
 	text-align: center;
-	margin: 0.67em 0;
+	margin: 13px 0;
 	font-family: Roboto, "Roboto", serif;
 	font-size: 30px;
 	transition: 0.3s;
@@ -116,6 +119,10 @@
 				opacity: 1;
 			}
 		}
+		&:hover {
+			background: white;
+			border: 5px solid #88acdb;
+		};
 	}
 	.header-subtitle{
 		text-align: center;
@@ -129,12 +136,13 @@
 		-webkit-box-orient: vertical;
 	}
 	.header-menu{
-		font-weight: 300;
-		line-height: 31px;
+		font-weight: 550;
+		line-height: 28px;
+		font-family: inherit;
 		cursor: pointer;
 		text-transform: uppercase;
 		float:none;
-		height: 150px;
+		height: 140px;
 		margin-left: -12px;
 		text-align: center;
 		display: -webkit-box;
@@ -168,100 +176,135 @@
 		position: absolute;
 		transition: transform .3s ease-in;
 		.social {
-			margin-right:15px;
+			margin-right:11px;
 			margin-top:10px;
 			text-align: center;
-			a {
+			li {
+				display: inline-block;
+				width: 37px;
 				border-radius:50%;
-				display:-moz-inline-stack;
-				display:inline-block;
-				vertical-align:middle;
-				*vertical-align:auto;
-				zoom:1;
-				*display:inline;
-				text-indent:-9999px;
-				margin:0 8px 15px 8px;
-				opacity:0.7;
-				width:28px;
-				height:28px;
-				transition:0.3s;
+				margin-right: 3px;
+				margin-bottom: 6px;
+				font: 22px FontAwesome;
+				background: #6f7170;
+				opacity: .58;
+				text-align: center;
+				a {
+					line-height: 37px;
+					color: white;
+				}
 				&:hover {
-					opacity:1
+					font-size: 24px;
+					opacity: 1;
 				}
 			}
-			a:last-of-type {
-				margin-right:0
+			#新浪微博 {
+				background:url('/img/weibo.png') center no-repeat #ecc260;
 			}
-			a.weibo {
-				background:url('/img/weibo.png') center no-repeat #aaaaff;
-				border:1px solid #aaaaff;
-				&:hover {
-					border:1px solid #aaaaff;
-				}
+			.新浪微博:before {
+		      content: "\f18a";
+		      color: transparent;
+		    }
+		    #GitHub {
+				background: url('/img/github.png') center no-repeat white;
+		    }
+		    .GitHub:before {
+		      content: "\f113";
+		      color: transparent;
+		    }
+			#V2EX {
+				background: url('/img/v2ex.png') center no-repeat #e4cdb4;
 			}
-			a.rss {
-				background:url('/img/rss.png') center no-repeat #ef7522;
-				border:1px solid #ef7522;
-				&:hover {
-					border:1px solid #cf5d0f;
-				}
-			}
-			a.github {
-				background:url('/img/github.png') center no-repeat #afb6ca;
-				border:1px solid #afb6ca;
-				&:hover {
-					border:1px solid #909ab6;
-				}
-			}
-			a.facebook {
-				background:url('/img/facebook.png') center no-repeat #3b5998;
-				border:1px solid #3b5998;
-				&:hover {
-					border:1px solid #2d4373;
-				}
-			}
-			a.google {
-				background:url('/img/google.png') center no-repeat #c83d20;
-				border:1px solid #c83d20;
-				&:hover {
-					border:1px solid #9c3019;
-				}
-			}
-			a.twitter {
-				background:url('/img/twitter.png') center no-repeat #55cff8;
-				border:1px solid #55cff8;
-				&:hover {
-					border:1px solid #24c1f6;
-				}
-			}
-			a.linkedin {
-				background:url('/img/linkedin.png') center no-repeat #005a87;
-				border:1px solid #005a87;
-				&:hover {
-					border:1px solid #006b98;
-				}
-			}
-			a.zhihu {
-				background:url('/img/zhihu.png') center no-repeat #0078d8;
-				border:1px solid #0078d8;
-				&:hover {
-					border:1px solid #0078d8;
-				}
-			}
-			a.douban {
-				background:url('/img/douban.png') center no-repeat #06c611;
-				border:1px solid #06c611;
-				&:hover {
-					border:1px solid #06c611;
-				}
-			}
-			a.mail {
-				background:url('/img/mail.png') center no-repeat #005a87;
-				border:1px solid #005a87;
-				&:hover {
-					border:1px solid #006b98;
-				}
-			}
+			.V2EX:before {
+		      content: "\f073";
+		      color: transparent;
+		    }
+		    #RSS {
+		    	background: #ef7522;
+		    }
+		    .RSS:before {
+		      content: "\f09e";
+		    }
+		    #知乎 {
+		    	background: url('/img/zhihu.png') center no-repeat #0078d8;
+		    }
+		    .知乎:before {
+		      content: "\f073";
+		      color: transparent;
+		    }
+		    #豆瓣 {
+		    	background: url('/img/douban.png') center no-repeat #06c611;
+		    }
+		    .豆瓣:before {
+		      content: "\f073";
+		      color: transparent;
+		    }
+		    #Google {
+		    	background: #c83d20;
+		    }
+		    .Google:before {
+		      content: "\f1a0";
+		    }
+		    #Twitter {
+		    	background: #55cff8;
+		    }
+		    .Twitter:before {
+		      content: "\f099";
+		    }
+		    #LinkedIn {
+		    	background: #005a87;
+		    }
+		    .LinkedIn:before {
+		      content: "\f0e1";
+		    }
+		    #Email {
+		    	background: #6fc0e4;
+		    }
+		    .Email:before {
+		      content: "\f003";
+		    }
+		    #Facebook {
+		    	background: #3b5998;
+		    }
+		    .Facebook:before {
+		      content: "\f09a";
+		    }
+		    #QQ {
+		    	background: #1cbcef;
+		    }
+		    .QQ:before {
+		      content: "\f1d6";
+		    }
+		    #微信 {
+		    	background: #8cdc49;
+		    }
+		    .微信:before {
+		      content: "\f1d7";
+		    }
+		    #PayPal {
+		    	background: #03a4e4;
+		    }
+		    .PayPal:before {
+		      content: "\f1ed";
+		    }
+		    #StackOverflow {
+		    	background: #f48024;
+		    }
+		    .StackOverflow:before {
+		      content: "\f16c";
+		    }
+		    #Instagram {
+		    	background: #bab0a6;
+		    }
+		    .Instagram:before {
+		      content: "\f16d";
+		    }
+		    #Flickr {
+		    	background: #0365c8;
+		    }
+		    .Flickr:before {
+		      content: "\f16e";
+		    }
 		}
 	}
 	.switch-part{
@@ -305,3 +348,92 @@
 #disqus_thread{
 	padding: 0 40px;
 }
+
+.search {
+	padding: 0;
+	margin-top: 1px;
+	font-family: inherit;
+	border:2px solid transparent;
+	border-bottom: 2px solid lightgray;
+	border-radius: 2px;
+	width: 68%;
+	opacity: .2;
+	height: 18px;
+	background: none;
+	&:hover {
+		opacity: 1;
+		border: 2px solid lightgray;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	};
+}
+.scroll {
+	z-index: 999;
+	position: fixed;
+	top: 61.8%;
+	right: 0px;
+	text-align: center;
+	a {
+		display: block;
+		width: 29px;
+		font-size: 28px;
+		background: rgba(215, 216, 215, .4);
+		border-bottom: 1px solid white;
+    	&:last-child {
+      		border-bottom: none;
+    	};
+	}
+	.fa {
+		color: rgba(255, 255, 255, .8);
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+	a:hover {
+		background: rgba(147, 181, 224, .3); 
+		.fa {
+		color: white;
+		}
+	}
+}
+.hide-labels {
+  position: fixed;
+  left: 378px;
+  top: 30px;
+  font-size: .9em;
+  padding: 1px;
+  font-weight: bold;
+  color: #666;
+  background: none;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  opacity: .32;
+  font-family: inherit;
+  -webkit-appearance: none;
+  &:hover {
+    color: #88acdb;
+    opacity: 1; 
+  }
+}
+.post-nav-button {
+    position: fixed;
+    left: 300px;
+    top: 61.8%;
+    text-align: center;
+  a {
+    display: block;
+    width: 29px;
+    font-size: 28px;
+  }
+  .fa {
+    color: rgba(255, 255, 255, .8);
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  a:hover {
+    background: rgba(147, 181, 224, .3); 
+    .fa {
+      color: white;
+    }
+    }
+  }

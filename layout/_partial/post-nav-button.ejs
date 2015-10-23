@@ -1,0 +1,28 @@
+<% if (is_post()){ %>
+  <% if (post.prev && !post.next){ %>
+    <div  class="post-nav-button">
+    <a href="<%- url_for(post.prev.path) %>" title="上一篇: <%= post.prev.title %>">
+    <i class="fa fa-angle-left"></i>
+    </a>
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    </div>
+  <% } %>
+  <% if (!post.prev && post.next){ %>
+    <div  class="post-nav-button">
+    <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+    <a href="<%- url_for(post.next.path) %>" title="下一篇: <%= post.next.title %>">
+    <i class="fa fa-angle-right"></i>
+    </a>
+    </div>
+  <% } %>
+    <% if (post.prev && post.next){ %>
+    <div  class="post-nav-button">
+    <a href="<%- url_for(post.prev.path) %>" title="上一篇: <%= post.prev.title %>">
+    <i class="fa fa-angle-left"></i>
+    </a>
+    <a href="<%- url_for(post.next.path) %>" title="下一篇: <%= post.next.title %>">
+    <i class="fa fa-angle-right"></i>
+    </a>
+    </div>
+  <% } %>
+<% } %>
