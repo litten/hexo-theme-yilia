@@ -1,6 +1,6 @@
 // https://github.com/chriskempson/tomorrow-theme
 // https://github.com/iissnan/hexo-theme-next/blob/master/source/css/_common/_vendor/highlight/theme.styl
-  highlight-background   = rgba(249, 249, 249, .4)
+  highlight-background   = rgba(249, 249, 249, .5)
   highlight-current-line = #efefef
   highlight-selection    = #d6d6d6
   highlight-foreground   = #4d4d4c
@@ -42,7 +42,6 @@ $line-numbers
   pre
     @extend $code-block
     code
-      background: none
       text-shadow: none
       padding: 0
   .highlight
@@ -53,6 +52,7 @@ $line-numbers
     margin-bottom: 1em
     overflow: auto
     pre
+      background: none
       border: none
       margin: 0
       padding: 0
