@@ -67,6 +67,8 @@ hexo new page about
 hexo new page tags
 ```
 
+> - [让 Hexo 自动生成 Tag Cloud 标签云页面](http://moxfive.xyz/2015/10/25/hexo-tag-cloud/)
+
 #### 3. Background image 网页背景:
 
 Change image list in: 修改背景图地址
