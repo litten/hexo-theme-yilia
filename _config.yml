@@ -1,10 +1,10 @@
 # Header
 menu:
   主页: /
-  所有文章: /archives
+  所有文章: /archives/
   # 随笔: /tags/随笔
-  标签云: /tags
-  关于我: /about
+  标签云: /tags/
+  关于我: /about/
 
 # SubNav
 subnav:
