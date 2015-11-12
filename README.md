@@ -67,6 +67,8 @@ hexo new page about
 hexo new page tags
 ```
 
+> Post with several categories 文章设置多个分类后的问题 [issue#4](https://github.com/MOxFIVE/hexo-theme-yelee/issues/4) 
+
 > - [让 Hexo 自动生成 Tag Cloud 标签云页面](http://moxfive.xyz/2015/10/25/hexo-tag-cloud/)
 
 #### 3. Background image 网页背景:
