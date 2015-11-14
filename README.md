@@ -83,7 +83,20 @@ Remove background image and use white-gray theme by:
 
 > `themes/yelee/_config.yml` - `background_image: false`
 
-#### 4. Comment 多说评论:
+#### 4. Style image 自定义图片样式:
+In order to style posts/pages' image with HTML/CSS within `.md` files, you should disable fancybox function firstly. 
+
+如果要使用 HTML/CSS 自定义文章图片样式，需要先关闭 fancybox 功能。
+
+Disable fancybox in full site | 在全站关闭 fancybox:
+
+> Set `fancybox: false` in `yelee/_config.yml`
+
+Disable fancybox in certain post/page | 在某篇文章中关闭 fancybox:
+
+> Add `fancybox: false` in [front-matter](https://hexo.io/docs/front-matter.html)
+
+#### 5. Comment 多说评论:
 在 `themes/yelee/_config.yml` 中，按 `duoshuo: duoshuo-key` 填写。
 
 注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
@@ -92,19 +105,19 @@ Remove background image and use white-gray theme by:
 
 > - [多说样式折腾记录 — 添加 UA 浏览器标识、旋转头像等](http://moxfive.xyz/2015/09/29/duoshuo-style/)
 
-#### 5. Table of Contents 文章目录:
+#### 6. Table of Contents 文章目录:
 
 Remove toc and the button via putting `toc: false` before "---" at [post].md.
 
 文章中默认显示目录和对应切换按钮，在文章 “---” 前输入 `toc: false` 关闭目录。
 
-#### 6. Copyright info. 文章版权信息:
+#### 7. Copyright info. 文章版权信息:
 
 Hide this  via putting `original: false` to post's front-matter.
 
 在文章顶部插入行 `original: false` 关闭文章版权声明框
 
-#### 7. 404 Page:
+#### 8. 404 Page:
 
 ```
 hexo new page 404
@@ -113,17 +126,17 @@ And then set `permalink: /404` in `/source/404/index.md` front matter.
 
 > - [在 Hexo 中创建匹配主题的404页面](http://moxfive.xyz/2015/10/16/hexo-404-page/)
 
-#### 8. RSS Feed 文章订阅:
+#### 9. RSS Feed 文章订阅:
 
 Install plugin: [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed)
 
-#### 9. Sitemap for SEO 站点地图:
+#### 10. Sitemap for SEO 站点地图:
 
 Install plugin: [hexo-generator-seo-friendly-sitemap](https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap)
 
 百度专用: [hexo-generator-baidu-sitemap](https://github.com/coneycode/hexo-generator-baidu-sitemap)
 
-#### 10. Apple Touch icon 苹果图标:
+#### 11. Apple Touch icon 苹果图标:
 
 替换路径: `/yelee/source/apple-touch-icon.png`
 

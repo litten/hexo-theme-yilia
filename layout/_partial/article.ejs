@@ -98,3 +98,36 @@
     </div>
 <% } %>
 <%- partial('_partial/post-nav-button') %>
+
+<% if (post.fancybox != false){ %>
+    <% if (theme.fancybox){ %>
+        <%- css('fancybox/jquery.fancybox') %>
+        <script>
+        var yiliaConfig = {
+        fancybox: <%=theme.fancybox%>,
+        mathjax: <%=theme.mathjax%>,
+        animate: <%=theme.animate%>,
+        isHome: <%=is_home()%>,
+        isPost: <%=is_post()%>,
+        isArchive: <%=is_archive()%>,
+        isTag: <%=is_tag()%>,
+        isCategory: <%=is_category()%>,
+        open_in_new: <%=theme.open_in_new%>
+        }
+        </script>
+    <% } %>    
+<% } else { %>
+    <script>
+    var yiliaConfig = {
+    fancybox: false,
+    mathjax: <%=theme.mathjax%>,
+    animate: <%=theme.animate%>,
+    isHome: <%=is_home()%>,
+    isPost: <%=is_post()%>,
+    isArchive: <%=is_archive()%>,
+    isTag: <%=is_tag()%>,
+    isCategory: <%=is_category()%>,
+    open_in_new: <%=theme.open_in_new%>
+    }
+    </script>
+<% } %>
