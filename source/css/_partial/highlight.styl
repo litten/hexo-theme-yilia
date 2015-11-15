@@ -16,17 +16,17 @@
 $code-block
   background: highlight-background
   margin: auto
-  padding: 0.5em article-padding
+  padding: .35em 1.5em
   border-style: solid
   border-color: color-border
-  border-width: 1px 0
+  border-width: 1px
   overflow: auto
   color: highlight-foreground
   line-height: font-size * line-height
 
 $line-numbers
   color: lightgray
-  font-size: 0.85em
+  font-size: .85em
 
 .article-entry
   pre, code
@@ -46,7 +46,7 @@ $line-numbers
       padding: 0
   .highlight
     @extend $code-block
-    border-radius: 5px
+    border-radius: 2px
     max-height: 50em
     margin-top: .5em
     margin-bottom: 1em
@@ -73,7 +73,7 @@ $line-numbers
     .gutter pre
       @extend $line-numbers
       text-align: right
-      padding-right: 20px
+      padding-right: 1em
     .line
       height: font-size * line-height
   .gist
