@@ -1,4 +1,4 @@
-<% if (post.original != false){ %>
+<% if (post.original != false && !is_page()){ %>
 <div class="copyright">
   <p><span>本文标题:</span><a href="<%- url_for(post.path) %>"><%= post.title %></a></p>
   <p><span>文章作者:</span><a href="/" title="访问 <%=theme.author%> 的个人博客"><%=theme.author%></a></p>
