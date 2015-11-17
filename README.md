@@ -73,15 +73,23 @@ hexo new page tags
 
 #### 3. Background image 网页背景:
 
-Change image list in: 修改背景图地址
+Find or change background images in folder | 修改背景图地址: 
 
-> `themes/yelee/layout/_partial/background.ejs` 
+> `/yelee/source/background/`
 
-Remove background image and use white-gray theme by: 
+Setting in `themes/yelee/_config.yml` 背景参数:
 
-取消网页背景图，使用淳朴的灰白主题 
+`
+background_image: 5
+`
 
-> `themes/yelee/_config.yml` - `background_image: false`
+- Default value is 5, free to modify the number | 默认值为5，可按需修改
+
+- "5": show 5 images form bg-1.jpg to bg-5.jpg in `/yelee/source/background/`
+
+- "5": 设置`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片为背景
+
+- "0": remove background image and use white-gray theme | 取消网页背景图，使用淳朴的灰白主题 
 
 #### 4. Style image 自定义图片样式:
 In order to style posts/pages' image with HTML/CSS within `.md` files, you should disable fancybox function firstly. 

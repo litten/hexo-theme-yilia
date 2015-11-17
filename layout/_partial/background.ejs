@@ -1,14 +1,12 @@
 <% if (theme.background_image){ %>
-<script type="text/javascript">
-
-  var backgroundnum = 10;
+<script>
+  var backgroundnum = <%= theme.background_image %>;
   var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
 
   $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
- 
 </script>
 <% } else { %>
-  <style type="text/css">
+  <style>
     body {
       background: lightgray;
     }
