@@ -60,7 +60,7 @@ cnt_id = 0;
 	  <% year_store.push(year) %>
       <section class="archives-wrap">
         <div class="archive-year-wrap">
-          <a class="archive-year" id="toc_year<%- year %>"><%= year %></a>
+          <a class="archive-year" id="toc_year<%- year %>"><%= year %></a><span class="hide">HideAll</span>
         </div>
  	</section>
       <section class="archives-wrap" id="year<%- year %>">
@@ -74,7 +74,7 @@ cnt_id = 0;
 		<% lastMonth = month %>
          <div class="article-month"><h2 id="tog<%- cnt_id %>"><%= MonthMap[parseInt(month)-1] %> (<%- posts_num[cnt_id++] %> Posts)</h2></div>
 
-        <div class="archives" id="archives<%- cnt_id -1%>">
+        <div class="archives" id="archives<%- cnt_id-1 %>">
 	<% } %>
 
 
@@ -95,18 +95,27 @@ cnt_id = 0;
 
 
 <script>
-for(var i=1; i<<%- posts_num.length %>; ++i) 
-	$("#archives"+i).addClass("hide");
+for(var i=1; i<<%- posts_num.length %>; ++i)
+	$("#archives"+i).toggle(0);
 
 <% for(var i=0; i<year_store.length; ++i) { %>
 	$("#toc_year<%- year_store[i] %>").click(function(){
-		$(".archives").toggle(600);
+		if($("#toc_year<%- year_store[i] %> + span").text() == "HideAll") {
+			$("#year<%- year_store[i] %> div[style='display: none;']").toggle(500);
+			$("#year<%- year_store[i] %> .archives").addClass("show");
+			$("#toc_year<%- year_store[i] %> + span").text("ShowAll");
+		}
+		else {
+			$("#year<%- year_store[i] %> .archives").toggle(500);
+			$("#toc_year<%- year_store[i] %> + span").text("HideAll");
+		}
+
 	})
 <% } %>
 
 <% for(var i=0; i<posts_num.length; ++i) { %>
 	$("#tog<%- i %>").click(function(){
-		$("#archives<%- i %>").toggle(500);
+		$("#archives<%- i %>").toggle(400);
 	})
 <% } %>
 
