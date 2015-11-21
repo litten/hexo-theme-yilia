@@ -12,19 +12,72 @@
   <% } %>
 <% } else { %>
   <% var last; %>
+  <% var lastMonth; %>
+  <% var MonthMap = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; %>
+<!-- 获取各月文章数量 -->
+
+<%
+var cnt_id = 0;
+var current_year, last_year, current_month, last_month;
+var num = 0;
+var posts_num = [];
+var year_store = [];
+page.posts.each(function(post, i) {
+	current_year = post.date.year();
+	current_month = post.date.format('MM'); // 从0开始
+	if(last_year == null) last_year = current_year;
+	if(last_month == null) last_month = current_month;
+
+	if(current_month != last_month) {
+		posts_num[cnt_id++] = num;
+		last_month = current_month;
+		num = 1;
+	}
+	else ++num;
+
+	if(current_year != last_year) {
+		last_year = current_year;
+	}
+})
+
+posts_num[cnt_id++] = num; // 最后一月
+
+cnt_id = 0;
+%>
+
+
   <% page.posts.each(function(post, i){ %>
+
+<!-- 年份分类 -->
     <% var year = post.date.year(); %>
+
     <% if (last != year){ %>
-      <% if (last != null){ %>
-        </div></section>
+      <% if (last != null){
+		%>
+       </section>
       <% } %>
       <% last = year; %>
+	  <% year_store.push(year) %>
       <section class="archives-wrap">
         <div class="archive-year-wrap">
-          <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+          <a class="archive-year" id="toc_year<%- year %>"><%= year %></a><span class="hide">HideAll</span>
         </div>
-        <div class="archives">
+ 	</section>
+      <section class="archives-wrap" id="year<%- year %>">
     <% } %>
+
+<!-- 月份分类 -->
+    <% var month = post.date.format('MM'); %>
+	<% if(month != lastMonth) {
+		if(lastMonth != null) %>
+			</div>
+		<% lastMonth = month %>
+         <div class="article-month"><h2 id="tog<%- cnt_id %>"><%= MonthMap[parseInt(month)-1] %> (<%- posts_num[cnt_id++] %> Posts)</h2></div>
+
+        <div class="archives" id="archives<%- cnt_id-1 %>">
+	<% } %>
+
+
     <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
   <% }) %>
   <% if (page.posts.length){ %>
@@ -40,4 +93,31 @@
     </nav>
   <% } %>
 
+
+<script>
+for(var i=1; i<<%- posts_num.length %>; ++i)
+	$("#archives"+i).toggle(0);
+
+<% for(var i=0; i<year_store.length; ++i) { %>
+	$("#toc_year<%- year_store[i] %>").click(function(){
+		if($("#toc_year<%- year_store[i] %> + span").text() == "HideAll") {
+			$("#year<%- year_store[i] %> div[style='display: none;']").toggle(500);
+			$("#year<%- year_store[i] %> .archives").addClass("show");
+			$("#toc_year<%- year_store[i] %> + span").text("ShowAll");
+		}
+		else {
+			$("#year<%- year_store[i] %> .archives").toggle(500);
+			$("#toc_year<%- year_store[i] %> + span").text("HideAll");
+		}
+
+	})
+<% } %>
+
+<% for(var i=0; i<posts_num.length; ++i) { %>
+	$("#tog<%- i %>").click(function(){
+		$("#archives<%- i %>").toggle(400);
+	})
+<% } %>
+
+</script>
 <% } %>
