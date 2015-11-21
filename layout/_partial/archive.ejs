@@ -21,6 +21,7 @@ var cnt_id = 0;
 var current_year, last_year, current_month, last_month;
 var num = 0;
 var posts_num = [];
+var year_store = [];
 page.posts.each(function(post, i) {
 	current_year = post.date.year();
 	current_month = post.date.format('MM'); // 从0开始
@@ -49,16 +50,20 @@ cnt_id = 0;
 
 <!-- 年份分类 -->
     <% var year = post.date.year(); %>
+
     <% if (last != year){ %>
       <% if (last != null){
 		%>
        </section>
       <% } %>
       <% last = year; %>
+	  <% year_store.push(year) %>
       <section class="archives-wrap">
         <div class="archive-year-wrap">
-          <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+          <a class="archive-year" id="toc_year<%- year %>"><%= year %></a>
         </div>
+ 	</section>
+      <section class="archives-wrap" id="year<%- year %>">
     <% } %>
 
 <!-- 月份分类 -->
@@ -88,13 +93,20 @@ cnt_id = 0;
     </nav>
   <% } %>
 
+
 <script>
 for(var i=1; i<<%- posts_num.length %>; ++i) 
 	$("#archives"+i).addClass("hide");
 
+<% for(var i=0; i<year_store.length; ++i) { %>
+	$("#toc_year<%- year_store[i] %>").click(function(){
+		$(".archives").toggle(600);
+	})
+<% } %>
+
 <% for(var i=0; i<posts_num.length; ++i) { %>
 	$("#tog<%- i %>").click(function(){
-		$("#archives<%- i %>").toggle(800);
+		$("#archives<%- i %>").toggle(500);
 	})
 <% } %>
 
