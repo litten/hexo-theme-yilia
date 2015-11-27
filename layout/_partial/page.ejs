@@ -31,9 +31,8 @@
 	}
 </style>
 
-
-<!-- Tag Cloud Page -->
 <% if (page.path === "tags/index.html"){ %>
+	<!-- Tag Cloud Page -->
 	<hr>
 	<br>
 	<%- list_categories() %>
@@ -58,7 +57,7 @@
 		.category-list a {
 			color: gray;
 		}
-		.category-list:hover a {
+		.category-list-item:hover a {
 			color: gray;
 			text-decoration: none;
 			font-weight: bold;
@@ -82,9 +81,11 @@
 			margin-right: 1em;
 			line-height: 65px;
 			border-bottom: 1px solid gray;
+			white-space: nowrap;
 		}
 		.tags a:hover {
-			font-weight: bold;
+			font-style: italic;
+			border-bottom: 2px solid black;
 			text-decoration: none;
 		}
 		.category-list-child {
