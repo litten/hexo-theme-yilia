@@ -35,7 +35,9 @@
 	<!-- Tag Cloud Page -->
 	<hr>
 	<br>
-	<%- list_categories() %>
+	<%- list_categories({
+        depth: 1,
+    }) %>
 	<div class="tags">
 	  <%- tagcloud({
 	      min_font: 16, 
@@ -87,9 +89,6 @@
 			font-style: italic;
 			border-bottom: 2px solid black;
 			text-decoration: none;
-		}
-		.category-list-child {
-			display: none;
 		}
 	</style>
 <% } %>
