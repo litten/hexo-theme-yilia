@@ -52,6 +52,37 @@ git pull
 
 ### Configuration 配置
 
+#### 0. Post Excerpt 文章摘要
+There are two ways to show excerpt in homepage. 
+
+目前主题可使用两种方式在首页显示文章摘要而不是全文。
+
+- a: <!-- more -->
+
+``` diff
+title: Hello World
+date: 2015-12-03 00:00:00
+---
+<Excerpt in index | 首页摘要> 
++ <!-- more -->
+<The rest of contents | 余下全文>
+```
+- b: description in Front-matter
+
+``` diff
+title: Hello World
+date: 2015-12-03 00:00:00
++ description: "Welcome to Hexo! This is your very first post."
+---
+<Contents>
+```
+
+> Description only support plain text. | 通过 description 添加的摘要只能为纯文本。
+
+> Set the value of description with quotes to avoid unexpected error `:`. | description 的内容加双引号，可以避免一些程序错误，例如内容里包含英文冒号时。
+
+
+
 #### 1. About Page 关于我页面: 
 cd to your hexo folder and run this code:
 
