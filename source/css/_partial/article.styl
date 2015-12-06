@@ -491,13 +491,13 @@ li:hover {
 }
 .copyright {
   width: 85%;
-  margin: 0px auto;
+  margin: 0 auto;
   max-width: 45em;
-  word-break: break-all;
+  word-break: break-word;
   font-size: .93em;
   line-height: 1.6em;
   padding: .5em 1.8em;
-  background: rgba(255, 255, 255, .4)
+  background: rgba(255, 255, 255, .4);
   border: 1px solid lightgray;
   span {
     color: #B5B5B5;
@@ -510,7 +510,20 @@ li:hover {
       font-weight: bold;
       color: #a3d2a3;
       text-decoration: underline;
-    };
+    }
+  }
+  &:hover p .copy-path::after {
+    content: "复制";
+  }
+  .post-url:hover {
+    font-weight: normal;
+  }
+  .copy-path {
+    margin-left: 1em;
+    &:hover {
+      color: gray;
+      cursor: pointer;
+    }
   }
 }
 

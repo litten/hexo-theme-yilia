@@ -5,27 +5,16 @@
   <p><span>发布时间:</span><%= post.date.format("YYYY年MM月DD日 - HH时mm分") %></p>
   <p><span>最后更新:</span><%= post.updated.format("YYYY年MM月DD日 - HH时mm分") %></p>
   <p>
-    <span>原始链接:</span><a href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.permalink %></a>
-    <span class="btn" data-clipboard-text="原文: <%= post.permalink %>　　作者: <%=theme.author%>" title="点击复制文章链接">
+    <span>原始链接:</span><a class="post-url" href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.permalink %></a>
+    <span class="copy-path" data-clipboard-text="原文: <%= post.permalink %>　　作者: <%=theme.author%>" title="点击复制文章链接">
         <i class="fa fa-clipboard"></i>
     </span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p>
   <script src="/js/clipboard.min.js"></script>
-  <script> var clipboard = new Clipboard('.btn'); </script>
+  <script> var clipboard = new Clipboard('.copy-path'); </script>
 </div>
-<style type="text/css">
-  .copyright p .btn {
-    margin-left: 1em;
-  }
-  .copyright:hover p .btn::after {
-    content: "复制"
-  }
-  .copyright p .btn:hover {
-      color: gray;
-      cursor: pointer;
-    };
-</style>
+
 <% } else { %>
 <% } %>
 
