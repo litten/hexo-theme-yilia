@@ -83,3 +83,8 @@ aboutme: 专注于前端
 #是否显示边栏中的搜索框 
 #Search Box in left column
 #search_box: true
+
+#Site Verification for Google and Baidu. HTML label content.
+#百度、谷歌站长验证。填写 HTML 标签 content
+#baidu_site: 
+#google_site: 
