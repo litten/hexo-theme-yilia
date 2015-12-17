@@ -57,17 +57,17 @@
   <% } %>
 </article>
 <% if (!index && post.toc != false && !is_page()){ %>
-<%- partial('_partial/toc') %>
+    <%- partial('_partial/toc') %>
 <% } %>
 <% if (!index && theme.share){ %>
 <%- partial('post/share') %>
 <% } %>
 
 <% if (!index && theme.duoshuo && post.comments){ %>
-  <%- partial('post/duoshuo', {
-      key: post.path,
-      title: post.title,
-      url: config.url+url_for(post.path)
+    <%- partial('post/duoshuo', {
+        key: post.path,
+        title: post.title,
+        url: config.url+url_for(post.path),
     }) %>
 <% } %>
 
@@ -90,48 +90,49 @@
 <% } %>
 
 <% if (!index && post.comments){ %>
-    <style type="text/css">
-    #scroll {
-      display: none;
-    }
+    <style>
+        #scroll {
+            display: none;
+        }
     </style>
     <div class="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+        <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+        <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+        <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
     </div>
 <% } %>
+
 <%- partial('_partial/post-nav-button') %>
 
 <% if (post.fancybox != false){ %>
     <% if (theme.fancybox){ %>
         <%- css('fancybox/jquery.fancybox') %>
         <script>
-        var yiliaConfig = {
-        fancybox: <%=theme.fancybox%>,
-        mathjax: <%=theme.mathjax%>,
-        animate: <%=theme.animate%>,
-        isHome: <%=is_home()%>,
-        isPost: <%=is_post()%>,
-        isArchive: <%=is_archive()%>,
-        isTag: <%=is_tag()%>,
-        isCategory: <%=is_category()%>,
-        open_in_new: <%=theme.open_in_new%>
-        }
+            var yiliaConfig = {
+            fancybox: <%=theme.fancybox%>,
+            mathjax: <%=theme.mathjax%>,
+            animate: <%=theme.animate%>,
+            isHome: <%=is_home()%>,
+            isPost: <%=is_post()%>,
+            isArchive: <%=is_archive()%>,
+            isTag: <%=is_tag()%>,
+            isCategory: <%=is_category()%>,
+            open_in_new: <%=theme.open_in_new%>
+            }
         </script>
-    <% } %> 
+    <% } %>    
 <% } else { %>
-    <script>
-    var yiliaConfig = {
-    fancybox: false,
-    mathjax: <%=theme.mathjax%>,
-    animate: <%=theme.animate%>,
-    isHome: <%=is_home()%>,
-    isPost: <%=is_post()%>,
-    isArchive: <%=is_archive()%>,
-    isTag: <%=is_tag()%>,
-    isCategory: <%=is_category()%>,
-    open_in_new: <%=theme.open_in_new%>
-    }
-    </script>
+        <script>
+            var yiliaConfig = {
+            fancybox: false,
+            mathjax: <%=theme.mathjax%>,
+            animate: <%=theme.animate%>,
+            isHome: <%=is_home()%>,
+            isPost: <%=is_post()%>,
+            isArchive: <%=is_archive()%>,
+            isTag: <%=is_tag()%>,
+            isCategory: <%=is_category()%>,
+            open_in_new: <%=theme.open_in_new%>
+            }
+        </script>
 <% } %>

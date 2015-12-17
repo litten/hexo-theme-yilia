@@ -1,38 +1,36 @@
 <% if (post.original != false && !is_page()){ %>
-<div class="copyright">
-  <p><span>本文标题:</span><a href="<%- url_for(post.path) %>"><%= post.title %></a></p>
-  <p><span>文章作者:</span><a href="/" title="访问 <%=theme.author%> 的个人博客"><%=theme.author%></a></p>
-  <p><span>发布时间:</span><%= post.date.format("YYYY年MM月DD日 - HH时mm分") %></p>
-  <p><span>最后更新:</span><%= post.updated.format("YYYY年MM月DD日 - HH时mm分") %></p>
-  <p>
-    <span>原始链接:</span><a class="post-url" href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.permalink %></a>
-    <span class="copy-path" data-clipboard-text="原文: <%= post.permalink %>　　作者: <%=theme.author%>" title="点击复制文章链接">
-        <i class="fa fa-clipboard"></i>
-    </span>
-  </p>
-  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。</p>
-  <script src="/js/clipboard.min.js"></script>
-  <script> var clipboard = new Clipboard('.copy-path'); </script>
-</div>
-
-<% } else { %>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="<%- url_for(post.path) %>"><%= post.title %></a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 <%=theme.author%> 的个人博客"><%=theme.author%></a></p>
+        <p><span>发布时间:</span><%= post.date.format("YYYY年MM月DD日 - HH时mm分") %></p>
+        <p><span>最后更新:</span><%= post.updated.format("YYYY年MM月DD日 - HH时mm分") %></p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.permalink %></a>
+            <span class="copy-path" data-clipboard-text="原文: <%= post.permalink %>　　作者: <%=theme.author%>" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 <% } %>
 
 <% if (post.prev || post.next){ %>
-<nav id="article-nav">
-  <% if (post.prev){ %>
-    <div id="article-nav-newer" class="article-nav-title">
-      <a href="<%- url_for(post.prev.path) %>">
-        <%= post.prev.title %>
-      </a>
-    </div>
-  <% } %>
-  <% if (post.next){ %>
-    <div id="article-nav-older" class="article-nav-title">
-      <a href="<%- url_for(post.next.path) %>">
-        <%= post.next.title %>
-      </a>
-    </div>
-  <% } %>
-</nav>
+    <nav id="article-nav">
+        <% if (post.prev){ %>
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="<%- url_for(post.prev.path) %>">
+                    <%= post.prev.title %>
+                </a>
+            </div>
+        <% } %>
+        <% if (post.next){ %>
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="<%- url_for(post.next.path) %>">
+                    <%= post.next.title %>
+                </a>
+            </div>
+        <% } %>
+    </nav>
 <% } %>

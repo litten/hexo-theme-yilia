@@ -1,26 +1,26 @@
 <% if (theme.background_image){ %>
-<script>
-  var backgroundnum = <%= theme.background_image %>;
-  var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+    <script>
+        var backgroundnum = <%= theme.background_image %>;
+        var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
 
-  $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-</script>
+        $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+    </script>
 <% } else { %>
-  <style>
-    body {
-      background: lightgray;
-    }
-    #container .left-col {
-      background: white;
-    }
-    .article-inner {
-      background: white;
-    }
-    .post-nav-button {
-      background: #ececec;
-    }
-    #header .header-nav .social #GitHub {
-      background-color: #bfd3ec;
-    }
-  </style>
+    <style>
+        body {
+          background: lightgray;
+        }
+        #container .left-col {
+          background: white;
+        }
+        .article-inner {
+          background: white;
+        }
+        .post-nav-button {
+          background: #ececec;
+        }
+        #header .header-nav .social #GitHub {
+          background-color: #bfd3ec;
+        }
+    </style>
 <% } %>
