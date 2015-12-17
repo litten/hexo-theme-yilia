@@ -5,7 +5,7 @@ code-tag = #F92672
 code-attr = #A6E22E
 code-word = #FFFFFF
 code-value = #E6DB74
-code-number = #7163D7
+code-number = #9E90FF
 code-keyword = #66D9EF
 code-comment = #75715E
 code-argument = #FD971F
@@ -17,7 +17,6 @@ $code-block
   overflow: auto
   color: #4C4C4C
   line-height: font-size * line-height
-  border-radius: 4px
 
 $line-numbers
   color: #666
@@ -39,6 +38,7 @@ $line-numbers
       color: code-word
   .highlight
     @extend $code-block
+    border-radius: 4px
     pre
       border: none
       margin: 0
@@ -118,6 +118,7 @@ pre
   .doctype
   .params
   .function
+  .css .value
     color: code-word
 
   .css ~ * .tag
