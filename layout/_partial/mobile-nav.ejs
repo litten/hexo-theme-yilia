@@ -6,7 +6,11 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
+			<% if (theme.animate){ %>
 				<img lazy-src="<%=theme.avatar%>" class="js-avatar">
+			<%}else{%>
+				<img src="<%=theme.avatar%>" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			<%}%>
 			</div>
 			<hgroup>
 			  <h1 class="header-author"><%=theme.author%></h1>
