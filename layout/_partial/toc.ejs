@@ -39,3 +39,21 @@
         $(".switch-area").css("display","block");
     }
 </script>
+
+<% if (theme.toc_nowrap) { %>
+    <style>
+        .toc {
+            white-space: nowrap;
+            overflow-x: hidden;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $(".toc li a").mouseover(function() {
+                var title = $(this).attr('href');
+                $(this).attr("title", title);
+            });
+        })
+    </script>
+<% } %>

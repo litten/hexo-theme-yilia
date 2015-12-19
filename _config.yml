@@ -88,3 +88,7 @@ aboutme: 专注于前端
 #百度、谷歌站长验证。填写 HTML 标签 content
 #baidu_site: 
 #google_site: 
+
+#Keep TOC title on the same line.
+#目录中标题不换行
+#toc_nowrap: true
