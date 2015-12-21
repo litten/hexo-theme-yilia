@@ -377,9 +377,11 @@
     top: 61.8%;
     right: 0;
     text-align: center;
+    line-height: 42px;
     a {
         display: block;
         width: 29px;
+        height: 42px;
         font-size: 28px;
         background: rgba(215, 216, 215, .4);
         border-bottom: 1px solid white;
@@ -389,8 +391,6 @@
     }
     .fa {
         color: rgba(255, 255, 255, .8);
-        padding-top: 6px;
-        padding-bottom: 6px;
     }
     a:hover {
         background: rgba(147, 181, 224, .3); 
@@ -427,14 +427,21 @@
     left: 300px;
     top: 61.8%;
     text-align: center;
+    line-height: 42px;
     a {
         display: block;
         width: 29px;
+        height: 42px;
         font-size: 28px;
+        .fa-times {
+            display: none;
+        }
+        border-bottom: 1px solid transparent;
+        &:last-child {
+            border-bottom: none;
+        }
     }
     .fa {
-        padding-top: 16px;
-        padding-bottom: 16px;
         color: rgba(255, 255, 255, .8);
     }
     a:hover {
@@ -443,4 +450,28 @@
             color: white;
         }
     }
+}
+
+.post-list {
+    display: none;
+    text-align: left;
+    font-size: .9em;
+    line-height: 1.3em;
+    list-style: decimal;
+    li {
+        margin: .4em 0 .1em .7em;
+        a {
+            color: gray;
+            &:hover {
+                color: ;
+                text-decoration: none;
+            }
+        }
+        &:hover {
+            background: ;
+            a {
+                color: #88acdb;
+            }
+        };
+   }
 }
