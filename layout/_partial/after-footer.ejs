@@ -1,17 +1,17 @@
 <% if (!is_page() && !is_post()){ %>
-	<script>
-		var yiliaConfig = {
-			fancybox: false,
-			mathjax: <%=theme.mathjax%>,
-			animate: <%=theme.animate%>,
-			isHome: <%=is_home()%>,
-			isPost: <%=is_post()%>,
-			isArchive: <%=is_archive()%>,
-			isTag: <%=is_tag()%>,
-			isCategory: <%=is_category()%>,
-			open_in_new: <%=theme.open_in_new%>
-		}
-	</script>
+    <script>
+        var yiliaConfig = {
+            fancybox: false,
+            mathjax: <%=theme.mathjax%>,
+            animate: <%=theme.animate%>,
+            isHome: <%=is_home()%>,
+            isPost: <%=is_post()%>,
+            isArchive: <%=is_archive()%>,
+            isTag: <%=is_tag()%>,
+            isCategory: <%=is_category()%>,
+            open_in_new: <%=theme.open_in_new%>
+        }
+    </script>
 <% } %>
 
 <%- js('http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min') %>

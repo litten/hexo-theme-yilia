@@ -1,34 +1,34 @@
 <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"><%=theme.author%></a></h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<a href="/" class="profilepic">
-				<img lazy-src="<%=theme.avatar%>" class="js-avatar">
-			</a>
-			<hgroup>
-			  <h1 class="header-author"><a href="/" title="回到主页"><%=theme.author%></a></h1>
-			</hgroup>
-			<% if (theme.subtitle){ %>
-			<p class="header-subtitle"><%=theme.subtitle%></p>
-			<%}%>
-			<nav class="header-menu">
-				<ul>
-				<% for (var i in theme.menu){ %>
-					<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-		        <%}%>
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-						<ul class="social">
-							<% for (var i in theme.subnav){ %>
-								<li id="<%= i %>"><a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"></a></li>
-					        <%}%>
-						</ul>
-			</nav>
-		</header>				
-	</div>
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"><%=theme.author%></a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img lazy-src="<%=theme.avatar%>" class="js-avatar">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页"><%=theme.author%></a></h1>
+            </hgroup>
+            <% if (theme.subtitle){ %>
+            <p class="header-subtitle"><%=theme.subtitle%></p>
+            <%}%>
+            <nav class="header-menu">
+                <ul>
+                <% for (var i in theme.menu){ %>
+                    <li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+                <%}%>
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            <% for (var i in theme.subnav){ %>
+                                <li id="<%= i %>"><a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"></a></li>
+                            <%}%>
+                        </ul>
+            </nav>
+        </header>                
+    </div>
 </nav>

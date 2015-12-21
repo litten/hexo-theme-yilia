@@ -1,348 +1,348 @@
 #container{
-	position:relative;
-	min-height:100%;
-	#mobile-nav{
-		display: none;
-		.overlay{
-			height: 110px;
-			position: absolute;
-			width: 100%;
-			background: #4d4d4d;
-			&.fixed{
-		        position: fixed;
-		        height: 42px;
-		        z-index: 99;
-		    }
-		}
-		#header{
-			padding: 10px 0 0 0;
-			.profilepic{
-				display: block;
-				position: relative;
-				z-index: 100;
-			}
-			.header-menu{
-				height: auto;
-				margin: 10px;
-				ul{
-					text-align: center;
-					cursor: default;
-				}
-				li{
-					display: inline-block;
-					margin: 3px;
-				}
-			}
-		}
-	}
-	.left-col {
-		background: rgba(255,255,255,.85);
-		width: 300px;
-		position:fixed;
-		opacity:1;
-		transition:all .2s ease-in;
-		height:100%;
+    position:relative;
+    min-height:100%;
+    #mobile-nav{
+        display: none;
+        .overlay{
+            height: 110px;
+            position: absolute;
+            width: 100%;
+            background: #4d4d4d;
+            &.fixed{
+                position: fixed;
+                height: 42px;
+                z-index: 99;
+            }
+        }
+        #header{
+            padding: 10px 0 0 0;
+            .profilepic{
+                display: block;
+                position: relative;
+                z-index: 100;
+            }
+            .header-menu{
+                height: auto;
+                margin: 10px;
+                ul{
+                    text-align: center;
+                    cursor: default;
+                }
+                li{
+                    display: inline-block;
+                    margin: 3px;
+                }
+            }
+        }
+    }
+    .left-col {
+        background: rgba(255,255,255,.85);
+        width: 300px;
+        position:fixed;
+        opacity:1;
+        transition:all .2s ease-in;
+        height:100%;
 
-		.overlay{
-			width: 100%;
-			height: 180px;
-			background-color: black;
-			position: absolute;
-			opacity: 0.7;
-		}
-		.intrude-less {
-			width: 76%;
-			text-align: center;
-			margin: 112px auto 0;
-		}
-		li:hover {
-			background: none;
-			font-weight: bold;
-		};
-	}
-	.mid-col {
-		position:absolute;
-		right:0;
-		min-height:100%;
-		background: rgba(255,255,255,.8);
-		left: 300px;
-		width: auto;
-	}
+        .overlay{
+            width: 100%;
+            height: 180px;
+            background-color: black;
+            position: absolute;
+            opacity: 0.7;
+        }
+        .intrude-less {
+            width: 76%;
+            text-align: center;
+            margin: 112px auto 0;
+        }
+        li:hover {
+            background: none;
+            font-weight: bold;
+        };
+    }
+    .mid-col {
+        position:absolute;
+        right:0;
+        min-height:100%;
+        background: rgba(255,255,255,.8);
+        left: 300px;
+        width: auto;
+    }
 
-	@media screen and (max-width:1040px) {
-		
-	}@media screen and (max-width:800px) {
-		@import "_partial/mobile"
-	}
+    @media screen and (max-width:1040px) {
+        
+    }@media screen and (max-width:800px) {
+        @import "_partial/mobile"
+    }
 }
 .header-author{
-	text-align: center;
-	margin: 13px 0;
-	font-family: Roboto, "Roboto", serif;
-	font-size: 30px;
-	transition: 0.3s;
+    text-align: center;
+    margin: 13px 0;
+    font-family: Roboto, "Roboto", serif;
+    font-size: 30px;
+    transition: 0.3s;
 }
 #header{
-	width:100%;
-	a {
-		color: #696969;
-		&:hover {
-			color: #B0A0AA;
-		}
-	}
-	.profilepic{
-		text-align: center;
-		display: block;
-		border: 5px solid #fff;
-		border-radius: 300px;
-		width: 128px;
-		height: 128px;
-		margin: 0 auto;
-		position: relative;
-		overflow: hidden;
-		background: #88acdb;
-		-webkit-transition: all 0.2s ease-in;
-		display: -webkit-box;
-		-webkit-box-orient: horizontal;
-		-webkit-box-pack: center;
-		-webkit-box-align: center;
-		text-align: center;
-		img{
-			width: 20%;
-			height: 20%;
-			border-radius: 300px;
-			opacity: 0;
-			-webkit-transition: all 0.2s ease-in;
-			&.show{
-				width: 100%;
-				height: 100%;
-				opacity: 1;
-			}
-		}
-		&:hover {
-			background: white;
-			border: 5px solid #88acdb;
-		};
-	}
-	.header-subtitle{
-		text-align: center;
-		color:#999;
-		font-size: 14px;
-		line-height: 25px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		-webkit-box-orient: vertical;
-	}
-	.header-menu{
-		font-weight: 550;
-		line-height: 28px;
-		font-family: inherit;
-		cursor: pointer;
-		text-transform: uppercase;
-		float:none;
-		height: 140px;
-		margin-left: -12px;
-		text-align: center;
-		display: -webkit-box;
-		-webkit-box-orient: horizontal;
-		-webkit-box-pack: center;
-		-webkit-box-align: center;
-		li{
-			cursor: default;
-			a{
-				font-size: 14px;
-				min-width: 300px;
-			}
-		}
-	}
-	.switch-area{
-		position: relative;
-		width: 100%;
-		overflow: hidden;
-		min-height: 500px;
-		font-size: 14px;
-		.switch-wrap{
-			transition: transform .3s ease-in;
-			position: relative;
-		}
-	}
-	.turn-left{
-	    transform: translate(-100%, 0 );
-	}
-	.header-nav{
-		width: 100%;
-		position: absolute;
-		transition: transform .3s ease-in;
-		.social {
-			margin-right:11px;
-			margin-top:10px;
-			text-align: center;
-			font-family: Arial;
-			li {
-				display: inline-block;
-				width: 37px;
-				border-radius:50%;
-				margin-right: 3px;
-				margin-bottom: 6px;
-				font: 21px FontAwesome;
-				background: #6f7170;
-				opacity: .58;
-				text-align: center;
-				a {
-					line-height: 37px;
-					color: white;
-				}
-				&:hover {
-					font-size: 23px;
-					opacity: 1;
-				}
-				&:nth-child(5n), &:last-child {
-					margin-right: 0;
-				}
-			}
-			#新浪微博 {
-				background:url('/img/weibo.png') center no-repeat #ecc260;
-			}
-			.新浪微博:before {
-		      content: "\f18a";
-		      color: transparent;
-		    }
-		    #GitHub {
-				background: url('/img/github.png') center no-repeat white;
-		    }
-		    .GitHub:before {
-		      content: "\f113";
-		      color: transparent;
-		    }
-			#V2EX {
-				background: url('/img/v2ex.png') center no-repeat #e4cdb4;
-			}
-			.V2EX:before {
-		      content: "\f073";
-		      color: transparent;
-		    }
-		    #RSS {
-		    	background: #ef7522;
-		    }
-		    .RSS:before {
-		      content: "\f09e";
-		    }
-		    #知乎 {
-		    	background: url('/img/zhihu.png') center no-repeat #0078d8;
-		    }
-		    .知乎:before {
-		      content: "\f073";
-		      color: transparent;
-		    }
-		    #豆瓣 {
-		    	background: url('/img/douban.png') center no-repeat #06c611;
-		    }
-		    .豆瓣:before {
-		      content: "\f073";
-		      color: transparent;
-		    }
-		    #Google {
-		    	background: #c83d20;
-		    }
-		    .Google:before {
-		      content: "\f1a0";
-		    }
-		    #Twitter {
-		    	background: #55cff8;
-		    }
-		    .Twitter:before {
-		      content: "\f099";
-		    }
-		    #LinkedIn {
-		    	background: #005a87;
-		    }
-		    .LinkedIn:before {
-		      content: "\f0e1";
-		    }
-		    #Email {
-		    	background: #6fc0e4;
-		    }
-		    .Email:before {
-		      content: "\f003";
-		    }
-		    #Facebook {
-		    	background: #3b5998;
-		    }
-		    .Facebook:before {
-		      content: "\f09a";
-		    }
-		    #QQ {
-		    	background: #1cbcef;
-		    }
-		    .QQ:before {
-		      content: "\f1d6";
-		    }
-		    #微信 {
-		    	background: #8cdc49;
-		    }
-		    .微信:before {
-		      content: "\f1d7";
-		    }
-		    #PayPal {
-		    	background: #03a4e4;
-		    }
-		    .PayPal:before {
-		      content: "\f1ed";
-		    }
-		    #StackOverflow {
-		    	background: #f48024;
-		    }
-		    .StackOverflow:before {
-		      content: "\f16c";
-		    }
-		    #Instagram {
-		    	background: #bab0a6;
-		    }
-		    .Instagram:before {
-		      content: "\f16d";
-		    }
-		    #Flickr {
-		    	background: #0365c8;
-		    }
-		    .Flickr:before {
-		      content: "\f16e";
-		    }
-		}
-	}
-	.switch-part{
-		width: 100%;
-		position: absolute;
-	}
-	.switch-part1{
-		left: 0;
-	}
-	.switch-part2{
-		left: 100%;
-		top: 20px;
-		overlay-x: hidden;
-		overflow-y: auto;
-		max-height: 200px;
-	}
-	.switch-part3{
-		left: 200%;
-		line-height: 30px;
-		.switch-friends-link{
-			margin-right: 9px;
-			border-radius: 3px;
-			padding: 5px;
-			&:hover{
-				background: #88acdb;
-				color: #fff;
-			}
-		}
-	}
-	.switch-part4{
-		left: 300%;
-		text-align: left;
-		line-height: 30px;
-	}
+    width:100%;
+    a {
+        color: #696969;
+        &:hover {
+            color: #B0A0AA;
+        }
+    }
+    .profilepic{
+        text-align: center;
+        display: block;
+        border: 5px solid #fff;
+        border-radius: 300px;
+        width: 128px;
+        height: 128px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        background: #88acdb;
+        -webkit-transition: all 0.2s ease-in;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        text-align: center;
+        img{
+            width: 20%;
+            height: 20%;
+            border-radius: 300px;
+            opacity: 0;
+            -webkit-transition: all 0.2s ease-in;
+            &.show{
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+            }
+        }
+        &:hover {
+            background: white;
+            border: 5px solid #88acdb;
+        };
+    }
+    .header-subtitle{
+        text-align: center;
+        color:#999;
+        font-size: 14px;
+        line-height: 25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .header-menu{
+        font-weight: 550;
+        line-height: 28px;
+        font-family: inherit;
+        cursor: pointer;
+        text-transform: uppercase;
+        float:none;
+        height: 140px;
+        margin-left: -12px;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-box-orient: horizontal;
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        li{
+            cursor: default;
+            a{
+                font-size: 14px;
+                min-width: 300px;
+            }
+        }
+    }
+    .switch-area{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        min-height: 500px;
+        font-size: 14px;
+        .switch-wrap{
+            transition: transform .3s ease-in;
+            position: relative;
+        }
+    }
+    .turn-left{
+        transform: translate(-100%, 0 );
+    }
+    .header-nav{
+        width: 100%;
+        position: absolute;
+        transition: transform .3s ease-in;
+        .social {
+            margin-right:11px;
+            margin-top:10px;
+            text-align: center;
+            font-family: Arial;
+            li {
+                display: inline-block;
+                width: 37px;
+                border-radius:50%;
+                margin-right: 3px;
+                margin-bottom: 6px;
+                font: 21px FontAwesome;
+                background: #6f7170;
+                opacity: .58;
+                text-align: center;
+                a {
+                    line-height: 37px;
+                    color: white;
+                }
+                &:hover {
+                    font-size: 23px;
+                    opacity: 1;
+                }
+                &:nth-child(5n), &:last-child {
+                    margin-right: 0;
+                }
+            }
+            #新浪微博 {
+                background:url('/img/weibo.png') center no-repeat #ecc260;
+            }
+            .新浪微博:before {
+              content: "\f18a";
+              color: transparent;
+            }
+            #GitHub {
+                background: url('/img/github.png') center no-repeat white;
+            }
+            .GitHub:before {
+              content: "\f113";
+              color: transparent;
+            }
+            #V2EX {
+                background: url('/img/v2ex.png') center no-repeat #e4cdb4;
+            }
+            .V2EX:before {
+              content: "\f073";
+              color: transparent;
+            }
+            #RSS {
+                background: #ef7522;
+            }
+            .RSS:before {
+              content: "\f09e";
+            }
+            #知乎 {
+                background: url('/img/zhihu.png') center no-repeat #0078d8;
+            }
+            .知乎:before {
+              content: "\f073";
+              color: transparent;
+            }
+            #豆瓣 {
+                background: url('/img/douban.png') center no-repeat #06c611;
+            }
+            .豆瓣:before {
+              content: "\f073";
+              color: transparent;
+            }
+            #Google {
+                background: #c83d20;
+            }
+            .Google:before {
+              content: "\f1a0";
+            }
+            #Twitter {
+                background: #55cff8;
+            }
+            .Twitter:before {
+              content: "\f099";
+            }
+            #LinkedIn {
+                background: #005a87;
+            }
+            .LinkedIn:before {
+              content: "\f0e1";
+            }
+            #Email {
+                background: #6fc0e4;
+            }
+            .Email:before {
+              content: "\f003";
+            }
+            #Facebook {
+                background: #3b5998;
+            }
+            .Facebook:before {
+              content: "\f09a";
+            }
+            #QQ {
+                background: #1cbcef;
+            }
+            .QQ:before {
+              content: "\f1d6";
+            }
+            #微信 {
+                background: #8cdc49;
+            }
+            .微信:before {
+              content: "\f1d7";
+            }
+            #PayPal {
+                background: #03a4e4;
+            }
+            .PayPal:before {
+              content: "\f1ed";
+            }
+            #StackOverflow {
+                background: #f48024;
+            }
+            .StackOverflow:before {
+              content: "\f16c";
+            }
+            #Instagram {
+                background: #bab0a6;
+            }
+            .Instagram:before {
+              content: "\f16d";
+            }
+            #Flickr {
+                background: #0365c8;
+            }
+            .Flickr:before {
+              content: "\f16e";
+            }
+        }
+    }
+    .switch-part{
+        width: 100%;
+        position: absolute;
+    }
+    .switch-part1{
+        left: 0;
+    }
+    .switch-part2{
+        left: 100%;
+        top: 20px;
+        overlay-x: hidden;
+        overflow-y: auto;
+        max-height: 200px;
+    }
+    .switch-part3{
+        left: 200%;
+        line-height: 30px;
+        .switch-friends-link{
+            margin-right: 9px;
+            border-radius: 3px;
+            padding: 5px;
+            &:hover{
+                background: #88acdb;
+                color: #fff;
+            }
+        }
+    }
+    .switch-part4{
+        left: 300%;
+        text-align: left;
+        line-height: 30px;
+    }
 }
 
 .duoshuo {
