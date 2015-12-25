@@ -179,7 +179,7 @@
   }
   ul,ol{
     font-size: 14px;
-    margin: 10px 0px;  
+    margin: 10px 0px;
   }
   li{
     ul,ol{
@@ -361,11 +361,12 @@
 @media (max-width: 1099px){
   #toc{
     display: none;
-  }  
+  }
 }
 
-@media (min-width: 1100px) { 
+@media (min-width: 1100px) {
   #toc{
+    z-index: 999;
     background-color: #fff;
     padding: 0 1em;
     border:1px solid #ddd;
@@ -391,8 +392,8 @@
         ol{
           margin: .5em 0 .5em 1em;
         }
-      }      
-    }   
+      }
+    }
   }
   .article2{
     margin-right: 211px;
@@ -400,4 +401,9 @@
   }
 }
 
-
+.toc-item span {
+display: table-cell;
+}
+span.toc-text {
+padding-left: 3px;
+}
