@@ -243,6 +243,7 @@
         font-family: inherit;
         &:hover{
             opacity: 1;
+            transform: scale(1.06);
         }
         &:before{
             content: " ";
@@ -293,6 +294,13 @@
         background: #88acdb;
         &:before{
             border-right-color:#88acdb;  
+        }
+    }
+    a:hover {
+        background-color: hover-color;
+        border-color: hover-color;
+        &::before {
+            border-right-color: hover-color;
         }
     }
 }

@@ -127,9 +127,6 @@
   li:hover {
     background: none;
   }
-  a:hover {
-    font-weight: bold;
-  }  
 }
 .article-info-index.article-info{
   padding-top: 20px;
@@ -340,12 +337,15 @@ line-height: 1.65em;
         transition: background 0.3s;
         opacity: 0.6;
         &:hover {
-            background: #9c9;
+            background: hover-color;
             opacity: 1;
         }
         &.hidden {
             visibility: hidden;
         }
+    }
+    &:hover {
+        transform: scale(1.06);
     }
 }
 
@@ -355,6 +355,9 @@ line-height: 1.65em;
     height: 2.5em;
     margin: 1em auto;
     background: rgba(158, 188, 226, .6);
+    &:hover {
+        background: #93b5e0;
+    }
 }
 
 .article-nav-title {
@@ -364,8 +367,7 @@ line-height: 1.65em;
         color: white;
     }
     a:hover {
-        font-weight: bold;
-        color: #4d4d4d;
+        font-style: italic;
     }
 }
 
@@ -509,16 +511,12 @@ li:hover {
     a {
         color: gray;
         &:hover {
-            font-weight: bold;
             color: #a3d2a3;
             text-decoration: underline;
         }
     }
     &:hover p .copy-path::after {
         content: "复制";
-    }
-    .post-url:hover {
-        font-weight: normal;
     }
     .copy-path {
         margin-left: 1em;
