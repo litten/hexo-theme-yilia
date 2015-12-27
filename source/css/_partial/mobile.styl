@@ -51,8 +51,9 @@
         margin-bottom: 10px;
     }
 }
-.header-subtitle{
-    padding: 0 24px;
+#header .header-subtitle{
+    padding: 0 3em;
+    font-size: 1em;
 }
 
 .article-info-index.article-info{
@@ -65,6 +66,7 @@
     padding-top: 10px;
     border: none;
 }
+
 .article-more-link{
     a{
         float:right;
@@ -91,24 +93,10 @@
     }
     .article-meta{
         width: auto;
-        height: 30px;
-        margin-top: -5px;
-        position: ralative;
-        .article-date{
-            font-size: 12px;
-            border-radius: 0;
-            color: #666;
-            background: none;
-            height: auto;
-            padding: 0;
+        .article-date {
             margin: 0;
-            width: 100%;
-            text-align: left;
-            margin-left: 10px;
-            time{
-                width: auto;
-                float: right;
-                margin-right: 10px;
+            time {
+                padding-right: .5em;
             }
         }
         .article-tag-list{
@@ -147,14 +135,28 @@
     }
 }
 
-.article-meta {
-  padding: 12px;
-
-}
 .article-inner {
   padding: 12px;
 }
 
+.archive-article-inner .article-meta {
+    top: 0;
+    margin-top: .5em;
+}
+
+.archives {
+    .archive-article {
+    padding: 0;
+    }
+    .archive-article-date {
+        margin-right: 0;
+    }
+    .article-info {
+    display: none;
+    }
+}
+
+.archive-article-inner .article-meta .archive-article-date
 
 .share{
     padding: 3px 10px;
@@ -174,6 +176,13 @@
     opacity: 1;
 }
 
+#page-nav {
+    margin-top: 1em;
+    .page-number {
+        margin-bottom: 1.5em;
+    }
+}
+
 .instagram .open-ins{
     left: 2px;
     top: -30px;
@@ -185,9 +194,7 @@
 .archives-wrap{
     margin: 10px 10px 0px;
     padding: 10px;
-    .archive-article-title{
-        font-size: 14px;
-    }
+    padding-right: 0;
     .archive-year-wrap{
         position: relative;
         padding: 0 0 0 0;
@@ -195,15 +202,9 @@
             padding: 0 0 0 0;
         }
     }
-    .article-meta{
-        .archive-article-date{
-            font-size: 12px;
-            margin-right: 10px;
-            margin-top: -5px;
-        }
-        .article-tag-list-link{
-            font-size: 12px;
-        }
+    h1 {
+        font-size: 1.2em;
+        margin-bottom: .3em;
     }
 }
 .archives{
@@ -216,10 +217,14 @@
 #footer {
     .footer-left{
         float: initial;
-        margin-bottom: 10px;
+        margin-bottom: .5em;
     }
     .footer-right{
         float: initial;
+        margin-bottom: 1em;
+    }
+    .visit {
+        margin: 0;
     }
 }
 
@@ -309,15 +314,18 @@
 }
 
 .hide-labels {
+    z-index: 100;
     position: fixed;
-    left: 42px;
-    top: 78px;
-    color: white;
-    opacity: .6;
-    &:hover {
-        color: none;
-        opacity: 1; 
-    }
+    left: .5em;
+    top: auto; 
+    bottom: 10px;
+    padding: .2em .4em;
+    border-radius: 6px;
+    border-style : outset;
+    opacity: .9;
+    background: rgba(255, 255, 255, .8);
+    font-weight: bold;
+    color: gray;
 }
 
 #post-nav-button {
