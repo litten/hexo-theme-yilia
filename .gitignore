@@ -1,2 +1,4 @@
 
 *.db
+
+*.DS_Store
