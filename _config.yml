@@ -60,7 +60,17 @@ share: true
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 #注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
-#duoshuo: 
+#duoshuo:
+
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭友言评论和多说评论
+#是否开启友言评论，设置on为true并填写友言id(注册后进入后台管理即可看到)
+#友言官网: http://www.uyan.cc/index.php
+#这里使用的是通用代码
+#由于友言的所有服务是在WEB环境下运行，所以必须在线上测试。
+#除非有构建虚拟运行环境和虚拟域名，在前台才能显示(可以使用nginx或者花生壳内网映射调试)。
+youyan:
+  on: true
+  id: 'your id'
 
 #是否开启云标签
 tagcloud: true

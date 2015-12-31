@@ -71,6 +71,10 @@
     }) %>
 <% } %>
 
+<% if (!index && theme.youyan && theme.youyan.on && post.comments) { %>
+  <%- partial('post/youyan') %>
+<% } %>
+
 <% if (!index && post.comments && config.disqus_shortname){ %>
 <section id="comments">
   <div id="disqus_thread"></div>
