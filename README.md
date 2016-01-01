@@ -135,10 +135,11 @@ Disable fancybox in certain post/page | 在某篇文章中关闭 fancybox:
 
 > Add `fancybox: false` in [front-matter](https://hexo.io/docs/front-matter.html)
 
-#### 5. Comment 多说评论:
-在 `themes/yelee/_config.yml` 中，按 `duoshuo: duoshuo-key` 填写。
+#### 5. Comment 评论:
+Disqus, duoshuo and youyan is supported, enable them in theme's "_config.yml".
+主题目测支持 Disqus，多说 和友言评论，自行在主题配置中开启。
 
-注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
+多说: http://duoshuo.com/create-site/ 登陆你的多说并创建站点，在 "domain" 中填入你设定的域名。请设置好自己专属的多说，不要再群聊了。
 
 > - [保留使用 Yilia 主题时的多说用户评论](https://github.com/MOxFIVE/hexo-theme-yelee/issues/1)
 

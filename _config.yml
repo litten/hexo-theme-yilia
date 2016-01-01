@@ -57,20 +57,32 @@ avatar: /img/avatar.png
 #是否开启分享
 share: true
 
-#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
-#注册多说后，地址前面的就是你的 duoshuo-key http://duoshuo-key.duoshuo.com
-#duoshuo:
+# >>> Conments 评论系统 <<<
+# Chose ONE as your comment system and keep others disable.
+# 选一个作为网站评论系统，其他保持禁用。
 
-#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭友言评论和多说评论
-#是否开启友言评论，设置on为true并填写友言id(注册后进入后台管理即可看到)
-#友言官网: http://www.uyan.cc/index.php
-#这里使用的是通用代码
-#由于友言的所有服务是在WEB环境下运行，所以必须在线上测试。
-#除非有构建虚拟运行环境和虚拟域名，在前台才能显示(可以使用nginx或者花生壳内网映射调试)。
+disqus: 
+  #on: true
+  shortname: 
+  # https://help.disqus.com/customer/en/portal/articles/466208-what-s-a-shortname-
+  # It is unnecessary to enable disqus here if 
+  # you have set "disqus_shortname" in your site's "_config.yml" 
+
+duoshuo: 
+  #on: true
+  domain: 
+  # 是否开启多说评论，http://duoshuo.com/create-site/
+  # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名
+  # http://你的多说域名.duoshuo.com
+
 youyan:
-  on: false
-  id: 'your id'
+  #on: true
+  id: 
+  # 是否开启友言评论，http://www.uyan.cc/index.php
+  # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
+  # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
+
+# >>> <<<
 
 #是否开启云标签
 tagcloud: true
@@ -96,8 +108,8 @@ aboutme: 专注于前端
 
 #Site Verification for Google and Baidu. HTML label content.
 #百度、谷歌站长验证。填写 HTML 标签 content
-#baidu_site: 
-#google_site: 
+baidu_site: 
+google_site: 
 
 #Keep TOC title on the same line.
 #目录中标题不换行
