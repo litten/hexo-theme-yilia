@@ -29,10 +29,15 @@
             $(".fa-bars, .fa-times").toggle();
             $(".post-list").toggle(300);
             if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200);
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
             }
             else {
-                $(".switch-btn, .switch-area").toggle(200);
+                $(".switch-btn, .switch-area").fadeToggle(300);
             }
         })
     </script>
