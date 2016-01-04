@@ -15,28 +15,29 @@
 
 <%- js('http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min') %>
 <script>
-    var toc_button = document.getElementById("tocButton");
-    var toc_div = document.getElementById("toc");
-    toc_button.onclick=function() {
-        if (toc_div.style.display == "none") {
-            toc_div.style.display = "block";
-            toc_button.value = "隐藏目录";
-            document.getElementById("switch-btn").style.display = "none";
-            document.getElementById("switch-area").style.display = "none";
-        }
-        else {
-            toc_div.style.display = "none";
-            toc_button.value = "显示目录";
-            document.getElementById("switch-btn").style.display = "block";
-            document.getElementById("switch-area").style.display = "block";
-        }
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
     }
 
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
     if ($(".toc").length < 1) {
-        $("#toc").css("display","none");
-        $("#tocButton").css("display","none");
-        $(".switch-btn").css("display","block");
-        $(".switch-area").css("display","block");
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
     }
 </script>
 
