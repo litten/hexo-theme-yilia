@@ -149,13 +149,16 @@
         -webkit-box-orient: vertical;
     }
     .header-menu{
+        menu-line-height = 28px
         font-weight: 550;
-        line-height: 28px;
+        line-height: menu-line-height;
         font-family: inherit;
         cursor: pointer;
         text-transform: uppercase;
-        float:none;
-        height: 140px;
+        float: none;
+        min-height: menu-line-height * 3px;
+        max-height: menu-line-height * 5px;
+        overflow: auto;
         margin-left: -12px;
         text-align: center;
         display: -webkit-box;
@@ -400,10 +403,6 @@
         height: 42px;
         font-size: 28px;
         background: rgba(215, 216, 215, .4);
-        border-bottom: 1px solid white;
-        &:last-child {
-            border-bottom: none;
-        };
         .fa {
             color: rgba(255, 255, 255, .8);
         }
@@ -413,6 +412,9 @@
                 color: white;
             }
         }
+    }
+    a:not(:last-child) {
+        border-bottom: 1px solid white;
     }
 }
 
