@@ -114,3 +114,16 @@ google_site:
 #Keep TOC title on the same line.
 #目录中标题不换行
 #toc_nowrap: true
+
+# >>> Style Customisation 样式自定义 <<<
+
+highlight_style:
+  #on: true
+  inline_code: 1  # Value: 0 - 9 可用
+  code_block: 1  # Value: 0 - 4 
+  # Set inline_code to style highlight text
+  # Chose a highlight theme for code block
+  # 通过 inline_code 切换内置文本高亮样式
+  # 通过 code_block 切换内置代码高亮配色主题
+
+# >>> <<<

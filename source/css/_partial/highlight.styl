@@ -1,17 +1,4 @@
-// https://github.com/chriskempson/tomorrow-theme
-// https://github.com/iissnan/hexo-theme-next/blob/master/source/css/_common/_vendor/highlight/theme.styl
-  highlight-background   = rgba(249, 249, 249, .5)
-  highlight-current-line = #efefef
-  highlight-selection    = #d6d6d6
-  highlight-foreground   = #4d4d4c
-  highlight-comment      = #8e908c
-  highlight-red          = #c82829
-  highlight-orange       = #f5871f
-  highlight-yellow       = #eab700
-  highlight-green        = #718c00
-  highlight-aqua         = #3e999f
-  highlight-blue         = #4271ae
-  highlight-purple       = #8959a8
+@require "customise/code-block"
 
 $code-block
   background: highlight-background
@@ -32,13 +19,6 @@ $line-numbers
   pre, code
     font-family: font-mono, font-chs
     font-size: 1em
-    
-  code
-    color: gray
-    background: rgba(248, 237, 223, .5)
-    padding: 0 0.3em
-    border-radius: 7px
-
   pre
     @extend $code-block
     code
@@ -114,6 +94,8 @@ $line-numbers
           font-weight: normal
           &:hover
             text-decoration: underline
+
+@require "customise/inline-code.styl"
 
 pre
   .comment
