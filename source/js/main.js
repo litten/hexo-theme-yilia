@@ -90,32 +90,7 @@ require([], function (){
           // 更多animation:
           // http://daneden.github.io/animate.css/
           var animationNames = [
-              // Attention Seekers
-              "bounce", "flash", "pulse", "rubberBand", "shake", "headShake", "swing", "tada", "wobble", "jello",
-
-              // Bouncing Entrances
-              "bounceIn", "bounceInDown", "bounceInLeft", "bounceInRight", "bounceInUp",
-
-              // Fading Entrances
-              "fadeIn", "fadeInDown", "fadeInDownBig", "fadeInLeft", "fadeInLeftBig", "fadeInRight", "fadeInRightBig", "fadeInUp", "fadeInUpBig",
-
-              // Flippers
-              "flip", "flipInX", "flipInY",
-
-              // Lightspeed
-              "lightSpeedIn",
-
-              // Rotating Entrances
-              "rotateIn", "rotateInDownLeft", "rotateInDownRight", "rotateInUpLeft", "rotateInUpRight",
-
-              // Zoom Entrances
-              "zoomIn", "zoomInDown", "zoomInLeft", "zoomInRight", "zoomInUp",
-
-              // Sliding Entrances
-              "slideInDown", "slideInLeft", "slideInRight", "slideInUp",
-
-              // Specials
-              "rollIn"
+            "pulse", "fadeIn","fadeInRight", "flipInX", "lightSpeedIn","rotateInUpLeft", "slideInUp","zoomIn",
             ],
             len = animationNames.length,
             randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
@@ -132,26 +107,6 @@ require([], function (){
       } else {
         $('.body-wrap > article').css({opacity: 1});
       }
-
-        /*if(yiliaConfig.isHome === true){
-            //content
-            function showArticle(){
-                $(".article").each(function(){
-                    if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
-                        $(this).removeClass("hidden").addClass("show");
-                        $(this).addClass("is-hiddened");
-                    }else{
-                        if(!$(this).hasClass("is-hiddened")){
-                            $(this).addClass("hidden");
-                        }
-                    }
-                });
-            }
-            $(window).on('scroll', function(){
-                showArticle();
-            });
-            showArticle();
-        }*/
 
     }
 
