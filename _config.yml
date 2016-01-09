@@ -39,7 +39,9 @@ background_image: 5
 # Content
 excerpt_link: more
 fancybox: true
-mathjax: true
+
+# Display Math(LaTeX, MathML...) | 数学公式支持
+mathjax: false
 
 # 是否开启动画效果
 animate: true
