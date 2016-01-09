@@ -28,10 +28,19 @@ define([], function(){
     }
 
     var slide = function(idx){
-        var $wrap = $(".switch-wrap");
-        $wrap.css({
-            "transform": "translate(-"+idx*100+"%, 0 )"
-        });
+        // 修复IE10+切换无效的bug
+        var $wrap = $(".switch-wrap"),
+          transform = [
+              '-webkit-transform: translate(-' + idx * 100 + '%, 0);',
+              '-moz-transform: translate(-' + idx * 100 + '%, 0);',
+              '-o-transform: translate(-' + idx * 100 + '%, 0);',
+              '-ms-transform: translate(-' + idx * 100 + '%, 0);',
+              'transform: translate(-' + idx * 100 + '%, 0);'
+          ];
+        //$wrap.css({
+        //    "transform": "translate(-"+idx*100+"%, 0 )"
+        //});
+        $wrap[0].style.cssText = transform.join('');
         $(".icon-wrap").addClass("hide");
         $(".icon-wrap").eq(idx).removeClass("hide");
     }
