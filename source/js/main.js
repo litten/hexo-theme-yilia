@@ -95,14 +95,40 @@ require([], function (){
             len = animationNames.length,
             randomAnimationName = animationNames[Math.ceil(Math.random() * len) - 1];
 
+          // ie9 不支持css3 keyframe动画, safari不支持requestAnimationFrame, 不使用随机动画，切回原来的动画
+          if (!window.requestAnimationFrame) {
+              $('.body-wrap > article').css({opacity: 1});
+
+              if (navigator.userAgent.match(/Safari/i)) {
+                  function showArticle(){
+                      $(".article").each(function(){
+                          if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
+                              $(this).removeClass("hidden").addClass("show");
+                              $(this).addClass("is-hiddened");
+                          }else{
+                              if(!$(this).hasClass("is-hiddened")){
+                                  $(this).addClass("hidden");
+                              }
+                          }
+                      });
+                  }
+                  $(window).on('scroll', function(){
+                      showArticle();
+                  });
+                  showArticle();
+              }
+              return;
+          }
+          // document.body有些浏览器不支持监听scroll，所以使用默认的document.documentElement
           ScrollReveal({
-            container: document.querySelector('body'),
             duration: 0,
             afterReveal: function (domEl) {
+              // safari不支持requestAnimationFrame不支持document.documentElement的onscroll所以这里不会执行
               // 初始状态设为opacity: 0, 动画效果更平滑一些(由于脚本加载是异步，页面元素渲染后在执行动画，感觉像是延时)
               $(domEl).addClass('animated ' + randomAnimationName).css({opacity: 1});
             }
           }).reveal('.body-wrap > article');
+
         });
       } else {
         $('.body-wrap > article').css({opacity: 1});
