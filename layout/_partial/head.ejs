@@ -28,6 +28,9 @@
   <% if (theme.favicon){ %>
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
+  <% if (theme.animate){ %>
+  <%- css('//cdn.bootcss.com/animate.css/3.5.0/animate.min.css') %>
+  <% } %>
   <%- css('css/style') %>
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
