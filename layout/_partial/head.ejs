@@ -42,4 +42,19 @@
       <meta name="google-site-verification" content="<%- theme.google_site %>" />
     <% } %>
   <% } %>
+  <% if (theme.fancybox){ %>
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <% } %>
+  <script>
+      var yiliaConfig = {
+          fancybox: <%=theme.fancybox%>,
+          animate: <%=theme.animate%>,
+          isHome: <%=is_home()%>,
+          isPost: <%=is_post()%>,
+          isArchive: <%=is_archive()%>,
+          isTag: <%=is_tag()%>,
+          isCategory: <%=is_category()%>,
+          open_in_new: <%=theme.open_in_new%>
+      }
+  </script>
 </head>
