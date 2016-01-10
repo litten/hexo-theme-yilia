@@ -503,9 +503,10 @@ li:hover {
     border: 1px solid lightgray;
     font-size: .93em;
     line-height: 1.6em;
-    word-break: break-word;
+    word-break: break-all;
     background: rgba(255, 255, 255, .4);
     span {
+        display: inline-block;
         margin-right: 1em;
         color: #B5B5B5;
         font-weight: bold;
@@ -521,6 +522,7 @@ li:hover {
         content: "复制";
     }
     .copy-path {
+        display: inline-block;
         margin-left: 1em;
         &:hover {
             color: gray;
