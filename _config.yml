@@ -18,9 +18,9 @@ avatar: /img/avatar.png
 favicon: /favicon.png
 
 # Social info. Bar | 社交信息展示
-## Encrypt email 加密邮件地址 http://tool.chacuo.net/commonhideinfo
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
-## RSS require a plugin to take effect | 使用 RSS 需先安装对应插件
+## Encrypt email 加密邮件地址 http://ctrlq.org/encode/
+## RSS requires a plugin to take effect | 使用 RSS 需先安装对应插件
 ## https://github.com/hexojs/hexo-generator-feed
 subnav:
   Email: "mailto:123@123.com"
