@@ -1,15 +1,28 @@
-# Header
+
+# >>> Basic Setup | 基础设置 <<<
+
+# Header | 主菜单
+## About Page: `hexo new page about`
+## Tags Cloud Page: `hexo new page tags`
 menu:
   主页: /
   所有文章: /archives/
-  # 随笔: /tags/随笔
+  #随笔: /tags/随笔
   标签云: /tags/
   关于我: /about/
 
-# SubNav
+# Link to your avatar | 填写头像地址
+avatar: /img/avatar.png
+
+# Small icon of Your site | 站点小图标地址
+favicon: /favicon.png
+
+# Social info. Bar | 社交信息展示
+## Encrypt email 加密邮件地址 http://tool.chacuo.net/commonhideinfo
+## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
+## RSS require a plugin to take effect | 使用 RSS 需先安装对应插件
+## https://github.com/hexojs/hexo-generator-feed
 subnav:
-  # RSS plugin: https://github.com/hexojs/hexo-generator-feed
-  # Encrypt email 加密邮件地址 http://tool.chacuo.net/commonhideinfo
   Email: "mailto:123@123.com"
   #新浪微博: "sina weibo"
   GitHub: "#"
@@ -28,36 +41,6 @@ subnav:
   #Instagram: "#"
   #Flickr: "#"
 
-# Customize feed link 自定义订阅地址
-rss: /atom.xml
-
-# "5": show images form bg-1.jpg to bg-5.jpg in `/yelee/source/background/`
-# "5": 显示`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片
-# "0": white-gray background | 淳朴灰白背景
-background_image: 5
-
-# Content
-excerpt_link: more
-fancybox: true
-
-# Display Math(LaTeX, MathML...) | 数学公式支持
-mathjax: false
-
-# 是否开启动画效果
-animate: true
-
-# 是否在新窗口打开链接
-open_in_new: false
-
-# Miscellaneous
-#google_analytics: ''
-favicon: /favicon.png
-
-#你的头像url
-avatar: /img/avatar.png
-
-#是否开启分享
-share: true
 
 # >>> Conments 评论系统 <<<
 # Chose ONE as your comment system and keep others disable.
@@ -74,8 +57,8 @@ duoshuo:
   #on: true
   domain: 
   # 是否开启多说评论，http://duoshuo.com/create-site/
-  # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名
-  # http://你的多说域名.duoshuo.com
+  # 使用上面网址登陆你的多说，然后创建站点，在 domain 中填入你设定的域名前半部分
+  # http://<要填的部分>.duoshuo.com (domain只填上<>里的内容，不要填整个网址)
 
 youyan:
   #on: true
@@ -84,40 +67,14 @@ youyan:
   # id 中填写你的友言用户数字ID，注册后进入后台管理即可查看
   # 友言服务在 Web 环境下运行，普通本地环境无法查看，请部署后在线上测试。
 
-# >>> <<<
-
-#是否开启云标签
-tagcloud: true
-
-#是否开启友情链接
-#不开启——
-#friends: false
-#开启——
-friends:
-  Hexo: https://hexo.io
-  GitHub: https://pages.github.com/
-  MOxFIVE: http://moxfive.xyz/
-
-#是否开启“关于我”。
-#不开启——
-#aboutme: false
-#开启——
-aboutme: 专注于前端
-
-#是否显示边栏中的搜索框 
-#Search Box in left column
-#search_box: true
-
-#Site Verification for Google and Baidu. HTML label content.
-#百度、谷歌站长验证。填写 HTML 标签 content
-baidu_site: 
-google_site: 
-
-#Keep TOC title on the same line.
-#目录中标题不换行
-#toc_nowrap: true
 
 # >>> Style Customisation 样式自定义 <<<
+
+# Background | 背景
+## "5": show images form bg-1.jpg to bg-5.jpg in `/yelee/source/background/`
+## "5": 显示`/yelee/source/background/`文件夹中 bg-1.jpg 到 bg-5.jpg 这5张图片
+## "0": white-gray background | 淳朴灰白背景
+background_image: 5
 
 highlight_style:
   #on: true
@@ -128,4 +85,65 @@ highlight_style:
   # 通过 inline_code 切换内置文本高亮样式
   # 通过 code_block 切换内置代码高亮配色主题
 
-# >>> <<<
+# 目录中标题不换行
+# Keep TOC title on the same line | 
+toc_nowrap: false
+
+# 自定义"阅读全文"链接按钮的显示文字
+# Customize the text on excerpt link
+excerpt_link: more
+
+# 是否显示边栏中的搜索框（仅样式，未添加搜索功能）
+# Search Box in left column
+search_box: false
+
+# 是否开启主页及加载头像时的动画效果
+# Animation in Homepage and Loading avatar
+animate: true
+
+
+# >>> Small features | 小功能设置 <<<
+
+# 是否开启边栏多标签切换
+# Birdhouse button in left column
+tagcloud: true
+
+# Blogroll, Link exchange | 友情链接
+friends:
+  Hexo: https://hexo.io
+  GitHub: https://pages.github.com/
+  MOxFIVE: http://moxfive.xyz/
+#friends: false
+
+#是否开启“关于我”。
+aboutme: 专注于前端
+#aboutme: false
+
+# 是否在新窗口打开链接
+# Open ALL link in a new tab
+open_in_new: false
+
+# Customize feed link 自定义订阅地址
+rss: /atom.xml
+
+
+# >>> Vendors | 第三方工具 & 服务 <<<
+
+# images viewer | 图片浏览器
+## http://www.fancyapps.com/fancybox/
+fancybox: true
+
+# Display Math(LaTeX, MathML...) | 数学公式支持
+## https://www.mathjax.org/
+mathjax: false
+
+# Socail Share | 是否开启分享
+share: true
+
+# 百度、谷歌站长验证。填写 HTML 标签 content
+# Site Verification for Google and Baidu. HTML label content.
+baidu_site: 
+google_site: 
+
+# Fill in Google Analytics tracking ID, #e.g. UA-XXXXX-X
+google_analytics: 
