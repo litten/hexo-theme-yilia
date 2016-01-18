@@ -1,0 +1,36 @@
+blockquote
+    padding .4em 20px
+    margin-top 10px
+    border-left 4px solid rgba(147, 181, 224, .4)
+    background rgba(255,255,255,0.4)
+    p
+        margin-top 0
+    blockquote
+        border-left none
+
+    blockquote_style = hexo-config("blockquote_style.on")
+    blockquote = hexo-config("blockquote_style.blockquote")
+
+    if blockquote_style
+        if blockquote
+            border-left 5px solid rgba(112, 134, 142, .85)
+            background rgba(255, 255, 255, .7)
+        if blockquote == "2"
+            border-left 10px solid rgba(102,128,153,0.08)
+            background rgba(102,128,153,0.08)
+        if blockquote == "3"
+            border-left 5px solid rgba(255, 224, 112, .6)
+            background rgba(255, 244, 204, .6)
+        if blockquote == "4"
+            border-left 5px solid rgba(85, 138, 187, .8)
+            background rgba(255, 255, 255, .7)
+        if blockquote == "5"
+            border-left-color #ddd
+            background none
+        if blockquote == "6"
+            border-left 5px solid rgba(0, 153, 100, .62)
+            padding 10.5px 21px
+            background none
+        if blockquote == "7"
+            border-left 3px solid rgba(0,0,0,0.8)
+            background none

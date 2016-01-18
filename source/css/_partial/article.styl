@@ -141,7 +141,8 @@
   margin: -30px 0 20px 30px;
 }
 .article-entry{
-line-height: 1.65em;
+  @require "customise/blockquote"
+  line-height: 1.65em;
   padding:0 2em;
   a:hover {
     text-decoration: underline;
@@ -155,18 +156,6 @@ line-height: 1.65em;
     margin: 0.1em
     font-size: 1.1em;
   }
-  blockquote {
-  padding: .4em 20px;
-  margin-top: 10px;
-  border-left: 4px solid rgba(147, 181, 224, .4);
-  background: rgba(255,255,255,0.4);
-  p{
-    margin-top: 0;
-  }
-  blockquote {
-    border-left: none;
-  }
-}
   em {
     font-style: italic;
   }

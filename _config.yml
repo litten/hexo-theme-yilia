@@ -78,12 +78,17 @@ background_image: 5
 
 highlight_style:
   #on: true
-  inline_code: 1  # Value: 0 - 9 可用
+  inline_code: 1  # Value: 0 - 9 可选
   code_block: 1  # Value: 0 - 4 
   # Set inline_code to style highlight text
   # Chose a highlight theme for code block
   # 通过 inline_code 切换内置文本高亮样式
   # 通过 code_block 切换内置代码高亮配色主题
+
+blockquote_style:
+  #on: true
+  blockquote: 1  # Value: 0 - 7 可选
+  # 自定义文章「引用部分」的样式
 
 # 目录中标题不换行
 # Keep TOC title on the same line | 
