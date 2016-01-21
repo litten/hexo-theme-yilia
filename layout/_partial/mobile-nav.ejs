@@ -6,7 +6,11 @@
     <div class="intrude-less">
         <header id="header" class="inner">
             <a href="/" class="profilepic">
-                <img lazy-src="<%=theme.avatar%>" class="js-avatar">
+                <% if (theme.animate){ %>
+                    <img lazy-src="<%=theme.avatar%>" class="js-avatar">
+                <% } else { %>
+                    <img src="<%=theme.avatar%>" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                <% } %>
             </a>
             <hgroup>
               <h1 class="header-author"><a href="/" title="回到主页"><%=theme.author%></a></h1>
