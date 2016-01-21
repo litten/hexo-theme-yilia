@@ -8,17 +8,26 @@
                 <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
             </div>
         </div>
-        <div class="visit">
-            <span id="busuanzi_container_site_pv" style='display:none'>
-                <span id="site-visit" >本站到访数: 
-                    <span id="busuanzi_value_site_uv"></span>
-                </span>
-            </span>
-            <span id="busuanzi_container_page_pv" style='display:none'>
-                <span id="page-visit">, 本页阅读量: 
-                    <span id="busuanzi_value_page_pv"></span>
-                </span>
-            </span>
-        </div>
+        <% if (theme.visit_counter.on) { %>
+            <div class="visit">
+                <% if (theme.visit_counter.site_visit) { %>
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" ><%= theme.visit_counter.site_visit %>: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                <% } %>
+                <% if (theme.visit_counter.site_visit && theme.visit_counter.page_visit) { %>
+                    <span>, </span>
+                <% } %>
+                <% if (theme.visit_counter.page_visit) { %>
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"><%= theme.visit_counter.page_visit %>: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                <% } %>
+            </div>
+        <% } %>
     </div>
 </footer>
