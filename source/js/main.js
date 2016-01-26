@@ -140,7 +140,7 @@ require([], function (){
     if(yiliaConfig.open_in_new == true){
         $(".article a[href]").attr("target", "_blank")
     }
-    $(".archive-article-title").attr("target", "_blank");
+    $(".archive-article-title, .github-widget a").attr("target", "_blank");
 
     //随机颜色
     var colorList = ["#6da336", "#ff945c", "#66CC66", "#99CC99", "#CC6666", "#76becc", "#c99979", "#918597", "#4d4d4d"];
