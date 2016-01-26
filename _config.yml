@@ -162,3 +162,7 @@ visit_counter:
   on: true
   site_visit: 本站到访数
   page_visit: 本页阅读量
+
+# GitHub Repo Widget
+# https://github.com/hustcc/GitHub-Repo-Widget.js
+github_widget: false
