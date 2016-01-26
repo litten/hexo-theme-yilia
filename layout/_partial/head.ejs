@@ -29,7 +29,10 @@
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
   <% if (theme.animate){ %>
-  <%- css('//cdn.bootcss.com/animate.css/3.5.0/animate.min.css') %>
+      <%- css('//cdn.bootcss.com/animate.css/3.5.0/animate.min.css') %>
+  <% } %>
+  <% if (theme.jquery_ui){ %>
+      <link href="//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css" rel="stylesheet">
   <% } %>
   <%- css('css/style') %>
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">

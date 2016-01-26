@@ -109,6 +109,9 @@ search_box: false
 # Animation in Homepage and Loading avatar
 animate: true
 
+# Load jQuery UI to style tooltips
+# 工具提示框样式美化
+jquery_ui: false
 
 # >>> Small features | 小功能设置 <<<
 

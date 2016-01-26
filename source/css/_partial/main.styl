@@ -478,3 +478,16 @@
 if hexo-config("github_widget")
     .article-entry .github-widget h3::after
         content none
+
+if hexo-config("jquery_ui")
+    .ui-tooltip
+        padding 6px
+        max-width 30em
+        box-shadow 0 0 .8em rgba(0, 0, 0, .6)
+        color white
+        font-family font-sans, font-chs
+        font-size .9em
+        background rgba(0, 0, 0, .65)
+
+    body .ui-tooltip
+        border 1px solid white
