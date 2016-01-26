@@ -216,12 +216,20 @@
                     margin-right: 0;
                 }
             }
-            #新浪微博 {
-                background:url('/img/weibo.png') center no-repeat #ecc260;
-            }
-            .新浪微博:before {
+            
+            .新浪微博::before,
+            .V2EX::before,
+            .知乎::before,
+            .豆瓣::before,
+            .TiddlyWiki::before,
+            .SegmentFault::before,
+            .简书::before,
+            #网易云音乐::before {
               content: "\f18a";
               color: transparent;
+            }
+            #新浪微博 {
+                background:url('/img/weibo.png') center no-repeat #ecc260;
             }
             #GitHub {
                 background: url('/img/github.png') center no-repeat white;
@@ -233,10 +241,6 @@
             #V2EX {
                 background: url('/img/v2ex.png') center no-repeat #e4cdb4;
             }
-            .V2EX:before {
-              content: "\f073";
-              color: transparent;
-            }
             #RSS {
                 background: #ef7522;
             }
@@ -246,16 +250,8 @@
             #知乎 {
                 background: url('/img/zhihu.png') center no-repeat #0078d8;
             }
-            .知乎:before {
-              content: "\f073";
-              color: transparent;
-            }
             #豆瓣 {
                 background: url('/img/douban.png') center no-repeat #06c611;
-            }
-            .豆瓣:before {
-              content: "\f073";
-              color: transparent;
             }
             #Google {
                 background: #c83d20;
@@ -322,6 +318,42 @@
             }
             .Flickr:before {
               content: "\f16e";
+            }
+            #Medium {
+                background: #00ab6b;
+            }
+            .Medium:before {
+              content: "\f23a";
+            }
+            #reddit {
+                background: #0278d1;
+            }
+            .reddit:before {
+              content: "\f281";
+            }
+            #TiddlyWiki {
+                background: url('/img/TiddlyWiki.png') center no-repeat #6283dd;
+            }
+            #Tumblr {
+                background: #3a5976;
+            }
+            .Tumblr:before {
+              content: "\f173";
+            }
+            #_500px {
+                background: #0099e5;
+            }
+            ._500px:before {
+              content: "\f26e";
+            }
+            #SegmentFault {
+                background: url('/img/SegmentFault.png') center no-repeat #018f56;
+            }
+            #简书 {
+                background: url('/img/简书.png') center no-repeat #e99888;
+            }
+            #网易云音乐 {
+                background: url('/img/网易云音乐.png') center no-repeat #e51e02;
             }
         }
     }

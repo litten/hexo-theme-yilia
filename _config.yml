@@ -22,6 +22,7 @@ favicon: /favicon.png
 ## Encrypt email 加密邮件地址 http://ctrlq.org/encode/
 ## RSS requires a plugin to take effect | 使用 RSS 需先安装对应插件
 ## https://github.com/hexojs/hexo-generator-feed
+
 subnav:
   Email: "mailto:123@123.com"
   #新浪微博: "sina weibo"
@@ -30,6 +31,9 @@ subnav:
   RSS: "/atom.xml"
   #知乎: "zhihu"
   #豆瓣: "douban"
+  #简书: "jianshu"
+  #SegmentFault: ""
+  #网易云音乐: "netease"
   #Facebook: "#"
   #Google: "#"
   #Twitter: "#"
@@ -40,7 +44,11 @@ subnav:
   #StackOverflow: "#"
   #Instagram: "#"
   #Flickr: "#"
-
+  #reddit: ""
+  #Medium: ""
+  #TiddlyWiki: ""
+  #Tumblr: ""
+  #_500px: ""
 
 # >>> Conments 评论系统 <<<
 # Chose ONE as your comment system and keep others disable.
