@@ -151,11 +151,24 @@ Remove toc and the button via putting `toc: false` before "---" at [post].md.
 
 文章中默认显示目录和对应切换按钮，在文章 “---” 前输入 `toc: false` 关闭目录。
 
+Hide toc in default | 默认不显示目录
+
+> Set `toc: false` in `yelee/_config.yml`. 
+
+(*Set `toc: true` in front-matter to show it in certain post*)
+
+
 #### 7. Copyright info. 文章版权信息:
 
-Hide this  via putting `original: false` to post's front-matter.
+Hide this via putting `original: false` to post's front-matter.
 
 在文章顶部插入行 `original: false` 关闭文章版权声明框
+
+Hide Copyright info. in default | 默认不显示版权信息
+
+> Set `copyright: false` in `yelee/_config.yml`. 
+
+(*Set `original: true` in front-matter to show it in certain post*)
 
 #### 8. 404 Page:
 

@@ -101,6 +101,12 @@ blockquote_style:
 # 左边栏宽度 px
 left_col_width: 300
 
+# Copyright info. of post | 文末版权信息
+copyright: true
+
+# Table of contents | 文章目录
+toc: true
+
 # 目录中标题不换行
 # Keep TOC title on the same line | 
 toc_nowrap: false
