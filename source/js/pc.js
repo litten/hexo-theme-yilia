@@ -109,5 +109,42 @@ define([], function(){
 });
 
 $(function() {
-    $(document).tooltip();
+    $(document).tooltip({
+        show: {
+            effect: 'blind',
+            delay: 250,
+            duration: 55,
+        }
+    })
+    $("#scroll").tooltip({
+        show: {
+            effect: 'clip',
+            delay: 600,
+            duration: 50,
+        }
+    })
+    $("#tocButton, #comments").tooltip({
+        show: {
+            delay: 1200,
+        }
+    })
+    $("#post-nav-button").tooltip({
+        show: {
+            effect: 'clip',
+            delay: 280,
+            duration: 65,
+        }
+    })
+    $("#post-nav-button > a:nth-child(2)").tooltip({
+        show: {
+            delay: 1500,
+        }
+    })
+    $(".social").tooltip({
+        show: {
+            effect: 'scale',
+            delay: 350,
+            duration: 70,
+        }
+    })
 });
