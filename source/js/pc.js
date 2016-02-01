@@ -109,6 +109,9 @@ define([], function(){
 });
 
 $(function() {
+    // if _config.yml => jquery_ui: false
+    if (!$().tooltip) return;
+
     $(document).tooltip({
         show: {
             effect: 'blind',
