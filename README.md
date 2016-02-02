@@ -137,9 +137,9 @@ Disable fancybox in certain post/page | 在某篇文章中关闭 fancybox:
 
 #### 5. Comment 评论:
 Disqus, duoshuo and youyan is supported, enable them in theme's "_config.yml".
-主题目测支持 Disqus，多说 和友言评论，自行在主题配置中开启。
+主题目前支持 Disqus，多说 及 友言评论，请自行在主题配置中开启。
 
-多说: http://duoshuo.com/create-site/ 登陆你的多说并创建站点，在 "domain" 中填入你设定的域名。请设置好自己专属的多说，不要再群聊了。
+多说: http://duoshuo.com/create-site/ 登陆你的多说并创建站点，在 "domain" 中填入你设定的域名的前半部分。比如完整域名是: `http://moxfive.duoshuo.com`，只需填入 `moxfive` 即可。请设置好自己专属的多说，不要再群聊了。
 
 > - [保留使用 Yilia 主题时的多说用户评论](https://github.com/MOxFIVE/hexo-theme-yelee/issues/1)
 
