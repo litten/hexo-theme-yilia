@@ -111,6 +111,7 @@ define([], function(){
 $(function() {
     // if _config.yml => jquery_ui: false
     if (!$().tooltip) return;
+    if (navigator.userAgent.match(/(iPhone|iPad|Android|ios|PlayBook|Touch)/i)) return;
     $("[title]").tooltip({
         show: {
             effect: 'blind',
