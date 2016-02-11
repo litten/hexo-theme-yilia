@@ -1,0 +1,66 @@
+#header .header-nav .social
+    margin-top:10px
+    text-align center
+    font-family Arial
+    li
+        display inline-block
+        width 37px
+        border-radius:50%
+        margin-right 3px
+        margin-bottom 6px
+        font 23px FontAwesome
+        background #6f7170
+        opacity .58
+        text-align center
+        a
+            line-height 37px
+            color white
+        &:hover
+            opacity 1
+            transform scale(1.1)
+        &:nth-child(5n), &:last-child
+            margin-right 0
+
+    img-logo = {
+        "新浪微博": #ecc260
+        "知乎": #0078d8
+        "豆瓣": #06c611
+        GitHub: white
+        V2EX: #e4cdb4
+        TiddlyWiki: #6283dd
+        "简书": #e99888
+        SegmentFault: #018f56
+        "网易云音乐": #e51e02
+        "虾米音乐": #ff6a00
+    }
+
+    for name, color in img-logo
+        .{name}:before
+            content '\f18a'
+            color transparent
+        #{name}
+            background: url('/img/' + name + '.png') center no-repeat color
+
+    // icon from Font Awesome
+    font-logo = RSS f09e #ef7522, 
+                Google f1a0 #c83d20,
+                Twitter f099 #55cff8,
+                LinkedIn f0e1 #005a87,
+                Email f003 #6fc0e4,
+                Facebook f09a #3b5998,
+                QQ f1d6 #1cbcef,
+                '微信' f1d7 #8cdc49,
+                PayPal f1ed #03a4e4,
+                StackOverflow f16c #f48024,
+                Instagram f16d #bab0a6,
+                Flickr f16e #0365c8,
+                reddit f281 #0278d1,
+                Medium f23a #00ab6b,
+                Tumblr f173 #3a5976,
+                _500px f26e #0099e5
+
+    for i in font-logo
+        .{i[0]}:before
+            content '\' + i[1]
+        #{i[0]}
+            background i[2]
