@@ -58,9 +58,19 @@
           isTag: <%=is_tag()%>,
           isCategory: <%=is_category()%>,
           open_in_new: <%=theme.open_in_new%>,
-          rootUrl: <%=theme.root_url%>,
       }
   </script>
+
+  <% if (theme.root_url){ %>
+      <script>
+          yiliaConfig.rootUrl = <%=theme.root_url%>;
+      </script>
+  <% } else {%>
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  <% } %>
+
   <% if (theme.baidu_tongji){ %>
       <script>
           var _hmt = _hmt || [];
