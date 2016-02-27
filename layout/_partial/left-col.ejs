@@ -1,11 +1,11 @@
 <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
-        <a href="<%- theme.root_url %>" class="profilepic">
+        <a href="<%= config.root %>" class="profilepic">
             <img src="<%- theme.root_url %><%=theme.avatar%>" class="animated zoomIn">
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="<%- theme.root_url %>"><%=theme.author%></a></h1>
+          <h1 class="header-author"><a href="<%= config.root %>"><%=theme.author%></a></h1>
         </hgroup>
 
         <% if (theme.subtitle){ %>
