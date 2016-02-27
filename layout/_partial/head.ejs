@@ -26,7 +26,7 @@
     <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
   <% } %>
   <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.favicon %>">
+    <link rel="icon" href="<%- theme.root_url %><%- theme.favicon %>">
   <% } %>
   <% if (theme.animate){ %>
       <%- css('//cdn.bootcss.com/animate.css/3.5.0/animate.min.css') %>
@@ -35,8 +35,8 @@
       <link href="//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css" rel="stylesheet">
   <% } %>
   <%- css('css/style') %>
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <%- css('font-awesome/css/font-awesome.min') %>
+  <link rel="apple-touch-icon" href="<%- theme.root_url %>/apple-touch-icon.png">
   <% if (is_home()){ %>
     <% if (theme.baidu_site) { %> 
       <meta name="baidu-site-verification" content="<%- theme.baidu_site %>" />
@@ -46,7 +46,7 @@
     <% } %>
   <% } %>
   <% if (theme.fancybox){ %>
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <%- css('fancybox/jquery.fancybox') %>
   <% } %>
   <script>
       var yiliaConfig = {
@@ -57,7 +57,8 @@
           isArchive: <%=is_archive()%>,
           isTag: <%=is_tag()%>,
           isCategory: <%=is_category()%>,
-          open_in_new: <%=theme.open_in_new%>
+          open_in_new: <%=theme.open_in_new%>,
+          rootUrl: <%=theme.root_url%>,
       }
   </script>
   <% if (theme.baidu_tongji){ %>

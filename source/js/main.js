@@ -2,14 +2,14 @@ require([], function (){
 
     var isMobileInit = false;
     var loadMobile = function(){
-        require(['/js/mobile.js'], function(mobile){
+        require([yiliaConfig.rootUrl + 'js/mobile.js'], function(mobile){
             mobile.init();
             isMobileInit = true;
         });
     }
     var isPCInit = false;
     var loadPC = function(){
-        require(['/js/pc.js'], function(pc){
+        require([yiliaConfig.rootUrl + 'js/pc.js'], function(pc){
             pc.init();
             isPCInit = true;
         });
@@ -55,7 +55,7 @@ require([], function (){
 
     //是否使用fancybox
     if(yiliaConfig.fancybox === true){
-        require(['/fancybox/jquery.fancybox.js'], function(pc){
+        require([yiliaConfig.rootUrl + 'fancybox/jquery.fancybox.js'], function(pc){
             var isFancy = $(".isFancy");
             if(isFancy.length != 0){
                 var imgArr = $(".article-inner img");
@@ -72,7 +72,7 @@ require([], function (){
     //是否开启动画
     if(yiliaConfig.animate === true){
 
-        require(['/js/jquery.lazyload.js'], function(){
+        require([yiliaConfig.rootUrl + 'js/jquery.lazyload.js'], function(){
             //avatar
             $(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
             $(".js-avatar")[0].onload = function(){

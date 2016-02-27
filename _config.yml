@@ -17,6 +17,11 @@ avatar: /img/avatar.png
 # Small icon of Your site | 站点小图标地址
 favicon: /favicon.png
 
+# If your site' url is 'http://yoursite.com/blog', set root_url as '/blog/'
+# 网站若存放在子目录，请按上面格式填写
+# https://hexo.io/docs/configuration.html#URL
+root_url: 
+
 # Social info. Bar | 社交信息展示
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
 ## Encrypt email 加密邮件地址 http://ctrlq.org/encode/

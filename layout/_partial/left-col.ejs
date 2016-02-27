@@ -1,11 +1,11 @@
 <div class="overlay"></div>
 <div class="intrude-less">
     <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="<%=theme.avatar%>" class="animated zoomIn">
+        <a href="<%- theme.root_url %>" class="profilepic">
+            <img src="<%- theme.root_url %><%=theme.avatar%>" class="animated zoomIn">
         </a>
         <hgroup>
-          <h1 class="header-author"><a href="/"><%=theme.author%></a></h1>
+          <h1 class="header-author"><a href="<%- theme.root_url %>"><%=theme.author%></a></h1>
         </hgroup>
 
         <% if (theme.subtitle){ %>
@@ -64,7 +64,7 @@
                     <nav class="header-menu">
                         <ul>
                         <% for (var i in theme.menu){ %>
-                            <li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+                            <li><a href="<%- theme.root_url %><%- url_for(theme.menu[i]) %>"><%= i %></a></li>
                         <%}%>
                         </ul>
                     </nav>
