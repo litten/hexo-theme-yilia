@@ -129,6 +129,16 @@ define([], function(){
         }, false);
     };
 
+    var resetTags = function(){
+        var tags = $(".tagcloud a");
+        tags.css({"font-size": "12px"});
+        for(var i = 0; i < tags.length; i++){
+            var num = parseInt(4*Math.random()) + 1;
+            tags.eq(i).addClass("color" + num);
+        };
+        $(".article-category a:nth-child(-n+2)").attr("class", "color5");
+    }
+
     return{
         init: function(){
             //构造函数需要的参数

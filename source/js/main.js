@@ -149,11 +149,4 @@ require([], function (){
     $("#container .left-col .overlay").css({"background-color": colorList[id],"opacity": .3});
     //移动端
     $("#container #mobile-nav .overlay").css({"background-color": colorList[id],"opacity": .7});
-
-    var tags = $(".tagcloud a");
-    for(var i = 0; i < tags.length; i++){
-        var num = parseInt(4*Math.random()) + 1;
-        tags.eq(i).addClass("color" + num);
-    };
-    $(".article-category a:nth-child(-n+2)").attr("class", "color5");
 });

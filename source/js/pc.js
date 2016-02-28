@@ -35,6 +35,16 @@ define([], function(){
         $(".icon-wrap").eq(idx).removeClass("hide");
     }
 
+    var resetTags = function(){
+        var tags = $(".tagcloud a");
+        tags.css({"font-size": "12px"});
+        for(var i = 0; i < tags.length; i++){
+            var num = parseInt(4*Math.random()) + 1;
+            tags.eq(i).addClass("color" + num);
+        };
+        $(".article-category a:nth-child(-n+2)").attr("class", "color5");
+    }
+
     var bind = function(){
         var switchBtn = $("#myonoffswitch");
         var tagcloud = $(".second-part");
