@@ -149,4 +149,6 @@ require([], function (){
     $("#container .left-col .overlay").css({"background-color": colorList[id],"opacity": .3});
     //移动端
     $("#container #mobile-nav .overlay").css({"background-color": colorList[id],"opacity": .7});
+
+    $("table").wrap("<div class='table-area'></div>");
 });
