@@ -1,4 +1,4 @@
-
+color-scheme = hexo-config("color_scheme")
 background-image = hexo-config("background_image")
 
 if !background-image
@@ -40,5 +40,29 @@ if !background-image
         background rgba(158,188,226,.9)
 
 
+if color-scheme == "yilia"
+    body
+        background gray
 
+    .article-header
+        border-left 5px solid #666
+
+    .article-more-link a
+        background #4d4d4d
+        font-size .8em
+
+    .tagcloud a.color3
+        background #7B5D5F
+        &:before
+            border-right-color #7B5D5F
+
+    .tagcloud a.color5
+        background #BA8F6C
+        &:before
+            border-right-color #BA8F6C
+        &:hover 
+            background-color hover-color
+            border-color hover-color
+            &::before 
+                border-right-color hover-color
 
