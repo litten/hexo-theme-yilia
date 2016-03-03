@@ -52,7 +52,7 @@
     <script>
         $(document).ready(function() {
             $(".toc li a").mouseover(function() {
-                var title = $(this).attr('href');
+                var title = $(this).find('.toc-text').text();
                 $(this).attr("title", title);
             });
         })
