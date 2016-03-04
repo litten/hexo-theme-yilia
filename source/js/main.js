@@ -62,7 +62,12 @@ require([], function (){
                 for(var i=0,len=imgArr.length;i<len;i++){
                     var src = imgArr.eq(i).attr("src");
                     var title = imgArr.eq(i).attr("alt");
-                    imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' title='"+title+"'></a>");
+                    if(typeof(title) == "undefined"){
+                        var title = imgArr.eq(i).attr("title");
+                    }
+                    var width = imgArr.eq(i).attr("width");
+                    var height = imgArr.eq(i).attr("height");
+                    imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' width="+width+" height="+height+" title='"+title+"' alt='"+title+"'></a>");
                 }
                 $(".article-inner .fancy-ctn").fancybox();
             }

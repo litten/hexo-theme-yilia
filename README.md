@@ -122,18 +122,23 @@ background_image: 5
 
 - "0": remove background image and use white-gray theme | 取消网页背景图，使用淳朴的灰白主题 
 
-#### 4. Style image 自定义图片样式:
-In order to style posts/pages' image with HTML/CSS within `.md` files, you should disable fancybox function firstly. 
+#### 4. Highlight Style | 文本/代码高亮样式:
+Set inline_code to style highlight text & Chose a highlight theme for code block.
 
-如果要使用 HTML/CSS 自定义文章图片样式，需要先关闭 fancybox 功能。
+通过 inline_code 切换内置文本高亮样式，通过 code_block 切换内置代码高亮配色主题。
 
-Disable fancybox in full site | 在全站关闭 fancybox:
 
-> Set `fancybox: false` in `yelee/_config.yml`
+```
+highlight_style:
+  #on: true
+  inline_code: 1
+  code_block: 1
+```
 
-Disable fancybox in certain post/page | 在某篇文章中关闭 fancybox:
+Set `on: true` to enable this feature | 移除`#`后自定义样式生效
 
-> Add `fancybox: false` in [front-matter](https://hexo.io/docs/front-matter.html)
+highlight theme from https://github.com/chriskempson/tomorrow-theme
+
 
 #### 5. Comment 评论:
 Disqus, duoshuo and youyan is supported, enable them in theme's "_config.yml".
