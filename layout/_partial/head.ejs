@@ -35,6 +35,9 @@
       <link href="//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css" rel="stylesheet">
   <% } %>
   <%- css('css/style') %>
+  <% if (is_home() && theme.animate){ %>
+      <style> .article { opacity: 0;} </style>
+  <% } %>
   <%- css('font-awesome/css/font-awesome.min') %>
   <link rel="apple-touch-icon" href="<%- theme.root_url %>/apple-touch-icon.png">
   <% if (is_home()){ %>
