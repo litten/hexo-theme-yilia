@@ -1,8 +1,8 @@
 <% if (theme.github_widget){ %>
     <%- js('js/GithubRepoWidget') %>
 <% } %>
-<%- js('http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min') %>
-<%- js('js/main') %>
+<%- js('//cdn.bootcss.com/jquery/1.9.1/jquery.min') %>
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
 <%- partial('_partial/background') %>
 <%- partial('google-analytics') %>
 <% if (theme.mathjax){ %>
