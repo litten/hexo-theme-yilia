@@ -77,14 +77,6 @@ require([], function (){
     //是否开启动画
     if(yiliaConfig.animate === true){
 
-        require([yiliaConfig.rootUrl + 'js/jquery.lazyload.js'], function(){
-            //avatar
-            $(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
-            $(".js-avatar")[0].onload = function(){
-                $(".js-avatar").addClass("show");
-            }
-        });
-
       if(yiliaConfig.isHome === true) {
         // 滚动条监听使用scrollreveal.js
         // https://github.com/jlmakes/scrollreveal.js
