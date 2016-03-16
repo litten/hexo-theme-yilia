@@ -148,4 +148,22 @@ require([], function (){
     $("#container #mobile-nav .overlay").css({"background-color": colorList[id],"opacity": .7});
 
     $("table").wrap("<div class='table-area'></div>");
+
+    // Hide Comment Button
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+
+    // Hide Labels
+    if(yiliaConfig.isArchive || yiliaConfig.isTag || yiliaConfig.isCategory) {
+        $(document).ready(function() {
+            $("#footer").after("<button class='hide-labels'>TAG 开关</button>");
+            $(".hide-labels").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    }
+
 });
