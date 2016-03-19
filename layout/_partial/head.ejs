@@ -87,7 +87,7 @@
       </script>
   <% } %>
 
-  <% if (theme.progressBar && theme.progressBar.on) { %>
+  <% if (theme.progressBar.on) { %>
     <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/<%= theme.progressBar.color || 'blue'%>/pace-theme-<%= theme.progressBar.type || 'minimal'%>.css" rel="stylesheet">
   <% } %>

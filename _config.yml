@@ -198,13 +198,13 @@ visit_counter:
 # https://github.com/hustcc/GitHub-Repo-Widget.js
 github_widget: false
 
-# Progress Bar
-# http://github.hubspot.com/pace/
-# type(default is minimal): barber-shop|big-counter|bounce|center-atom|center-circle|
+# Progress Bar | 页面加载进度条
+# Demo: http://github.hubspot.com/pace/docs/welcome/
+# type: barber-shop|big-counter|bounce|center-atom|center-circle|
 #       center-radar|center-simple|corner-indicator|flash|flat-top|
 #       loading-bar|mac-osx|minimal
-# color(default is blue): black|blue|green|orange|pink|purple|red|silver|white|yellow|
+# color: black|blue|green|orange|pink|purple|red|silver|white|yellow|
 progressBar:
   on: true
-  type: minimal
+  type: "minimal"  # Keep Quotes | 保留引号避免出错
   color: blue
