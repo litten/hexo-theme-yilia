@@ -45,7 +45,7 @@
       <%- partial('post/tag') %>
       <% if (index && (post.description || post.excerpt)){ %>
         <p class="article-more-link">
-          <a <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+          <a href="<%- url_for(post.path) %>#more"><%= __('index.more') %> >></a>
         </p>
       <% } %>
       <div class="clearfix"></div>

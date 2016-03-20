@@ -1,0 +1,28 @@
+# zh-Hant-HK: Chinese (Traditional) 港澳繁體
+index:
+  menu: 菜單
+  tags: 標籤
+  friends: 友情鏈接
+  about: 關於我
+  more: 查看全文
+
+toc:
+  title: 文章目錄
+  hide: 隱藏目錄
+  show: 顯示目錄
+
+visit_counter:
+  site: 本站到訪數
+  page: 本頁閱讀量
+
+tooltip:
+  tocButton: 點擊按鈕隱藏或者顯示文章目錄
+  back2home: 回到主頁
+  nextPost: 下一篇
+  prePost: 上一篇
+  miniArchives: 文章列表
+  back2top: 返回頂部
+  jump2comments: 查看評論
+  go2bottom: 轉到底部
+  Hexo: "快速、簡潔且高效的博客框架"
+  Yelee: 簡而不減 Hexo 雙欄博客主題

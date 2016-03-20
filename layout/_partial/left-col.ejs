@@ -45,13 +45,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li><%= __('index.menu') %></li>
+                        <li><%= __('index.tags') %></li>
                         <%if(theme.friends && theme.friends.length != 0){%>
-                        <li>友情链接</li>
+                        <li><%= __('index.friends') %></li>
                         <%}%>
                         <%if(theme.aboutme){%>
-                        <li>关于我</li>
+                        <li><%= __('index.about') %></li>
                         <%}%>
                     </ul>
                 </div>

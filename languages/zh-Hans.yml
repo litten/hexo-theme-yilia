@@ -1,0 +1,28 @@
+# zh-Hans: Chinese (Simplified) 大陆简体
+index:
+  menu: 菜单
+  tags: 标签
+  friends: 友情链接
+  about: 关于我
+  more: 阅读全文
+
+toc:
+  title: 文章目录
+  hide: 隐藏目录
+  show: 显示目录
+
+visit_counter:
+  site: 本站到访数
+  page: 本页阅读量
+
+tooltip:
+  tocButton: 点击按钮隐藏或者显示文章目录
+  back2home: 回到主页
+  nextPost: 下一篇
+  prePost: 上一篇
+  miniArchives: 文章列表
+  back2top: 返回顶部
+  jump2comments: 查看评论
+  go2bottom: 转到底部
+  Hexo: "快速、简洁且高效的博客框架"
+  Yelee: 简而不减 Hexo 双栏博客主题

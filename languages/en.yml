@@ -1,0 +1,29 @@
+# en: English
+index:
+  menu: Menu
+  tags: Tags
+  friends: Friends
+  about: About Me
+  more: more
+
+# Tables of Contents
+toc:
+  title: Contents
+  hide: Hide
+  show: Show
+
+visit_counter:
+  site: Site Visitors
+  page: Page Hits
+
+tooltip:
+  tocButton: Show or Hide Table of Contents
+  back2home: Back to Homepage
+  nextPost: Next
+  prePost: Pre
+  miniArchives: Mini Archives
+  back2top: Back to Top
+  jump2comments: Comments
+  go2bottom: Go to Bottom
+  Hexo: "A fast, simple & powerful blog framework"
+  Yelee: Another simple and elegant theme for Hexo

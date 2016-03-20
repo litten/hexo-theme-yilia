@@ -17,9 +17,15 @@ avatar: /img/avatar.png
 # Small icon of Your site | 站点小图标地址
 favicon: /favicon.png
 
-# If your site' url is 'http://yoursite.com/blog', set root_url as '/blog/'
-# 网站若存放在子目录，请按上面格式填写
-# https://hexo.io/docs/configuration.html#URL
+# Internationalization | 主题语言
+## Change Language in SITE's _config.yml | 在站点配置中切换语言
+## https://hexo.io/docs/internationalization.html
+## Available Languages: en, zh-Hans, zh-Hant-TW, zh-Hant-HK
+
+# Subdirectory | 子目录
+## If your site' url is 'http://yoursite.com/blog', set root_url as '/blog/'
+## 网站若存放在子目录，请按上面格式填写
+## https://hexo.io/docs/configuration.html#URL
 root_url: 
 
 # Social info. Bar | 社交信息展示
@@ -121,10 +127,6 @@ toc: true
 # Keep TOC title on the same line | 
 toc_nowrap: false
 
-# 自定义"阅读全文"链接按钮的显示文字
-# Customize the text on excerpt link
-excerpt_link: more
-
 # 是否显示边栏中的搜索框（仅样式，未添加搜索功能）
 # Search Box in left column
 search_box: false
@@ -191,8 +193,8 @@ baidu_tongji:
 # http://ibruce.info/2015/04/04/busuanzi/
 visit_counter:
   on: true
-  site_visit: 本站到访数
-  page_visit: 本页阅读量
+  site_visit: true
+  page_visit: true
 
 # GitHub Repo Widget
 # https://github.com/hustcc/GitHub-Repo-Widget.js

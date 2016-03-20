@@ -2,21 +2,21 @@
 
     <div class="scroll" id="post-nav-button">
         <% if (post.prev){ %>
-            <a href="<%- url_for(post.prev.path) %>" title="上一篇: <%= post.prev.title %>">
+            <a href="<%- url_for(post.prev.path) %>" title="<%= __('tooltip.prePost') %>: <%= post.prev.title %>">
                 <i class="fa fa-angle-left"></i>
             </a>
         <% } else { %>
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="<%= __('tooltip.back2home') %>"><i class="fa fa-home"></i></a>
         <% } %>
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="<%= __('tooltip.miniArchives') %>"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         <% if (post.next){ %>
-            <a href="<%- url_for(post.next.path) %>" title="下一篇: <%= post.next.title %>">
+            <a href="<%- url_for(post.next.path) %>" title="<%= __('tooltip.nextPost') %>: <%= post.next.title %>">
                 <i class="fa fa-angle-right"></i>
             </a>
         <% } else { %>
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="<%= __('tooltip.back2home') %>"><i class="fa fa-home"></i></a>
         <% } %>
     </div>
 
