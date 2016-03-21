@@ -5,6 +5,7 @@ index:
   friends: 友情鏈接
   about: 關於我
   more: 查看全文
+  copy: 複製
 
 toc:
   title: 文章目錄
@@ -15,6 +16,18 @@ visit_counter:
   site: 本站到訪數
   page: 本頁閱讀量
 
+copyright_info:
+  title: 本文標題
+  author: 文章作者
+  date: 發布時間
+  updated: 最後更新
+  url: 原始鏈接
+  from: "原文:"
+  by: "作者:"
+  license: 許可協議
+  cc: "署名-非商用-相同方式共享 4.0"
+  notice: "轉載請保留原文鏈接及作者。"
+
 tooltip:
   tocButton: 點擊按鈕隱藏或者顯示文章目錄
   back2home: 回到主頁
@@ -24,5 +37,6 @@ tooltip:
   back2top: 返回頂部
   jump2comments: 查看評論
   go2bottom: 轉到底部
+  copyPath: 點擊複製文章鏈接
   Hexo: "快速、簡潔且高效的博客框架"
   Yelee: 簡而不減 Hexo 雙欄博客主題

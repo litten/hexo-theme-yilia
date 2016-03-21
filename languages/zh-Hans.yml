@@ -5,6 +5,7 @@ index:
   friends: 友情链接
   about: 关于我
   more: 阅读全文
+  copy: 复制
 
 toc:
   title: 文章目录
@@ -15,6 +16,18 @@ visit_counter:
   site: 本站到访数
   page: 本页阅读量
 
+copyright_info:
+  title: 本文标题
+  author: 文章作者
+  date: 发布时间
+  updated: 最后更新
+  url: 原始链接
+  from: "原文:"
+  by: "作者:"
+  license: 许可协议
+  cc: "署名-非商用-相同方式共享 4.0"
+  notice: "转载请保留原文链接及作者。"
+
 tooltip:
   tocButton: 点击按钮隐藏或者显示文章目录
   back2home: 回到主页
@@ -24,5 +37,6 @@ tooltip:
   back2top: 返回顶部
   jump2comments: 查看评论
   go2bottom: 转到底部
+  copyPath: 点击复制文章链接
   Hexo: "快速、简洁且高效的博客框架"
   Yelee: 简而不减 Hexo 双栏博客主题

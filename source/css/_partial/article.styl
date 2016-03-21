@@ -501,7 +501,7 @@ li:hover {
     background: rgba(255, 255, 255, .4);
     span {
         display: inline-block;
-        margin-right: 1em;
+        width: 5.8em;
         color: #B5B5B5;
         font-weight: bold;
     }
@@ -512,11 +512,10 @@ li:hover {
             text-decoration: underline;
         }
     }
-    &:hover p .copy-path::after {
-        content: "复制";
+    &:hover .fa-clipboard {
+        color: black;
     }
     .copy-path {
-        display: inline-block;
         margin-left: 1em;
         &:hover {
             color: gray;
