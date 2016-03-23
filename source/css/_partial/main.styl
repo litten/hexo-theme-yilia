@@ -356,3 +356,11 @@ if hexo-config("jquery_ui")
 
     body .ui-tooltip
         border 1px solid white
+        
+
+if hexo-config("progressBar.on") && hexo-config("progressBar.type") == "minimal"
+        bar-color = hexo-config("progressBar.color")
+        if bar-color == "blue"
+            .pace .pace-progress
+                background #77b6ff
+                box-shadow 0 0 10px rgba(@background, .7) 
