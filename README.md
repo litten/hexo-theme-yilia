@@ -46,11 +46,35 @@ git pull
 | 4 | 文章版权等信息显示       | Copyright info.                 |
 | 5 | 文章导航切换按钮         | Post navigation button          |
 | 6 | 网站计数                 | Site counter                    |
+| 7 | 多语言支持                 | i18n, multi-language          |
 
 ![feature](http://i13.tietuku.com/2bfd34c63f627bae.jpg)
 
-
 ### Configuration 配置
+
+#### Internationalization | 语言切换
+Use internationalization to present your site in different languages.
+
+https://hexo.io/docs/internationalization.html
+
+```yaml
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+
+# Site
+language: en
+```
+
+##### Available Languages | 目前可用语言
+
+| Code           | -                     | -        | Contributor(s) |
+|----------------|:-----------------------:|:----------:|:--------------:|
+| **en**         | English               | 英语     |     MOxFIVE    |
+| **zh-Hans**    | Chinese (Simplified)  | 大陆简体 |     MOxFIVE    |
+| **zh-Hant-HK** | Chinese (Traditional) | 港澳繁體 |     MOxFIVE    |
+| **zh-Hant-TW** | Chinese (Traditional) | 台灣正體 |     MOxFIVE    |
+
+> **Any Contribution is Welcome! | 欢迎协助完善翻译！**
 
 #### 0. Post Excerpt 文章摘要
 There are two ways to show excerpt in homepage. 
@@ -100,7 +124,7 @@ hexo new page tags
 
 > Post with several categories 文章设置多个分类后的问题 [issue#4](https://github.com/MOxFIVE/hexo-theme-yelee/issues/4) 
 
-> - [让 Hexo 自动生成 Tag Cloud 标签云页面](http://moxfive.xyz/2015/10/25/hexo-tag-cloud/)
+> - [让 Hexo 自动生成 Tag Cloud 标签云页面] (http://moxfive.xyz/2015/10/25/hexo-tag-cloud/)(Yelee 主题已自带，无需查看此教程)
 
 #### 3. Background image 网页背景:
 
