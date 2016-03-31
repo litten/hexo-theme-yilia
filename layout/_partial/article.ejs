@@ -48,6 +48,14 @@
   <% if (!index){ %>
     <%- partial('post/nav') %>
   <% } %>
+
+  <% if (!index && theme.donate && post.donate!=false){ %>
+	<%- partial('donate') %>
+<% } %>
+
+	<% if(!index && theme.show_declare && post.copyright!=false) { %>
+			<%- partial('declare') %>
+		<% } %>
 </article>
 
 <% if (!index && theme.share){ %>

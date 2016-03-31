@@ -97,6 +97,31 @@ a {
   }
 }
 
+.toc-article
+  background #eee
+  border 1px solid #bbb
+  border-radius 10px
+  margin 1.5em 0 0.3em 1.5em
+  padding 1.2em 1em 0 1em
+  max-width 28%
+
+.toc-title
+  font-size 120%
+
+#toc
+  line-height 1em
+  font-size 0.9em
+  float right
+  .toc
+    padding 0
+    margin 1em
+    line-height 1.8em
+    li
+      list-style-type none
+
+  .toc-child 
+    margin-left 1em
+
 @import "_extend"
 @import "_partial/main"
 @import "_partial/archive"
@@ -110,6 +135,8 @@ a {
 @import "_partial/tagcloud"
 @import "_partial/scroll"
 @import "_partial/mobile-slider"
+@import '_partial/donate'
+@import '_partial/copyright'
 
 if sidebar
   @import "_partial/sidebar"
