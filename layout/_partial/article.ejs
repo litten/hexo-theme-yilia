@@ -16,6 +16,15 @@
       <div class="article-info article-info-post">
         <%- partial('post/tag') %>
         <%- partial('post/category') %>
+
+    <% if(!index) { %>
+    <div class="bookicon"></div>
+    <div class="article-hit">
+    <span id="busuanzi_container_page_pv">
+  Hits <span id="busuanzi_value_page_pv"></span>次</span>
+  </div>
+  <% } %>
+
         <div class="clearfix"></div>
       </div>
       <% } %>
@@ -24,8 +33,22 @@
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
       <% } else { %>
+          <!-- Table of Contents -->
+      <% if (!index && post.toc){ %>
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <%- toc(post.content) %>
+        </div>
+      <% } %>
         <%- post.content %>
       <% } %>
+      <% if (!index && theme.donate && post.donate!=false){ %>
+  <%- partial('donate') %>
+<% } %>
+
+  <% if(!index && theme.show_declare && post.copyright!=false) { %>
+      <%- partial('declare') %>
+    <% } %>
     </div>
     <% if (index){ %>
     <div class="article-info article-info-index">
@@ -45,17 +68,12 @@
     </div>
     <% } %>
   </div>
+
   <% if (!index){ %>
     <%- partial('post/nav') %>
   <% } %>
-
-  <% if (!index && theme.donate && post.donate!=false){ %>
-	<%- partial('donate') %>
-<% } %>
-
-	<% if(!index && theme.show_declare && post.copyright!=false) { %>
-			<%- partial('declare') %>
-		<% } %>
+  
+    
 </article>
 
 <% if (!index && theme.share){ %>
