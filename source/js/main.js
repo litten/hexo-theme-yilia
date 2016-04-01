@@ -166,4 +166,15 @@ require([], function (){
         });
     }
 
+    if ($("#GitHub").length) {
+        $.ajax({
+            url: yiliaConfig.rootUrl + 'img/GitHub.png',
+            type: 'HEAD',
+            error: function() {
+                var setUrl = "url(" + yiliaConfig.rootUrl + "img/github.png)"
+                $("#GitHub").css("background-image", setUrl);
+            }
+        });
+    }
+
 });
