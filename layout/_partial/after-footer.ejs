@@ -1,7 +1,7 @@
 <% if (theme.github_widget){ %>
     <%- js('js/GithubRepoWidget') %>
 <% } %>
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+<script data-main="<%-config.root%>js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
 <%- partial('_partial/background') %>
 <%- partial('google-analytics') %>
 <% if (theme.mathjax){ %>
