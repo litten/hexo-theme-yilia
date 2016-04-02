@@ -112,7 +112,10 @@ a {
 @import "_partial/archive"
 @import "_partial/highlight"
 @import "_partial/footer"
-@import "_partial/share"
+
+if share
+  @import "_partial/share"
+
 @import "_partial/page"
 @import "_partial/instagram"
 @import "_partial/tagcloud"

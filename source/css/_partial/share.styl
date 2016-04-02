@@ -1,3 +1,6 @@
+baidu-share = hexo-config("share.baidu")
+addthis-share = hexo-config("share.addthis")
+
 .share
     padding-left 40px
     margin 1em auto .5em
@@ -5,45 +8,51 @@
     &:hover
         opacity 1
 
-.bdsharebuttonbox
-    font-family Arial
-    li
-        display inline-block
-        width 28px
-        height @width
-        margin-right 2px
-        font 20px FontAwesome
-        background #6f7170
-        text-align center
-        vertical-align middle
-        box-shadow 1px 1px 1px rgba(0,0,0, .1), 1px 1px 1px rgba(0,0,0, .3)
-        a, .bds_more
-            float none
-            margin 0
-            padding 0
-            font @font
-            background-image none
-            color white
-            line-height @width
+if baidu-share
+    .bdsharebuttonbox
+        font-family Arial
+        li
+            display inline-block
+            width 28px
+            height @width
+            margin-right 2px
+            font 20px FontAwesome
+            background #6f7170
+            text-align center
+            vertical-align middle
+            box-shadow 1px 1px 1px rgba(0,0,0, .1), 1px 1px 1px rgba(0,0,0, .3)
+            a, .bds_more
+                float none
+                margin 0
+                padding 0
+                font @font
+                background-image none
+                color white
+                line-height @width
+                &:hover
+                    opacity 1
             &:hover
                 opacity 1
-        &:hover
-            opacity 1
-            transform scale(1.1)
-            a
-                color white
+                transform scale(1.1)
+                a
+                    color white
 
-    // http://share.baidu.com/help/webid
-    font-logo = bds_tsina f18a #db332f, 
-                bds_sqq f1d6 #1cbcef,
-                bds_copy f016 #8f8f8f,
-                bds_mail f003 #6fc0e4,
-                bds_weixin f1d7 #8cdc49,
-                bds_more f1e0 #8cbcf5,
-                bds_twi f099 #21abf4
+        // http://share.baidu.com/help/webid
+        font-logo = bds_tsina f18a #db332f, 
+                    bds_sqq f1d6 #1cbcef,
+                    bds_copy f016 #8f8f8f,
+                    bds_mail f003 #6fc0e4,
+                    bds_weixin f1d7 #8cdc49,
+                    bds_more f1e0 #8cbcf5,
+                    bds_twi f099 #21abf4
 
-    for i in font-logo
-        .{i[0]}:before
-            content '\' + i[1]
-        #{i[0]}
-            background i[2]
+        for i in font-logo
+            .{i[0]}:before
+                content '\' + i[1]
+            #{i[0]}
+                background i[2]
+                
+if addthis-share
+    .addthis_sharing_toolbox
+        margin-top .5em
+        margin-left -2px

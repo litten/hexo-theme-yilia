@@ -79,6 +79,10 @@
       </script>
   <% } %>
 
+  <% if (theme.share.on && theme.share.addthis){ %>
+      <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%-theme.share.addthis_pubid%>"></script>
+  <% } %>
+
   <% if (theme.baidu_tongji){ %>
       <script>
           var _hmt = _hmt || [];

@@ -1,5 +1,6 @@
-<% if (theme.share) { %>
-    <div class="share">
+
+<div class="share">
+    <% if (theme.share.baidu) { %>
         <div class="bdsharebuttonbox">
             <li id="bds_twi"><a href="#" class="bds_twi" data-cmd="twi" title="分享到推特"></a></li>
             <li id="bds_tsina"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
@@ -13,5 +14,12 @@
             window._bd_share_config={
                 "common":{"bdSnsKey":{},"bdText":"<%- post.title %>　| <%- config.title %>　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
-    </div>
-<% } %>
+    <% } %>
+
+    <% if (theme.share.addthis) { %>
+        <div class="addthis_sharing_toolbox"></div>
+    <% } %>
+</div>
+
+
+

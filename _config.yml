@@ -175,7 +175,13 @@ fancybox: true
 mathjax: false
 
 # Socail Share | 是否开启分享
-share: true
+share: 
+  on: true
+  baidu: true
+  addthis: false
+  addthis_pubid: "ra-56ff76c972fc0cf9"
+  ## Go to www.addthis.com/dashboard to get your pubid (in src of Code)
+  ## and customize AddThis share buttons
 
 # 百度、谷歌站长验证。填写 HTML 标签 content
 # Site Verification for Google and Baidu. HTML label content.
