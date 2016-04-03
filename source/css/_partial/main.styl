@@ -364,3 +364,12 @@ if hexo-config("progressBar.on") && hexo-config("progressBar.type") == "minimal"
             .pace .pace-progress
                 background #77b6ff
                 box-shadow 0 0 10px rgba(@background, .7) 
+
+.social,
+.share,
+.article-category::before,
+.article-tag::before,
+.article-meta time:before
+    text-rendering auto
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
