@@ -44,7 +44,10 @@ body
   font-family: font-sans, font-chs;
   font-size: 16px;
   background: #fff;
-  color: rgba(0,0,0,0.6);
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga" on;
+  color: rgba(0,0,0,.75);
   -webkit-overflow-scrolling: touch
 
 ::selection 
