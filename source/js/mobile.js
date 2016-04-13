@@ -131,7 +131,6 @@ define([], function(){
 
     var resetTags = function(){
         var tags = $(".tagcloud a");
-        tags.css({"font-size": "12px"});
         for(var i = 0; i < tags.length; i++){
             var num = parseInt(4*Math.random()) + 1;
             tags.eq(i).addClass("color" + num);

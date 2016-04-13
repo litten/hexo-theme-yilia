@@ -79,7 +79,7 @@
     text-align: center;
     margin: 13px 0;
     font-family: Roboto, "Roboto", serif;
-    font-size: 30px;
+    font-size: base-font-size + 14;
     transition: 0.3s;
 }
 #header{
@@ -95,8 +95,8 @@
         display: block;
         border: 5px solid #fff;
         border-radius: 50%;
-        width: 128px;
-        height: 128px;
+        width: 128 + base-font-size - 16;
+        height: @width;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
@@ -135,8 +135,8 @@
     .header-subtitle{
         text-align: center;
         color:#999;
-        font-size: 14px;
-        line-height: 25px;
+        font-size: (14/16)rem;
+        line-height: 1.75;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
@@ -144,15 +144,15 @@
         -webkit-box-orient: vertical;
     }
     .header-menu{
-        menu-line-height = 28px
+        menu-line-height = (28/16)rem
         font-weight: 550;
         line-height: menu-line-height;
         font-family: inherit;
         cursor: pointer;
         text-transform: uppercase;
         float: none;
-        min-height: menu-line-height * 3px;
-        max-height: menu-line-height * 5px;
+        min-height: @line-height * 3;
+        max-height: @line-height * 5;
         overflow: auto;
         text-align: center;
         display: -webkit-box;
@@ -162,7 +162,7 @@
         li{
             cursor: default;
             a{
-                font-size: 14px;
+                font-size: (14/16)rem;
                 min-width: left-col-width;
             }
         }
@@ -172,7 +172,7 @@
         width: 100%;
         overflow: hidden;
         min-height: 260px;
-        font-size: 14px;
+        font-size: (14/16)rem;
         .switch-wrap{
             transition: transform .3s ease-in;
             position: relative;
@@ -198,6 +198,7 @@
         top: 20px;
         overflow-y: auto;
         max-height: 260px;
+        font-size (12/16)rem
     }
     .switch-part3{
         left: 200%;
@@ -341,8 +342,20 @@
 }
 
 if hexo-config("github_widget")
-    .article-entry .github-widget h3::after
-        content none
+    .article-entry .github-widget
+        h3::after
+            content none
+        .github-box 
+            font-size (13/16)rem
+            .github-box-title
+                h3
+                    font-size 1rem
+                .github-stats
+                    font-size (11/16)rem
+            .updated
+                font-size (11/16)rem
+            .download
+                font-size (12/16)rem
 
 if hexo-config("jquery_ui")
     .ui-tooltip

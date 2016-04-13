@@ -101,9 +101,8 @@
   color: #696969;
   margin-left: 0px;
   font-weight: 300;
-  line-height: 35px;
+  line-height: 1.3;
   margin-bottom: 20px;
-  font-size: 26px;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
   -o-transition: color 0.3s;
@@ -145,18 +144,18 @@
   @require "customise/blockquote"
   line-height: 1.65em;
   padding:0 2em;
+  font-size 1rem
   a:hover {
     text-decoration: underline;
     color: #9c9;
   }
   p{
     margin: .85em auto;
-    line-height: 1.7em;
-    font-size: 1em;
+    line-height: 1.7;
   }
   li{
     margin: 0.1em
-    font-size: 1.1em;
+    font-size: 1rem;
   }
   em {
     font-style: italic;
@@ -302,8 +301,8 @@
     position: absolute;
     right: 0;
     top: 23px;
-    width: 150px;
-    font-size: 14;
+    width: 8rem;
+    font-size: (14/16)rem;
     text-align: center;
     z-index: 1;
     time {
@@ -328,8 +327,9 @@
         border-radius: 2px;
         background: #88acdb;
         color: #fff;
-        font-size: .9em;
+        font-size: .9rem;
         line-height: 1em;
+        white-space: nowrap;
         transition: background 0.3s;
         opacity: i-opacity;
         &:hover {
@@ -350,6 +350,7 @@
     width: 100%;
     height: 2.5em;
     margin: 1em auto;
+    font-size 1rem
     background: rgba(158, 188, 226, i-opacity);
     &:hover {
         background: #93b5e0;
@@ -442,13 +443,13 @@ li:hover {
   bottom: 1em;
   left: 0;
   margin-left: 0em;
-  padding: 6px 10px 10px 50px;
+  padding: 6px 10px 10px 50 - (base-font-size - 16)*2;
   border-radius: 2.8%;
   overflow: auto;
 }
 #toc {
     float: right;
-    font-size: .9em;
+    font-size: .9rem;
     line-height: 1.65em;
     a {
         color: gray;
@@ -495,7 +496,7 @@ li:hover {
     margin: 1.2em auto 0;
     padding: .5em 1.8em;
     border: 1px solid lightgray;
-    font-size: .93em;
+    font-size: .93rem;
     line-height: 1.6em;
     word-break: break-all;
     background: rgba(255, 255, 255, .4);
@@ -517,6 +518,7 @@ li:hover {
     }
     .copy-path {
         margin-left: 1em;
+        width 1em
         &:hover {
             color: gray;
             cursor: pointer;
