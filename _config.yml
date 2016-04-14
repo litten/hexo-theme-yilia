@@ -36,6 +36,10 @@ favicon: /favicon.png
 
 #你的头像url
 avatar:
+
+#return to top
+returntotop_img: http://7xsj8c.com2.z0.glb.clouddn.com/img/topbtn.png
+
 #是否开启分享
 share_jia: true
 share_addthis: false
