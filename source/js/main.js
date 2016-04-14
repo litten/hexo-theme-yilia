@@ -107,7 +107,7 @@ require([], function (){
 		$(".article a[href]").attr("target", "_blank")
 	}
 	
-	//return to top
+	//return to top初始化
 	$(function() {
 	    var isRttShow = false;
 	    $(window).scroll(function() {
