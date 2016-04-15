@@ -7,7 +7,6 @@
         <p>
             <span><%= __('copyright_info.url') %>:</span><a class="post-url" href="<%- url_for(post.path) %>" title="<%= post.title %>"><%= post.permalink %></a>
             <span class="copy-path" data-clipboard-text="<%= __('copyright_info.from') %> <%= post.permalink %>　　<%= __('copyright_info.by') %> <%=theme.author%>" title="<%= __('tooltip.copyPath') %>"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
