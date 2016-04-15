@@ -29,20 +29,20 @@
     <link rel="icon" href="<%- theme.root_url %><%- theme.favicon %>">
   <% } %>
   <% if (theme.animate){ %>
-      <%- css('//cdn.bootcss.com/animate.css/3.5.0/animate.min.css') %>
+      <link href="<%- theme.CDN.animate_css %>" rel="stylesheet">
   <% } %>
   <% if (theme.jquery_ui){ %>
-      <link href="//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css" rel="stylesheet">
+      <link href="<%- theme.CDN.jquery_ui_css %>" rel="stylesheet">
   <% } %>
   <% if (theme.progressBar.on) { %>
-      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <script src="<%- theme.CDN.pace_js %>"></script>
       <link href="//cdn.bootcss.com/pace/1.0.2/themes/<%= theme.progressBar.color || 'blue'%>/pace-theme-<%= theme.progressBar.type || 'minimal'%>.css" rel="stylesheet">
   <% } %>
   <%- css('css/style') %>
   <% if (is_home() && theme.animate){ %>
       <style> .article { opacity: 0;} </style>
   <% } %>
-  <%- css('//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css') %>
+  <link href="<%- theme.CDN.fontawesome %>" rel="stylesheet">
   <link rel="apple-touch-icon" href="<%- theme.root_url %>/apple-touch-icon.png">
   <% if (is_home()){ %>
     <% if (theme.baidu_site) { %> 
@@ -53,10 +53,10 @@
     <% } %>
   <% } %>
   <% if (theme.fancybox){ %>
-    <%- css('//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css') %>
+      <link href="<%- theme.CDN.fancybox_css %>" rel="stylesheet">
   <% } %>
-  <%- js('//cdn.bootcss.com/jquery/1.9.1/jquery.min') %>
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.9/clipboard.min.js"></script>
+  <script src="<%- theme.CDN.jquery %>"></script>
+  <script src="<%- theme.CDN.clipboard %>"></script>
   <script>
       var yiliaConfig = {
           fancybox: <%=theme.fancybox%>,
@@ -67,6 +67,8 @@
           isTag: <%=is_tag()%>,
           isCategory: <%=is_category()%>,
           open_in_new: <%=theme.open_in_new%>,
+          fancybox_js: "<%- theme.CDN.fancybox_js %>",
+          scrollreveal: "<%- theme.CDN.scrollreveal %>"
       }
   </script>
 

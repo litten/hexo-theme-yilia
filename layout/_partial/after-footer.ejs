@@ -1,7 +1,7 @@
 <% if (theme.github_widget){ %>
     <%- js('js/GithubRepoWidget') %>
 <% } %>
-<script data-main="<%-config.root%>js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+<script data-main="<%-config.root%>js/main.js" src="<%- theme.CDN.require %>"></script>
 <%- partial('_partial/background') %>
 <%- partial('google-analytics') %>
 <% if (theme.mathjax){ %>
@@ -9,7 +9,7 @@
 <% } %>
 <%- partial('scrolling-button') %>
 <% if (theme.jquery_ui){ %>
-    <script src="//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="<%- theme.CDN.jquery_ui_js %>"></script>
 <% } %>
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
