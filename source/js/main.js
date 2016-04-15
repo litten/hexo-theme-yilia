@@ -55,7 +55,7 @@ require([], function (){
 
     //是否使用fancybox
     if(yiliaConfig.fancybox === true){
-        require([yiliaConfig.rootUrl + 'fancybox/jquery.fancybox.js'], function(pc){
+        require(['//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js'], function(pc){
             var isFancy = $(".isFancy");
             if(isFancy.length != 0){
                 var imgArr = $(".article-inner img");
