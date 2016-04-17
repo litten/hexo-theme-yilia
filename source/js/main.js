@@ -113,6 +113,12 @@ require([], function (){
               }
               return;
           }
+          var animateScope = ".body-wrap > article";
+          var $firstArticle = $(".body-wrap > article:first-child");
+          if ($firstArticle.height() > $(window).height()) {
+              var animateScope = ".body-wrap > article:not(:first-child)";
+              $firstArticle.css({opacity: 1});
+          }
           // document.body有些浏览器不支持监听scroll，所以使用默认的document.documentElement
           ScrollReveal({
             duration: 0,
@@ -121,7 +127,7 @@ require([], function (){
               // 初始状态设为opacity: 0, 动画效果更平滑一些(由于脚本加载是异步，页面元素渲染后在执行动画，感觉像是延时)
               $(domEl).addClass('animated ' + randomAnimationName).css({opacity: 1});
             }
-          }).reveal('.body-wrap > article');
+          }).reveal(animateScope);
 
         });
       } else {
