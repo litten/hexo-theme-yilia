@@ -357,3 +357,38 @@
     float: right;
   }
 }
+
+.copyright {
+    width: 85%;
+    max-width: 45em;
+    margin: 1.2em auto 0;
+    padding: .5em 1.8em;
+    border: 1px solid lightgray;
+    font-size: .93em;
+    line-height: 1.6em;
+    word-break: break-all;
+    background: rgba(255, 255, 255, .4);
+    span {
+        display: inline-block;
+        width: 5.8em;
+        color: #B5B5B5;
+        font-weight: bold;
+    }
+    a {
+        color: gray;
+        &:hover {
+            color: #a3d2a3;
+            text-decoration: underline;
+        }
+    }
+    &:hover .fa-clipboard {
+        color: black;
+    }
+    .copy-path {
+        margin-left: 1em;
+        &:hover {
+            color: gray;
+            cursor: pointer;
+        }
+    }
+}

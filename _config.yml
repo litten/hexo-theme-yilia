@@ -2,20 +2,24 @@
 menu:
   主页: /
   所有文章: /archives
-  # 随笔: /tags/随笔
+  文集: /collection
+  相册: /photo
+  留言板: /about
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  github: "https://github.com/airingursb"
+  jianshu: "http://www.jianshu.com/users/b7757a81a98f/latest_articles"
+  weibo: "http://weibo.com/2696578192/profile?topnav=1&wvr=6"
+  #rss: "#"
+  #zhihu: "#"
   #douban: "#"
-  #mail: "#"
-  #facebook: "#"
+  #mail: "mailto:gx-deng@163.com"
+  #facebook: "https://www.facebook.com/airing.gx"
   #google: "#"
   #twitter: "#"
   #linkedin: "#"
+  wymusic: "http://music.163.com/#/user/home?id=94609819"
 
 rss: /atom.xml
 
@@ -32,15 +36,16 @@ open_in_new: false
 
 # Miscellaneous
 google_analytics: ''
-favicon: /favicon.png
+favicon: /favicon.ico
 
 #你的头像url
-avatar: 
+avatar: /img/face.png
 #是否开启分享
 share: true
-#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#是否开启多说评论，填写你在多说申请的项目名称 
+duoshuo: airingursb
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: true
+#duoshuo: true
 #是否开启云标签
 tagcloud: true
 
@@ -49,15 +54,13 @@ tagcloud: true
 #friends: false
 #开启——
 friends:
-  奥巴马的博客: http://localhost:4000/
-  卡卡的美丽传说: http://localhost:4000/
-  本泽马的博客: http://localhost:4000/
-  吉格斯的博客: http://localhost:4000/
-  习大大大不同: http://localhost:4000/
-  托蒂的博客: http://localhost:4000/
-
+  #安林镜界: http://ursb.me/
+  Hi,Penny: http://penny.gift/
+  Education: http://ursb.me/EduPlayer/
+  NoMan: http://nomanteam.github.io/Hole/
+  urdb.me: http://urdb.me/
 #是否开启“关于我”。
 #不开启——
 #aboutme: false
 #开启——
-aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+aboutme: 谢谢支持！使用支付宝扫码即可。

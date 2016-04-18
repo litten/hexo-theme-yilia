@@ -48,7 +48,7 @@
   <% if (!index){ %>
     <%- partial('post/nav') %>
   <% } %>
-</article>
+  </article>
 
 <% if (!index && theme.share){ %>
 <%- partial('post/share') %>
@@ -61,7 +61,7 @@
     url: config.url+url_for(post.path)
   }) %>
 <% } %>
-
+	 
 <% if (!index && post.comments && config.disqus_shortname){ %>
 <section id="comments">
   <div id="disqus_thread"></div>
