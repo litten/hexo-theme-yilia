@@ -55,12 +55,32 @@
     $.scrollto("#back-to-top", 800);
 	
 	show_date_time();
+	
+	$("html,body").click(function(e){
+	var n=Math.round(Math.random()*100);//随机数
+	var $i=$("<b/>").text("+"+n);//添加到页面的元素
+	var x=e.pageX,y=e.pageY;//鼠标点击的位置
+	$i.css({
+		"z-index":99999,
+		"top":y-20,
+		"left":x,
+		"position":"absolute",
+		"color":"#E94F06"
+	});
+	$("body").append($i);
+	$i.animate(
+		{"top":y-180,"opacity":0},
+		1500,
+		function(){$i.remove();}
+	);
+	e.stopPropagation();
+	});
   });
   
   	
 	function show_date_time() {
 	    window.setTimeout("show_date_time()", 1000);
-	    var BirthDay = new Date(2014,11,04);
+	    var BirthDay = new Date("December 4, 2014 21:12:00");
 	    var today = new Date();
 	    var timeold = (today.getTime() - BirthDay.getTime());
 	    var msPerDay = 24 * 60 * 60 * 1000;
