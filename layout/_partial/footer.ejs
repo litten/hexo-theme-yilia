@@ -2,10 +2,10 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+                <i class="fa fa-copyright"></i> <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="<%= __('tooltip.Hexo') %>">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="<%= __('tooltip.Yelee') %>">Yelee</a> by MOxFIVE
+                <a href="http://hexo.io/" target="_blank" title="<%= __('tooltip.Hexo') %>">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="<%= __('tooltip.Yelee') %>">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         <% if (theme.visit_counter.on) { %>
