@@ -1,4 +1,5 @@
 <% if (post.original != false && !is_page()){ %>
+
 <div class="copyright">
   <p><span>本文标题:</span><a href="<%- url_for(post.path) %>"><%= post.title %></a></p>
   <p><span>文章作者:</span>
@@ -17,7 +18,7 @@
   <script src="/js/clipboard.min.js"></script>
   <script> var clipboard = new Clipboard('.copy-path'); </script>
 </div>
-
+<iframe src="http://121.42.195.113/emps/like.html" class="like" frameborder="no" scrolling="no"></iframe>
 <% } else { %>
 <% } %>
 
