@@ -486,6 +486,13 @@ li:hover {
         background: rgba(158, 188, 226, .21);
     }
 }
+if hexo-config("toc_nowrap")
+    #toc .toc-link 
+        display inline-block
+        width 100% 
+        text-overflow ellipsis
+        white-space nowrap
+        overflow-x hidden
 
 .copyright {
     width: 85%;
