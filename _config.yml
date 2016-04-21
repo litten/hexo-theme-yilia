@@ -11,7 +11,7 @@ subnav:
   github: "https://github.com/airingursb"
   jianshu: "http://www.jianshu.com/users/b7757a81a98f/latest_articles"
   weibo: "http://weibo.com/2696578192/profile?topnav=1&wvr=6"
-  #rss: "#"
+  rss: "http://ursb.me/atom.xml"
   #zhihu: "#"
   #douban: "#"
   #mail: "mailto:gx-deng@163.com"
@@ -19,7 +19,7 @@ subnav:
   #google: "#"
   #twitter: "#"
   #linkedin: "#"
-  wymusic: "http://music.163.com/#/user/home?id=94609819"
+  #wymusic: "http://music.163.com/#/user/home?id=94609819"
 
 rss: /atom.xml
 
