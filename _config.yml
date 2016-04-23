@@ -28,6 +28,9 @@ favicon: /favicon.png
 ## https://hexo.io/docs/configuration.html#URL
 root_url: 
 
+# Year of Site Creation | 网站成立年份
+since: 2016
+
 # Social info. Bar | 社交信息展示
 ## Keep "mailto:" in Email | 设置 Email 时保留 "mailto:"
 ## Encrypt email 加密邮件地址 http://ctrlq.org/encode/
