@@ -1,0 +1,143 @@
+/**
+ * Mobile First
+ */
+*,
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font: 100%/1.4em "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  color: #444;
+  -webkit-text-size-adjust: none;
+}
+
+/**
+ * Small Screens
+ */
+h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1em;
+  margin: 30px auto 20px;
+}
+
+h2 {
+  font: 1.2em Georgia, "Times New Roman", Palatino, serif;
+}
+
+output {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+input {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 300;
+  color: #222;
+  font-size: 18pt;
+  width: 300px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #CCC;
+  vertical-align: middle;
+}
+
+button {
+  padding: 13px 10px 12px;
+  border-radius: 6px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 18pt;
+  line-height: 1em;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  border: 1px solid #CCC;
+  vertical-align: middle;
+  margin-top: 15px;
+}
+
+footer {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.heart {
+  font-style: normal;
+  font-weight: 500;
+  color: #c0392b;
+  text-decoration: none;
+}
+
+#twitter {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#github-button {
+  display: block;
+  margin: 30px auto 0;
+  position: relative;
+  left: 40px;
+}
+
+#github-ribbon {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  border: 0;
+  width: 149px;
+  height: 149px;
+}
+
+.github-buttons {
+  text-align: center;
+  margin: 1em 0;
+}
+
+/**
+ * Medium Screens
+ */
+@media all and (min-width:40em) {
+  button {
+    border-radius: 0px 6px 6px 0px;
+    margin-top: 0;
+    margin-left: -10px;
+  }
+}
+
+/**
+ * Large Screens
+ */
+@media all and (min-width: 54em) {
+  output {
+    margin: 40px 0;
+  }
+  h1 {
+    font-size: 6em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  input {
+    width: 600px;
+  }
+}
+

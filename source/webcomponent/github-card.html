@@ -1,0 +1,187 @@
+<template id="github-template">
+  <style>
+    :host {
+      display: inline-block;
+    }
+
+    .user {
+      font-family: "Helvetica", Arial, sans-serif;
+      display: inline-block;
+      width: 265px;
+      height: 300px;
+      overflow: hidden;
+      border-radius: 6px;
+      position: relative;
+      background-color: #2E353C;
+      text-align: center;
+      color: #fff;
+      font-weight: 100;
+      transition: background 1000ms ease-out;
+    }
+
+    .user dl,
+    .user dd {
+      margin: 0;
+    }
+
+    .user dt {
+      display: none;
+    }
+
+    .user-data {
+      background: #fff url('webcomponent/github.png') no-repeat 5px 5px;
+      background-size: 25px;
+      height: 85px;
+      border: 1px solid #D5D5D5;
+      border-bottom:0;
+    }
+
+    dd.user-avatar {
+      display: inline-block;
+      margin: 20px 0 10px;
+    }
+
+    .user-avatar img {
+      border-radius: 100%;
+      height: 120px;
+      width: 120px;
+      border: 3px solid #fff;
+      vertical-align: middle;
+      background-color: #fff;
+    }
+
+    dd.user-name,
+    dd.user-account {
+      margin: 5px 0;
+    }
+
+    .user-name {
+      font-size: 24px;
+    }
+
+    .user-account {
+      font-size: 16px;
+      color: #999;
+      margin: 5px 0;
+    }
+
+    .user-stats {
+      border-top: 1px groove #999;
+      position: relative;
+      top: 155px;
+    }
+
+    .user-stats dd {
+      padding: 10px 20px;
+    }
+
+    .user-repos,
+    .user-following,
+    .user-followers {
+      display: inline-block;
+      font-size: 22px;
+      color: #999;
+    }
+
+    .user-repos:after,
+    .user-following:after,
+    .user-followers:after {
+      content: attr(data-stats);
+      text-transform: uppercase;
+      display: block;
+      font-size: 11px;
+      color: #666;
+      font-weight: normal;
+      line-height: 1.7em;
+    }
+
+    .spinner {
+      background: url('webcomponent/spinner.gif') no-repeat center center;
+    }
+
+    a.user-github-url,
+    a.user-repos-url,
+    a.user-followers-url {
+        text-decoration: none;
+    }
+  </style>
+
+  <article class="user spinner">
+    <dl class="user-data" hidden>
+      <dt>Avatar:</dt>
+      <dd class="user-avatar">
+        <img src="">
+      </dd>
+
+      <dt>Fullname:</dt>
+      <dd class="user-name"></dd>
+
+      <dt>Account:</dt>
+      <a class="user-github-url"><dd class="user-account"></dd></a>
+    </dl>
+    <dl class="user-stats" hidden>
+      <dt>Repos</dt>
+      <a class="user-repos-url"><dd class="user-repos" data-stats="repos"></dd></a>
+
+      <dt>Followers</dt>
+      <a class="user-followers-url"><dd class="user-followers" data-stats="followers"></dd></a>
+    </dl>
+  </article>
+</template>
+
+<script>
+  var url = 'https://api.github.com/users/',
+      doc = document.currentScript.ownerDocument,
+      XgithubProto = Object.create(HTMLElement.prototype);
+
+  XgithubProto.getUser = function getJSON() {
+    var that = this,
+        xhr = new XMLHttpRequest();
+
+    xhr.open('GET', url + this.getAttribute('user'));
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === xhr.DONE) {
+        status = xhr.status;
+
+        if ((status >= 200 && status < 300) || status === 304 || status === 0) {
+          response = JSON.parse(xhr.response || xhr.responseText);
+          that.fillUser(response);
+        }
+      }
+    };
+
+    xhr.send();
+  };
+
+  XgithubProto.fillUser = function fillUser(user) {
+    var usr = this.shadow;
+
+    usr.querySelector('.user-account').textContent = this.getAttribute('user');
+
+    usr.querySelector('.user-name').textContent = user.name;
+    usr.querySelector('.user-avatar img').src = user.avatar_url;
+    usr.querySelector('.user-repos').textContent = user.public_repos;
+    usr.querySelector('.user-followers').textContent = user.followers;
+
+    usr.querySelector('.user').classList.remove('spinner');
+    usr.querySelector('.user-data').removeAttribute('hidden');
+    usr.querySelector('.user-stats').removeAttribute('hidden');
+
+    usr.querySelector('.user-github-url').href = user.html_url;
+    usr.querySelector('.user-repos-url').href = user.html_url.concat('?tab=repositories');
+    usr.querySelector('.user-followers-url').href = user.html_url.concat('/followers');
+  };
+
+  XgithubProto.createdCallback = function() {
+    var template = doc.querySelector("#github-template"),
+        usr = template.content.cloneNode(true);
+    this.shadow = this.createShadowRoot();
+    this.shadow.appendChild(usr);
+  };
+
+  XgithubProto.attachedCallback = function() {
+    this.getUser();
+  };
+
+  var Xgithub = doc.registerElement('github-card', {'prototype': XgithubProto});
+</script>
