@@ -40,3 +40,9 @@ tooltip:
   copyPath: 点击复制文章链接
   Hexo: "快速、简洁且高效的博客框架"
   Yelee: 简而不减 Hexo 双栏博客主题
+
+tag_cloud:
+  already: 已有
+  categories: 个分类，
+  total: 共计
+  tags: 个标签

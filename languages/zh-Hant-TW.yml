@@ -40,3 +40,9 @@ tooltip:
   copyPath: 點擊複製文章鏈接
   Hexo: "快速、簡單且強大的網誌框架"
   Yelee: 簡而不減 Hexo 雙欄網誌主題
+
+tag_cloud:
+  already: 已有
+  categories: 個分類，
+  total: 共計
+  tags: 個標籤
