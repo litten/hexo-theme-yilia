@@ -1,5 +1,5 @@
 ![Yelee](
-http://i13.tietuku.com/404b8c63eb155793.jpg)
+https://moxfive.github.io/resources/yelee-mockup.jpg)
 
 ### Introduction 前言
 
@@ -16,7 +16,7 @@ Theme **Yelee** relies on [Hexo-Theme-Yilia][1], thanks for the author [Litten][
 [5]: http://moxfive.xyz/2015/08/20/blog-building/ "个人博客站点建设历程"
 [6]: http://moxfive.xyz
 
-![QR](http://i11.tietuku.com/f9ce6d6bb62921d4.png)
+![QR](https://moxfive.github.io/resources/yelee-qrcode.png)
 
 ### Installation 安装主题
 
@@ -48,7 +48,7 @@ git pull
 | 6 | 网站计数                 | Site counter                    |
 | 7 | 多语言支持                 | i18n, multi-language          |
 
-![feature](http://i13.tietuku.com/2bfd34c63f627bae.jpg)
+![feature](https://moxfive.github.io/resources/yelee-features.jpg)
 
 ### Configuration 配置
 
