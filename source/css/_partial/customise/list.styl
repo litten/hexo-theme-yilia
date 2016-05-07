@@ -1,0 +1,56 @@
+list_style = hexo-config("list_style")
+
+li
+    margin .1em
+    font-size 1rem
+
+ul, ol
+    margin 10px 0
+    li.task-list
+        list-style none
+        margin-left 0
+        &::before
+            display none
+
+li ul, li ol
+    margin-left 30px
+
+if !list_style
+    ul > li:before
+        content ""
+        background #dedede
+
+    ul > li:before
+        display inline-block
+        content ""
+        width .4em
+        height .4em
+        margin-right .5em
+        margin-bottom .11em
+        border 1px solid #d3d3d3
+        border-radius 50%
+        background #d3d3d3
+
+css-list = 1 disc, 2 circle, 3 square
+
+for i in css-list
+    if list_style == i[0]
+        ul > li
+            margin-left 1.1em
+            list-style-type i[1]
+
+icon-list = 4 f054, 5 f0a4, 6 f0fe,
+            7 f061, 8 f0a9, 9 f005,
+            10 f006, 11 f192, 12 f05b
+
+for i in icon-list
+    if list_style == i[0]
+        ul > li
+            list-style none
+            margin 0
+        ul > li:before
+            content "\" + i[1]
+            font-family FontAwesome
+            font-size .8em
+            margin-right .5em
+            color #c8c8c8

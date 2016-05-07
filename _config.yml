@@ -124,6 +124,9 @@ blockquote_style:
   blockquote: 1  # Value: 0 - 7 可选
   # 自定义文章「引用部分」的样式
 
+## List style type (ul) | 无序列表项标记样式
+list_style: 0  # value: 0 - 12 可选
+
 # 左边栏宽度 px
 left_col_width: 300
 

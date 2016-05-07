@@ -153,44 +153,8 @@
     margin: .85em auto;
     line-height: 1.7;
   }
-  li{
-    margin: 0.1em
-    font-size: 1rem;
-  }
   em {
     font-style: italic;
-  }
-  ul{
-    li:before{
-      display inline-block;
-      content: "";
-      width: .4em;
-      height: .4em;
-      margin-right: .5em;
-      margin-bottom: .11em;
-      border: 1px solid lightgray;
-      border-radius: 50%;
-      background: lightgray;
-    }
-  }
-  ul,ol{
-    font-size: 14px;
-    margin: 10px 0px;  
-  }
-  li{
-    ul,ol{
-      margin-left: 30px;
-      li:before{
-        content: "";
-        background: #dedede;
-      }
-    }
-  }
-  li.task-list {
-    list-style: none;
-    &::before{
-        display: none;
-    }
   }
   h1{
     margin-top: 30px;
@@ -286,6 +250,7 @@
       white-space: nowrap;
     }
   }
+  @import "customise/list"
   figure{
     table {
       border: none;
@@ -535,4 +500,3 @@ if hexo-config("toc_nowrap")
         }
     }
 }
-
