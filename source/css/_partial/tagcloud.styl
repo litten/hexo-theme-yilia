@@ -223,125 +223,83 @@
     }
 }
 
-#header .tagcloud a{
-    color:#fff; 
-}
-.tagcloud{
-    a{
-        display:inline-block;  
-        text-decoration:none;  
-        font-weight: normal;
-        font-size: (12/16)rem;  
-        color:#fff;   
-        height: (18/16)rem;  
-        line-height: @height;  
-        float: left;
-        padding:0 5px 0px 10px;  
-        position:relative;  
-        border-radius:0 5px 5px 0; 
-        margin: 5px 9px 5px 8px;
-        opacity: i-opacity;
-        font-family: inherit;
-        &:hover{
-            opacity: 1;
-            transform: scale(1.06);
-        }
-        &:before{
-            content: " ";
-            width: 0px;
-            height: 0px;
-            position: absolute;
-            top: 0;
-            left: -(18/16)rem;
-            border: (18/16/2)rem solid transparent;
-        }
-        &:after{  
-            content:" ";  
-            width:4px;  
-            height:4px;  
-            background-color:#fff;  
-            border-radius:4px;  
-            box-shadow:0px 0px 0px 1px rgba(0,0,0,.3);  
-            position:absolute;  
-            top: (7/16)rem;
-            left: 2px;
-        }  
-    }
-    a.color1{
-        background:  #FF945C;
-        &:before{
-            border-right-color: #FF945C;  
-        }
-    }
-    a.color2{
-        background:  #F5C7B7;
-        &:before{
-            border-right-color: #F5C7B7;  
-        }
-    }
-    a.color3{
-        background:  #BA8F6C;
-        &:before{
-            border-right-color: #BA8F6C;  
-        }
-    }
-    a.color4{
-        background: #CFB7C4;
-        &:before{
-            border-right-color:#CFB7C4;  
-        }
-    }
-    a.color5{
-        background: #88acdb;
-        &:before{
-            border-right-color:#88acdb;  
-        }
-    }
-    a:hover {
-        background-color: hover-color;
-        border-color: hover-color;
-        &::before {
-            border-right-color: hover-color;
-        }
-    }
-}
-.article-tag {
-    &::before {
-        float: left;
-        color: #999;
-        content: "\f02b";
-        font: base-font-size FontAwesome;
-        margin-left: 1em;
-        margin-right: 5px;
-        margin-top: 6px;
-    }
-}
-.article-category {
-    &::before {
-        float: left;
-        color: #999;
-        content: "\f02d";
-        font: base-font-size FontAwesome;
-        margin-right: 5px;
-        margin-top: (1/3)rem;
-    }
-}
-.article-pop-out {
-    float: left;
-    &:before{
-        float: left;
-        color: #999;
-        content: "\f08d";
-        font: base-font-size FontAwesome;
-        float: left;
-        margin-right: 5px;
-        margin-top: (1/3)rem;
-    }
-    &:after{
-        float: left;
-        content: "";
-        margin-right: 20px;
-        margin-top: 9px;
-        float: left;
-    }
-}
+#header .tagcloud a
+    color #fff
+
+.tagcloud a
+    display inline-block
+    text-decoration none
+    font-weight normal
+    font-size .75rem
+    color #fff
+    height 1.125rem
+    line-height 1.125rem
+    float left
+    padding 0 5px 0 10px
+    position relative
+    border-radius 0 5px 5px 0
+    margin 5px 9px 5px 8px
+    opacity i-opacity
+    font-family font-chs font-sans
+
+    for color, i in color-list
+        &.color{i}
+            background color
+            &::before
+                border-right-color color
+
+    &:hover
+        opacity 1
+        transform scale(1.06)
+        background-color hover-color
+        border-color hover-color
+        &::before
+            border-right-color hover-color
+    &:before
+        content " "
+        width 0
+        height 0
+        position absolute
+        top 0
+        left -1.1rem
+        border .5625rem solid transparent
+    &:after
+        content " "
+        width 4px
+        height 4px
+        background-color #fff
+        border-radius 4px
+        box-shadow 0 0 0 1px rgba(0,0,0,.3)
+        position absolute
+        top .4375rem
+        left 2px
+
+.article-tag::before,
+.article-category::before
+    float left
+    color #999
+    font base-font-size FontAwesome
+    margin-right 5px
+    margin-top (1/3)rem
+
+.article-tag::before
+    content "\f02b"
+    margin-left 1em
+
+.article-category::before
+    content "\f02d"
+
+.article-pop-out
+    float left
+    &:before
+        color #999
+        content "\f08d"
+        font base-font-size FontAwesome
+        float left
+        margin-right 5px
+        margin-top (1/3)rem
+    &:after
+        float left
+        content ""
+        margin-right 20px
+        margin-top 9px
