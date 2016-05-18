@@ -124,6 +124,10 @@ blockquote_style:
   blockquote: 1  # Value: 0 - 7 可选
   # 自定义文章「引用部分」的样式
 
+# Headings Style | 标题风格
+## 0-Yelee, 1-Yilia, 2-GitHub
+heading_style: 0 # Value: 0 - 2
+
 ## List style type (ul) | 无序列表项标记样式
 list_style: 0  # value: 0 - 12 可选
 
