@@ -47,7 +47,7 @@ require([], function (){
         }
     });
 
-    if(browser.versions.mobile === true || $(window).width() < 700){
+    if(browser.versions.mobile === true || $(window).width() < 800){
         loadMobile();
     }else{
         loadPC();
