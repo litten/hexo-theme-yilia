@@ -26,7 +26,7 @@ fancybox: true
 mathjax: true
 
 # Miscellaneous
-google_analytics: ''
+google_analytics: 'UA-78149472-1'
 # favicon: /favicon.png
 
 # 头像
