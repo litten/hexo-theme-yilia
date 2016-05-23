@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html <% if (page.lang) { %>lang="<%= page.lang %>"<% } %>>
 <head>
+  <%- partial('ie-updater') %>
   <meta charset="utf-8">
   <%
   var title = page.title;

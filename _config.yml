@@ -182,6 +182,14 @@ open_in_new: false
 # Customize feed link 自定义订阅地址
 rss: /atom.xml
 
+# Update Reminder for IE6/7/8
+# 针对 IE6/7/8 的升级浏览器提示
+ie_updater:
+  on: true
+  link: //outdatedbrowser.com/
+  ## http://browsehappy.com/
+  ## http://outdatedbrowser.com/
+
 
 # >>> Vendors | 第三方工具 & 服务 <<<
 
