@@ -32,9 +32,6 @@
   <% if (theme.animate){ %>
       <link href="<%- theme.CDN.animate_css %>" rel="stylesheet">
   <% } %>
-  <% if (theme.jquery_ui){ %>
-      <link href="<%- theme.CDN.jquery_ui_css %>" rel="stylesheet">
-  <% } %>
   <% if (theme.progressBar.on) { %>
       <script src="<%- theme.CDN.pace_js %>"></script>
       <link href="//cdn.bootcss.com/pace/1.0.2/themes/<%= theme.progressBar.color || 'blue'%>/pace-theme-<%= theme.progressBar.type || 'minimal'%>.css" rel="stylesheet">
@@ -73,6 +70,16 @@
           search: <%= theme.search.on %>
       }
   </script>
+
+  <% if (theme.jquery_ui) { %>
+      <script>
+          yiliaConfig.jquery_ui = [true, "<%- theme.CDN.jquery_ui_js %>", "<%- theme.CDN.jquery_ui_css %>"];
+      </script>
+  <% } else { %>
+      <script>
+          yiliaConfig.jquery_ui = [false];
+      </script>
+  <% } %>
 
   <% if (theme.root_url){ %>
       <script>
