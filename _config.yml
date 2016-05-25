@@ -146,10 +146,6 @@ toc: true
 # Keep TOC title on the same line | 
 toc_nowrap: false
 
-# 是否显示边栏中的搜索框（仅样式，未添加搜索功能）
-# Search Box in left column
-search_box: false
-
 # 是否开启主页及加载头像时的动画效果
 # Animation in Homepage and Loading avatar
 animate: true
@@ -192,6 +188,15 @@ ie_updater:
 
 
 # >>> Vendors | 第三方工具 & 服务 <<<
+
+# Local Site Search | 本地站内搜索
+## Insatall below plugin to take effect | 使用搜索需先安装对应插件
+## https://github.com/PaicHyperionDev/hexo-generator-search
+search: 
+  #on: true
+  onload: false
+  ## true: get search.xml file when the page has loaded
+  ## false: get the file when search box gets focus
 
 # images viewer | 图片浏览器
 ## http://www.fancyapps.com/fancybox/

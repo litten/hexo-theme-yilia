@@ -47,6 +47,7 @@ git pull
 | 5 | 文章导航切换按钮         | Post navigation button          |
 | 6 | 网站计数                 | Site counter                    |
 | 7 | 多语言支持                 | i18n, multi-language          |
+| 8 | 本地站内搜索                 | Local Site Search           |
 
 ![feature](http://moxfive.github.io/resources/yelee-features.jpg)
 

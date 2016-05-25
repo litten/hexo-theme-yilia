@@ -1,0 +1,69 @@
+.search
+    width 68%
+    height 18px
+    margin-top 1px
+    padding 0
+    font-family inherit
+    border 2px solid transparent
+    border-bottom 2px solid lightgray
+    border-radius 2px
+    opacity .65
+    background none
+    &:hover
+        border 2px solid lightgray
+        opacity 1
+        box-shadow 0 0 10px rgba(0, 0, 0, .3)
+
+#search-form .fa-times
+    display none
+    padding 1px .7em
+    box-shadow: 0 0 3px rgba(0, 0, 0, .15)
+    cursor pointer
+    color gray
+    &:active
+        background lightgray
+    &:hover
+        zoom 1.1
+        padding 1px .6em
+        border: 1px solid lightgray
+        box-shadow: 0 0 6px rgba(0, 0, 0, .25)
+
+#local-search-result
+    margin auto -12% auto -6%
+    font-size .9rem
+    text-align left
+    word-break break-all
+    ul.search-result-list li:hover
+        font-weight normal
+    li
+        margin .5em auto
+        border-bottom 2px solid lightgray
+    .search-result-list li:hover
+        background rgba(158,188,226,0.21)
+        box-shadow 0 0 5px rgba(0, 0, 0, .2)
+    a.search-result-title
+        line-height 1.2
+        font-weight bold
+        color #708090
+    p.search-result
+        margin .4em auto
+        line-height 1.2rem
+        max-height @line-height * 3rem
+        overflow hidden
+        font-size .8rem
+        text-align justify
+        color gray
+    em.search-keyword
+        color #f58e90
+        border-bottom: 1px dashed @color
+        font-weight: bold
+        font-size .85rem
+
+p.no-result
+    display none
+    margin 2em 0 2em 6%
+    padding-bottom .5em
+    text-align left
+    color gray
+    font-family font-serif serif
+    border-bottom 2px solid lightgray
