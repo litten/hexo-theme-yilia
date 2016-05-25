@@ -12,7 +12,7 @@ define([], function(){
 				$tipBox.addClass("hide");
 			},
 			init: function(){
-				
+				initSlider();//初始化左侧菜单轮播				
 			}
 		}
 	})();
@@ -88,7 +88,31 @@ define([], function(){
 		});
 	}
 
-	
+    //让左侧菜单轮播起来
+	var initSlider = function() {
+	    var count = $(".tips-inner li").length,
+	        currentIdx = 1;
+	    var timer = setInterval(function() {//初始化轮播
+	        if (currentIdx >= count) {
+	            currentIdx = 0;
+	        }
+	        slide(currentIdx);
+	        currentIdx++;
+
+	    }, 6000);
+
+	    $(".switch-btn").mouseover(function() {//鼠标hover暂停轮播
+	        clearInterval(timer);
+	    }).mouseleave(function() {//鼠标离开继续轮播
+	        timer = setInterval(function() {
+	            if (currentIdx >= count) {
+	                currentIdx = 0;
+	            }
+	            slide(currentIdx);
+	            currentIdx++;
+	        }, 6000);
+	    });
+	}	
 
 	return {
 		init: function(){
