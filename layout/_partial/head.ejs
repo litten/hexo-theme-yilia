@@ -1,108 +1,117 @@
 <!DOCTYPE html>
-<html <% if (page.lang) { %>lang="<%= page.lang %>"<% } %>>
+<html <% if (page.lang && page.lang != "default") { %>lang="<%= page.lang %>"<% } %>>
 <head>
-  <%- partial('ie-updater') %>
-  <meta charset="utf-8">
-  <%
-  var title = page.title;
+<%- partial('ie-updater') %>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="<%= config.author %>" />
 
-  if (is_archive()){
-    title = 'Archives';
-
-    if (is_month()){
-      title += ': ' + page.year + '/' + page.month;
-    } else if (is_year()){
-      title += ': ' + page.year;
-    }
-  } else if (is_category()){
-    title = 'Category: ' + page.category;
-  } else if (is_tag()){
-    title = 'Tag: ' + page.tag;
-  }
-  %>
-  <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
-  <% if (theme.rss){ %>
-    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
-  <% } %>
-  <% if (theme.favicon){ %>
-    <link rel="icon" href="<%- theme.root_url %><%- theme.favicon %>">
-  <% } %>
-  <% if (theme.animate){ %>
-      <link href="<%- theme.CDN.animate_css %>" rel="stylesheet">
-  <% } %>
-  <% if (theme.progressBar.on) { %>
-      <script src="<%- theme.CDN.pace_js %>"></script>
-      <link href="//cdn.bootcss.com/pace/1.0.2/themes/<%= theme.progressBar.color || 'blue'%>/pace-theme-<%= theme.progressBar.type || 'minimal'%>.css" rel="stylesheet">
-  <% } %>
-  <%- css('css/style') %>
-  <% if (is_home() && theme.animate){ %>
-      <style> .article { opacity: 0;} </style>
-  <% } %>
-  <link href="<%- theme.CDN.fontawesome %>" rel="stylesheet">
-  <link rel="apple-touch-icon" href="<%- theme.root_url %>/apple-touch-icon.png">
-  <% if (is_home()){ %>
+<% if (is_home()){ %>
     <% if (theme.baidu_site) { %> 
-      <meta name="baidu-site-verification" content="<%- theme.baidu_site %>" />
+        <meta name="baidu-site-verification" content="<%- theme.baidu_site %>" />
     <% } %>
     <% if (theme.google_site) { %> 
-      <meta name="google-site-verification" content="<%- theme.google_site %>" />
+        <meta name="google-site-verification" content="<%- theme.google_site %>" />
     <% } %>
-  <% } %>
-  <% if (theme.fancybox){ %>
-      <link href="<%- theme.CDN.fancybox_css %>" rel="stylesheet">
-  <% } %>
-  <script src="<%- theme.CDN.jquery %>"></script>
-  <script src="<%- theme.CDN.clipboard %>"></script>
-  <script>
-      var yiliaConfig = {
-          fancybox: <%=theme.fancybox%>,
-          animate: <%=theme.animate%>,
-          isHome: <%=is_home()%>,
-          isPost: <%=is_post()%>,
-          isArchive: <%=is_archive()%>,
-          isTag: <%=is_tag()%>,
-          isCategory: <%=is_category()%>,
-          open_in_new: <%=theme.open_in_new%>,
-          fancybox_js: "<%- theme.CDN.fancybox_js %>",
-          scrollreveal: "<%- theme.CDN.scrollreveal %>",
-          search: <%= theme.search.on %>
-      }
-  </script>
+<% } %>
 
-  <% if (theme.jquery_ui) { %>
-      <script>
-          yiliaConfig.jquery_ui = [true, "<%- theme.CDN.jquery_ui_js %>", "<%- theme.CDN.jquery_ui_css %>"];
-      </script>
-  <% } else { %>
-      <script>
-          yiliaConfig.jquery_ui = [false];
-      </script>
-  <% } %>
+<%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
 
-  <% if (theme.root_url){ %>
-      <script>
-          yiliaConfig.rootUrl = <%=theme.root_url%>;
-      </script>
-  <% } else {%>
-      <script>
-          yiliaConfig.rootUrl = "/";
-      </script>
-  <% } %>
+<link rel="apple-touch-icon" href= "<%- theme.root_url %>/apple-touch-icon.png">
 
-  <% if (theme.share.on && theme.share.addthis){ %>
-      <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%-theme.share.addthis_pubid%>"></script>
-  <% } %>
-  <% if (theme.baidu_tongji){ %>
-      <script>
-          var _hmt = _hmt || [];
-          (function() {
-              var hm = document.createElement("script");
-              hm.src = "//hm.baidu.com/hm.js?<%=theme.baidu_tongji%>";
-              var s = document.getElementsByTagName("script")[0]; 
-              s.parentNode.insertBefore(hm, s);
-          })();
-      </script>
-  <% } %>
+<% if (theme.rss){ %>
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+<% } %>
+
+<% if (theme.favicon){ %>
+    <link rel="shortcut icon" href="<%- theme.root_url %><%- theme.favicon %>">
+<% } %>
+
+<% if (theme.animate){ %>
+    <link href="<%- theme.CDN.animate_css %>" rel="stylesheet">
+<% } %>
+
+<% if (theme.fancybox){ %>
+    <link href="<%- theme.CDN.fancybox_css %>" rel="stylesheet">
+<% } %>
+
+<% if (theme.progressBar.on) { %>
+    <script src="<%- theme.CDN.pace_js %>"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/<%= theme.progressBar.color || 'blue'%>/pace-theme-<%= theme.progressBar.type || 'minimal'%>.css" rel="stylesheet">
+<% } %>
+
+<%- css('css/style') %>
+
+<% if (is_home() && theme.animate){ %>
+    <style> .article { opacity: 0;} </style>
+<% } %>
+
+<link href="<%- theme.CDN.fontawesome %>" rel="stylesheet">
+
+<%  var title = page.title;
+if ( is_archive() ) {
+        title = 'Archives';
+        if ( is_month() ){
+            title += ': ' + page.year + '/' + page.month;
+        } else if (is_year()){
+            title += ': ' + page.year;
+        }
+    } else if ( is_category() ){
+        title = 'Category: ' + page.category;
+    } else if ( is_tag() ){
+        title = 'Tag: ' + page.tag;
+} %>
+<title><% if ( title ){ %><%= title %> | <% } %><%= config.title %></title>
+
+<script src="<%- theme.CDN.jquery %>"></script>
+<script src="<%- theme.CDN.clipboard %>"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: <%=theme.fancybox%>,
+        animate: <%=theme.animate%>,
+        isHome: <%=is_home()%>,
+        isPost: <%=is_post()%>,
+        isArchive: <%=is_archive()%>,
+        isTag: <%=is_tag()%>,
+        isCategory: <%=is_category()%>,
+        open_in_new: <%=theme.open_in_new%>,
+        fancybox_js: "<%- theme.CDN.fancybox_js %>",
+        scrollreveal: "<%- theme.CDN.scrollreveal %>",
+        search: <%= theme.search.on %>
+    }
+</script>
+
+<% if (theme.jquery_ui) { %>
+    <script>
+        yiliaConfig.jquery_ui = [true, "<%- theme.CDN.jquery_ui_js %>", "<%- theme.CDN.jquery_ui_css %>"];
+    </script>
+<% } else { %>
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+<% } %>
+
+<% if (theme.root_url){ %>
+    <script> yiliaConfig.rootUrl = <%=theme.root_url%>; </script>
+<% } else {%>
+    <script> yiliaConfig.rootUrl = "\/";</script>
+<% } %>
+
+<% if (theme.share.on && theme.share.addthis){ %>
+    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=<%-theme.share.addthis_pubid%>"></script>
+<% } %>
+
+<% if (theme.baidu_tongji){ %>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?<%=theme.baidu_tongji%>";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<% } %>
+
 </head>
