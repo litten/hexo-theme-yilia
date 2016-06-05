@@ -40,13 +40,14 @@
 </script>
 
 <% if (theme.toc_nowrap) { %>
-
     <script>
-        $(document).ready(function() {
-            $(".toc li a").mouseover(function() {
-                var title = $(this).find('.toc-text').text();
+        $(".toc li a").each(function(){
+            var title = $(this).find('.toc-text').text();
+            // Find elements with ellipsis
+            if (this.offsetWidth < this.scrollWidth) {
                 $(this).attr("title", title);
-            });
+                if (!!$().tooltip) { $(this).tooltip() }
+            }
         })
     </script>
 <% } %>
