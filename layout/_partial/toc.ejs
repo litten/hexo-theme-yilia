@@ -3,51 +3,14 @@
     <%- toc(post.content) %>
 </div>
 <style>
-    .left-col .switch-btn {
-        display: none;
-    }
+    .left-col .switch-btn,
     .left-col .switch-area {
         display: none;
     }
 </style>
 
 <input type="button" id="tocButton" value="<%= __('toc.hide') %>"  title="<%= __('tooltip.tocButton') %>">
+
 <script>
-    var valueHide = "<%= __('toc.hide') %>";
-    var valueShow = "<%= __('toc.show') %>";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
+    yiliaConfig.toc = ["<%= __('toc.hide') %>", "<%= __('toc.show') %>", !!"<%= theme.toc_nowrap %>"];
 </script>
-
-<% if (theme.toc_nowrap) { %>
-    <script>
-        $(".toc li a").each(function(){
-            var title = $(this).find('.toc-text').text();
-            // Find elements with ellipsis
-            if (this.offsetWidth < this.scrollWidth) {
-                $(this).attr("title", title);
-                if (!!$().tooltip) { $(this).tooltip() }
-            }
-        })
-    </script>
-<% } %>

@@ -1,0 +1,86 @@
+#tocButton 
+    position fixed
+    left left-col-width - 80px
+    top toc-top + 7
+    font-size .9em
+    font-weight bold
+    font-family inherit
+    color lightgray
+    cursor pointer
+    background none
+    border none
+    outline none
+    -webkit-appearance none
+    &:hover 
+        color: #88acdb
+
+.toc-article 
+    position fixed
+    width left-col-width - 70px
+    top toc-top
+    bottom 1em
+    left 0
+    margin-left 0
+    padding 6px 10px 10px 50 - (base-font-size - 16)*2
+    border-radius 2.8%
+    overflow auto
+
+#toc 
+    font-size .9rem
+    line-height 1.65em
+    .toc-title 
+        font-weight bold
+        color gray
+        &.clickable 
+            cursor pointer
+            &:hover 
+              color #88acdb
+            &:active 
+              color lightgray
+
+    ol.toc
+        margin-left 0 
+        padding .7em
+        padding-right 0
+        li.toc-item
+            list-style-type none
+            i
+                display inline-block
+                margin-left -.9em
+                width .9em
+                color hsl(0, 0%, 70%)
+                font-weight: bold
+                cursor pointer
+                &:hover
+                    color black
+            i.hide
+                display none
+            &:hover 
+                background none
+
+        a.toc-link
+            color: gray
+            &:visited 
+                color rgba(244, 131, 133, 1)
+            &:hover 
+                color #88acdb
+                text-decoration none
+                background rgba(158, 188, 226, .21)
+
+        ol.toc-child
+            padding-left 1.25em
+            margin 4px 0 
+
+
+    if hexo-config("toc_nowrap")
+        a.toc-link 
+            display inline-block
+            width 100% 
+            text-overflow ellipsis
+            white-space nowrap
+            overflow-x hidden
+        li.toc-item
+            line-height: 1.45em
+            & > i
+                position: relative
+                bottom: .35em

@@ -98,7 +98,7 @@ define([], function(){
                     $("#toc, #tocButton").toggle(200, function() {
                         if ($(".switch-area").is(":visible")) {
                             $("#toc, .switch-btn, .switch-area").toggle();
-                            $("#tocButton").attr("value", valueHide);
+                            $("#tocButton").attr("value", yiliaConfig.toc[0]);
                             }
                         });
                 }
