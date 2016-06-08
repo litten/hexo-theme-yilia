@@ -1,4 +1,11 @@
 <section class="youyan" id="comments">
-  <div id="uyan_frame"></div>
-  <script src="http://v2.uyan.cc/code/uyan.js?uid=<%= theme.youyan.id%>"></script>
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=<%= theme.youyan.id%>';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    <%- partial('click2show') %>
+    <div id="uyan_frame"></div>
 </section>

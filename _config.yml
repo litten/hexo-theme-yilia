@@ -75,6 +75,10 @@ subnav:
 # Chose ONE as your comment system and keep others disable.
 # 选一个作为网站评论系统，其他保持禁用。
 
+preload_comment: true
+## false: 当点击评论条等区域时再加载评论模块
+## false: load comment's section until u click/hover on the bar/icon
+
 disqus: 
   #on: true
   shortname: 

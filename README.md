@@ -48,6 +48,7 @@ git pull
 | 6 | 网站计数                 | Site counter                    |
 | 7 | 多语言支持                 | i18n, multi-language          |
 | 8 | 本地站内搜索                 | Local Site Search           |
+| 9 | 动态加载评论                 | Load Comment dynamically    |
 
 ![feature](http://moxfive.github.io/resources/yelee-features.jpg)
 
