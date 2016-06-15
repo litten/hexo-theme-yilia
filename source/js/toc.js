@@ -93,6 +93,10 @@ define(function (){
                     if (!!$().tooltip) { $(this).tooltip() }
                 }
             })
+            var isSafari = !!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/);
+            if (isSafari) {
+                $("#toc .toc-item i").css("bottom", ".1em");
+            }
         }
     }
     TocNoWarp(yiliaConfig.toc[2]);
