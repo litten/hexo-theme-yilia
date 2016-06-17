@@ -28,7 +28,7 @@
 </p>
 
 <h3 align="center">
-    <a href="http://moxfive.xyz/yelee/index.html" target="_blank">
+    <a href="http://MOxFIVE.coding.me/yelee" target="_blank">
         Yelee 主题使用说明 [简中]
     </a>
     <br>
