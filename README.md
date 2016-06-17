@@ -28,11 +28,23 @@
 </p>
 
 <h3 align="center">
-    <a href="http://moxfive.xyz/yelee" target="_blank">
-        Yelee 主题使用说明 [简中]
+    <a href="http://moxfive.xyz/yelee/index.html" target="_blank">
+        Yelee 主题使用说明 [简中], 
+    </a>
+    <a href="https://github.com/MOxFIVE/yelee" target="_blank">
+        Repo
     </a>
 </h3>
 
+<h3 align="center">
+    <a href="http://moxfive.xyz/yelee/index.html" target="_blank">
+        Yelee 主题使用说明 [简中]
+    </a>
+    <br>
+    <a href="https://github.com/MOxFIVE/yelee" target="_blank">
+        文档 GitHub 仓库
+    </a>
+</h3>
 ### Installation
 
 ```
