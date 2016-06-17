@@ -29,15 +29,6 @@
 
 <h3 align="center">
     <a href="http://moxfive.xyz/yelee/index.html" target="_blank">
-        Yelee 主题使用说明 [简中], 
-    </a>
-    <a href="https://github.com/MOxFIVE/yelee" target="_blank">
-        Repo
-    </a>
-</h3>
-
-<h3 align="center">
-    <a href="http://moxfive.xyz/yelee/index.html" target="_blank">
         Yelee 主题使用说明 [简中]
     </a>
     <br>
