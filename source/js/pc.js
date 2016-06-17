@@ -27,9 +27,6 @@ define([], function(){
               '-ms-transform: translate(-' + idx * 100 + '%, 0);',
               'transform: translate(-' + idx * 100 + '%, 0);'
           ];
-        //$wrap.css({
-        //    "transform": "translate(-"+idx*100+"%, 0 )"
-        //});
         $wrap[0].style.cssText = transform.join('');
         $(".icon-wrap").addClass("hide");
         $(".icon-wrap").eq(idx).removeClass("hide");
