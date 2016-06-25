@@ -19,23 +19,29 @@
             opacity 1
             transform scale(1.1)
 
-    img-logo = "新浪微博" #ecc260 80%,
-                "知乎" #0078d8 90%,
-                "豆瓣" #06c611 88%,
-                V2EX #e4cdb4 78%,
-                TiddlyWiki #6283dd 82%,
-                "简书" #e99888 82%,
-                SegmentFault #018f56 80%,
-                "网易云音乐" #e51e02 80%,
-                "虾米音乐" #ff6a00 82%,
-                CSDN red 82%,
-                "博客园" #217ed4 95%,
-                Plunker black 90%
+    img-logo = "新浪微博" #ecc260 80,
+                "知乎" #0078d8 90,
+                "豆瓣" #06c611 88,
+                V2EX #e4cdb4 78,
+                TiddlyWiki #6283dd 82,
+                "简书" #e99888 82,
+                SegmentFault #018f56 80,
+                "网易云音乐" #e51e02 80,
+                "虾米音乐" #ff6a00 82,
+                CSDN red 82,
+                "博客园" #217ed4 95,
+                Plunker black 90,
+                LOFTER #316061 75,
+                Coding white 88,
+                bilibili #f589a0 100,
+                AcFun #fbc054 90,
+                niconico white 70,
+                Quora #b92b27 103
 
     for i in img-logo
         .{i[0]}
             background url(root-url + '/img/' + i[0] + '.png') center no-repeat i[1]
-            background-size i[2]
+            background-size i[2] + "%"
 
     .GitHub
         background url(//cdn.bootcss.com/logos/0.2.0/github-octocat.svg) no-repeat white
