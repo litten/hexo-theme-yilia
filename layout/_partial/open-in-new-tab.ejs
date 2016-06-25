@@ -1,0 +1,26 @@
+<script>
+    // Open in New Window
+    <% if (global === 0) { %>
+        var oOpenInNew = {
+            <% if (theme.github_widget) { %> github: ".github-widget a", <% } %>
+            <% if (theme.open_in_new.title) { %> title: "a.article-title, .article-more-link a", <% } %>
+            <% if (theme.open_in_new.post) { %> post: ".article-entry a[href], .copyright a[href]", <% } %>
+            <% if (theme.open_in_new.tags) { %> tags: ".article-tag a", <% } %>
+            <% if (theme.open_in_new.categories) { %> categories: ".article-category a, a.tag-list-link", <% } %>
+            <% if (theme.open_in_new.article_nav) { %> articleNav: "#article-nav a, #post-nav-button a", <% } %>
+            <% if (theme.open_in_new.archives) { %> archives: ".archive-article-title", <% } %>
+            <% if (theme.open_in_new.mini_archives) { %> miniArchives: "a.post-list-link", <% } %>
+            <% if (theme.open_in_new.menu) { %> menu: ".header-menu a", <% } %>
+            <% if (theme.open_in_new.friends) { %> friends: "#js-friends a", <% } %>
+            <% if (theme.open_in_new.socail) { %> socail: ".social a" <% } %>
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    <% } else if (global === 1) { %>
+        $("a").attr("target", "_blank");
+        $("#scroll a, #toc a").removeAttr("target");
+    <% } else if (global === 2) { %>
+        $("a[target=_blank]").removeAttr("target");
+    <% } %>
+</script>

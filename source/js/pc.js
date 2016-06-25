@@ -87,7 +87,6 @@ define([], function(){
     var miniArchives = function(){
         if(yiliaConfig.isPost) {
             $(".post-list").addClass("toc-article");
-            $(".post-list-item a").attr("target","_blank");
             $("#post-nav-button > a:nth-child(2)").click(function() {
                 $("#post-nav-button .fa-bars,#post-nav-button .fa-times").toggle();
                 $(".post-list").toggle(300);

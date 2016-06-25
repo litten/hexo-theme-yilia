@@ -140,13 +140,6 @@ require([], function (){
         require(['toc'], function(){ })
     }
 
-    // Open in New Tab
-    if(!!yiliaConfig.open_in_new){
-        $(".article a[href]").attr("target", "_blank")
-    }
-    $(".archive-article-title, .github-widget a").attr("target", "_blank");
-
-
     // Random Color 边栏顶部随机颜色
     var colorList = ["#6da336", "#ff945c", "#66CC66", "#99CC99", "#CC6666", "#76becc", "#c99979", "#918597", "#4d4d4d"];
     var id = Math.ceil(Math.random()*(colorList.length-1));
