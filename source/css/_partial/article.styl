@@ -230,25 +230,34 @@
   }
 }
 
-.article-meta{
-    position: absolute;
-    right: 0;
-    top: 23px;
-    width: 8rem;
-    font-size: (14/16)rem;
-    text-align: center;
-    z-index: 1;
-    time {
-        color: #aaa;
-        &:before {
-            margin-top: 0px;
-            margin-right: 4px;
-            content: "\f073";
-            font: 1em FontAwesome;
-            color: #999;
-        }
-    }
-}
+.article-meta
+    position absolute
+    right 0
+    top 23px
+    width 9rem
+    padding-right 1.2rem
+    font-size 0.875rem
+    text-align right
+    z-index 1
+    time
+        color #aaa
+        float right
+        &:before
+            margin-top 0px
+            margin-right 4px
+            content "\f073"
+            font 1em FontAwesome
+            color #999
+    a:nth-child(2)
+        &:hover
+            color #258fb8
+            font-size 110%
+        i
+            vertical-align top
+        clear right
+        float right
+        padding-top .45rem
+        color #999
 
 .article-more-link {
     float: right;

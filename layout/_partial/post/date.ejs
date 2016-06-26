@@ -1,3 +1,16 @@
 <a href="<%- url_for(post.path) %>" class="<%= class_name %>">
       <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, date_format) %></time>
 </a>
+
+<% if ((is_home() || (is_post() && !theme.preload_comment)) && theme.show_count && (theme.disqus.on || theme.duoshuo.on || config.disqus_shortname)) { %> 
+    <a href="<%- url_for(post.path) %>#comments" title="<%= __('tooltip.jump2comments') %>">
+        <i class="fa fa-comments-o" aria-hidden="true"></i>
+        <span class="count-comment"></span>
+        <% if (theme.duoshuo.on) { %>
+            <span class="ds-thread-count" <% if (index) { %> data-thread-key="<%=post.path%>" <% } %>"></span>
+        <% } %>
+        <% if (theme.disqus.on || config.disqus_shortname) { %>
+            <span class="disqus-comment-count" data-disqus-identifier="<%= post.path %>"></span>
+        <% } %>
+    </a>
+<% } %>
