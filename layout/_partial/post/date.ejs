@@ -7,7 +7,7 @@
         <i class="fa fa-comments-o" aria-hidden="true"></i>
         <span class="count-comment"></span>
         <% if (theme.duoshuo.on) { %>
-            <span class="ds-thread-count" <% if (index) { %> data-thread-key="<%=post.path%>" <% } %>"></span>
+            <span class="ds-thread-count" <% if (index) { %> data-thread-key="<%=post.path%>" <% } %>></span>
         <% } %>
         <% if (theme.disqus.on || config.disqus_shortname) { %>
             <span class="disqus-comment-count" data-disqus-identifier="<%= post.path %>"></span>
