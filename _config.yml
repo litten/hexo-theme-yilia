@@ -6,13 +6,13 @@ menu:
   # 随笔: /tags/随笔
 # SubNav
 subnav:
-  github: "https://github.com/stotem"
-  #oschina: "http://git.oschina.net/QKing"
+  github: "#"
+  #oschina: "#"
   #weibo: "#"
   rss: "/atom.xml"
   #zhihu: "#"
   #douban: "#"
-  mail: "mailto:china.wujianjun@icloud.com"
+  mail: "mailto:#"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
