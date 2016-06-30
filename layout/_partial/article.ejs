@@ -2,6 +2,7 @@
   <%if(post.noDate != "true"){%>
     <div class="article-meta">
       <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+      <%- partial('post/analysis') %>
     </div>
   <%}%>
   <div class="article-inner">
@@ -24,6 +25,20 @@
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
       <% } else { %>
+              <% if (!index){ %>
+           <% if (toc(post.content)){ %>            
+             <div id="toc" class="article-toc">
+             <h2><%= __('sidebar.toc') %></h2>
+               <%- toc(post.content) %>  
+             </div>
+             <script type="text/javascript">
+               var _article = document.getElementsByClassName('article')[0];
+               <!-- setTimeout("_article.style.marginRight = '211px'",0);  -->
+               setTimeout("_article.className += ' article2'",0); 
+               setTimeout("document.getElementById('toc').style.right = '15px'", 0);                
+             </script>
+           <% } %>
+         <% } %>
         <%- post.content %>
       <% } %>
     </div>
@@ -67,7 +82,11 @@
 <% } %>
 
 <% if (!index && theme.uyan && post.comments){ %>
-<%- partial('post/uyan') %>
+<%- partial('post/uyan', {
+    key: post.slug,
+    title: post.title,
+    url: config.url+url_for(post.path)
+  }) %>
 <% } %>
 
 <% if (!index && post.comments && config.disqus_shortname){ %>

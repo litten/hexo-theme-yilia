@@ -48,6 +48,11 @@ counter:
     zero: No posts.
     one: 1 post.
     other: "%d posts in total."
+    
+  hits:
+    pv: Pageviews
+    sitepv: Visitors
+    unit: Hits
 
 state:
   posts: posts

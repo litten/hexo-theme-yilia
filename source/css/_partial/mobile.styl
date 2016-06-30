@@ -41,6 +41,7 @@
     }
 }
 .article-header{
+    min-height: 60px;
     border-left: none;
     padding: 0;
     border-bottom: 1px dotted #ddd;
@@ -88,9 +89,11 @@
     .article-meta{
         width: auto;
         height: 30px;
-        margin-top: -5px;
+        margin-top: -10px;
+        padding-right: 15px;
         position: ralative;
         .article-date{
+            float:right;
             font-size: 12px;
             border-radius: 0;
             color: #666;
@@ -104,7 +107,6 @@
             time{
                 width: auto;
                 float: right;
-                margin-right: 10px;
             }
         }
         .article-tag-list{
@@ -140,6 +142,10 @@
                 padding-left:10px;
             }
         }
+    }
+    .analysis-container { 
+        float: right;
+        padding-top: 10px;
     }
     .article-nav-link-wrap{
         margin: 5px 0;
@@ -202,7 +208,7 @@
         .archive-article-date{
             font-size: 12px;
             margin-right: 10px;
-            margin-top: -5px;
+            margin-top: -10px;
         }
         .article-tag-list-link{
             font-size: 12px;

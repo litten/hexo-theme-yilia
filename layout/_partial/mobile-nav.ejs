@@ -32,6 +32,10 @@
 						<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
 			        <%}%>
 				</div>
+				<div style="text-align: center;">
+					<i class="fa fa-line-chart"></i>
+					<%= __('counter.hits.sitepv') %><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> <%= __('counter.hits.unit') %>
+				</div>
 			</nav>
 		</header>				
 	</div>
