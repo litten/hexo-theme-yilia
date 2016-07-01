@@ -1,0 +1,18 @@
+<% if (theme.tab_title_change.on) { %>
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "<%- theme.tab_title_change.left_tab_title %>" + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "<%- theme.tab_title_change.return_tab_title %>" + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+<% } %>

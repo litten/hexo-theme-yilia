@@ -83,25 +83,6 @@ if ( is_archive() ) {
     }
 </script>
 
-<% if (theme.tab_title_change){ %>
-<script>
-    var OriginTitile = document.title;
-    var titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = "<%- theme.tab_title_change.left_tab_title %>" + OriginTitile;
-            clearTimeout(titleTime);
-        }
-        else {
-            document.title = "<%- theme.tab_title_change.return_tab_title %>" + OriginTitile;
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            }, 2000);
-        }
-    });
-</script>
-<% } %>
-
 <% if (theme.jquery_ui) { %>
     <script>
         yiliaConfig.jquery_ui = [true, "<%- theme.CDN.jquery_ui_js %>", "<%- theme.CDN.jquery_ui_css %>"];
