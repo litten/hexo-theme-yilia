@@ -275,6 +275,13 @@ progressBar:
   type: "minimal"  # Keep Quotes | 保留引号避免出错
   color: blue
 
+# Tab Title Change | 标签页标题切换
+tab_title_change: 
+  on: true
+  left_tab_title: '(つェ⊂)我藏好了哦~ '
+  return_tab_title: '(*´∇｀*) 被你发现啦~ '
+
+
 CDN:
   jquery: //cdn.bootcss.com/jquery/2.2.4/jquery.min.js
   require: //cdn.bootcss.com/require.js/2.2.0/require.min.js
