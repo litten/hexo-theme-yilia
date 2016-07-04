@@ -1,16 +1,26 @@
-<div id="toc" class="toc-article">
-    <strong class="toc-title"><%= __('toc.title') %></strong>
-    <%- toc(post.content) %>
-</div>
-<style>
-    .left-col .switch-btn,
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
+<% if (!index && ((post.toc != false && !is_page() && theme.toc.on) || post.toc)) { %>
+    <div id="toc" class="toc-article">
+        <strong class="toc-title"><%= __('toc.title') %></strong>
+        <% if ((theme.toc.list_number && post.toc_list_number != false) || post.toc_list_number) { %>
+            <%- toc(post.content) %>
+        <% } else { %>
+            <%- toc(post.content, {list_number: false}) %>
+        <% } %>
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-<%= theme.toc.max_depth %> i,
+        .toc-level-<%= theme.toc.max_depth %> ol {
+            display: none !important;
+        }
+    </style>
 
-<input type="button" id="tocButton" value="<%= __('toc.hide') %>"  title="<%= __('tooltip.tocButton') %>">
+    <input type="button" id="tocButton" value="<%= __('toc.hide') %>"  title="<%= __('tooltip.tocButton') %>">
 
-<script>
-    yiliaConfig.toc = ["<%= __('toc.hide') %>", "<%= __('toc.show') %>", !!"<%= theme.toc_nowrap %>"];
-</script>
+    <script>
+        yiliaConfig.toc = ["<%= __('toc.hide') %>", "<%= __('toc.show') %>", !!"<%= theme.toc.nowrap %>"];
+    </script>
+<% } %>
