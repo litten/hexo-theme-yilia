@@ -32,10 +32,12 @@ open_in_new: false
 
 # Miscellaneous
 google_analytics: ''
-favicon: /favicon.png
+avatar: /img/person.jpg
 
-#你的头像url
-avatar:
+# Small icon of Your site | 站点小图标地址
+favicon: /img/icoperson.jpg
+
+
 #是否开启分享
 share_jia: true
 share_addthis: false
@@ -44,7 +46,9 @@ share_addthis: false
 duoshuo: true
 #是否开启云标签
 tagcloud: true
-
+search:
+  on: true
+  onload: false
 #是否开启友情链接
 #不开启——
 #friends: false
