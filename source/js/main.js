@@ -78,7 +78,7 @@ require([], function (){
                     var height = imgArr.eq(i).attr("height");
                     imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' width="+width+" height="+height+" title='"+title+"' alt='"+title+"'></a>");
                 }
-                $(".article-inner .fancy-ctn").fancybox();
+                $(".article-inner .fancy-ctn").fancybox({ type: "image" });
             }
         })
     }
