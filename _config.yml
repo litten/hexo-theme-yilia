@@ -168,6 +168,11 @@ animate: true
 # 工具提示框样式美化
 jquery_ui: false
 
+# Max width of right cloumn | 限制右侧内容的宽带 
+limit_article_width: 
+  on: false
+  max_width: 60 # em
+
 # >>> Small features | 小功能设置 <<<
 
 # 是否开启边栏多标签切换
