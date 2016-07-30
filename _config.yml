@@ -37,6 +37,7 @@ open_in_new: false
 
 # Miscellaneous
 google_analytics: ''
+cnzz_protocol: false
 favicon: /favicon.png
 
 #你的头像url
