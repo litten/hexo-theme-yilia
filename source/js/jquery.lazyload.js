@@ -47,7 +47,7 @@
                 }
                 var w = target.width();
                 var h = target.height();
-                target[0].src = "/img/img-err.png";
+                target[0].src = yiliaConfig.root + "/img/img-err.png";
 
                 fn();
                 //todo: 上报
@@ -59,7 +59,7 @@
                 var t = target.offset().top;
                 var l = target.offset().left;
                 var tempDom = target.clone().addClass("lazy-loding").insertBefore(target);
-                tempDom[0].src = "/img/img-loading.png";
+                tempDom[0].src = yiliaConfig.root + "/img/img-loading.png";
                 target.hide();
             }
             /**

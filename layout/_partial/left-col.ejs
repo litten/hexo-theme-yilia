@@ -3,9 +3,9 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			<% if (theme.animate){ %>
-			<img lazy-src="<%=theme.avatar%>" class="js-avatar">
+			<img lazy-src="<%=theme.root + theme.avatar%>" class="js-avatar">
 			<%}else{%>
-			<img src="<%=theme.avatar%>" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			<img src="<%=theme.root + theme.avatar%>" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			<%}%>
 		</a>
 
