@@ -62,6 +62,8 @@ require([], function (){
 				for(var i=0,len=imgArr.length;i<len;i++){
 					var src = imgArr.eq(i).attr("src");
 					var title = imgArr.eq(i).attr("alt");
+					var height = imgArr.eq(i).attr("height");
+					var width = imgArr.eq(i).attr("width");
 					imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' title='"+title+"'></a>");
 				}
 				$(".article-inner .fancy-ctn").fancybox();
