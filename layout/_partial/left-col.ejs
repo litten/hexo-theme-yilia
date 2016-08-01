@@ -75,6 +75,10 @@
 								<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
 					        <%}%>
 						</div>
+						<div>
+							<i class="fa fa-line-chart"></i>
+							<%= __('counter.hits.sitepv') %><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> <%= __('counter.hits.unit') %>
+						</div>
 					</nav>
 				</section>
 				
@@ -90,7 +94,7 @@
 				<section class="switch-part switch-part3">
 					<div id="js-friends">
 					<% for (var i in theme.friends){ %>
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a>
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a><br />
 			        <% } %>
 			        </div>
 				</section>
@@ -107,5 +111,6 @@
 				<%}%>
 			</div>
 		</div>
+		
 	</header>				
 </div>
