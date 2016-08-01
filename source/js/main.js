@@ -107,4 +107,23 @@ require([], function (){
 		$(".article a[href]").attr("target", "_blank")
 	}
 	
+	//return to top初始化
+	$(function() {
+	    var isRttShow = false;
+	    $(window).scroll(function() {
+	        var scrollTop = $(this).scrollTop();
+	        if (scrollTop > 100 && !isRttShow) {
+	            $("#return_to_top").show();
+	            isRttShow = true;
+	        } else if (scrollTop < 100 && isRttShow) {
+	            $("#return_to_top").hide();
+	            isRttShow = false;
+	        }
+	    });
+
+	    $("#return_to_top").click(function() {
+	        $('html,body').animate({ scrollTop: '0px' }, 800);
+	    });
+	});
+	
 });

@@ -41,6 +41,10 @@ favicon: /favicon.png
 
 #你的头像url
 avatar:
+
+#你的return to top图片
+return_to_top_img: /img/topbtn.png
+
 #是否开启分享
 share_jia: true
 share_addthis: false
