@@ -89,8 +89,9 @@ define([], function(){
 		}, false);
 
 		//点击展示和隐藏
-		ctn.addEventListener("touchend", function(){
+		ctn.addEventListener("touchend", function(event){
 			show();
+			event.preventDefault();
 		}, false);
 
 		var $right = document.getElementsByClassName("viewer-box-r")[0];
