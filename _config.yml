@@ -10,6 +10,7 @@ subnav:
   weibo: "#"
   rss: "#"
   zhihu: "#"
+  #stackoverflow: "#"
   #douban: "#"
   #mail: "#"
   #facebook: "#"
