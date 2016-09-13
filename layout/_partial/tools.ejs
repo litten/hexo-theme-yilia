@@ -1,0 +1,57 @@
+<%
+  var hasInnerArchive = theme.smart_menu.innerArchive
+  var hasTagcloud = theme.smart_menu.tagcloud
+  var hasFriends = theme.smart_menu.friends
+  var hasAboutme = theme.smart_menu.aboutme
+%>
+<div class="tools-col">
+  <ul class="btn-wrap">
+    <%if(hasInnerArchive){%>
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    <%}%>
+    <%if(hasTagcloud){%>
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    <%}%>
+    <%if(hasFriends){%>
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    <%}%>
+    <%if(hasAboutme){%>
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    <%}%>
+  </ul>
+  <div class="tools-wrap">
+    <%if(hasInnerArchive){%>
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    <%}%>
+
+    <%if(hasTagcloud){%>
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<%- tagcloud() %>
+    			</div>
+    	</section>
+    <%}%>
+
+    <%if(hasFriends){%>
+    	<section class="tools-section tools-section-friends">
+  		<%if(theme.friends && theme.friends.length != 0){%>
+  			<div class="friends-wrap" id="js-friends">
+  			<% for (var i in theme.friends){ %>
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a>
+  	        <% } %>
+  	        </div>
+  		<%}%>
+    	</section>
+    <%}%>
+
+    <%if(hasAboutme){%>
+    	<section class="tools-section tools-section-me">
+  	  	<%if(theme.aboutme){%>
+  	  		<div class="aboutme-wrap" id="js-aboutme"><%=theme.aboutme%></div>
+  	  	<%}%>
+    	</section>
+    <%}%>
+  </div>
+  
+</div>

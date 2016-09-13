@@ -1,13 +1,13 @@
 <nav id="mobile-nav">
   	<div class="overlay">
-  		<div class="slider-trigger"></div>
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
   		<h1 class="header-author js-mobile-header hide"><%=theme.author%></h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<% if (theme.animate){ %>
-					<img lazy-src="<%=theme.root + theme.avatar%>" class="js-avatar">
+					<img src="<%=theme.root + theme.avatar%>" class="js-avatar">
 				<%}else{%>
 					<img src="<%=theme.root + theme.avatar%>" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 				<%}%>

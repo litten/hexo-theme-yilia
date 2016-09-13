@@ -1,0 +1,52 @@
+$iconWidth: 26px;
+
+@keyframes smile {
+  	0% {
+		margin-left: (-1 * $iconWidth);
+	}
+	20% {
+		margin-left: (-2 * $iconWidth);
+	}
+	40% {
+		margin-left: (-3 * $iconWidth);
+	}
+	60% {
+		margin-left: (-4 * $iconWidth);
+	}
+	80% {
+		margin-left: (-5 * $iconWidth);
+	}
+	100% {
+		margin-left: (-1 * $iconWidth);
+	}
+}
+
+.switch-btn {
+	margin-left: 74px;
+	margin-top: 23px;
+	position: relative; 
+	width: 70px;
+	text-align: center;
+	.wrap {
+		height: $iconWidth;
+		width: $iconWidth;
+		line-height: $iconWidth;
+		//background: #e8de52;
+		border-radius: 100px;
+		position: relative;
+		overflow: hidden;
+		display: inline-block;
+		cursor: pointer;
+		text-align: center;
+		.wrap-line {
+			width: 1000px;
+			height: 100%;
+			// animation: smile 20s steps(1, start) infinite;
+		}
+		.icon {
+			font-size: $iconWidth;
+			color: #5d5d5d;
+			float: left;
+		}
+	}
+}

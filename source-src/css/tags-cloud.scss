@@ -1,0 +1,63 @@
+.glass {
+    background-color: rgba(54,70,93,.9);
+    left: 0;
+    opacity: 1;
+    z-index: 998;
+    transition: opacity .15s;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.tagcloud-ctn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 90120;
+    background-size: 100% 100%;
+    opacity: 1;
+    .tagcloud-global {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -115px;
+        margin-left: -315px;
+        width: 630px;
+        a {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #F2992E;
+            color: #fff;
+            display: block;
+            float: left;
+            line-height: 80px;
+            text-align: center;
+        }
+        .tab-post-types .tab-post-type:nth-child(1) .post-type-icon {
+            background: #F2992E
+        }
+
+        .tab-post-types .tab-post-type:nth-child(2) .post-type-icon {
+            background: #56BC8A
+        }
+
+        .tab-post-types .tab-post-type:nth-child(3) .post-type-icon {
+            background: #4AA8D8
+        }
+
+        .tab-post-types .tab-post-type:nth-child(4) .post-type-icon {
+            background: #A77DC2
+        }
+
+        .tab-post-types .tab-post-type:nth-child(5) .post-type-icon {
+            background: #DD765D
+        }
+    }
+}

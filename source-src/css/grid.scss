@@ -1,0 +1,67 @@
+body, button, input, select, textarea {
+    color: #1a1a1a;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+body {
+	overflow-y: hidden;
+}
+html, body, #container {
+    height: 100%;
+    overflow-x: hidden;
+}
+#container{
+	position:relative;
+	min-height:100%;
+}
+.body-wrap{
+  margin-bottom: 80px;
+}
+.mid-col {
+	position:absolute;
+	right:0;
+	min-height:100%;
+	background:#eaeaea;
+	left: 300px;
+	width: auto;
+	@extend %trans;
+	&.show {
+	  transform: translate3d(300px, 0, 0);
+	}
+}
+#mobile-nav{
+	display: none;
+	.overlay{
+		height: 110px;
+		position: absolute;
+		width: 100%;
+		background: #4d4d4d;
+		&.fixed{
+	        position: fixed;
+	        height: 42px;
+	        z-index: 99;
+	    }
+	}
+	#header{
+		padding: 10px 0 0 0;
+		.profilepic{
+			display: block;
+			position: relative;
+			z-index: 100;
+		}
+		.header-menu{
+			height: auto;
+			margin: 10px;
+			ul{
+				text-align: center;
+				cursor: default;
+			}
+			li{
+				display: inline-block;
+				margin: 3px;
+			}
+		}
+	}
+}

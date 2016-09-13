@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------	
+// variables scss
+//-----------------------------------------------------	
+
+
+// font相关
+//-----------------------------------------------------	
+$fontSize:                       14px !default; 
+$fontLineHeight:                 1.5 !default;
+$fontFamily:                     "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif !default;
+// ios华文黑体,Android 4.0之后,Android 4.0之前
+$fontCn:                         STHeiTi, Roboto, "Droid Sans Fallback", Arial !default; 
+// ios4.0+,ios4.0-,Android 4.0+,Android 4.0-
+$fontEn:                         "Helvetica Neue", Helvetica, Roboto, "Droid Sans", Arial !default; 
+
+
+// 背景色，文本色，边框色，链接色
+//-----------------------------------------------------	
+$colorText:                      #333 !default;
+$colorBg:                        #fff !default;
+$colorBorder:                    #dbdbdb !default;
+$colorLink:                      #08c !default;
+$colorPlaceholder:               #999 !default; // input placeholder color
+$colorDisabled:                  (text: #999, bg: #e3e3e3, border: #dbdbdb) !default; // textColor bgColor borderColor
+$colorOverlay:                   rgba(0,0,0,.7) !default; // 遮罩层颜色
+
+
+// 基本颜色
+// color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
+// lighten($color, $amount)
+// darken($color, $amount)
+// opacity($color, $amount)
+// mix($color1, $color2[, $amount])
+//-----------------------------------------------------	
+$color3:                          #333;
+$color6:                          #666;
+$color9:                          #999;
+$colorC:                          #ccc;
+$colorF:                          #f5f5f5;
+
+$blue:                            #007aff !default;
+$orange:                          #ff9500 !default;
+$red:                             #ff3b30 !default;
+$green:                           #4cd964 !default;
+$primary:                         #007aff !default;
+
+
+// 元素上下间距
+//-----------------------------------------------------	
+$gap:                             20px !default;
+
+
+// header,footer等的高度
+//-----------------------------------------------------	
+$barHeight:                       44px !default;
+
+
+// radius
+//-----------------------------------------------------	
+$radiusBase:                      5px !default;
+$radiusSmall:                     3px !default;
+
+
+// timing-function
+//-----------------------------------------------------
+$timingFunction:                  cubic-bezier(0.42, 0, 0.58, 1);
+
+
+// active state switch
+//-----------------------------------------------------
+$activeStateSwitch:               true !default;
+
+
+// z-index
+//-----------------------------------------------------	
+$zIndexHeader:                    1000 !default;
+$zIndexFooter:                    2000 !default;
+$zIndexPopup:					  3000 !default;                     
+$zIndexOverlay:                   4000 !default; // 默认高于header和footer部分
+
+$articlePadding:				  7.6923%;

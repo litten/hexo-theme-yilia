@@ -1,9 +1,4 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
-  <%if(post.noDate != "true"){%>
-    <div class="article-meta">
-      <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
-    </div>
-  <%}%>
   <div class="article-inner">
     <% if (theme.fancybox){ %>
       <input type="hidden" class="isFancy" />
@@ -12,43 +7,33 @@
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
-      <% if (!index){ %>
-      <div class="article-info article-info-post">
-        <%- partial('post/tag') %>
-        <%- partial('post/category') %>
-        <div class="clearfix"></div>
-      </div>
-      <% } %>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
+        <p class="article-more-link">
+          <a <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
+        </p>
       <% } else { %>
         <%- post.content %>
       <% } %>
     </div>
-    <% if (index){ %>
     <div class="article-info article-info-index">
       <%if(post.top){%>
         <div class="article-pop-out tagcloud">
           <a class="">置顶</a>
         </div>
       <% } %>
+      <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
       <%- partial('post/tag') %>
       <%- partial('post/category') %>
-      <% if (post.excerpt && index){ %>
-        <p class="article-more-link">
-          <a <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-        </p>
-      <% } %>
       <div class="clearfix"></div>
     </div>
-    <% } %>
   </div>
-  <% if (!index){ %>
-    <%- partial('post/nav') %>
-  <% } %>
 </article>
+<% if (!index){ %>
+  <%- partial('post/nav') %>
+<% } %>
 
 <% if (!index && theme.share_jia){ %>
 <%- partial('post/share_jia') %>

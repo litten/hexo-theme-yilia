@@ -1,0 +1,119 @@
+.tools-col {
+    width: 300px;
+    height: 100%;
+    @extend %paper-bg;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    padding: 0;
+    @extend %trans;
+    @extend %shadow;
+    &.show {
+        transform: translate3d(300px, 0, 0);
+        .btn-wrap {
+            opacity: 1;
+        }
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .tools-wrap, .tools-section{
+        height: 100%;
+        color: #e5e5e5;
+    }
+    .tools-section {
+        display: none;
+        &.chose {
+            display: block;
+        }
+        .tagcloud {
+            padding: 15px 0 0 15px;
+        }
+    }
+    .btn-wrap {
+        position: absolute;
+        height: 60px;
+        width: 100px;
+        right: -100px;
+        opacity: 0;
+        @extend %trans;
+        li {
+            height: 30px;
+            width: 40px;
+            line-height: 31px;
+            text-align: right;
+            padding-right: 5px;
+            background: #56BC8A;
+            color: #eaeaea;
+            border-top-right-radius: 100px;
+            border-bottom-right-radius: 100px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border: 2px solid #fff;
+            border-left: 0;
+            @extend %trans;
+            .text {
+                opacity: 0;
+                font-size: 12px;
+                float: left;
+                margin-left: -30px;
+                @extend %trans;
+            }
+            &.chose, &:hover {
+                width: 60px;
+                .text {
+                    opacity: 1;
+                    margin-left: 4px;
+                }
+            }
+            &:hover {
+                opacity: 0.85;
+            }
+            &:nth-child(1) {
+                background: #56BC8A;
+            }
+            &:nth-child(2) {
+                background: #A77DC2;
+            }
+            &:nth-child(3) {
+                background: #F2992E;
+            }
+            &:nth-child(4) {
+                background: #DD765D;
+            }
+            &:nth-child(5) {
+                background: #4AA8D8;
+            }
+        }
+
+    }
+
+    .tools-section-friends {
+        .friends-wrap {
+            padding: 15px;
+        }
+        .switch-friends-link {
+            padding: 7px 0 7px 5px;
+            border-bottom: 1px solid #717171;
+            border-top: 1px solid #5d5d5d;
+            display: block;
+            color: #e5e5e5;
+            &:hover {
+                background: #6b6b6b;
+            }
+        }
+    }
+    .aboutme-wrap {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-shadow: 1px 1px #424242;
+    }
+}

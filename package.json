@@ -1,10 +1,32 @@
 {
-  "name": "hexo-site",
-  "version": "2.8.3",
-  "private": true,
-  "dependencies": {
-    "hexo-renderer-ejs": "*",
-    "hexo-renderer-stylus": "*",
-    "hexo-renderer-marked": "*"
+  "name": "yilia",
+  "version": "3.0.0",
+  "description": "a theme for hexo",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/litten/hexo-theme-yilia.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "blog"
+  ],
+  "author": "litten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/litten/hexo-theme-yilia/issues"
+  },
+  "homepage": "https://github.com/litten/hexo-theme-yilia#readme",
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "node-sass": "^3.9.3",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
   }
 }
