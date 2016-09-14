@@ -95,10 +95,8 @@
 			-webkit-box-align: center;
 			text-align: center;
 			img{
-				width: 20%;
-				height: 20%;
 				border-radius: 300px;
-				opacity: 0;
+				opacity: 1;
 				-webkit-transition: all 0.2s ease-in;
 				&.show{
 					width: 100%;
