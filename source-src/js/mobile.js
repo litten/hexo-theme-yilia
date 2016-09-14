@@ -1,6 +1,7 @@
+var Util = require('./util')
 var _isShow = false;
-var $tag, $aboutme, $friends;
-
+var $menu, $tag, $aboutme, $friends;
+var hasInnerArchive
 var ctn,radio,scaleW,idx,basicwrap;
 
 //第一步 -- 初始化
@@ -18,11 +19,12 @@ var combine = function(){
 		document.getElementById("js-mobile-tagcloud").innerHTML = $tag.innerHTML;
 	}
 	if($aboutme){
-		document.getElementById("js-mobile-aboutme").innerHTML = $aboutme.innerHTML;
+		document.getElementById("js-mobile-aboutme").innerHTML = Util.decode($aboutme.innerHTML);
 	}
 	if($friends){
 		document.getElementById("js-mobile-friends").innerHTML = $friends.innerHTML;
 	}
+	document.getElementById("js-mobile-menu").innerHTML = $menu.innerHTML;
 }
 //第三步 -- 根据数据渲染DOM
 var renderDOM = function(){
@@ -30,16 +32,26 @@ var renderDOM = function(){
 	var $viewer = document.createElement("div");
 	$viewer.id = "viewer";
 	$viewer.className = "hide";
+	$menu = document.getElementsByClassName("header-menu")[0];
 	$tag = document.getElementById("js-tagcloud");
 	$aboutme = document.getElementById("js-aboutme");
 	$friends = document.getElementById("js-friends");
+
+	// 插入“全部文章”
+	hasInnerArchive = !!$('.js-archives-frame').length
+	if (hasInnerArchive) {
+		var str = $('.js-smart-menu').first().html()
+		$('.header-menu ul').append('<li><a href="/archives">' + str +'</a></li>')
+	}
+
+	var menuStr = '<span class="viewer-title">菜单</span><div class="viewer-div menu" id="js-mobile-menu"></div>'
 	var tagStr = $tag?'<span class="viewer-title">标签</span><div class="viewer-div tagcloud" id="js-mobile-tagcloud"></div>':"";
 	var friendsStr = $friends?'<span class="viewer-title">友情链接</span><div class="viewer-div friends" id="js-mobile-friends"></div>':"";
 	var aboutmeStr = $aboutme?'<span class="viewer-title">关于我</span><div class="viewer-div aboutme" id="js-mobile-aboutme"></div>':"";
 
 	$viewer.innerHTML = '<div id="viewer-box">\
 	<div class="viewer-box-l">\
-		<div class="viewer-box-wrap">'+aboutmeStr+friendsStr+tagStr+'</div>\
+		<div class="viewer-box-wrap">'+menuStr+aboutmeStr+friendsStr+tagStr+'</div>\
 	</div>\
 	<div class="viewer-box-r"></div>\
 	</div>';

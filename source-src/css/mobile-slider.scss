@@ -57,15 +57,20 @@
 	-webkit-transform: translate3d(-100%, 0, 0 );
 	-webkit-transition: -webkit-transform .25s ease-in-out;
 	.viewer-box-l{
-		background: rgba(20,20,20,0.9);
+		background: url('./img/checkered-pattern.png') repeat #5d5d5d;
 		width: 80%;
 		height: 100%;
 		float: left;
+		a {
+			color: #5ac8ff;
+		}
 		.viewer-box-wrap{
 			margin: 20px 10px 0px 20px;
 		}
 		.viewer-title{
 			line-height: 32px;
+			font-weight: bold;
+			color: #d6d6d6;
 			&:before{
 				content: "";
 				width: 6px;
@@ -88,6 +93,9 @@
 			.switch-friends-link{
 				line-height: 20px;
 			}
+		}
+		.tagcloud a {
+			color: #fff;
 		}
 	}
 	.viewer-box-r{

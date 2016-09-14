@@ -19,6 +19,5 @@ module.exports = {
       loader: 'url-loader?limit=50000&name=[path][name].[ext]'
     }]
   },
-  devtool: "source-map",
   watch: true
 }
