@@ -1,0 +1,112 @@
+#post-instagram{
+	.article-entry{
+		padding-right: 0;
+	}
+	padding: 30px;
+}
+.instagram{
+	position: relative;
+	min-height: 500px;
+}
+.instagram .open-ins{
+	display: block;
+	padding: 10px 0;
+	position: absolute;
+	right: 28px;
+	top: -75px;
+	color: #333;
+	&:hover{
+		color: #657b83;
+	}
+}
+.instagram .year{
+	display: inline;
+}
+.instagram .album h1 em{
+	font-style: normal;
+	font-size: 14px;
+	margin-left: 10px;
+}
+.instagram .album ul{
+	padding-top: 17px;
+	border-bottom: 1px solid #ddd;
+	clear: both;
+	width: 100%;
+	text-align: left;
+}
+.instagram .album li{
+	list-style: none;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 5px;
+	margin-bottom: -10px;
+	height: 0;
+	width: 25%;
+	position: relative;
+	padding-bottom: 25%;
+	&:before{
+		display: none;
+	}
+}
+.instagram .album div.img-box{
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
+	.icon {
+		font-size: 40px;
+		position: absolute;
+		top: 28px;
+		left: 27px;
+		color: #999;
+		z-index: 1;
+	}
+}
+.instagram .album div.img-box img{
+	width: 100%;
+	height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+.instagram .album div.img-box .img-bg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0px;
+	width: 100%;
+	margin: -5px;
+	padding: 5px;
+	-webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 1px 5px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 1px 5px rgba(0,0,0,0.1);
+	box-shadow: 0 0 0 1px rgba(0,0,0,.04), 0 1px 5px rgba(0,0,0,0.1);
+	-webkit-transition: all 0.15s ease-out 0.1s;
+	-moz-transition: all 0.15s ease-out 0.1s;
+	-o-transition: all 0.15s ease-out 0.1s;
+	transition: all 0.15s ease-out 0.1s;
+	opacity: 0.2;
+	cursor: pointer;
+	display: block;
+	z-index: 3;
+}
+.instagram .album div.img-box .img-bg:hover{
+	opacity: 0;
+}
+@media screen and (max-width:600px) {
+	.instagram .album ul {
+		margin-left: 0;
+		text-align: center;
+	}
+	.instagram .album li {
+		width: 100%;
+		position: relative;
+		padding-bottom: 100%;
+		text-align: center;
+	}
+	.instagram .album div.img-box{
+		margin: 0;
+		width: 90%;
+		height: 90%;
+	}
+}

@@ -63,7 +63,10 @@
 	padding: 15px;
 	white-space: nowrap;
 }
-
+.fancybox-video {
+	width: 100%;
+	height: 100%;
+}
 .fancybox-image, .fancybox-iframe {
 	display: block;
 	width: 100%;
@@ -221,7 +224,6 @@
 }
 
 .fancybox-title-float-wrap .child {
-	display: inline-block;
 	margin-right: -100%;
 	padding: 2px 20px;
 	background: transparent; /* Fallback for web browsers that doesn't support RGBa */
@@ -234,6 +236,15 @@
 	font-weight: bold;
 	line-height: 24px;
 	text-align: left;
+	cursor: pointer;
+	overflow: hidden;
+	-webkit-line-clamp: 1;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	display: -webkit-box;
+}
+.fancybox-title-float-wrap .child:hover {
+	-webkit-line-clamp: 1000;
 }
 
 .fancybox-title-outside-wrap {
