@@ -49,9 +49,6 @@
 	}
 }
 .instagram .album div.img-box{
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	position: absolute;
 	width: 90%;
 	height: 90%;
@@ -59,7 +56,10 @@
 	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
 	box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
 	.icon {
-		font-size: 40px;
+		font-size: 14px;
+		position: absolute;
+		bottom: 28px;
+		left: 10px;
 		color: #999;
 		z-index: 1;
 	}
