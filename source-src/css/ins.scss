@@ -58,8 +58,10 @@
 	.icon {
 		font-size: 14px;
 		position: absolute;
-		bottom: 28px;
-		left: 10px;
+		left: 50%;
+		top: 50%;
+		margin-left: -7px;
+		margin-top: -7px;
 		color: #999;
 		z-index: 1;
 	}
