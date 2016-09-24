@@ -20,7 +20,7 @@ function init() {
 		$('.archive-article-date').attr('href', 'javascript:void(0);')
 	} else if (! /\/archives\/(.*)/.test(window.location.pathname)) {
 		// 父级
-		var $frame = $('<iframe class="' + frameClass + '"></iframe>').attr('src', '/archives')
+		var $frame = $('<iframe class="' + frameClass + '"></iframe>').attr('src', '/archives/')
 		$('.tools-section-all').append($frame)
 		// 避免闪动
 		$frame[0].onload = function() {
