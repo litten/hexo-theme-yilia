@@ -12,12 +12,10 @@ html, body, #container {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
 }
 #container{
 	position:relative;
 	min-height:100%;
-	-webkit-overflow-scrolling: touch;
 }
 .body-wrap{
   margin-bottom: 80px;

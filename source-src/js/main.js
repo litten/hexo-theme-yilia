@@ -13,7 +13,8 @@ $(function() {
 	archiveInner.init()
 	fixPage.init()
 	tags.init()
-	if(browser.versions.mobile === true || $(window).width() < 700){
+	// todo: resize destrop
+	if(browser.versions.mobile === true && $(window).width() < 800){
 		mobile.init()
 	}else{
 		tools.init()

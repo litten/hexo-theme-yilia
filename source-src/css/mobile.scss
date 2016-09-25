@@ -77,7 +77,8 @@
 .article{
     padding: 10px;
     margin: 10px;
-    font-size: 14px;
+    font-size: 16px;
+    color: #555;
     .article-entry{
         padding-left: 0;
         padding-right: 0;
@@ -85,6 +86,7 @@
     }
     .article-inner h1.article-title, .article-title{
         font-size: 18px;
+        font-weight: 300;
         display: block;
         margin: 0;
     }
@@ -173,7 +175,7 @@
     float: none;
 }
 #article-nav .article-nav-link-wrap .article-nav-title {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #page-nav .extend{
@@ -192,7 +194,7 @@
     margin: 10px 10px 0px;
     padding: 10px;
     .archive-article-title{
-        font-size: 14px;
+        font-size: 16px;
     }
     .archive-year-wrap{
         position: relative;

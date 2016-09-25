@@ -121,7 +121,7 @@ var bindDOM = function(){
 	}, false);
 
 	//点击展示和隐藏
-	ctn.addEventListener("touchend", function(){
+	ctn.addEventListener("click", function(){
 		show();
 	}, false);
 
