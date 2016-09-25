@@ -56,10 +56,12 @@
 	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
 	box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
 	.icon {
-		font-size: 40px;
+		font-size: 14px;
 		position: absolute;
-		top: 28px;
-		left: 27px;
+		left: 50%;
+		top: 50%;
+		margin-left: -7px;
+		margin-top: -7px;
 		color: #999;
 		z-index: 1;
 	}
@@ -68,6 +70,8 @@
 	width: 100%;
 	height: 100%;
     position: absolute;
+    left: 0;
+    top: 0;
     z-index: 2;
 }
 .instagram .album div.img-box .img-bg{
