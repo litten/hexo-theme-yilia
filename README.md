@@ -113,6 +113,8 @@ favicon: /favicon.png
 
 #你的头像url
 avatar: ""
+#开启头像动画
+animate: false
 #是否开启分享
 share: true
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
