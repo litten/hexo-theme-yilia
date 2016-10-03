@@ -1,8 +1,14 @@
+html, body, #container {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
 .left-col {
     display: none;
 }
 .mid-col {
     left: 0;
+    position: relative;
 }
 #header{
     .header-nav{

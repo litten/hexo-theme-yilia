@@ -86,61 +86,58 @@ var hide = function(){
 
 //第四步 -- 绑定 DOM 事件
 var bindDOM = function(){
-	var scaleW = scaleW;
-	//滚动样式
-	var $overlay = $("#mobile-nav .overlay");
-	var $header = $(".js-mobile-header");
-	$('#container').scroll(
-		function(){
-		    var scrollTop = document.documentElement.scrollTop + document.body.scrollTop + $(this).scrollTop();
-		    if(scrollTop >= 69){
-		    	$overlay.addClass("fixed");
-		    }else{
-		    	$overlay.removeClass("fixed");
-		    }
-		    if(scrollTop >= 160){
-		    	$header.removeClass("hide").addClass("fixed");
-		    }else{
-		    	$header.addClass("hide").removeClass("fixed");
-		    }
-		}
-	)
-	$header[0].addEventListener("touchstart", function(){
-		$('html, body').animate({scrollTop:0}, 'slow');
-	}, false);
+    var scaleW = scaleW;
+     
+    //滑动隐藏
+    document.getElementById("viewer-box").addEventListener("webkitTransitionEnd", function(){
 
-	//滑动隐藏
-	document.getElementById("viewer-box").addEventListener("webkitTransitionEnd", function(){
+        if(_isShow == false){
+            document.getElementById("viewer").className = "hide";
+            _isShow = true;
+        }else{
+        }
+         
+    }, false);
 
-		if(_isShow == false){
-			document.getElementById("viewer").className = "hide";
-			_isShow = true;
-		}else{
-		}
-		
-	}, false);
+    //点击展示和隐藏
+    ctn.addEventListener("touchend", function(){
+        show();
+    }, false);
 
-	//点击展示和隐藏
-	ctn.addEventListener("click", function(){
-		show();
-	}, false);
+    var $right = document.getElementsByClassName("viewer-box-r")[0];
+    var touchStartTime;
+    var touchEndTime;
+    $right.addEventListener("touchstart", function(){
+        touchStartTime = + new Date();
+    }, false);
+    $right.addEventListener("touchend", function(){
+        touchEndTime = + new Date();
+        if(touchEndTime - touchStartTime < 300){
+            hide();
+        }
+        touchStartTime = 0;
+        touchEndTime = 0;
+    }, false);
 
-	var $right = document.getElementsByClassName("viewer-box-r")[0];
-	var touchStartTime;
-	var touchEndTime;
-	$right.addEventListener("touchstart", function(){
-		touchStartTime = + new Date();
-	}, false);
-	$right.addEventListener("touchend", function(){
-		touchEndTime = + new Date();
-		if(touchEndTime - touchStartTime < 300){
-			hide();
-		}
-		touchStartTime = 0;
-		touchEndTime = 0;
-	}, false);
-
-	
+    //滚动样式
+    var $overlay = $("#mobile-nav .overlay");
+    var $header = $(".js-mobile-header");
+    window.onscroll = function(){
+        var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
+        if(scrollTop >= 69){
+            $overlay.addClass("fixed");
+        }else{
+            $overlay.removeClass("fixed");
+        }
+        if(scrollTop >= 160){
+            $header.removeClass("hide").addClass("fixed");
+        }else{
+            $header.addClass("hide").removeClass("fixed");
+        }
+    };
+    $header[0].addEventListener("touchstart", function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+    }, false);
 };
 
 module.exports = {
