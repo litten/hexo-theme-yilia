@@ -3,7 +3,9 @@
   "version": "3.0.0",
   "description": "a theme for hexo",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack",
+    "dist": "webpack -p"
   },
   "repository": {
     "type": "git",

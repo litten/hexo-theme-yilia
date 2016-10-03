@@ -4,14 +4,7 @@ hexo-theme-yilia
 Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://litten.github.io/) 查看效果。           
  
-如遇到问题或有需求，可以：
-* 提issue给我
-* 在这篇文章下留言[Hexo主题Yilia](http://litten.github.io/2014/08/31/hexo-theme-yilia/)
-* 移动端问题留言[Yilia在移动端适配的一些事](http://litten.github.io/2015/02/23/yilia-on-mobile/)
-
-我都会看到并处理。
-
-如果你想体验手机浏览效果，可以扫一下二维码：
+如果想体验手机浏览效果，可以扫一下二维码：
 
 ![litten-qrcode](https://cloud.githubusercontent.com/assets/2024949/6349328/51a067fe-bc64-11e4-881c-f68050c50c28.png)
 
@@ -20,21 +13,28 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 关于主题：
 
 1. 我喜欢简约。所以近期文章，搜索框都拿掉了    
-2. 接地气一点。所以用上了jiathis分享，友言评论，以及baidu的cdn       
+2. 接地气一点。所以用上了jiathis分享，友言评论      
 3. 追求移动端的体验
 3. 让大家把注意力放到内容上。这是本主题设计初衷      
-4. 主题不支持IE6，7，8。以后也不会        
+4. 主题不支持IE6，7，8。以后也不会     
+             
+## 一、外观
 
-##一、近期更新
+####**常规**
+![常规](http://120.24.181.238/bmg/yilia1.gif)        
 
-2015.6.14 - 模块化加载
-2015.2.21 - 移动侧重构&布局bug修改
-2014.11.7 - 增加“友情链接”“关于我”               
-2014.10.22 - 优化fancybox展示               
-2014.10.16 - 增加表格样式                 
-2014.9.19 - 云标签挂件                 
+####**手机**
+![手机](http://120.24.181.238/bmg/yilia2.gif)   
 
-##二、使用
+####**ipad横竖屏切换**
+![ipad横竖屏切换](http://120.24.181.238/bmg/yilia3.gif)                    
+
+## 二、开发者
+
+为了性能和开发工程化考虑，Yilia需要使用webpack进行构建生成。
+如果您对主题有一些定制化的需求，请参考wiki[《Yilia源码目录结构及构建须知》](https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5)
+
+## 三、使用
 
 #### 安装
 
@@ -53,34 +53,17 @@ cd themes/yilia
 git pull
 ```
 
-##三、外观
+## 四、配置
 
-####**宽屏**
-![宽屏](http://littendomo.sinaapp.com/yilia/yilia-pc1.png)        
-
-####**宽屏文字**
-![宽屏文字](http://littendomo.sinaapp.com/yilia/yilia-pc2.png)   
-
-####**窄屏**
-![窄屏](http://littendomo.sinaapp.com/yilia/yilia-pc3.png)     
-
-####**同步instagram**
-![同步instagram](http://littendomo.sinaapp.com/yilia/yilia-pc4.png)
-
-####**移动端**
-![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile.png)
-![移动端](http://littendomo.sinaapp.com/yilia/yilia-mobile2.png)   
-
-##四、配置
-
-主题配置文件在主目录下的`_config.yml`：
+主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
+完整配置例子，可以参考[我的博客备份](https://github.com/litten/BlogBackup)
 
 ```
 # Header
+
 menu:
   主页: /
-  所有文章: /archives
-  # 随笔: /tags/随笔
+  随笔: /tags/随笔
 
 # SubNav
 subnav:
@@ -105,40 +88,49 @@ root:
 # Content
 excerpt_link: more
 fancybox: true
-mathjax: true
+mathjax: false
+
+# 是否开启动画效果
+animate: true
+
+# 是否在新窗口打开链接
+open_in_new: false
 
 # Miscellaneous
 google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: ""
+avatar:
+
 #是否开启分享
-share: true
+share_jia: true
+share_addthis: false
+
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: true
-#是否开启云标签
-tagcloud: true
+duoshuo: false
 
-#是否开启友情链接
-#不开启——
-#friends: false
-#开启——
+# 如不需要，将该项置为false
+# 比如
+#smart_menu:
+#  friends: false
+
+smart_menu:
+  innerArchive: '所有文章'
+  tagcloud: '标签'
+  friends: '友链'
+  aboutme: '关于我'
+
 friends:
-  奥巴马的博客: http://localhost:4000/
-  卡卡的美丽传说: http://localhost:4000/
-  本泽马的博客: http://localhost:4000/
-  吉格斯的博客: http://localhost:4000/
-  习大大大不同: http://localhost:4000/
-  托蒂的博客: http://localhost:4000/
+  友情链接1: http://localhost:4000/
+  友情链接2: http://localhost:4000/
+  友情链接3: http://localhost:4000/
+  友情链接4: http://localhost:4000/
+  友情链接5: http://localhost:4000/
+  友情链接6: http://localhost:4000/
 
-#是否开启“关于我”。
-#不开启——
-#aboutme: false
-#开启——
-aboutme: 我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…
+aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 ```
-##五、其他
 
-[同步你的instagram图片](https://github.com/litten/hexo-theme-yilia/wiki/%E5%90%8C%E6%AD%A5%E4%BD%A0%E7%9A%84instagram%E5%9B%BE%E7%89%87)
+
