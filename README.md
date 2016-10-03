@@ -21,17 +21,21 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 ## 一、外观
 
 ####**常规**
-![常规](http://120.24.181.238/bmg/yilia1.gif)        
+
+![常规](https://cloud.githubusercontent.com/assets/2024949/19027861/92879edc-8967-11e6-8e60-7987b6507c8d.gif)
 
 ####**手机**
+
 ![手机](https://cloud.githubusercontent.com/assets/2024949/19027020/1c5b756a-895f-11e6-99bf-ddff9687aee0.gif)   
 
 ####**ipad横竖屏切换**
+
 ![ipad横竖屏切换](https://cloud.githubusercontent.com/assets/2024949/19026392/e74e1816-8957-11e6-8f08-eac9b3c8c036.gif)                    
 
 ## 二、开发者
 
 为了性能和开发工程化考虑，Yilia需要使用webpack进行构建生成。
+
 如果您对主题有一些定制化的需求，请参考wiki[《Yilia源码目录结构及构建须知》](https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5)
 
 ## 三、使用
