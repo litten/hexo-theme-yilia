@@ -7,6 +7,7 @@ var browser = require('./browser')
 var fixPage = require('./fix-page')
 var mobile = require('./mobile')
 var viewer = require('./viewer')
+require('./jquery.lazyload')
 
 $(function() {
 	viewer.init()

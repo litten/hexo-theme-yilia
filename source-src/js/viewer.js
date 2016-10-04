@@ -23,6 +23,9 @@ var PhotoSwipeUI_Default = require('../photoSwipe/photoswipe-ui-default')
 require('../photoSwipe/default-skin/default-skin.scss')
 require('../photoSwipe/photoswipe.scss')
 
+window.PhotoSwipe = PhotoSwipe
+window.PhotoSwipeUI_Default = PhotoSwipeUI_Default
+
 module.exports = {
 	init: function() {
 		var pswpElement = document.querySelectorAll('.pswp')[0];
@@ -45,7 +48,6 @@ module.exports = {
 		
 		imgArr.click(function(e) {
 			var idx = $(this).attr('data-idx')
-			console.log(idx)
 			var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
 				index: parseInt(idx)
 			});

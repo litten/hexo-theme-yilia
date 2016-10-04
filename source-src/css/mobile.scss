@@ -3,6 +3,9 @@ html, body, #container {
     overflow-x: hidden;
     overflow-y: auto;
 }
+.body-wrap {
+    margin-bottom: 0;
+}
 .left-col {
     display: none;
 }
@@ -228,6 +231,8 @@ html, body, #container {
 }
 
 #footer {
+    position: relative;
+    bottom: 0;
     .footer-left{
         float: initial;
         margin-bottom: 10px;
