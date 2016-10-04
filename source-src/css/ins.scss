@@ -49,6 +49,9 @@
 	}
 }
 .instagram .album div.img-box{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
 	width: 90%;
 	height: 90%;
