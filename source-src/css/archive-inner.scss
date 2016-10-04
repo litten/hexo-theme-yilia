@@ -1,7 +1,14 @@
 body.archive-inner {
-	.mid-col {
+	#container {
 		@extend %paper-bg;
 		@extend %shadow;
+	}
+	.mid-col {
+		@extend %paper-bg;
+		
+	}
+	.archives-wrap .archive-article-title {
+	    font-size: 14px;
 	}
 	.left-col, 
 	#header, 

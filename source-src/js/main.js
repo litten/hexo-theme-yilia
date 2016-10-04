@@ -7,7 +7,6 @@ var browser = require('./browser')
 var fixPage = require('./fix-page')
 var mobile = require('./mobile')
 var viewer = require('./viewer')
-var ins = require('./ins')
 
 $(function() {
 	viewer.init()
@@ -26,9 +25,5 @@ $(function() {
 		$('.left-col,.mid-col').click(function() {
 			tools.hide()
 		})
-	}
-
-	if (window.location.pathname === '/instagram/') {
-		ins.init()
 	}
 })

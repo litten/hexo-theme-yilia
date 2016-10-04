@@ -1,4 +1,4 @@
-require('../fancybox/jquery.fancybox')
+/*require('../fancybox/jquery.fancybox')
 require('../fancybox/jquery.fancybox.scss')
 
 var fancyInit = function(){
@@ -16,9 +16,9 @@ var fancyInit = function(){
 
 module.exports = {
 	init: fancyInit
-}
+}*/
 
-/*var PhotoSwipe = require('../photoSwipe/photoswipe')
+var PhotoSwipe = require('../photoSwipe/photoswipe')
 var PhotoSwipeUI_Default = require('../photoSwipe/photoswipe-ui-default')
 require('../photoSwipe/default-skin/default-skin.scss')
 require('../photoSwipe/photoswipe.scss')
@@ -53,4 +53,4 @@ module.exports = {
 		})
 		
 	}
-}*/
+}
