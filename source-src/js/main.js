@@ -27,4 +27,8 @@ $(function() {
 			tools.hide()
 		})
 	}
+
+	if (yiliaConfig && yiliaConfig.open_in_new) {
+		$('.article-entry a').attr('target', '_blank')
+	}
 })

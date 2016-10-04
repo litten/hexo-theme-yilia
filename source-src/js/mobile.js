@@ -38,8 +38,7 @@ var renderDOM = function(){
 	$friends = document.getElementById("js-friends");
 
 	// 插入“全部文章”
-	hasInnerArchive = !!$('.js-archives-frame').length
-	if (hasInnerArchive) {
+	if (yiliaConfig && yiliaConfig.innerArchive) {
 		var str = $('.js-smart-menu').first().html()
 		$('.header-menu ul').append('<li><a href="/archives">' + str +'</a></li>')
 	}
@@ -100,8 +99,10 @@ var bindDOM = function(){
     }, false);
 
     //点击展示和隐藏
-    ctn.addEventListener("touchend", function(){
-        show();
+    ctn.addEventListener("touchend", function(e){
+    	show();
+    	e.stopPropagation();
+        return false;
     }, false);
 
     var $right = document.getElementsByClassName("viewer-box-r")[0];

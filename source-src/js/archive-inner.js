@@ -1,3 +1,7 @@
+var browser = require('./browser')
+
+var isMobile = browser.versions.mobile === true && $(window).width() < 800
+
 function init() {
 	var frameClass = 'js-archives-frame'
 
@@ -18,7 +22,7 @@ function init() {
 		})
 		// 去掉日期点击
 		$('.archive-article-date').attr('href', 'javascript:void(0);')
-	} else if (! /\/archives\/(.*)/.test(window.location.pathname)) {
+	} else if (! /\/archives\/(.*)/.test(window.location.pathname) && !isMobile) {
 		// 父级
 		var $frame = $('<iframe class="' + frameClass + '"></iframe>').attr('src', '/archives/')
 		$('.tools-section-all').append($frame)
