@@ -99,10 +99,8 @@ var bindDOM = function(){
     }, false);
 
     //点击展示和隐藏
-    ctn.addEventListener("touchend", function(e){
+    ctn.addEventListener("click", function(){
     	show();
-    	e.stopPropagation();
-        return false;
     }, false);
 
     var $right = document.getElementsByClassName("viewer-box-r")[0];
