@@ -29,6 +29,6 @@ $(function() {
 	}
 
 	if (yiliaConfig && yiliaConfig.open_in_new) {
-		$('.article-entry a').attr('target', '_blank')
+		$('.article-entry a').not('.article-more-a').attr('target', '_blank')
 	}
 })
