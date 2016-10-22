@@ -29,24 +29,25 @@ window.PhotoSwipeUI_Default = PhotoSwipeUI_Default
 module.exports = {
 	init: function() {
 		var pswpElement = document.querySelectorAll('.pswp')[0];
-		// build items array
 		var imgArr = $(".body-wrap img");
-		var items = []
-		for(var i=0,len=imgArr.length;i<len;i++){
-			var img = imgArr.eq(i).attr('data-idx', i)
-			var src = img.attr("data-target") || img.attr("src");
-			var title = img.attr("alt");
-			items.push({
-				src: src,
-				w: img.width(),
-				h: img.height(),
-				title: title
-			})
-		}
 
-		// Initializes and opens PhotoSwipe
-		
 		imgArr.click(function(e) {
+			// 再重置一遍，以防未加载完成
+			// TODO：不太好，后面优化
+			imgArr = $(".body-wrap img");
+			var items = []
+			for(var i=0,len=imgArr.length;i<len;i++){
+				var img = imgArr.eq(i).attr('data-idx', i)
+				var src = img.attr("data-target") || img.attr("src");
+				var title = img.attr("alt");
+				items.push({
+					src: src,
+					w: img.width(),
+					h: img.height(),
+					title: title
+				})
+			}
+
 			var idx = $(this).attr('data-idx')
 			var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
 				index: parseInt(idx)
