@@ -1,3 +1,5 @@
+require('../css/main.scss')
+
 require('./jquery')
 
 var tags = require('./tags')

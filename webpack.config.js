@@ -1,23 +1,29 @@
 var webpack = require("webpack")
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: "./source-src/js/main.js",
-    style: "./source-src/css/style.js"
+    main: "./source-src/js/main.js"
   },
   output: {
     path: "./source",
-    publicPath: "/source/",
+    publicPath: "/",
     filename: "[name].js"
   },
   module: {
     loaders: [{
-      test: /\.scss$/,
-      loaders: ["style", "css", "sass"]
+      test: /.scss$/,
+      loader: ExtractTextPlugin.extract('style', 'css!sass')
     }, {
-      test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-      loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+      test: /\.(gif|jpg|png)\??.*$/,
+      loader: 'url-loader?limit=5000&name=img/[name].[ext]'
+    }, {
+      test: /\.(woff|svg|eot|ttf)\??.*$/,
+      loader: "file-loader?name=fonts/[name].[ext]"
     }]
   },
+  plugins: [
+    new ExtractTextPlugin('[name].css')
+  ],
   watch: true
 }
