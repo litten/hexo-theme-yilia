@@ -29,12 +29,12 @@ window.PhotoSwipeUI_Default = PhotoSwipeUI_Default
 module.exports = {
 	init: function() {
 		var pswpElement = document.querySelectorAll('.pswp')[0];
-		var imgArr = $(".body-wrap img");
+		var imgArr = $(".article-entry img");
 
 		imgArr.click(function(e) {
 			// 再重置一遍，以防未加载完成
 			// TODO：不太好，后面优化
-			imgArr = $(".body-wrap img");
+			imgArr = $(".article-entry img");
 			var items = []
 			for(var i=0,len=imgArr.length;i<len;i++){
 				var img = imgArr.eq(i).attr('data-idx', i)

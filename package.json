@@ -23,9 +23,11 @@
   },
   "homepage": "https://github.com/litten/hexo-theme-yilia#readme",
   "devDependencies": {
+    "autoprefixer": "^6.5.1",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "node-sass": "^3.9.3",
+    "postcss-loader": "^1.0.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
