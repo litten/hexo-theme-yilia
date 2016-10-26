@@ -13,8 +13,8 @@ module.exports = {
   },
   module: {
     loaders: [{
-      test: /.scss$/,
-      loader: ExtractTextPlugin.extract('style', 'css!sass!postcss-loader')
+      test: /\.(scss|sass)$/,
+      loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
     }, {
       test: /\.(gif|jpg|png)\??.*$/,
       loader: 'url-loader?limit=5000&name=img/[name].[ext]'
@@ -23,7 +23,9 @@ module.exports = {
       loader: "file-loader?name=fonts/[name].[ext]"
     }]
   },
-  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
+  postcss: function() {
+    return [autoprefixer];
+  },
   plugins: [
     new ExtractTextPlugin('[name].css')
   ],
