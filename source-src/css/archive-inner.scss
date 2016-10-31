@@ -1,7 +1,8 @@
 body.archive-inner {
+	@extend %paper-bg;
+	@extend %shadow;
 	#container {
 		@extend %paper-bg;
-		@extend %shadow;
 	}
 	.mid-col {
 		@extend %paper-bg;

@@ -11,6 +11,7 @@
     @extend %shadow;
     &.show {
         transform: translate3d(300px, 0, 0);
+        -ms-transform: translate3d(300px, 0, 0);
         .btn-wrap {
             opacity: 1;
         }

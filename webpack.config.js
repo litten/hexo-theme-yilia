@@ -14,7 +14,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.(scss|sass)$/,
-      loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
+      loader: ExtractTextPlugin.extract('style-loader', ['css-loader?-autoprefixer', 'postcss-loader', 'sass-loader'])
     }, {
       test: /\.(gif|jpg|png)\??.*$/,
       loader: 'url-loader?limit=5000&name=img/[name].[ext]'

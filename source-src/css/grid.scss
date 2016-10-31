@@ -30,6 +30,7 @@ html, body, #container {
 	@extend %trans;
 	&.show {
 	  transform: translate3d(300px, 0, 0);
+	  -ms-transform: translate3d(300px, 0, 0);
 	}
 }
 #mobile-nav{
