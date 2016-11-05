@@ -34,6 +34,7 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
+    "badjs-report": "^1.2.2",
     "file-loader": "^0.9.0"
   }
 }

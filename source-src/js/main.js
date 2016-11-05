@@ -1,7 +1,29 @@
 require('../css/main.scss')
 
-require('./jquery')
+require('badjs-report')
 
+// 统计用，开发者不需要理会
+if (window.BJ_REPORT) {
+	BJ_REPORT.init({
+  		id: 1
+	});
+	BJ_REPORT.init({
+		id: 1,                                
+		uin: window.location.origin,          
+		combo: 0,                             
+		delay: 1000,                          
+		url: "//litten.me:9005/badjs/",       
+		ignore: [/Script error/i],           
+		random: 1,                            
+		repeat: 5000,                         
+		onReport: function(id, errObj){},    
+		ext: {}                             
+	});
+	// iframe不上报
+	(top === window) && BJ_REPORT.report("pv")
+}
+
+require('./jquery')
 var tags = require('./tags')
 var archiveInner = require('./archive-inner')
 var tools = require('./tools')
