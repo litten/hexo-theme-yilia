@@ -12,15 +12,18 @@ if (window.BJ_REPORT) {
 		uin: window.location.origin,          
 		combo: 0,                             
 		delay: 1000,                          
-		url: "//litten.me:9005/badjs/",       
+		url: "//litten.me/report/badjs/",       
 		ignore: [/Script error/i],           
 		random: 1,                            
-		repeat: 5000,                         
+		repeat: 500000,                         
 		onReport: function(id, errObj){},    
 		ext: {}                             
 	});
 	// iframe不上报
-	(top === window) && BJ_REPORT.report("pv")
+	var host = window.location.host
+	var isNotFrame = (top === window)
+	var isNotLocal = !((/localhost/i.test(host) || /127.0.0.1/i.test(host)))
+	isNotFrame && isNotLocal && BJ_REPORT.report('yilia-' + window.location.host)
 }
 
 require('./jquery')
