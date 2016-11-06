@@ -22,7 +22,7 @@ if (window.BJ_REPORT) {
 	// iframe不上报
 	var host = window.location.host
 	var isNotFrame = (top === window)
-	var isNotLocal = !((/localhost/i.test(host) || /127.0.0.1/i.test(host)))
+	var isNotLocal = !((/localhost/i.test(host) || /127.0.0.1/i.test(host) || /0.0.0.0/i.test(host)))
 	isNotFrame && isNotLocal && BJ_REPORT.report('yilia-' + window.location.host)
 }
 
