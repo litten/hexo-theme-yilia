@@ -1,5 +1,10 @@
 hexo-theme-yilia
 ================
+> 这是从yilia主题作者litten那边fork的一个仓库，为了后面能对这个主题的修改做备份。
+> 注意：这个仓库是blogBackup仓库的子仓库，所以不被作为更改提交的对象。
+> 对应的远程仓库：https://github.com/tywei90/hexo-theme-yilia.git
+> 主题做更改后要用webpack编译打包之后再hexo操作才能对线上博客生效
+
 
 Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://litten.me/) 查看效果。           
