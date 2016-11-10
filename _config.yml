@@ -2,14 +2,14 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔
-
+  随笔: /page
+  # archive: /archives
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  github: "https://github.com/tywei90"
+  weibo: "http://weibo.com/1762959307/profile"
+  # rss: "#"
+  zhihu: "https://www.zhihu.com/people/wei-yao-92"
   #douban: "#"
   #mail: "#"
   #facebook: "#"
@@ -17,12 +17,13 @@ subnav:
   #twitter: "#"
   #linkedin: "#"
 
-rss: /atom.xml
+# rss: /atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: 
+url: //weitianyao.com
+root: /
 
 # Content
 excerpt_link: more
@@ -33,14 +34,14 @@ mathjax: false
 animate: true
 
 # 是否在新窗口打开链接
-open_in_new: false
+open_in_new: true
 
 # Miscellaneous
 google_analytics: ''
-favicon: /favicon.png
+favicon: /assets/blogImg/favicon.ico
 
 #你的头像url
-avatar:
+avatar: /assets/blogImg/avatar.png
 
 #是否开启分享
 share_jia: true
@@ -48,7 +49,7 @@ share_addthis: false
 
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: false
+duoshuo: tywei90
 
 # 如不需要，将该项置为false
 # 比如
@@ -62,11 +63,13 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  立马理财: https://www.lmlc.com/
+  阮一峰博客: http://www.ruanyifeng.com/blog/
+  张鑫旭博客: http://www.zhangxinxu.com/wordpress/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: Teal</br>西电12级</br>目前是一枚前端</br></br>上海华为工作半年</br>现就职于北京网易</br></br>喜欢打篮球</br>自认为技术还不错
+
+
+
+
+
