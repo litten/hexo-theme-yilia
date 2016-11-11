@@ -2,6 +2,14 @@ require('../css/main.scss')
 
 require('badjs-report')
 
+// 统一跳转到weitianyao.com域名
+function redirect() {
+    location.replace('http://weitianyao.com');
+}
+if(/www.weitianyao.com|tywei.coding.me|tywei90.github.io/.test(location.href)){
+	redirect()
+}
+
 // 统计用，开发者不需要理会
 if (window.BJ_REPORT) {
 	BJ_REPORT.init({
