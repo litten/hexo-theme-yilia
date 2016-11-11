@@ -2,12 +2,9 @@ require('../css/main.scss')
 
 require('badjs-report')
 
-// 统一跳转到weitianyao.com域名
-function redirect() {
-    location.replace('http://weitianyao.com');
-}
-if(/www.weitianyao.com|tywei.coding.me|tywei90.github.io/.test(location.href)){
-	redirect()
+// 统一跳转到weitianyao.com域名下相应网址
+if(/www.weitianyao.com|tywei.coding.me|tywei90.github.io/.test(document.URL)){
+	location.href = document.URL.replace(/www.weitianyao.com|tywei.coding.me|tywei90.github.io/, 'weitianyao.com')
 }
 
 // 统计用，开发者不需要理会
