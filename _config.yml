@@ -2,7 +2,7 @@
 
 menu:
   主页: /
-  随笔: /page
+  # 随笔: /page
   # archive: /archives
 # SubNav
 subnav:
@@ -59,13 +59,13 @@ duoshuo: tywei90
 smart_menu:
   innerArchive: '所有文章'
   tagcloud: '标签'
-  friends: '友链'
+  # friends: '友链'
   aboutme: '关于我'
 
-friends:
-  立马理财: https://www.lmlc.com/
-  阮一峰博客: http://www.ruanyifeng.com/blog/
-  张鑫旭博客: http://www.zhangxinxu.com/wordpress/
+# friends:
+#   立马理财: https://www.lmlc.com/
+#   阮一峰博客: http://www.ruanyifeng.com/blog/
+#   张鑫旭博客: http://www.zhangxinxu.com/wordpress/
 
 aboutme: Teal</br>西电12级</br>目前是一枚前端</br></br>上海华为工作半年</br>现就职于北京网易</br></br>喜欢打篮球</br>自认为技术还不错
 
