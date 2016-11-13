@@ -37,7 +37,7 @@ animate: true
 open_in_new: true
 
 # Miscellaneous
-google_analytics: ''
+google_analytics: 'UA-87250582-1'
 favicon: /assets/blogImg/favicon.ico
 
 #你的头像url
