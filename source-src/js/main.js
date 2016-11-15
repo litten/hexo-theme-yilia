@@ -1,7 +1,14 @@
 require('../css/main.scss')
 
+var jsCookie = require('js-cookie')
+
 require('badjs-report')
 
+function getQueryString(name) { 
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+	var r = window.location.search.substr(1).match(reg); 
+	if (r != null) return unescape(r[2]); return null; 
+} 
 // 统计用，开发者不需要理会
 if (window.BJ_REPORT) {
 	BJ_REPORT.init({
@@ -24,6 +31,24 @@ if (window.BJ_REPORT) {
 	var isNotFrame = (top === window)
 	var isNotLocal = !((/localhost/i.test(host) || /127.0.0.1/i.test(host) || /0.0.0.0/i.test(host)))
 	isNotFrame && isNotLocal && BJ_REPORT.report('yilia-' + window.location.host)
+
+	// 来源上报
+	var from = getQueryString('f');
+	var fromKey = 'yilia-from';
+	if (from) {
+		isNotFrame && BJ_REPORT.report('from-' + from);
+		// 种cookie
+		jsCookie.set(fromKey, from);
+	} else {
+		if (document.referrer.indexOf(window.location.host) >= 0) {
+			// 取cookie
+			from = jsCookie.get(fromKey);
+			from && isNotFrame && BJ_REPORT.report('from-' + from);
+		} else {
+			// 清cookie
+			jsCookie.remove(fromKey);
+		}
+	}
 }
 
 require('./jquery')

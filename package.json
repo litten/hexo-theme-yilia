@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "badjs-report": "^1.2.2",
-    "file-loader": "^0.9.0"
+    "file-loader": "^0.9.0",
+    "js-cookie": "^2.1.3"
   }
 }
