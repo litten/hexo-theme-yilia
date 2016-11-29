@@ -147,13 +147,14 @@
         color: #4d4d4d;
         background: transparent;
         opacity: 0;
-        margin: 0 0 75px -185px;
+        margin: 0 0 -10px -185px;
         cursor: default;
         pointer-events: none;
         font-family: 'Satisfy', cursive;
         -webkit-font-smoothing: antialiased;
         -webkit-transition: opacity 0.3s 0.3s;
         transition: opacity 0.3s 0.3s;
+        padding-bottom: 80px;
     }
 
     .tooltip:hover .tooltip-content {
@@ -203,7 +204,6 @@
 
     .tooltip-content::after {
         content: '';
-        bottom: -20px;
         left: 50%;
         border: solid transparent;
         height: 0;

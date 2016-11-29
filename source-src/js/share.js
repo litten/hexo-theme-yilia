@@ -365,7 +365,7 @@ var init = function() {
 	var sTitle = $('title').html();
 	var $img = $('.article-entry img');
 	var sPic = $img.length ? $('.article-entry img').eq(0).attr('src') : '';
-	if (!/^(http:|https:)?\/\//.test(sPic)) {
+	if ((sPic !== '') && !/^(http:|https:)?\/\//.test(sPic)) {
 		sPic = window.location.origin + sPic
 	}
 
