@@ -43,18 +43,14 @@ html, body, #container {
         left: 0;
         width: 42px;
         height: 42px;
+        text-align: center;
+        line-height: 50px;
         &:hover{
             background: #444;
         }
-        .icon-list{
-            color: #ddd;
-            content: "\f00b";
-            font: 16px FontAwesome;
-            width: 16px;
-            height: 16px;
-            margin-left: 9px;
-            margin-top: 14px;
-            display: block;
+        .icon-sort{
+            font-size: 24px;
+            color: #fff;
         }
     }
 }
@@ -64,6 +60,9 @@ html, body, #container {
     border-bottom: 1px dotted #ddd;
     h1{
         margin-bottom: 10px;
+    }
+    .archive-article-date{
+        float: initial;
     }
 }
 .header-subtitle{

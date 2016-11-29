@@ -77,6 +77,15 @@
         float: left;
     }
 }
+.article-pop-out{
+    float: left;
+    .icon-tuding {
+        color: #999;
+        float: left;
+        margin-right: 10px;
+        margin-top: 6px;
+    }
+}
 .article-tag{
     float: left;
     .article-tag-list{
@@ -91,40 +100,22 @@
 }
 .article-category{
     float: left;
-    .icon-file-text {
-        float: left;
+    .icon-calendar {
         color: #999;
         float: left;
         margin-right: 10px;
-        margin-top: 9px;
+        margin-top: 6px;
     }
 }
 .article-pop-out {
     float: left;
-    &:before{
-        float: left;
-        color: #999;
-        content: "\f08d";
-        font: 16px FontAwesome;
-        float: left;
-        margin-right: 10px;
-        margin-top: 9px;
-    }
-    &:after{
-        float: left;
-        content: "";
-        margin-right: 20px;
-        margin-top: 9px;
-        float: left;
-    }
 }
 
 .archive-article-date {
-    float: left;
     color: #999;
-    margin-right: 20px;
-    .icon-clock {
-        float: left;
-        margin: 5px;
+    margin-right: 7.6923%;
+    float: right;
+    .icon {
+        margin: 5px 5px 5px 0;
     }
 }

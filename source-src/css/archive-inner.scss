@@ -51,7 +51,7 @@ body.archive-inner {
 		}
 	}
 	.archives-wrap .article-meta .archive-article-date {
-		margin-top: -3px;
+		float: left;
 	}
 	#page-nav .extend {
 		display: none;
@@ -62,7 +62,7 @@ body.archive-inner {
 	    	background: #717171;
 	    }
 	}
-	.archive-article-date .icon-clock {
+	.archive-article-date .icon {
 		margin: 0 8px 0 0;
 	}
 }

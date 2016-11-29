@@ -1,0 +1,51 @@
+.page-reward {
+    margin: 60px 0;
+    text-align: center;
+    .page-reward-btn {
+        position: relative;
+        display: inline-block;
+        width: 56px;
+        height: 56px;
+        line-height: 56px;
+        font-size: 20px;
+        color: #fff;
+        background: #f44336;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        -webkit-transition: .4s ease-in-out;
+        transition: .4s ease-in-out;
+        &:hover, &:active {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2),0 4px 15px rgba(0,0,0,0.2);
+        }
+        .tooltip-item {
+            display: block;
+            width: 56px;
+            height: 56px;
+        }
+    }
+    .reward-box {
+        display: flex;
+        justify-content: space-around;
+    }
+    .reward-p {
+        color: #fff;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #45b9e0;
+        .icon {
+            margin: 0 10px;
+            color: #ddd;
+        }
+    }
+    .reward-type {
+        font-size: 16px;
+        display: block;
+        color: #4d4d4d;
+        margin: 20px 0 0 0;
+    }
+    .reward-img {
+        width: 130px;
+        height: 130px;
+        border: 6px solid #fff;
+        border-radius: 3px;
+    }
+}

@@ -1,42 +1,76 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <div class="article-inner">
-    <% if (theme.fancybox){ %>
-      <input type="hidden" class="isFancy" />
-    <% } %>
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
+        <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
-        <p class="article-more-link">
-          <a class="article-more-a" <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-        </p>
+        <a class="article-more-a" <% if (!theme.excerpt_link){ %>class="hidden"<% } %> href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
       <% } else { %>
         <%- post.content %>
+      <% } %>
+
+      <% if (post.reward && !index){ %>
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i><%= theme.reward_wording%><i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    <% if(theme.alipay) {%>
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="<%= theme.alipay%>">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    <% } %>
+                    <% if(theme.weixin) {%>
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="<%= theme.weixin%>">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    <% } %>
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       <% } %>
     </div>
     <div class="article-info article-info-index">
       <%if(post.top){%>
         <div class="article-pop-out tagcloud">
-          <a class="">置顶</a>
+          <i class="icon-tuding"></i>
+          <a>置顶</a>
         </div>
       <% } %>
-      <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
       <%- partial('post/tag') %>
       <%- partial('post/category') %>
+      <% if (index && theme.show_all_link){ %>
+        <p class="article-more-link">
+          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.show_all_link %> >></a>
+        </p>
+      <% } %>
+
+      <% if (!index && theme.share_jia){ %>
+        <%- partial('post/share') %>
+      <% } %>
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 <% if (!index){ %>
   <%- partial('post/nav') %>
-<% } %>
-
-<% if (!index && theme.share_jia){ %>
-<%- partial('post/share_jia') %>
 <% } %>
 
 <% if (!index && theme.share_addthis){ %>

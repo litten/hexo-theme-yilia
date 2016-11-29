@@ -1,6 +1,6 @@
 <nav id="mobile-nav">
   	<div class="overlay">
-  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<div class="slider-trigger"><i class="icon-sort"></i></div>
   		<h1 class="header-author js-mobile-header hide"><%=theme.author%></h1>
   	</div>
 	<div class="intrude-less">
@@ -28,7 +28,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					<% for (var i in theme.subnav){ %>
-						<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
+						<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
 			        <%}%>
 				</div>
 			</nav>
