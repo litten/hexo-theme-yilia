@@ -3,34 +3,34 @@
   var hasFriends = theme.smart_menu.friends
   var hasAboutme = theme.smart_menu.aboutme
 %>
-<div class="tools-col" v-bind:class="{ show: isShow, hide: isShow === false }" v-on:click="stop($event)">
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-wrap">
     <%if(hasInnerArchive){%>
-    	<section class="tools-section tools-section-all" v-show="innerArchive">
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
-          <input class="search-ipt" v-model="search" type="text" placeholder="find something…">
-          <i class="icon-search icon" v-show="search===''"></i>
-          <i class="icon-close icon" v-show="search!==''" v-on:click="clearChose($event)"></i>
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
         </div>
         <div class="widget tagcloud search-tag">
           <p class="search-tag-wording">tag:</p>
           <label class="search-switch">
-            <input type="checkbox" v-on:click="toggleTag($event)" v-bind:checked="showTags">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
-          <ul class="article-tag-list" v-bind:class="{ show: showTags }">
+          <ul class="article-tag-list" q-show="showTags">
             <% site.tags.forEach(function(tag, i){ %> 
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" v-on:click="choseTag($event)" class="color3" style="font-size: 12px;"><%-tag.name%></a>
+                <a href="javascript:void(0)"><%-tag.name%></a>
               </li>
             <% }) %>
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
-          <p v-show="jsonFail" style="padding: 20px; font-size: 12px;">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
             缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
             2、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" v-show="jsonFail">
+<pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
     meta: false
     pages: false
@@ -51,15 +51,15 @@
       tags: true
 </pre>
           </p>
-          <li class="search-li" v-for="item in items" v-show="!item.isHide">
-            <a v-bind:href="item.path|urlformat" class="search-title"><i class="icon-quo-left icon"></i>{{ item.title }}</a>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
             <p class="search-time">
               <i class="icon-calendar icon"></i>
-              <span>{{ item.date|dateformat }}</span>
+              <span q-text="date|dateformat"></span>
             </p>
             <p class="search-tag">
               <i class="icon-price-tags icon"></i>
-              <span v-for="tag in item.tags" v-on:click="choseTag($event, tag.name)">#{{ tag.name }}</span>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
             </p>
           </li>
         </ul>
@@ -67,7 +67,7 @@
     <%}%>
 
     <%if(hasFriends){%>
-    	<section class="tools-section tools-section-friends" v-show="friends">
+    	<section class="tools-section tools-section-friends" q-show="friends">
   		<%if(theme.friends && theme.friends.length != 0){%>
         <ul class="search-ul">
           <% for (var i in theme.friends){ %>
@@ -81,7 +81,7 @@
     <%}%>
 
     <%if(hasAboutme){%>
-    	<section class="tools-section tools-section-me" v-show="aboutme">
+    	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	<%if(theme.aboutme){%>
   	  		<div class="aboutme-wrap" id="js-aboutme"><%=theme.aboutme%></div>
   	  	<%}%>

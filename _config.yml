@@ -32,8 +32,6 @@ excerpt_link: more
 show_all_link: '展开全文'
 # 数学公式
 mathjax: false
-# 是否开启动画效果
-animate: true
 # 是否在新窗口打开链接
 open_in_new: false
 

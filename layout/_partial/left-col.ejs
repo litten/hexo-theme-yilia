@@ -2,11 +2,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<% if (theme.animate){ %>
 			<img src="<%=theme.avatar%>" class="js-avatar">
-			<%}else{%>
-			<img src="<%=theme.avatar%>" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			<%}%>
 		</a>
 
 		<hgroup>
@@ -28,7 +24,7 @@
 	        <% var count = 0 %>
     		<% for (var i in theme.smart_menu){ %>
     			<% if(theme.smart_menu[i]){ %>
-    			<a data-idx="<%-count%>" v-on:click="openSlider($event, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
+    			<a data-idx="<%-count%>" q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
     			<% count++ %>
     			<% } %>
             <%}%>
