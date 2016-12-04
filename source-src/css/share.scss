@@ -27,6 +27,9 @@
         height: 28px;
         line-height: 26px;
         text-shadow: 1px 1px 1px #509eb7;
+        &:active {
+            color: #fff;
+        }
         &:hover {
             transform: scale(1.2);
         }

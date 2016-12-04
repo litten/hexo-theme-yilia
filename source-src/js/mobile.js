@@ -1,4 +1,7 @@
-var Util = require('./util')
+import addClass from 'dom101/add-class'
+import removeClass from 'dom101/remove-class'
+import Util from './util'
+
 var _isShow = false;
 var $menu, $tag, $aboutme, $friends;
 var hasInnerArchive
@@ -32,16 +35,10 @@ var renderDOM = function(){
 	var $viewer = document.createElement("div");
 	$viewer.id = "viewer";
 	$viewer.className = "hide";
-	$menu = document.getElementsByClassName("header-menu")[0];
+	$menu = document.getElementsByClassName("header-menu")[1];
 	$tag = document.getElementById("js-tagcloud");
 	$aboutme = document.getElementById("js-aboutme");
 	$friends = document.getElementById("js-friends");
-
-	// 插入“全部文章”
-	if (yiliaConfig && yiliaConfig.innerArchive) {
-		var str = $('.js-smart-menu').first().html()
-		$('.header-menu ul').append('<li><a href="/archives">' + str +'</a></li>')
-	}
 
 	var menuStr = '<span class="viewer-title">菜单</span><div class="viewer-div menu" id="js-mobile-menu"></div>'
 	var tagStr = $tag?'<span class="viewer-title">标签</span><div class="viewer-div tagcloud" id="js-mobile-tagcloud"></div>':"";
@@ -119,23 +116,26 @@ var bindDOM = function(){
     }, false);
 
     //滚动样式
-    var $overlay = $("#mobile-nav .overlay");
-    var $header = $(".js-mobile-header");
-    window.onscroll = function(){
-        var scrollTop = document.documentElement.scrollTop + document.body.scrollTop;
+    var $overlay = document.querySelector('#mobile-nav .overlay');
+    var $header = document.querySelector('.js-mobile-header');
+    var $ctn = document.querySelector('#container');
+    $ctn.onscroll = function(){
+        var scrollTop = $ctn.scrollTop;
         if(scrollTop >= 69){
-            $overlay.addClass("fixed");
+        	addClass($overlay, 'fixed')
         }else{
-            $overlay.removeClass("fixed");
+        	removeClass($overlay, 'fixed')
         }
         if(scrollTop >= 160){
-            $header.removeClass("hide").addClass("fixed");
+        	removeClass($header, 'hide')
+        	addClass($header, 'fixed')
         }else{
-            $header.addClass("hide").removeClass("fixed");
+        	addClass($header, 'hide')
+        	removeClass($header, 'fixed')
         }
     };
-    $header[0].addEventListener("touchstart", function(){
-        $('html, body').animate({scrollTop:0}, 'slow');
+    $header.addEventListener("touchstart", function(){
+    	$ctn.scrollTop = 0
     }, false);
 };
 

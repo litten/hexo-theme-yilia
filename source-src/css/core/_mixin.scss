@@ -681,12 +681,21 @@
 }
 
 %shadow {
-    box-shadow: 0px 0px 32px 9px #4d4d4d inset;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,.75);
 }
 
 %trans {
     transition: all 0.2s ease-in;
     -ms-transition: all 0.2s ease-in;
+}
+
+%trans8 {
+    transition: all 0.8s ease-in;
+    -ms-transition: all 0.8s ease-in;
+}
+
+%line-bg {
+    background: linear-gradient(200deg, #a0cfe4, #e8c37e);
 }
 
 %paper-bg {

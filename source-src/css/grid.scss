@@ -7,6 +7,7 @@ body, button, input, select, textarea {
 }
 body {
 	overflow-y: hidden;
+	background:#eaeaea;
 }
 html, body, #container {
     height: 100%;
@@ -16,6 +17,17 @@ html, body, #container {
 #container{
 	position:relative;
 	min-height:100%;
+	@extend %trans8;
+	.anm-canvas {
+		display: none;
+	}
+	&.show {
+		@extend %line-bg;
+		.anm-canvas {
+			display: block;
+			position: fixed;
+		}
+	}
 }
 .body-wrap{
   margin-bottom: 80px;
@@ -29,8 +41,16 @@ html, body, #container {
 	width: auto;
 	@extend %trans;
 	&.show {
-	  transform: translate3d(300px, 0, 0);
-	  -ms-transform: translate3d(300px, 0, 0);
+		background: none;
+		opacity: .9;
+		@extend %anmLeftIn;
+		.article {
+			@extend %trans;
+			background: rgba(255,255,255,.3);
+		}
+	}
+	&.hide {
+		@extend %anmLeftOut;
 	}
 }
 #mobile-nav{

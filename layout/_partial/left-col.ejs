@@ -28,7 +28,7 @@
 	        <% var count = 0 %>
     		<% for (var i in theme.smart_menu){ %>
     			<% if(theme.smart_menu[i]){ %>
-    			<a class="js-smart-menu" data-idx="<%-count%>" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
+    			<a data-idx="<%-count%>" v-on:click="openSlider($event, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
     			<% count++ %>
     			<% } %>
             <%}%>
