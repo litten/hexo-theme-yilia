@@ -13,6 +13,9 @@ function init() {
 
 	$imgArr.forEach(($em, i) => {
 		$em.onclick = () => {
+			// slider展开状态
+			// todo: 这样不好，后面改成状态
+			if (document.querySelector('.left-col.show')) return
 			let items = []
 			$imgArr.forEach(($em2, i2) => {
 				let img = $em2.getAttribute('data-idx', i2)
