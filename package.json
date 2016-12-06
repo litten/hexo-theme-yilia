@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "badjs-report": "^1.2.2",
+    "es6-promise": "^4.0.5",
     "fetch": "^1.1.0",
     "fetch-ie8": "^1.4.3",
     "file-loader": "^0.9.0",

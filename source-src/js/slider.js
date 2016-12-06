@@ -3,7 +3,11 @@ import Anm from './anm'
 // Q 基础库
 import Q from './Q'
 // 神特么safari不支持fetch
-import fetch from 'fetch-ie8'
+import * as promise from 'es6-promise'
+import * as fetch from 'fetch-ie8'
+
+window.Promise = window.Promise || promise.Promise
+window.fetch = window.fetch || fetch
 
 let localKey = 'yilia-tag'
 
@@ -107,7 +111,7 @@ function init() {
       	app.$set('items', items)
     })
 
-	fetch('/content.json?t=' + (+ new Date()), {
+	window.fetch('/content.json?t=' + (+ new Date()), {
 		method: 'get',
 	}).then((res) => {
 		return res.json()
