@@ -2,6 +2,8 @@
 import Anm from './anm'
 // Q 基础库
 import Q from './Q'
+// 神特么safari不支持fetch
+import fetch from 'fetch-ie8'
 
 let localKey = 'yilia-tag'
 

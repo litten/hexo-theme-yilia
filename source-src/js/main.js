@@ -19,9 +19,7 @@ window.onload = () => {
 	if(Browser.versions.mobile && window.screen.width < 800){
 		Mobile.init()
 	}else{
-		setTimeout(function() {
-			loadScript('/slider.js?v=4.0.0.js')
-		}, 80)
+		loadScript('/slider.js?v=4.0.0.js')
 	}
 	Fix.init()
 	Share.init()
