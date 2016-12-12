@@ -2,7 +2,7 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔
+  随笔: /tags/随笔/
 
 # SubNav
 subnav:
@@ -10,6 +10,9 @@ subnav:
   weibo: "#"
   rss: "#"
   zhihu: "#"
+  #qq: "#"
+  #weixin: "#"
+  #jianshu: "#"
   #douban: "#"
   #mail: "mailto:litten225@qq.com"
   #facebook: "#"
@@ -48,6 +51,7 @@ alipay:
 weixin: 
 
 # Miscellaneous
+baidu_analytics: ''
 google_analytics: ''
 favicon: /favicon.png
 

@@ -80,7 +80,7 @@ git pull
 
 menu:
   主页: /
-  随笔: /tags/随笔
+  随笔: /tags/随笔/
 
 # SubNav
 subnav:
@@ -88,6 +88,9 @@ subnav:
   weibo: "#"
   rss: "#"
   zhihu: "#"
+  #qq: "#"
+  #weixin: "#"
+  #jianshu: "#"
   #douban: "#"
   #mail: "mailto:litten225@qq.com"
   #facebook: "#"
@@ -110,8 +113,6 @@ excerpt_link: more
 show_all_link: '展开全文'
 # 数学公式
 mathjax: false
-# 是否开启动画效果
-animate: true
 # 是否在新窗口打开链接
 open_in_new: false
 
@@ -128,6 +129,7 @@ alipay:
 weixin: 
 
 # Miscellaneous
+baidu_analytics: ''
 google_analytics: ''
 favicon: /favicon.png
 
