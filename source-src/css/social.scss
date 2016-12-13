@@ -98,5 +98,26 @@
                 border:1px solid #006b98;
             }
         }
+        a.jianshu {
+            background: #ff5722;
+            border:1px solid #ff5722;
+            &:hover {
+                border:1px solid #ff5722;
+            }
+        }
+        a.weixin {
+            background: #4caf50;
+            border:1px solid #4caf50;
+            &:hover {
+                border:1px solid #4caf50;
+            }
+        }
+        a.qq {
+            background: #34baad;
+            border:1px solid #34baad;
+            &:hover {
+                border:1px solid #34baad;
+            }
+        }
     }
 }

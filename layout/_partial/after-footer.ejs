@@ -1,7 +1,6 @@
 <script>
 	var yiliaConfig = {
 		mathjax: <%=theme.mathjax%>,
-		animate: <%=theme.animate%>,
 		isHome: <%=is_home()%>,
 		isPost: <%=is_post()%>,
 		isArchive: <%=is_archive()%>,
@@ -13,7 +12,7 @@
 	}
 </script>
 
-<%- js('./main') %>
+<%- js('./main.js?v=4.0.0') %>
 
 <% if (theme.mathjax){ %>
 <%- partial('mathjax') %>

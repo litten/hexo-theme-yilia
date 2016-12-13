@@ -66,6 +66,11 @@ var e = function() {
             else if ("string" == typeof r)
                 return e.encode(r);
             return r
+        },
+        loadScript: function(path) {
+            var $script = document.createElement('script')
+            document.getElementsByTagName('body')[0].appendChild($script)
+            $script.setAttribute('src', path)
         }
     }
 }();

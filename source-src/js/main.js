@@ -1,37 +1,28 @@
-require('../css/main.scss')
-require('./report')
-require('./jquery')
-var tags = require('./tags')
-var archiveInner = require('./archive-inner')
-var tools = require('./tools')
-var browser = require('./browser')
-var fixPage = require('./fix-page')
-var mobile = require('./mobile')
-var viewer = require('./viewer')
-var share = require('./share')
-require('./jquery.lazyload')
+// 样式
+import '../css/main.scss'
+// 上报
+import './report'
+// fix hexo 不支持的配置
+import Fix from './fix'
+// 图片查看器
+import Viewer from './viewer'
+// 分享
+import Share from './share'
+// 浏览器判断
+import Browser from './browser'
+// 手机
+import Mobile from './mobile'
+// 异步脚本
+import { loadScript } from './util'
 
-$(function() {
-	viewer.init()
-	archiveInner.init()
-	fixPage.init()
-	tags.init()
-	share.init()
-	// todo: resize destrop
-	if(browser.versions.mobile === true && $(window).width() < 800){
-		mobile.init()
+window.onload = () => {
+	if(Browser.versions.mobile && window.screen.width < 800){
+		Mobile.init()
 	}else{
-		tools.init()
-		$('.js-smart-menu').click(function(e) {
-			e.stopPropagation()
-			tools.show($(this).data('idx'))
-		})
-		$('.left-col,.mid-col').click(function() {
-			tools.hide()
-		})
+		loadScript('/slider.js?v=4.0.0.js')
 	}
-	// 新窗口打开
-	if (yiliaConfig && yiliaConfig.open_in_new) {
-		$('.article-entry a').not('.article-more-a').attr('target', '_blank')
-	}
-})
+	Fix.init()
+	Share.init()
+	Viewer.init()
+}
+
