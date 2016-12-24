@@ -6,15 +6,22 @@
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
       </header>
     <% } %>
-    <div class="article-entry" itemprop="articleBody">
-      <% if (post.excerpt && index){ %>
-        <%- post.excerpt %>
-        <% if (theme.excerpt_link) { %>
-          <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
-        <% } %>
-      <% } else { %>
-        <%- post.content %>
-      <% } %>
+      <div class="article-entry" itemprop="articleBody">
+          <% if (post.excerpt && index) { %>
+          <%- post.excerpt %>
+          <% if (theme.excerpt_link) { %>
+          <p class="article-more-link">
+              <a href="<%- config.root %><%- post.path %>#more"><%= theme.excerpt_link %></a>
+          </p>
+          <% } %>
+          <% } else { %>
+          <% var br = post.content.indexOf('\n') %>
+          <% if(br < 0 || !index) { %>
+          <%- post.content %>
+          <% } else { %>
+          <%- post.content.substring(0, br) %>
+          <% } %>
+          <% } %>
 
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
