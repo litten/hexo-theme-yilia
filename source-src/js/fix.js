@@ -18,14 +18,6 @@ function init() {
 		})
 	}
 
-	// 标签
-	var $tags = document.querySelectorAll('.tagcloud a')
-	$tags.forEach(($em) => {
-		$em.style.fontSize = '12px'
-		var num = $em.innerHTML.length % 5 + 1
-		$em.className = 'color' + num
-	})
-
 	// about me 转义
 	var $aboutme = document.querySelector('#js-aboutme')
 	if ($aboutme && $aboutme.length !== 0) {

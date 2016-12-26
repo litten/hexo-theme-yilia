@@ -1,29 +1,27 @@
 <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"><i class="icon-sort"></i></div>
-  		<h1 class="header-author js-mobile-header hide"><%=theme.author%></h1>
-  	</div>
+  	<div class="overlay js-overlay"></div>
+	<div class="btnctn js-mobile-btnctn">
+		<div class="slider-trigger back" style="display:none"><i class="icon icon-back1"></i></div>
+  		<div class="slider-trigger list" q-on="click: openSlider(e, 'innerArchive')"><i class="icon icon-sort"></i></div>
+	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
 				<img src="<%=theme.avatar%>" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author"><%=theme.author%></h1>
+			  <h1 class="header-author js-header-author"><%=theme.author%></h1>
 			</hgroup>
 			<% if (theme.subtitle){ %>
-			<p class="header-subtitle"><%=theme.subtitle%></p>
-			<%}%>
-			<nav class="header-menu">
-				<ul>
-				<% for (var i in theme.menu){ %>
-					<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-		        <%}%>
-		        <% if (theme.smart_menu.innerArchive) { %>
-		        	<li><a href="/archives/"><%= theme.smart_menu.innerArchive %></a></li>
-		        <% } %>
-				</ul>
-			</nav>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i><%=theme.subtitle%><i class="icon icon-quo-right"></i></p>
+			<% } %>
+			<% var count = 0%>
+			<% for (var i in theme.menu){ %>
+				<% count++ %>
+			<% } %>
+			<% var ulWidth = count > 2 ? '70%' : '50%' %>
+			
+			<% if (theme.mobile.social) { %>
 			<nav class="header-nav">
 				<div class="social">
 					<% for (var i in theme.subnav){ %>
@@ -31,6 +29,17 @@
 			        <%}%>
 				</div>
 			</nav>
+			<% } %>
+
+			<nav class="header-menu js-header-menu">
+				<ul style="width: <%= ulWidth %>">
+				<% var divide = 100 / count + '%' %>
+				<% for (var i in theme.menu){ %>
+					<li style="width: <%= divide %>"><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+		        <%}%>
+				</ul>
+			</nav>
 		</header>				
 	</div>
+	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>

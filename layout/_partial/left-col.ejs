@@ -21,11 +21,9 @@
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
-	        <% var count = 0 %>
     		<% for (var i in theme.smart_menu){ %>
     			<% if(theme.smart_menu[i]){ %>
-    			<a data-idx="<%-count%>" q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
-    			<% count++ %>
+    			<a q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
     			<% } %>
             <%}%>
 		</nav>

@@ -14,6 +14,9 @@ html, body, #container {
     overflow-x: hidden;
     overflow-y: auto;
 }
+#mobile-nav {
+	display: none;
+}
 #container{
 	position:relative;
 	min-height:100%;
@@ -51,39 +54,5 @@ html, body, #container {
 	}
 	&.hide {
 		@extend %anmLeftOut;
-	}
-}
-#mobile-nav{
-	display: none;
-	.overlay{
-		height: 110px;
-		position: absolute;
-		width: 100%;
-		background: #4d4d4d;
-		&.fixed{
-	        position: fixed;
-	        height: 42px;
-	        z-index: 99;
-	    }
-	}
-	#header{
-		padding: 10px 0 0 0;
-		.profilepic{
-			display: block;
-			position: relative;
-			z-index: 100;
-		}
-		.header-menu{
-			height: auto;
-			margin: 10px;
-			ul{
-				text-align: center;
-				cursor: default;
-			}
-			li{
-				display: inline-block;
-				margin: 3px;
-			}
-		}
 	}
 }

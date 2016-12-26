@@ -1,5 +1,7 @@
 // 动画
 import Anm from './anm'
+// 浏览器判断
+import Browser from './browser'
 // Q 基础库
 import Q from './Q'
 // 神特么safari不支持fetch
@@ -11,6 +13,7 @@ window.fetch = window.fetch || fetch
 
 let localTagKey = 'yilia-tag'
 let localSearchKey = 'yilia-search'
+const isMobile = (Browser.versions.mobile && window.screen.width < 800)
 
 function fixzero(str) {
 	str = str + ''
@@ -162,11 +165,14 @@ function init() {
 			app.$set('isShow', true)
 			app.$set('isCtnShow', true)
 			app.$set('search', '#' + $em.innerHTML)
+			return false
 		}
 	})
 }
 
 init()
-Anm.init()
+if (!isMobile) {
+	Anm.init()
+}
 
 module.exports = {}

@@ -20,7 +20,7 @@
           <ul class="article-tag-list" q-show="showTags">
             <% site.tags.forEach(function(tag, i){ %> 
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)"><%-tag.name%></a>
+                <a href="javascript:void(0)" class="color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
               </li>
             <% }) %>
             <div class="clearfix"></div>

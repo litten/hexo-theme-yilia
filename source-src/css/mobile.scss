@@ -3,6 +3,9 @@ html, body, #container {
     overflow-x: hidden;
     overflow-y: auto;
 }
+#mobile-nav {
+	display: block;
+}
 .body-wrap {
     margin-bottom: 0;
 }
@@ -19,36 +22,62 @@ html, body, #container {
     }
 }
 .tools-col {
-    display: none;
-}
-.header-author{
-    &.fixed{
-        position: fixed;
-        top: -13px;
-        width: 100%;
-        color: #ddd;
+    left: -300px;
+    width: 300px;
+    .tools-wrap, .tools-section {
+        width: 300px;
+        .search-wrap {
+            width: 280px;
+        }
+        .search-tag.tagcloud {
+            margin-right: -30px;
+        }
+        .search-ul .search-li {
+            padding: 5px 20px;
+        }
     }
 }
+
 #container .header-author.fixed {
     position: fixed;
     top: -29px;
     width: 100%;
     color: #ddd;
 }
-.overlay{
+.mobile-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .85);
+    z-index: 999;
+}
+.btnctn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: -5px;
+    z-index: 3;
     .slider-trigger{
         position: absolute;
         z-index: 101;
-        bottom: 0;
-        left: 0;
         width: 42px;
         height: 42px;
         text-align: center;
         line-height: 50px;
+        &.back {
+            top: 0;
+            left: 0;
+        }
+        &.list {
+            bottom: 0;
+            left: 0;
+        }
         &:hover{
             background: #444;
         }
-        .icon-sort{
+        .icon{
             font-size: 24px;
             color: #fff;
         }
@@ -67,12 +96,17 @@ html, body, #container {
 }
 .header-subtitle{
     padding: 0 24px;
+    .icon {
+        margin: 0 10px;
+        color: #d0d0d0;
+    }
 }
 
 .article-info-index.article-info{
-  padding-top: 10px;
-  margin: 0;
-  border-top: 1px solid #ddd;
+    min-height: 40px;
+    padding-top: 10px;
+    margin: 0;
+    border-top: 1px solid #ddd;
 }
 .article-info-post.article-info{
     margin: 0;
@@ -84,13 +118,15 @@ html, body, #container {
 }
 .article{
     padding: 10px;
-    margin: 10px;
+    margin: 10px 0;
+    border: 0;
     font-size: 16px;
     color: #555;
+    .article-more-link {
+        margin: 0;
+    }
     .article-entry{
-        padding-left: 0;
-        padding-right: 0;
-        padding-top: 10px;
+        padding: 10px 0 30px 0;
     }
     .article-inner h1.article-title, .article-title{
         font-size: 18px;
@@ -176,9 +212,6 @@ html, body, #container {
     padding: 0 13px;
 }
 
-#mobile-nav{
-    display: block;
-}
 #article-nav #article-nav-older {
     float: none;
 }
@@ -239,4 +272,65 @@ html, body, #container {
     .footer-right{
         float: initial;
     }
+}
+
+#mobile-nav{
+    .header-author{
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        color: #424242;
+    }
+	.overlay{
+		height: 110px;
+		position: absolute;
+		width: 100%;
+        z-index: 1;
+		background: #4d4d4d;
+	}
+	#header{
+		padding: 10px 0 0 0;
+		.profilepic{
+			display: block;
+			position: relative;
+			z-index: 100;
+		}
+		.header-menu{
+			height: auto;
+			margin: 10px 0 20px;
+			ul{
+				text-align: center;
+                cursor: default;
+                display: flex;
+                margin: 0 auto;
+                align-items: center;
+                justify-content: space-around;
+                position: relative;
+                z-index: 1;
+                border: 1px solid #a0a0a0;
+                border-radius: 3px;
+			}
+			li{
+                border-left: 1px solid #a0a0a0;
+                &:first-child {
+                    border-left: 0;
+                }
+                &:last-child {
+                    border-right: 0;
+                }
+                a {
+                    font-size: 14px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    display: block;
+                    color: #a0a0a0;
+                    &.active {
+                        color: #eaeaea;
+                        background: #a0a0a0;
+                    }
+                }
+			}
+		}
+	}
 }
