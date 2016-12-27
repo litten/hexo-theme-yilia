@@ -24,6 +24,9 @@ html, body, #container {
 .tools-col {
     left: -300px;
     width: 300px;
+    .tools-wrap {
+        padding-top: 30px;
+    }
     .tools-wrap, .tools-section {
         width: 300px;
         .search-wrap {
@@ -295,42 +298,57 @@ html, body, #container {
 			position: relative;
 			z-index: 100;
 		}
-		.header-menu{
-			height: auto;
-			margin: 10px 0 20px;
-			ul{
-				text-align: center;
-                cursor: default;
-                display: flex;
-                margin: 0 auto;
-                align-items: center;
-                justify-content: space-around;
-                position: relative;
-                z-index: 1;
-                border: 1px solid #a0a0a0;
-                border-radius: 3px;
-			}
-			li{
-                border-left: 1px solid #a0a0a0;
-                &:first-child {
-                    border-left: 0;
-                }
-                &:last-child {
-                    border-right: 0;
-                }
-                a {
-                    font-size: 14px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    display: block;
-                    color: #a0a0a0;
-                    &.active {
-                        color: #eaeaea;
-                        background: #a0a0a0;
-                    }
-                }
-			}
-		}
 	}
+}
+
+.header-menu{
+    height: auto;
+    margin: 10px 0 20px;
+    &.tools-nav {
+        display: block;
+        position: fixed;
+        width: 100%;
+        ul {
+            margin-right: 28px;
+        }
+        ul, li {
+            border-color: #fff;
+            a {
+                color: #fff;
+            }
+        }
+    }
+    ul{
+        text-align: center;
+        cursor: default;
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        z-index: 1;
+        border: 1px solid #a0a0a0;
+        border-radius: 3px;
+    }
+    li{
+        border-left: 1px solid #a0a0a0;
+        &:first-child {
+            border-left: 0;
+        }
+        &:last-child {
+            border-right: 0;
+        }
+        a {
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: block;
+            color: #a0a0a0;
+            &.active {
+                color: #eaeaea;
+                background: #a0a0a0;
+            }
+        }
+    }
 }

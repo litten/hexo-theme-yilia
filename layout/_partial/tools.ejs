@@ -4,6 +4,22 @@
   var hasAboutme = theme.smart_menu.aboutme
 %>
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-nav header-menu">
+    <% var count = 0%>
+    <% for (var i in theme.smart_menu){ %>
+      <% count++ %>
+    <% } %>
+    <% var ulWidth = count > 2 ? '70%' : '50%' %>
+
+    <ul style="width: <%= ulWidth %>">
+    <% var divide = 100 / count + '%' %>
+    <% for (var i in theme.smart_menu){ %>
+      <% if(theme.smart_menu[i]){ %>
+      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)"><%= theme.smart_menu[i] %></a></li>
+      <% } %>
+        <%}%>
+    </ul>
+  </div>
   <div class="tools-wrap">
     <%if(hasInnerArchive){%>
     	<section class="tools-section tools-section-all" q-show="innerArchive">

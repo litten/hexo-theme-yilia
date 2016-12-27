@@ -17,6 +17,9 @@
     &.hide {
         @extend %anmSmallLeftOut;
     }
+    .tools-nav {
+        display: none;
+    }
     .tools-wrap, .tools-section{
         height: 100%;
         color: #e5e5e5;
