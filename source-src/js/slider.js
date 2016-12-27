@@ -20,6 +20,13 @@ function fixzero(str) {
 	return str.length === 1 ? '0' + str : str
 }
 
+function setScrollZero() {
+	let $sct = document.querySelectorAll('.tools-section')
+	$sct.forEach((em) => {
+		em.scrollTop = 0
+	})
+}
+
 function init() {
 	let app = new Q({
 	    el: '#container',
@@ -49,7 +56,10 @@ function init() {
 	    		window.localStorage && window.localStorage.setItem(localTagKey, app.showTags)
 	    	},
 	        openSlider: (e, type) => {
-				e.stopPropagation()
+	        	e.stopPropagation()
+	        	if (!type) {
+	        		type = 'innerArchive'
+	        	}
 				// innerArchive: '所有文章'
   				// friends: '友情链接'
   				// aboutme: '关于我'
@@ -59,6 +69,7 @@ function init() {
   				app.$set(type, true)
   				app.$set('isShow', true)
   				app.$set('isCtnShow', true)
+  				setScrollZero()
 			}
 	    },
 	    filters: {
@@ -155,7 +166,8 @@ function init() {
 	// 其他标签点击
 	// 标签
 	let $tags = document.querySelectorAll('.tagcloud a')
-	$tags.forEach(($em) => {
+	for (var i = 0, len = $tags.length; i < len; i++) {
+		let $em = $tags[i]
 		$em.setAttribute('href', 'javascript:void(0)')
 		$em.onclick = (e) => {
 			e.stopPropagation()
@@ -165,9 +177,10 @@ function init() {
 			app.$set('isShow', true)
 			app.$set('isCtnShow', true)
 			app.$set('search', '#' + $em.innerHTML)
+			setScrollZero()
 			return false
 		}
-	})
+	}
 }
 
 init()

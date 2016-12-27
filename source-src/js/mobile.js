@@ -3,6 +3,10 @@ import removeClass from 'dom101/remove-class'
 import after from 'dom101/after'
 // 浏览器判断
 import Browser from './browser'
+// fix hexo 不支持的配置
+import Fix from './fix'
+
+import {addLoadEvent} from './util'
 
 function isPathMatch(path, href) {
 	let reg = /\/|index.html/g
@@ -12,11 +16,13 @@ function isPathMatch(path, href) {
 function tabActive() {
 	let $tabs = document.querySelectorAll('.js-header-menu li a')
 	let path = window.location.pathname
-	$tabs.forEach(($tab) => {
+
+	for (var i = 0, len = $tabs.length; i < len; i++) {
+		let $tab = $tabs[i]
 		if (isPathMatch(path, $tab.getAttribute('href'))) {
 			addClass($tab, 'active')
 		}
-	})
+	}
 }
 
 function getElementLeft(element) {　　　　
@@ -41,8 +47,7 @@ function getElementTop(element) {　　　　
 function scrollStop($dom, top, limit, zIndex, diff) {
 	let nowLeft = getElementLeft($dom)
 	let nowTop = getElementTop($dom) - top
-		// let nowTop = $dom.offsetTop - document.body.scrollTop
-		// console.log(nowTop)
+
 	if (nowTop - limit <= diff) {
 		let $newDom = $dom.$newDom
 		if (!$newDom) {
@@ -58,26 +63,20 @@ function scrollStop($dom, top, limit, zIndex, diff) {
 		}
 		$newDom.style.visibility = 'visible'
 		$dom.style.visibility = 'hidden'
-		return true
-			//$dom.style.top = (top + 'px')
 	} else {
-		//console.log(top - limit)
 		$dom.style.visibility = 'visible'
 		let $newDom = $dom.$newDom
 		if ($newDom) {
 			$newDom.style.visibility = 'hidden'
 		}
-		return false
 	}
 }
 
 function handleScroll() {
 	let $overlay = document.querySelector('.js-overlay')
 	let $menu = document.querySelector('.js-header-menu')
-	//let $mobileCtn = document.querySelector('.js-mobile-btnctn')
 	scrollStop($overlay, document.body.scrollTop, -63, 1, 0)
 	scrollStop($menu, document.body.scrollTop, 1, 2, 0)
-	//scrollStop($mobileCtn, document.body.scrollTop, -5)
 }
 
 function bindScroll() {
@@ -85,9 +84,6 @@ function bindScroll() {
 		handleScroll()
 	})
 
-	/*window.onscroll = (e) => {
-		handleScroll()
-	}*/
 	window.addEventListener('scroll', (e) => {
 		handleScroll()
 	})
@@ -102,6 +98,10 @@ function init() {
 }
 
 init();
+
+addLoadEvent(function() {
+	Fix.init()
+})
 
 module.exports = {
 }

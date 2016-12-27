@@ -25,7 +25,7 @@ html, body, #container {
     left: -300px;
     width: 300px;
     .tools-wrap {
-        padding-top: 30px;
+        padding-top: 48px;
     }
     .tools-wrap, .tools-section {
         width: 300px;
@@ -37,6 +37,13 @@ html, body, #container {
         }
         .search-ul .search-li {
             padding: 5px 20px;
+        }
+    }
+    &.show {
+        .header-menu{
+            &.tools-nav {
+                display: block;
+            }
         }
     }
 }
@@ -305,9 +312,11 @@ html, body, #container {
     height: auto;
     margin: 10px 0 20px;
     &.tools-nav {
-        display: block;
+        display: none;
         position: fixed;
+        left: 0;
         width: 100%;
+        z-index: 9999;
         ul {
             margin-right: 28px;
         }
@@ -315,6 +324,9 @@ html, body, #container {
             border-color: #fff;
             a {
                 color: #fff;
+                &.active {
+                    background: #81b5cc;
+                }
             }
         }
     }

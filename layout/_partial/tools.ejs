@@ -7,15 +7,17 @@
   <div class="tools-nav header-menu">
     <% var count = 0%>
     <% for (var i in theme.smart_menu){ %>
+      <% if (theme.smart_menu[i]) { %>
       <% count++ %>
+      <% } %>
     <% } %>
-    <% var ulWidth = count > 2 ? '70%' : '50%' %>
+    <% var ulWidth = '70%' %>
 
     <ul style="width: <%= ulWidth %>">
     <% var divide = 100 / count + '%' %>
     <% for (var i in theme.smart_menu){ %>
       <% if(theme.smart_menu[i]){ %>
-      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)"><%= theme.smart_menu[i] %></a></li>
+      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)" q-class="active:<%-i%>"><%= theme.smart_menu[i] %></a></li>
       <% } %>
         <%}%>
     </ul>

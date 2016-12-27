@@ -71,6 +71,17 @@ var e = function() {
             var $script = document.createElement('script')
             document.getElementsByTagName('body')[0].appendChild($script)
             $script.setAttribute('src', path)
+        },
+        addLoadEvent: function(func){
+            var oldonload = window.onload;
+            if (typeof window.onload!="function") {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    oldonload();
+                    func();
+                }
+            }
         }
     }
 }();
