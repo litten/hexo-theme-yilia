@@ -1,5 +1,3 @@
-import {decode} from './util'
-
 function init() {
 	// 由于hexo分页不支持，手工美化
 	var $nav = document.querySelector('#page-nav')
@@ -21,7 +19,7 @@ function init() {
 	// about me 转义
 	var $aboutme = document.querySelector('#js-aboutme')
 	if ($aboutme && $aboutme.length !== 0) {
-		$aboutme.innerHTML = decode($aboutme.innerHTML)
+		$aboutme.innerHTML = $aboutme.innerText
 	}
 }
 

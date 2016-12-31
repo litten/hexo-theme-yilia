@@ -160,7 +160,16 @@ function init() {
 	}
 
 	// tag 显示/隐藏
-	let isTagOn = (window.localStorage && window.localStorage.getItem(localTagKey)) || 'false'
+	let localTag = false
+	if (window.localStorage) {
+		localTag = window.localStorage.getItem(localTagKey)
+	}
+	let isTagOn = 'false'
+	if (localTag === null) {
+		isTagOn = (window.yiliaConfig && window.yiliaConfig.showTags) ? 'true' : 'false'
+	} else {
+		isTagOn = (window.localStorage && window.localStorage.getItem(localTagKey)) || 'false'
+	}
 	app.$set('showTags', JSON.parse(isTagOn))
 
 	// 其他标签点击

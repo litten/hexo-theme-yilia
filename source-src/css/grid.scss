@@ -20,12 +20,10 @@ html, body, #container {
 #container{
 	position:relative;
 	min-height:100%;
-	@extend %trans8;
 	.anm-canvas {
 		display: none;
 	}
 	&.show {
-		@extend %line-bg;
 		.anm-canvas {
 			display: block;
 			position: fixed;

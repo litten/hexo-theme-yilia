@@ -1,5 +1,6 @@
+<% var defaultBg = '#4d4d4d'; %>
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay"></div>
+  	<div class="overlay js-overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
