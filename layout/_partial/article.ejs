@@ -81,14 +81,16 @@
 <%- partial('post/share_addthis') %>
 <% } %>
 
-<% if (!index && theme.duoshuo && post.comments){ %>
-<%- partial('post/duoshuo', {
-    key: post.slug,
-    title: post.title,
-    url: config.url+url_for(post.path)
-  }) %>
-<% } else { %>
-  <div class="duoshuo"></div>
+<% if (!index){ %>
+  <% if (theme.duoshuo && post.comments){ %>
+  <%- partial('post/duoshuo', {
+      key: post.slug,
+      title: post.title,
+      url: config.url+url_for(post.path)
+    }) %>
+  <% } else { %>
+    <div class="duoshuo"></div>
+  <% } %>
 <% } %>
 
 <% if (!index && post.comments && config.disqus_shortname){ %>
