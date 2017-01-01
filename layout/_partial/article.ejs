@@ -3,7 +3,9 @@
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
+        <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
+        <% } %>
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
@@ -85,6 +87,8 @@
     title: post.title,
     url: config.url+url_for(post.path)
   }) %>
+<% } else { %>
+  <div class="duoshuo"></div>
 <% } %>
 
 <% if (!index && post.comments && config.disqus_shortname){ %>
