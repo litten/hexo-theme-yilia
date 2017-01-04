@@ -15,6 +15,7 @@
         position:relative;  
         border-radius:0 5px 5px 0; 
         margin: 5px 9px 5px 8px;
+        background: #ba8f6c;
         font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
         &:hover{
             opacity: 0.8;
@@ -27,6 +28,7 @@
             top: 0;
             left: -18px;
             border: 9px solid transparent;
+            border-right-color: #ba8f6c;  
         }
         &:after{  
             content:" ";  
