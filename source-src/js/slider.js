@@ -174,7 +174,7 @@ function init() {
 
 	// 其他标签点击
 	// 标签
-	let $tags = document.querySelectorAll('.tagcloud a')
+	let $tags = document.querySelectorAll('.tagcloud a.js-tag')
 	for (var i = 0, len = $tags.length; i < len; i++) {
 		let $em = $tags[i]
 		$em.setAttribute('href', 'javascript:void(0)')
