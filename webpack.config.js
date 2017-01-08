@@ -2,6 +2,16 @@ var webpack = require("webpack");
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanPlugin = require('clean-webpack-plugin');
+
+// 模板压缩
+// 详见：https://github.com/kangax/html-minifier#options-quick-reference
+
+var minifyHTML = {
+  collapseInlineTagWhitespace: true,
+  collapseWhitespace: true,
+  minifyJS:true
+}
 
 module.exports = {
   entry: {
@@ -11,7 +21,7 @@ module.exports = {
   },
   output: {
     path: "./source",
-    publicPath: "/",
+    publicPath: "./",
     filename: "[name].[chunkhash:6].js"
   },
   module: {
@@ -53,12 +63,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       cache: false,
+      minify: minifyHTML,
       template: './source-src/script.ejs',
       filename: '../layout/_partial/script.ejs'
     }),
     new HtmlWebpackPlugin({
       inject: false,
       cache: false,
+      minify: minifyHTML,
       template: './source-src/css.ejs',
       filename: '../layout/_partial/css.ejs'
     })
@@ -79,6 +91,7 @@ if (process.env.NODE_ENV === 'production') {
         warnings: false
       }
     }),
-    new webpack.optimize.OccurenceOrderPlugin()
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new CleanPlugin('builds')
   ])
 }
