@@ -98,7 +98,7 @@ function init() {
 	})
 
 	function handleSearch(val) {
-		val = val || ''
+		val = (val || '').toLowerCase()
 		let type = 'title'
 		if (val.indexOf('#') === 0) {
 			val = val.substr(1, val.length)
@@ -107,13 +107,13 @@ function init() {
 		let items = app.items
 	  	items.forEach((item) => {
 	  		let matchTitle = false
-	  		if (item.title.indexOf(val) > -1) {
+	  		if (item.title.toLowerCase().indexOf(val) > -1) {
 	  			matchTitle = true
 	  		}
 
 	  		let matchTags = false
 	  		item.tags.forEach((tag) => {
-	  			if (tag.name.indexOf(val) > -1) {
+	  			if (tag.name.toLowerCase().indexOf(val) > -1) {
 	      			matchTags = true
 	      		}
 	  		})
