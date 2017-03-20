@@ -1,0 +1,117 @@
+.left-col {
+	background: #fff;
+	width: 300px;
+	position:fixed;
+	opacity:1;
+	transition:all .2s ease-in;
+	height:100%;
+	z-index: 999;
+	&.show {
+		@extend %shadow;
+	}
+	.overlay{
+		width: 100%;
+		height: 180px;
+		position: absolute;
+	}
+
+	.intrude-less {
+		width: 76%;
+		text-align: center;
+		margin: 112px auto 0;
+	}
+
+	#header{
+		width:100%;
+		height: 300px;
+		position: relative;
+		border-bottom: 1px solid color-border;
+		a {
+			color: #696969;
+			&:hover {
+				color: #B0A0AA;
+			}
+		}
+		.header-subtitle{
+			text-align: center;
+			color:#999;
+			font-size: 14px;
+			line-height: 25px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+		.header-menu{
+			font-weight: 300;
+			line-height: 31px;
+			cursor: pointer;
+			text-transform: uppercase;
+			float:none;
+			min-height: 150px;
+			margin-left: -12px;
+			text-align: center;
+			display: -webkit-box;
+			-webkit-box-orient: horizontal;
+			-webkit-box-pack: center;
+			-webkit-box-align: center;
+			li{
+				cursor: default;
+				a{
+					font-size: 14px;
+					min-width: 300px;
+				}
+			}
+		}
+		.header-smart-menu {
+			font-size: 12px;
+			margin-bottom: 20px;
+			a {
+				&:after {
+					content: '/'
+				}
+				&:last-child {
+					&:after {
+						content: ''
+					}
+				}
+			}
+		}
+		.profilepic{
+			text-align: center;
+			display: block;
+			border: 5px solid #fff;
+			border-radius: 300px;
+			width: 128px;
+			height: 128px;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+			background: #88acdb;
+			-webkit-transition: all 0.2s ease-in;
+			display: -webkit-box;
+			-webkit-box-orient: horizontal;
+			-webkit-box-pack: center;
+			-webkit-box-align: center;
+			text-align: center;
+			img{
+				border-radius: 300px;
+				opacity: 1;
+				-webkit-transition: all 0.2s ease-in;
+				&.show{
+					width: 100%;
+					height: 100%;
+					opacity: 1;
+				}
+			}
+		}
+		.header-author{
+			text-align: center;
+			margin: 0.67em 0;
+			font-family: Roboto, "Roboto", serif;
+			font-size: 30px;
+			transition: 0.3s;
+		}
+	}
+}

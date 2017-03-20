@@ -1,0 +1,56 @@
+body, button, input, select, textarea {
+    color: #1a1a1a;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+body {
+	overflow-y: hidden;
+	background:#eaeaea;
+}
+html, body, #container {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#mobile-nav {
+	display: none;
+}
+#container{
+	position:relative;
+	min-height:100%;
+	.anm-canvas {
+		display: none;
+	}
+	&.show {
+		.anm-canvas {
+			display: block;
+			position: fixed;
+		}
+	}
+}
+.body-wrap{
+  margin-bottom: 80px;
+}
+.mid-col {
+	position:absolute;
+	right:0;
+	min-height:100%;
+	background:#eaeaea;
+	left: 300px;
+	width: auto;
+	@extend %trans;
+	&.show {
+		background: none;
+		opacity: .9;
+		@extend %anmLeftIn;
+		.article {
+			@extend %trans;
+			background: rgba(255,255,255,.3);
+		}
+	}
+	&.hide {
+		@extend %anmLeftOut;
+	}
+}

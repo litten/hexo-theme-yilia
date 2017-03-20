@@ -1,0 +1,138 @@
+.archives-wrap{
+  position: relative;
+  margin: 0 30px;
+  padding-right: 60px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  &:first-child{
+    margin-top: 30px;
+  }
+  &:last-child{
+    margin-bottom: 80px;
+  }
+  .archive-year-wrap{
+    line-height: 35px;
+    width: 200px;
+    position: absolute;
+    padding-top: 15px;
+    font-size: 1.8em;
+  }
+  .archive-year-wrap a{
+    color: #666;
+    font-weight: bold;
+    padding-left: 48px;
+  }
+}
+
+.archives {
+  position:relative;
+  .article-info{
+    border: none;
+  }
+  .archive-article {
+    margin-left:200px;
+    padding:20px 0;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #fff;
+    position: relative;
+    &:first-child{
+      border-top: none;
+    }
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+
+  .archive-article-title {
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s;
+    &:hover{
+      color: #657b83;
+    }
+    span{
+      display: block;
+      color: #a8a8a8;
+      font-size: 12px;
+      line-height: 14px;
+      height: 7px;
+      padding-left: 2px;
+      &:before{
+        display: inline-block;
+        content: "“";
+        font-family: serif;
+        font-size: 30px;
+        float: left;
+        margin: 4px 4px 0 -12px;
+        color: #c8c8c8;
+      }
+    }
+  }
+}
+
+.archive-article-inner{
+  .icon-clock {
+    margin-right: 5px;
+  }
+  .archive-article-header{
+    position: relative;
+    min-height: 36px;
+  }
+  .article-meta{
+    position: relative;
+    float: right;
+    margin-top: -10px;
+    color: #555;
+    background: none;
+    text-align: right;
+    width: auto;
+    .article-date{
+      time{
+        color: #aaa;
+      }
+    }
+    .archive-article-date, .article-tag-list{
+      margin-right: 30px;
+      display: -moz-inline-stack;
+      display: inline-block;
+      vertical-align: middle;
+      zoom: 1;
+      color: #666;
+      font-size: 14px;
+    }
+    .archive-article-date{
+     cursor: default;
+     font-size: 12px;
+     margin-bottom: 5px;
+     margin-top: -10px;
+     margin-right: 0;
+     time{
+     }
+    }
+    .article-category{
+      &:before{
+        float: left;
+        margin-top: 1px;
+        left: 15px;
+      }
+      .article-category-link{
+        width: auto;
+        max-width: 83px;
+        padding-left: 10px;
+      }
+    }
+    .article-tag-list{
+      margin-top: 0px;
+      &:before{
+        left: 15px;
+      }
+      .article-tag-list-item{
+        display: inline-block;
+        width: auto;
+        max-width: 83px;
+        padding-left: 8px;
+        font-size: 12px;
+      }
+    }
+  }
+}
