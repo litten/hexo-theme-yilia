@@ -6,7 +6,6 @@ menu:
 
 # SubNav
 subnav:
-
   github: "https://github.com/tidus5/"
   #weibo: "#"
   #rss: "#"
@@ -29,13 +28,14 @@ rss: /atom.xml
 root: 
 
 # Content
-
 # 文章太长，截断按钮文字
 excerpt_link: more
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
+
+fancybox: true
 # 数学公式
-mathjax: false
+mathjax: true
 # 是否在新窗口打开链接
 open_in_new: false
 
@@ -43,7 +43,7 @@ open_in_new: false
 # 请在需要打赏的文章的md文件头部，设置属性reward: true
 
 # 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 0
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
@@ -57,14 +57,14 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: http://imgtosun-meiupic.stor.sinaapp.com/data/2/145408563338.jpg
+avatar: http://wx3.sinaimg.cn/mw1024/8730fe8egy1fczpzllxpkj205l05ldfv.jpg
 
 #是否开启分享
 share_jia: true
 
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: false
+duoshuo: tidus5
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -78,28 +78,19 @@ slider:
   # 是否默认展开tags板块
   showTags: false
 
+  
 # 智能菜单
 # 如不需要，将该对应项置为false
 # 比如
 #smart_menu:
 #  friends: false
+
 smart_menu:
   innerArchive: '所有文章'
   friends: '友链'
   aboutme: '关于我'
 
 friends:
+  我的CSDN博客: http://blog.csdn.net/tidus5
 
-   我的CSDN博客: http://blog.csdn.net/tidus5
-#  卡卡的美丽传说: http://localhost:4000/
-#  本泽马的博客: http://localhost:4000/
-#  吉格斯的博客: http://localhost:4000/
-#  习大大大不同: http://localhost:4000/
-#  托蒂的博客: http://localhost:4000/
-
-#是否开启“关于我”。
-#不开启——
-#aboutme: false
-#开启——
 aboutme: 咱们屯里的人啊，屯里的人。。。
-
