@@ -92,6 +92,7 @@ subnav:
   #weixin: "#"
   #jianshu: "#"
   #douban: "#"
+  #segmentfault: "#"
   #mail: "mailto:litten225@qq.com"
   #facebook: "#"
   #google: "#"

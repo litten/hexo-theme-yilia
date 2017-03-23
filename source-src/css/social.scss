@@ -35,6 +35,13 @@
                 border:1px solid #aaaaff;
             }
         }
+        a.segmentfault {
+            background: #009a61;
+            border:1px solid #009a61;
+            &:hover {
+                border:1px solid #009a61;
+            }
+        }
         a.rss {
             background: #ef7522;
             border:1px solid #ef7522;
