@@ -84,6 +84,20 @@
                 border:1px solid #006b98;
             }
         }
+        a.acfun {
+            background: #fd4c5d;
+            border:1px solid #fd4c5d;
+            &:hover {
+                border:1px solid #fd4c5d;
+            }
+        }
+        a.bilibili {
+            background: #e15280;
+            border:1px solid #e15280;
+            &:hover {
+                border:1px solid #e15280;
+            }
+        }
         a.zhihu {
             background: #0078d8;
             border:1px solid #0078d8;
