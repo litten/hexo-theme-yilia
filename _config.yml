@@ -2,17 +2,19 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
-
+#  所有文章: /archives/ 
+#  随笔: /tags/随笔/
+  随笔: /tags/Leo/
+  
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
-  #qq: "#"
-  #weixin: "#"
-  #jianshu: "#"
+  github: "https://github.com/jazhLeo"
+  weibo: "http://weibo.com/GeekaLeo"
+  # rss: "#"
+  # zhihu: "#"
+  # qq: "#"
+  # weixin: "#"
+  # jianshu: "#"
   #douban: "#"
   #segmentfault: "#"
   #bilibili: "#"
@@ -33,7 +35,7 @@ root:
 # Content
 
 # 文章太长，截断按钮文字
-excerpt_link: more
+excerpt_link: More
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
 # 数学公式
@@ -45,13 +47,13 @@ open_in_new: false
 # 请在需要打赏的文章的md文件头部，设置属性reward: true
 
 # 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 1
 # 打赏wording
-reward_wording: '谢谢你请我吃糖果'
+reward_wording: '思想无价'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: 
+alipay: "/Image/alipay.png"
 # 微信二维码图片地址
-weixin: 
+weixin: "/Image/wxpay.png" 
 
 # Miscellaneous
 baidu_analytics: ''
@@ -59,14 +61,14 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar:
+avatar: "/Image/zzh-min.jpg"
 
 #是否开启分享
 share_jia: true
 
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
 #若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
-duoshuo: false
+duoshuo: jazhLeo
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -87,7 +89,8 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '所有文章'
-  friends: '友链'
+#  tagcloud: '标签'
+  friends: false
   aboutme: '关于我'
 
 friends:
@@ -98,4 +101,4 @@ friends:
   友情链接5: http://localhost:4000/
   友情链接6: http://localhost:4000/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 一个还是不要露脸比较好的人<br/>：）
