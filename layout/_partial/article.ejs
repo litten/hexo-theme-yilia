@@ -88,6 +88,10 @@
       title: post.title,
       url: config.url+url_for(post.path)
     }) %>
+  <% } else if (theme.youyan_uid && post.comments){ %>
+  <%- partial('post/youyan', {
+	  youyan_uid: theme.youyan_uid
+    }) %>
   <% } else { %>
     <div class="duoshuo"></div>
   <% } %>
