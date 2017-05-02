@@ -120,4 +120,11 @@
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </section>
   <% } %>
+
+  <% if (theme.youyan){ %>
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=<%=theme.youyan%>"></script>
+    <!-- UY END -->
+  <% } %>
 <% } %>
