@@ -35,6 +35,13 @@
                 border:1px solid #aaaaff;
             }
         }
+        a.segmentfault {
+            background: #009a61;
+            border:1px solid #009a61;
+            &:hover {
+                border:1px solid #009a61;
+            }
+        }
         a.rss {
             background: #ef7522;
             border:1px solid #ef7522;
@@ -75,6 +82,20 @@
             border:1px solid #005a87;
             &:hover {
                 border:1px solid #006b98;
+            }
+        }
+        a.acfun {
+            background: #fd4c5d;
+            border:1px solid #fd4c5d;
+            &:hover {
+                border:1px solid #fd4c5d;
+            }
+        }
+        a.bilibili {
+            background: #e15280;
+            border:1px solid #e15280;
+            &:hover {
+                border:1px solid #e15280;
             }
         }
         a.zhihu {

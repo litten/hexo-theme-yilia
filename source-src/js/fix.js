@@ -12,7 +12,10 @@ function init() {
 	if (yiliaConfig && yiliaConfig.open_in_new) {
 		let $a = document.querySelectorAll(('.article-entry a:not(.article-more-a)'))
 		$a.forEach(($em) => {
-			$em.setAttribute('target', '_blank')
+			let target = $em.getAttribute('target');
+			if (!target || target === '') {
+				$em.setAttribute('target', '_blank');
+			}
 		})
 	}
 

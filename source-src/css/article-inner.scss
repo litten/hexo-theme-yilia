@@ -104,7 +104,7 @@
   em {
     font-style: italic;
   }
-  ul, ol{
+  ul {
     li:before{
       content: "";
       width: 6px;
@@ -115,7 +115,15 @@
       display: inline-block;
       margin-right: 10px;
       float: left;
-      margin-top: 12px;
+      margin-top: 10px;
+    }
+  }
+  ol {
+    counter-reset: item;
+    li:before{
+      counter-increment: item;
+	    content: counter(item)".";
+      margin-right: 10px;
     }
   }
   ul,ol{

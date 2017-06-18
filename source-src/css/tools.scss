@@ -16,6 +16,7 @@
     }
     &.hide {
         @extend %anmSmallLeftOut;
+        z-index: 0;
     }
     .tools-nav {
         display: none;
