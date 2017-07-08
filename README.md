@@ -18,8 +18,13 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 4. 让大家把注意力放到内容上。这是本主题设计初衷      
 5. 主题不支持IE6，7，8。以后也不会     
 
-**近期更新（2016.12.04）：**
+**近期更新（2017.07.09）：**
 
+2017.07.09
+1. 返回顶部
+2. TOC目录
+
+2016.12.04
 1. 打赏
 2. 搜索
 3. “更好的”标签云
@@ -28,8 +33,7 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 
 **计划中：**
 
-1. TOC
-2. 移动端优化
+1. 移动端优化
              
 ## 一、外观
 
@@ -120,9 +124,7 @@ mathjax: false
 open_in_new: false
 
 # 打赏
-# 请在需要打赏的文章的md文件头部，设置属性reward: true
-
-# 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
+# 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
 reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
@@ -130,6 +132,17 @@ reward_wording: '谢谢你请我吃糖果'
 alipay: 
 # 微信二维码图片地址
 weixin: 
+
+# 目录
+# 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
+toc: 1
+# 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
+toc_hide_index: true
+# 目录为空时的提示
+toc_empty_wording: '目录，不存在的…'
+
+# 是否有快速回到顶部的按钮
+top: true
 
 # Miscellaneous
 baidu_analytics: ''
@@ -142,9 +155,21 @@ avatar:
 #是否开启分享
 share_jia: true
 
-#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
-#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus 不需要使用某项，直接设置值为false，或注释掉
+#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
+
+#1、多说
 duoshuo: false
+
+#2、网易云跟帖
+wangyiyun: false
+
+#3、畅言
+changyan_appid: false
+changyan_conf: false
+
+#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+disqus: false
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -157,7 +182,7 @@ style:
 slider:
   # 是否默认展开tags板块
   showTags: false
-  
+
 # 智能菜单
 # 如不需要，将该对应项置为false
 # 比如
