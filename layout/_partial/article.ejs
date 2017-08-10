@@ -96,6 +96,14 @@
     }) %>
   <% } %>
 
+  <% if (theme.valine){ %>
+  <%- partial('post/valine', {
+      key: post.slug,
+      title: post.title,
+      url: config.url+url_for(post.path)
+    }) %>
+  <% } %>
+
   <% if (theme.changyan_appid && theme.changyan_conf){ %>
   <%- partial('post/changyan', {
       key: post.slug,

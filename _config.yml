@@ -89,6 +89,12 @@ changyan_conf: false
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus: false
 
+#5 Valine -- 一款极简的评论系统 食用方法参考https://ioliu.cn/2017/add-valine-comments-to-your-blog/
+valine:
+  enable: false
+  appId:
+  appKey:
+
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色
