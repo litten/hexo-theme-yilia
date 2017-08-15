@@ -1,0 +1,703 @@
+@charset "UTF-8";
+
+//-----------------------------------------------------  
+// mixin scss
+// 包括常用的mixin, %, @function 及辅助的btn和背景图片icon
+// mixin，通过@include调用，样式通过拷贝的方式使用，尤其适用于传递参数
+// %，通过@extend调用，样式通过组合申明的方式使用，适用于不传参数的代码片段  
+// @function，返回一个值，用于调用
+//-----------------------------------------------------
+
+// mixin & %
+// 既定义了mixin也定义了%，根据需求使用@include或@extend调用
+//-----------------------------------------------------
+
+// Center-align a block level element
+@mixin center-block($extend: true) {
+    @if $extend {
+        @extend %center-block;
+    }
+    @else {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+%center-block {
+    @include center-block(false);
+}
+
+// clearfix
+@mixin clearfix($extend: true) {
+    @if $extend {
+        @extend %clearfix;
+    }
+    @else {
+        &::before,
+        &::after {
+            content: "";
+            display: table;
+        }
+        &::after {
+            clear: both;
+        }
+    }
+}
+
+%clearfix {
+    @include clearfix(false);
+}
+
+// Hide only visually, but have it available for screenreaders
+// 只隐藏于视觉，屏幕浏览器可以阅读
+@mixin hidden-clip($extend: true) {
+    @if $extend {
+        @extend %hidden-clip;
+    }
+    @else {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+}
+
+%hidden-clip {
+    @include hidden-clip(false);
+}
+
+// ellipsis
+@mixin ellipsis($extend: true) {
+    @if $extend {
+        @extend %ellipsis;
+    }
+    @else {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+%ellipsis {
+    @include ellipsis(false);
+}
+
+// ellipsis lines
+// only old webkit flex box
+@mixin ellipsis-lines($lines: 2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+}
+
+// word-break
+@mixin word-break($extend: true) {
+    @if $extend {
+        @extend %word-break;
+    }
+    @else {
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+}
+
+%word-break {
+    @include word-break(false);
+}
+
+// disabled
+// add !important
+@mixin disabled($colorText: map-get($colorDisabled, text), $colorBg: map-get($colorDisabled, bg), $colorBorder: false) {
+    background-color: $colorBg !important;
+    color: $colorText !important;
+    cursor: default !important;
+    pointer-events: none !important;
+    @if $colorBorder {
+        border: 1px solid map-get($colorDisabled, border);
+    }
+}
+
+%disabled {
+    @include disabled;
+}
+
+// image replace text
+@mixin ir($extend: true) {
+    @if $extend {
+        @extend %ir;
+    }
+    @else {
+        font: 0/0 a;
+        text-shadow: none;
+        border: 0 none;
+        color: transparent;
+    }
+}
+
+%ir {
+    @include ir(false);
+}
+
+// fixed top or bottom or bottom & top
+@mixin fixed($pos: 0) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    @if $pos == bottom {
+        bottom: 0;
+    } @else if $pos == all {
+        top: 0;
+        bottom: 0;
+    } @else {
+        top: $pos;
+    }
+}
+
+%fixed-top {
+    @include fixed;
+}
+
+%fixed-bottom {
+    @include fixed(bottom);
+}
+
+// justify 
+// 左右对齐
+@mixin justify($extend: true) {
+    @if $extend {
+        @extend %justify;
+    }
+    @else {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+%justify {
+    @include justify(false);
+}
+
+// retina border
+// 0.5px实现 ios9
+@mixin retina-one-px() {
+    @supports (border-width: 0.5px) {
+        @media only screen and (-webkit-min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 3) {
+            border-width: 0.5px;
+        }
+    }
+}
+
+// linear-gradient实现
+// 安卓4.3- 不支持background-size的百分比
+@mixin retina-one-px-bg($direction: top, $color: $colorBorder) {
+    background-repeat: no-repeat;
+    @if $direction == top {
+        background-image: linear-gradient(to bottom, $color 50%, transparent 50%);
+        background-size: 100% 1px;
+    }
+    @if $direction == bottom {
+        background-image: linear-gradient(to top, $color 50%, transparent 50%);
+        background-size: 100% 1px;
+        background-position: left bottom;
+    }
+    @if $direction == left {
+        background-image: linear-gradient(to right, $color 50%, transparent 50%);
+        background-size: 1px 100%;
+    }
+    @if $direction == right {
+        background-image: linear-gradient(to left, $color 50%, transparent 50%);
+        background-size: 1px 100%;
+        background-position: right top;
+    }
+    @if $direction == v { // 左右两个边框
+        background-image: linear-gradient(to right, $color 50%, transparent 50%),linear-gradient(to left, $color 50%, transparent 50%);
+        background-size: 1px 100%;
+        background-position: left top, right top;
+    }
+    @if $direction == h { // 上下两个边框
+        background-image: linear-gradient(to bottom, $color 50%, transparent 50%), linear-gradient(to top, $color 50%, transparent 50%);
+        background-size: 100% 1px;
+        background-position: left top, left bottom;
+    }
+    @if $direction == all { // 上下左右四个边框
+        background-image: linear-gradient(to bottom, $color 50%, transparent 50%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to right, $color 50%, transparent 50%),linear-gradient(to left, $color 50%, transparent 50%);
+        background-size: 100% 1px, 100% 1px, 1px 100%, 1px 100%;
+        background-position: left top, left bottom, left top, right top;
+    }
+}
+
+// border和transform实现
+// 注意before和after的层级问题
+@mixin retina-one-px-border($direction: top, $color: $colorBorder) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+
+    @if $direction == top or $direction == bottom{    
+        right: 0;
+        height: 0;
+        transform: scaleY(0.5);
+        border-top: 1px solid $color;
+    }
+    @if $direction == bottom {
+        top: auto;
+        bottom: 0;
+    }
+    @if $direction == right or $direction == left{
+        width: 0;
+        bottom: 0;
+        transform: scaleX(0.5);
+        border-left: 1px solid $color;
+    }
+    @if $direction == right {
+        left: auto;
+        right: 0;
+    }
+    @if $direction == all {
+        width: 200%;
+        height: 200%;
+        transform-origin: left top;
+        transform: scale(0.5);
+        border: 1px solid $color;
+    }
+}
+
+// border top & bottom
+%border-tb {
+    position: relative;
+    &::before {
+        content: "";
+        @include retina-one-px-border(top);
+        z-index: 1;
+    }
+    &::after {
+        content: "";
+        @include retina-one-px-border(bottom);
+    }
+}
+
+// border all
+%border-all {
+    position: relative;
+    &::before {
+        content: "";
+        @include retina-one-px-border(all);
+        z-index: -1;
+    }
+}
+
+// mixin
+// 只定义了mixin，所以只能通过@include来调用
+//-----------------------------------------------------
+
+// table 等
+// $child 参数请使用单引号，因为用于子元素选择器
+@mixin equal-table($child: 'li') {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    #{unquote($child)} {
+        display: table-cell;
+    }
+}
+
+// flex 等分
+// $child 参数请使用单引号，因为用于子元素选择器
+@mixin equal-flex($child: 'li') {
+    display: flex;
+
+    #{unquote($child)} {
+        flex: 1;
+        width: 1%;
+    }
+}
+
+// line equal gap
+// $child 参数请使用单引号，因为用于子元素选择器
+@mixin line-equal-gap($gap: 10px, $child: 'li', $lr: true) {
+    display: flex;
+
+    @if $lr {
+        padding-left: $gap;
+        padding-right: $gap;
+    }
+
+    #{unquote($child)} {
+        flex: 1;
+        width: 1%;
+        &:not(:first-of-type){
+            margin-left: $gap;
+        }
+    }
+}
+
+// line equal item
+@mixin line-equal-item($lr: true) {
+    display: flex;
+    justify-content: space-between;
+    @if $lr {
+        &::before,
+        &::after {
+            content: "";
+        }
+    }
+}
+
+// flex center
+@mixin center-flex($direction: both) {
+    display: flex;
+    @if $direction == both {
+        justify-content: center;
+        align-items: center;
+    }
+    @else if $direction == x {
+        justify-content: center;
+    }
+    @else if $direction == y {
+        align-items: center;
+    }
+}
+
+// translate center
+@mixin center-translate($direction: both) {
+    position: absolute;
+    @if $direction == both {
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    @else if $direction == x {
+        left: 50%;
+        transform: translate3d(-50%, 0, 0);
+    }
+    @else if $direction == y {
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+// object wrap
+// $child 参数请使用单引号，因为用于子元素选择器
+@mixin object-wrap($percent: 100%, $child: 'img') {
+    position: relative;
+    padding-top: $percent;
+    height: 0;
+
+    #{unquote($child)} {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// triangle 三角箭头
+// 可采用空元素或伪元素生成，具体定位这里不涉及
+%triangle-basic {
+    content: "";
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+@mixin triangle($direction: top, $borderWidth: 6px, $borderColor: $colorC) {
+    @extend %triangle-basic;
+    @if $direction == top {
+        border-bottom: $borderWidth solid $borderColor;
+        border-left: $borderWidth dashed transparent;
+        border-right: $borderWidth dashed transparent;
+    }
+    @else if $direction == right {
+        border-left: $borderWidth solid $borderColor;
+        border-top: $borderWidth dashed transparent;
+        border-bottom: $borderWidth dashed transparent;
+    }
+    @else if $direction == bottom {
+        border-top: $borderWidth solid $borderColor;
+        border-left: $borderWidth dashed transparent;
+        border-right: $borderWidth dashed transparent;
+    }
+    @else if $direction == left {
+        border-right: $borderWidth solid $borderColor;
+        border-top: $borderWidth dashed transparent;
+        border-bottom: $borderWidth dashed transparent;
+    }
+}
+
+// v arrow 方向箭头
+@mixin v-arrow($direction: right, $borderWidth: 2px, $size: 10px) {
+    display: inline-block;
+    vertical-align: middle;
+    width: $size;
+    height: $size;
+    @if $direction == top {
+        border-top: $borderWidth solid currentColor;
+        border-right: $borderWidth solid currentColor;
+        transform: rotate(-45deg);
+    }
+    @else if $direction == right {
+        border-top: $borderWidth solid currentColor;
+        border-right: $borderWidth solid currentColor;
+        transform: rotate(45deg);
+    }
+    @else if $direction == bottom {
+        border-left: $borderWidth solid currentColor;
+        border-bottom: $borderWidth solid currentColor;
+        transform: rotate(-45deg);
+    }
+    @if $direction == left {
+        border-left: $borderWidth solid currentColor;
+        border-bottom: $borderWidth solid currentColor;
+        transform: rotate(45deg);
+    }
+}
+
+// selector
+// 改变父元素状态，如:hover或.active
+// 父元素不能有组合选择器，如.a, .b{}
+// .parent{
+//     .child{
+//         @include parent-state(":hover"){
+//             color: #f00;
+//         }
+//     }
+// }
+// .parent:hover .child {
+//     color: #f00;
+// }
+@mixin parent-state($states...) {
+    $parent: nth(nth(&, 1), (length(nth(&, 1))-1));
+    
+    @each $state in $states {    
+      @at-root #{selector-replace(&, $parent, str-insert($state, $parent, 0))} {
+          @content;
+      }
+    }
+}
+
+// animation-fade
+// @include animation-fade
+// @include animation-fade($from: false, $to: .5);
+// @include animation-fade($from: 1, $to: 0);
+@mixin animation-fade($name: animationFade, $from: 0, $to: false){
+  @keyframes #{animationFade} {
+    @if $from {
+      from {
+        opacity: $from;
+      }
+    }
+    @if $to {
+      to {
+        opacity: $to;
+      }
+    }
+  }
+}
+
+// animation-translate
+// @include animation-translate
+// @include animation-translate($from: x -100%);
+// @include animation-translate($from: xy -50% -50%, $to: y -100%);
+// @include animation-translate($from: y 100px, $to: y 0px);
+@mixin animation-translate($name: animationTranslate, $from: y -100%, $to: false) {
+    @keyframes #{$name} {
+        @if $from and length($from) > 1 {
+            from {
+                @if nth($from, 1) == x {
+                  transform: translate(nth($from, 2), 0);
+                }
+                @if nth($from, 1) == y {
+                  transform: translate(0, nth($from, 2));
+                }
+                @if nth($from, 1) == xy or nth($from, 1) == both {
+                  transform: translate(nth($from, 2), nth($from, 3));
+                }
+            }
+        }
+        @if $to andd length($to) > 1 {
+            to {
+                @if nth($to, 1) == x {
+                  transform: translate(nth($to, 2), 0);
+                }
+                @if nth($to, 1) == y {
+                  transform: translate(0, nth($to, 2));
+                }
+                @if nth($to, 1) == xy or nth($to, 1) == both {
+                  transform: translate(nth($to, 2), nth($to, 3));
+                }
+            }
+        }
+    }
+}
+
+// %
+// 只定义了%，所以只能通过@extend来调用
+//-----------------------------------------------------
+
+// bar line
+%bar-line {
+    line-height: $barHeight - 10px;
+    padding: 5px 10px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    @if $activeStateSwitch{
+        &:active,
+        &:hover {
+            background-color: darken($colorF, 3%);
+        }
+    }
+    &:not(:first-of-type)::before {
+        content: "";
+        @include retina-one-px-border;
+    }
+}
+
+// item arrow, 右侧箭头跳转指向
+%item-v-right {
+    &::after {
+        content: "";
+        @include v-arrow;
+        color: $colorC;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        margin-top: -1px;
+        transform: rotate(45deg) translate(0, -50%);
+        box-sizing: border-box;
+    }
+}
+
+// 间隔列表
+%gap-item{
+    position: relative;
+    background: #fff;
+    margin: 10px 0;
+    @if $activeStateSwitch{
+        &:active,
+        &:hover {
+            background-color: darken($colorF, 3%);
+        }
+    }
+    &::before{
+        content: "";
+        @include retina-one-px-border;
+    }
+    &::after{
+        content: "";
+        @include retina-one-px-border(bottom);
+    }
+}
+
+// 下面的几个%，由于版本或前缀，所以设计成%
+//-----------------------------------------------------
+// flex
+%display-flex {
+    display: flex;
+}
+
+// all-transition
+%transition-all {
+    transition: all 0.3s ease-in-out;
+}
+
+// translate3d
+%translate3d {
+    transform: translate3d(0, 0, 0);
+}
+
+
+// btn
+//----------------------------------------------------
+// btn-basic
+// 按钮基本样式，联合申明
+%btn-basic {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    user-select: none;
+    padding: 0 1em;
+    white-space: nowrap;
+}
+
+// btn-size
+// 按钮大小
+@mixin btn-size($padding: 1em, $height: $barHeight, $radius: 3px) {
+    padding: 0 $padding;
+    line-height: $height - 2px; // 减掉2px的上下高度
+    @if $radius {
+        border-radius: $radius;
+    }
+}
+
+// btn-color
+// 包括按钮背景色，文本色，是否有边框
+@mixin btn-color($colorText: #333, $colorBg: #666, $colorBorder: false) {
+    color: nth($colorText, 1);
+    background-color: nth($colorBg, 1);
+    @if $colorBorder {
+        border-color: nth($colorBorder, 1);
+    }
+    &:hover,
+    &:active {
+        @if length($colorText) == 2 {
+            color: nth($colorText, 2);
+        }
+        @if length($colorBg) == 2 {
+            background-color: nth($colorBg, 2);
+        } @else {
+            @if lightness($colorBg) > 40% {
+                background-color: darken($colorBg, 5%);
+            }
+            @else {
+                background-color: lighten($colorBg, 5%);
+            }
+        }
+        @if $colorBorder and length($colorBorder) == 2 {
+            border-color: nth($colorBorder, 2); // $colorBorder: #dbdbdb #ccc => #ccc
+        }
+    }
+}
+
+
+//function
+//-----------------------------------------------------
+
+// 为颜色添加白色，以百分比形式
+@function tint($color, $percent) {
+    @return mix(white, $color, $percent);
+}
+
+// 为颜色添加黑色，以百分比形式
+@function shade($color, $percent) {
+    @return mix(black, $color, $percent);
+}
+
+%shadow {
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,.75);
+}
+
+%trans {
+    transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+}
+
+%trans8 {
+    transition: all 0.8s ease-in;
+    -ms-transition: all 0.8s ease-in;
+}
+
+%line-bg {
+    background: linear-gradient(200deg, #a0cfe4, #e8c37e);
+}
+
+%paper-bg {
+    background: url('./img/checkered-pattern.png') repeat #5d5d5d;
+}

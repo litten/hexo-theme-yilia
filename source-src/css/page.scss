@@ -1,0 +1,38 @@
+#page-nav{
+	text-align: center;
+	margin-top: 30px;
+	.page-number{
+		width: 20px;
+		height: 25px;
+		background: #4d4d4d;
+		display: inline-block;
+		color: #fff;
+		line-height: 25px;
+		font-size: 12px;
+		margin: 0 5px 30px;
+		border-radius: 2px;
+		&:hover{
+			background: #5e5e5e;
+		}
+	}
+	.current{
+		background: #88acdb;
+		cursor: default;
+		&:hover{
+			background: #88acdb;
+		}
+	}
+	.extend{
+		color: #4d4d4d;
+		margin: 0 27px;
+		opacity: 1;
+		&:hover{
+			color: #5e5e5e;
+		}
+	}
+	&:hover{
+		.extend{
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,227 @@
+.article-inner {
+	p {
+	    margin: 0 0 1.75em;
+	}
+}
+
+.article-inner {
+	border-color: #d1d1d1;
+}
+
+.article-inner h1 {
+	font-size: 28px;
+	font-size: 1.75rem;
+	line-height: 1.25;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.article-inner h2 {
+	font-size: 23px;
+	font-size: 1.4375rem;
+	line-height: 1.2173913043;
+	margin-top: 2.4347826087em;
+	margin-bottom: 1.2173913043em;
+}
+
+.article-inner h3 {
+	font-size: 19px;
+	font-size: 1.1875rem;
+	line-height: 1.1052631579;
+	margin-top: 2.9473684211em;
+	margin-bottom: 1.4736842105em;
+}
+
+.article-inner h4,
+.article-inner h5,
+.article-inner h6 {
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.3125;
+	margin-top: 3.5em;
+	margin-bottom: 1.75em;
+}
+
+.article-inner h4 {
+	letter-spacing: 0.140625em;
+	text-transform: uppercase;
+}
+
+.article-inner h6 {
+	font-style: italic;
+}
+
+.article-inner h1,
+.article-inner h2,
+.article-inner h3,
+.article-inner h4,
+.article-inner h5,
+.article-inner h6 {
+	font-weight: 900;
+}
+
+.article-inner h1:first-child,
+.article-inner h2:first-child,
+.article-inner h3:first-child,
+.article-inner h4:first-child,
+.article-inner h5:first-child,
+.article-inner h6:first-child {
+	margin-top: 0;
+}
+
+.article-inner h1:first-child{
+  margin-bottom: 10px;
+  display: inline;
+}
+.article-entry{
+  line-height: 1.8em;
+  padding-right: 7.6923%;
+  padding-left: 7.6923%;
+  p{
+    margin-top: 10px;
+  }
+  p code,li code{
+    padding: 1px 3px;
+    margin: 0 3px;
+    background: #ddd;
+    border: 1px solid #ccc;
+    font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+  blockquote {
+    background: #ddd;
+    border-left: 5px solid #ccc;
+    padding: 15px 20px;
+    margin-top: 10px;
+    border-left: 5px solid #657b83;
+    background: #f6f6f6;
+    p{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  em {
+    font-style: italic;
+  }
+  ul {
+    li:before{
+      content: "";
+      width: 6px;
+      height: 6px;
+      border: 1px solid #999;
+      border-radius: 10px;
+      background: #aaa;
+      display: inline-block;
+      margin-right: 10px;
+      float: left;
+      margin-top: 10px;
+    }
+  }
+  ol {
+    counter-reset: item;
+    li:before{
+      counter-increment: item;
+	    content: counter(item)".";
+      margin-right: 10px;
+    }
+  }
+  ul,ol{
+    font-size: 14px;
+    margin: 10px 0px;  
+  }
+  li{
+    ul,ol{
+      margin-left: 30px;
+      li:before{
+        content: "";
+        background: #dedede;
+      }
+    }
+  }
+  h1{
+    margin-top: 30px;
+  }
+  h2{
+    margin-top: 20px;
+    font-weight: bold;
+    color: #574C4C;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  h3,h4,h5,h6{
+    margin-top: 20px;
+    font-weight: bold;
+    color: #574C4C;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+  }
+  video{
+    max-width: 100%;
+  }
+  strong {
+    font-weight: bold;
+  }
+  .caption{
+    display: block;
+    font-size: 0.8em;
+    color: #aaa;
+  }
+  hr{
+    height: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #FFF;
+  }
+  pre {
+    line-height: 1.5;
+    margin-top: 10px;
+    padding: 5px 15px;
+    overflow-x: auto;
+    color: #657b83;
+    border: 1px solid #ccc;
+    text-shadow: 0 1px #444;
+    font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+    code{
+      font-size: 14px;
+    }
+  }
+  table{
+    width:100%;
+    border: 1px solid #dedede;
+    margin: 15px 0;
+    border-collapse:collapse;
+    tr,td{
+      height:35px;
+    }
+    thead{
+      tr {
+        background: #f8f8f8;
+      }
+    }
+    tbody{
+      tr:hover{
+        background: #efefef;
+      }
+    }
+    td,th{
+      border: 1px solid #dedede;
+      padding: 0 10px;
+    }
+  }
+  figure{
+    table {
+      border: none;
+      width: auto;
+      margin: 0;
+      tbody{
+        tr:hover{
+          background: none;
+        }
+      }
+    }
+  }
+}
