@@ -2,28 +2,24 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
+  所有文章: /archives
+  技术笔记: /tags/技术笔记
+  # 随笔: /tags/随笔
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
-  #qq: "#"
-  #weixin: "#"
-  #jianshu: "#"
-  #douban: "#"
-  #segmentfault: "#"
-  #bilibili: "#"
-  #acfun: "#"
-  #mail: "mailto:litten225@qq.com"
-  #facebook: "#"
-  #google: "#"
-  #twitter: "#"
-  #linkedin: "#"
+  github: "https://github.com/lujiaying"
+  # weibo: "#"
+  # rss: "#"
+  zhihu: "http://www.zhihu.com/people/lu-jia-ying-93"
+  douban: "http://www.douban.com/people/54173822/"
+  mail: "mailto:lujiaying93@foxmail.com"
+  facebook: "https://www.facebook.com/lujiaying93"
+  # google: "#"
+  # twitter: "#"
+  linkedin: "https://cn.linkedin.com/in/lujiaying93"
 
-rss: /atom.xml
+# rss: /atom.xml
 
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
@@ -63,60 +59,29 @@ toc_empty_wording: '目录，不存在的…'
 top: true
 
 # Miscellaneous
-baidu_analytics: ''
-google_analytics: ''
-favicon: /favicon.png
+google_analytics: 'UA-78149472-1'
+# favicon: /favicon.png
 
-#你的头像url
-avatar:
-
+# 头像
+avatar: "https://avatars3.githubusercontent.com/u/5207337?v=3&s=460"
 #是否开启分享
-share_jia: true
+share: true
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+duoshuo: true
+#是否开启云标签
+tagcloud: true
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus 不需要使用某项，直接设置值为false，或注释掉
-#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
-
-#1、多说
-duoshuo: false
-
-#2、网易云跟帖
-wangyiyun: false
-
-#3、畅言
-changyan_appid: false
-changyan_conf: false
-
-#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
-disqus: false
-
-# 样式定制 - 一般不需要修改，除非有很强的定制欲望…
-style:
-  # 头像上面的背景颜色
-  header: '#4d4d4d'
-  # 右滑板块背景
-  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
-
-# slider的设置
-slider:
-  # 是否默认展开tags板块
-  showTags: false
-
-# 智能菜单
-# 如不需要，将该对应项置为false
-# 比如
-#smart_menu:
-#  friends: false
-smart_menu:
-  innerArchive: '所有文章'
-  friends: '友链'
-  aboutme: '关于我'
-
+#是否开启友情链接
+#不开启——
+# friends: false
+#开启——
 friends:
-  友情链接1: http://localhost:4000/
-  友情链接2: http://localhost:4000/
-  友情链接3: http://localhost:4000/
-  友情链接4: http://localhost:4000/
-  友情链接5: http://localhost:4000/
-  友情链接6: http://localhost:4000/
+  Javee's Blog: http://jayveehe.github.io/
+  Wangzi's Blog: http://wangzi6147.github.io/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+#是否开启“关于我”。
+#不开启——
+#aboutme: false
+#开启——
+aboutme: 不想忘记生命中的那些美好
