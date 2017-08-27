@@ -20,6 +20,15 @@
     }
     .tools-nav {
         display: none;
+        .tools-nav-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: #fff;
+            &:after {
+                content: "\2716";
+            }
+        }
     }
     .tools-wrap, .tools-section{
         height: 100%;
