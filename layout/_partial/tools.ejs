@@ -21,10 +21,11 @@
       <% } %>
         <%}%>
     </ul>
+    <div class="tools-nav-button" q-on="click:hideApp(e)"><i class="icon-close icon"></i></div>
   </div>
   <div class="tools-wrap">
     <%if(hasInnerArchive){%>
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
+      <section class="tools-section tools-section-all" q-show="innerArchive">
         <div class="search-wrap">
           <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
           <i class="icon-search icon" q-show="search|isEmptyStr"></i>
@@ -36,7 +37,7 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-            <% site.tags.forEach(function(tag, i){ %> 
+            <% site.tags.forEach(function(tag, i){ %>
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
               </li>
@@ -81,12 +82,12 @@
             </p>
           </li>
         </ul>
-    	</section>
+      </section>
     <%}%>
 
     <%if(hasFriends){%>
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		<%if(theme.friends && theme.friends.length != 0){%>
+      <section class="tools-section tools-section-friends" q-show="friends">
+      <%if(theme.friends && theme.friends.length != 0){%>
         <ul class="search-ul">
           <% for (var i in theme.friends){ %>
             <li class="search-li">
@@ -94,17 +95,17 @@
             </li>
           <% } %>
         </ul>
-  		<%}%>
-    	</section>
+      <%}%>
+      </section>
     <%}%>
 
     <%if(hasAboutme){%>
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-  	  	<%if(theme.aboutme){%>
-  	  		<div class="aboutme-wrap" id="js-aboutme"><%=theme.aboutme%></div>
-  	  	<%}%>
-    	</section>
+      <section class="tools-section tools-section-me" q-show="aboutme">
+        <%if(theme.aboutme){%>
+          <div class="aboutme-wrap" id="js-aboutme"><%=theme.aboutme%></div>
+        <%}%>
+      </section>
     <%}%>
   </div>
-  
+
 </div>
