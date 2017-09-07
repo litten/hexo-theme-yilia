@@ -4,7 +4,7 @@
 		<ul class="article-tag-list">
 			<% post.categories.forEach(function(tag, i){ %> 
         		<li class="article-tag-list-item">
-        			<a href="<%= config.root %>categories/<%= tag.name.replace(/\s+/g, '') %>/" class="article-tag-list-link color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
+        			<a href="<%= config.root %><%= tag.path %>/" class="article-tag-list-link color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
         		</li>
       		<% }) %>
 		</ul>

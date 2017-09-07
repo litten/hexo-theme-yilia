@@ -1,8 +1,8 @@
 
 import PhotoSwipe from 'photoswipe'
-import PhotoSwipeUI_Default from 'photoSwipe/dist/photoswipe-ui-default'
-import 'photoSwipe/dist/default-skin/default-skin.css'
-import 'photoSwipe/dist/photoswipe.css'
+import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+import 'photoswipe/dist/default-skin/default-skin.css'
+import 'photoswipe/dist/photoswipe.css'
 
 window.PhotoSwipe = PhotoSwipe
 window.PhotoSwipeUI_Default = PhotoSwipeUI_Default
