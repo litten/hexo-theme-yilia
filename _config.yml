@@ -97,6 +97,12 @@ gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
 
+#6、Valine -- 一款极简的评论系统 食用方法参考https://ioliu.cn/2017/add-valine-comments-to-your-blog/
+valine:
+  enable: false
+  appId:
+  appKey:
+
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色
