@@ -1,111 +1,37 @@
-<div class="overlay"></div>
+<% var defaultBg = '#4d4d4d'; %>
+<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			<% if (theme.animate){ %>
-			<img lazy-src="<%=theme.avatar%>" class="js-avatar">
-			<%}else{%>
-			<img src="<%=theme.avatar%>" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			<%}%>
+		<a href="<%=theme.root%>" class="profilepic">
+			<img src="<%=theme.avatar%>" class="js-avatar">
 		</a>
-
 		<hgroup>
-		  <h1 class="header-author"><a href="/"><%=theme.author%></a></h1>
+		  <h1 class="header-author"><a href="<%=theme.root%>"><%=theme.author%></a></h1>
 		</hgroup>
-
 		<% if (theme.subtitle){ %>
 		<p class="header-subtitle"><%=theme.subtitle%></p>
 		<%}%>
 
-		<%if(theme.tagcloud){%>
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						<%if(theme.friends && theme.friends.length != 0){%>
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						<%}%>
-						<%if(theme.aboutme){%>
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						<%}%>
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li><%= __('menu.menu') %></li>
-						<li><%= __('menu.tags') %></li>
-						<%if(theme.friends && theme.friends.length != 0){%>
-						<li><%= __('menu.link') %></li>
-						<%}%>
-						<%if(theme.aboutme){%>
-						<li><%= __('menu.about') %></li>
-						<%}%>
-					</ul>
-				</div>
+		<nav class="header-menu">
+			<ul>
+			<% for (var i in theme.menu){ %>
+				<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+	        <%}%>
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+    		<% for (var i in theme.smart_menu){ %>
+    			<% if(theme.smart_menu[i]){ %>
+    			<a q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
+    			<% } %>
+            <%}%>
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				<% for (var i in theme.subnav){ %>
+					<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
+		        <%}%>
 			</div>
-		<%}%>
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						<% for (var i in theme.menu){ %>
-							<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-				        <%}%>
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							<% for (var i in theme.subnav){ %>
-								<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
-					        <%}%>
-						</div>
-					</nav>
-				</section>
-				
-				<%if(theme.tagcloud){%>
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<%- tagcloud() %>
-					</div>
-				</section>
-				<%}%>
-				
-				<%if(theme.friends && theme.friends.length != 0){%>
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					<% for (var i in theme.friends){ %>
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="<%- url_for(theme.friends[i]) %>"><%= i %></a>
-			        <% } %>
-			        </div>
-				</section>
-				<%}%>
-
-				<%if(theme.aboutme){%>
-				<%if(!theme.friends){%>
-				<section class="switch-part switch-part3">
-				<%}else{%>
-				<section class="switch-part switch-part4">
-				<%}%>
-					<div id="js-aboutme"><%=theme.aboutme%></div>
-				</section>
-				<%}%>
-			</div>
-		</div>
-	</header>				
+		</nav>
+	</header>		
 </div>

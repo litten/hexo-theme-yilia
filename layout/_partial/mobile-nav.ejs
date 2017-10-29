@@ -1,38 +1,43 @@
+<% var defaultBg = '#4d4d4d'; %>
 <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide"><%=theme.author%></h1>
-  	</div>
+  	<div class="overlay js-overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div>
+	<div class="btnctn js-mobile-btnctn">
+  		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
+	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-			<% if (theme.animate){ %>
-				<img lazy-src="<%=theme.avatar%>" class="js-avatar">
-			<%}else{%>
-				<img src="<%=theme.avatar%>" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
-			<%}%>
+				<img src="<%=theme.avatar%>" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author"><%=theme.author%></h1>
+			  <h1 class="header-author js-header-author"><%=theme.author%></h1>
 			</hgroup>
 			<% if (theme.subtitle){ %>
-			<p class="header-subtitle"><%=theme.subtitle%></p>
-			<%}%>
-			<nav class="header-menu">
-				<ul>
-				<% for (var i in theme.menu){ %>
-					<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-		        <%}%>
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i><%=theme.subtitle%><i class="icon icon-quo-right"></i></p>
+			<% } %>
+			<% var count = 0%>
+			<% for (var i in theme.menu){ %>
+				<% count++ %>
+			<% } %>
+			<% var ulWidth = count > 2 ? '70%' : '50%' %>
+			
 			<nav class="header-nav">
 				<div class="social">
 					<% for (var i in theme.subnav){ %>
-						<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><%= i %></a>
+						<a class="<%= i %>" target="_blank" href="<%- url_for(theme.subnav[i]) %>" title="<%= i %>"><i class="icon-<%= i %>"></i></a>
 			        <%}%>
 				</div>
 			</nav>
+
+			<nav class="header-menu js-header-menu">
+				<ul style="width: <%= ulWidth %>">
+				<% var divide = 100 / count + '%' %>
+				<% for (var i in theme.menu){ %>
+					<li style="width: <%= divide %>"><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+		        <%}%>
+				</ul>
+			</nav>
 		</header>				
 	</div>
+	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>

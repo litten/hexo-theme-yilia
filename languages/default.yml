@@ -1,56 +1,19 @@
-title:
-  archive: Archive
-  category: Category
-  tag: Tag
-
-menu:
-  menu: Menu
-  home: Home
-  archives: Archives
-  categories: Categories
-  tags: Tags
-  about: About
-  search: Search
-  link: Links
-
-sidebar:
-  overview: Overview
-  toc: Table Of Contents
-
-post:
-  posted: Posted on
-  in: In
-  read_more: Read more
-  untitled: Untitled
-  toc_empty: This post does not have a Table Of Contents
-  share: Share to
-
-page:
-  totally: Totally
-  tags: tags
-
-footer:
-  powered: "Powered by %s"
-  theme: Theme
-
-counter:
-  tag_cloud:
-    zero: No tags
-    one: 1 tag in total
-    other: "%d tags in total"
-
-  categories:
-    zero: No categories
-    one: 1 category in total
-    other: "%d categories in total"
-
-  archive_posts:
-    zero: No posts.
-    one: 1 post.
-    other: "%d posts in total."
-
-state:
-  posts: posts
-  pages: pages
-  tags: tags
-  categories: categories
+categories: Categories
+search: Search
+tags: Tags
+tagcloud: Tag Cloud
+tweets: Tweets
+prev: Prev
+next: Next
+comment: Comments
+archive_a: Archives
+archive_b: "Archives: %s"
+page: Page %d
+recent_posts: Recent Posts
+newer: Newer
+older: Older
+share: Share
+powered_by: Powered by
+rss_feed: RSS Feed
+category: Category
+tag: Tag

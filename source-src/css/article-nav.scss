@@ -1,0 +1,22 @@
+#article-nav {
+  margin: 0 0 20px 0;
+  padding: 0 32px 10px;
+  min-height: 30px;
+}
+#article-nav .article-nav-link-wrap {
+  font-size: 14px;
+}
+#article-nav .article-nav-link-wrap .article-nav-title {
+  display: inline-block;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+#article-nav .article-nav-link-wrap:hover i {
+  color: #4d4d4d;
+}
+#article-nav .article-nav-link-wrap:hover .article-nav-title {
+  color: #4d4d4d;
+}
+#article-nav #article-nav-older {
+  float: right;
+}

@@ -2,7 +2,7 @@
 <nav id="article-nav">
   <% if (post.prev){ %>
     <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
+      <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         <% if (post.prev.title){ %>
           <%= post.prev.title %>
@@ -15,7 +15,7 @@
   <% if (post.next){ %>
     <a href="<%- url_for(post.next.path) %>" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title"><%= post.next.title %></div>
-      <strong class="article-nav-caption">></strong>
+      <i class="icon-circle-right"></i>
     </a>
   <% } %>
 </nav>

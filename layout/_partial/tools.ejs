@@ -1,0 +1,110 @@
+<%
+  var hasInnerArchive = theme.smart_menu.innerArchive
+  var hasFriends = theme.smart_menu.friends
+  var hasAboutme = theme.smart_menu.aboutme
+%>
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-nav header-menu">
+    <% var count = 0%>
+    <% for (var i in theme.smart_menu){ %>
+      <% if (theme.smart_menu[i]) { %>
+      <% count++ %>
+      <% } %>
+    <% } %>
+    <% var ulWidth = '70%' %>
+
+    <ul style="width: <%= ulWidth %>">
+    <% var divide = 100 / count + '%' %>
+    <% for (var i in theme.smart_menu){ %>
+      <% if(theme.smart_menu[i]){ %>
+      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)" q-class="active:<%-i%>"><%= theme.smart_menu[i] %></a></li>
+      <% } %>
+        <%}%>
+    </ul>
+  </div>
+  <div class="tools-wrap">
+    <%if(hasInnerArchive){%>
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+            <% site.tags.forEach(function(tag, i){ %> 
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
+              </li>
+            <% }) %>
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    <%}%>
+
+    <%if(hasFriends){%>
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		<%if(theme.friends && theme.friends.length != 0){%>
+        <ul class="search-ul">
+          <% for (var i in theme.friends){ %>
+            <li class="search-li">
+              <a href="<%- url_for(theme.friends[i]) %>" target="_blank" class="search-title"><i class="icon-quo-left icon"></i><%= i %></a>
+            </li>
+          <% } %>
+        </ul>
+  		<%}%>
+    	</section>
+    <%}%>
+
+    <%if(hasAboutme){%>
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	<%if(theme.aboutme){%>
+  	  		<div class="aboutme-wrap" id="js-aboutme"><%=theme.aboutme%></div>
+  	  	<%}%>
+    	</section>
+    <%}%>
+  </div>
+  
+</div>

@@ -1,10 +1,12 @@
 <% if (post.categories && post.categories.length){ %>
 	<div class="article-category tagcloud">
-	<%- list_categories(post.categories, {
-	  show_count: false,
-	  class: 'article-category',
-	  style: 'none',
-	  separator: ''
-	}) %>
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			<% post.categories.forEach(function(tag, i){ %> 
+        		<li class="article-tag-list-item">
+        			<a href="<%= config.root %><%= tag.path %>/" class="article-tag-list-link color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
+        		</li>
+      		<% }) %>
+		</ul>
 	</div>
 <% } %>

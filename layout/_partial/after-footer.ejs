@@ -1,25 +1,22 @@
-<% if (theme.fancybox){ %>
-  <%- css('fancybox/jquery.fancybox') %>
-<% } %>
-
 <script>
 	var yiliaConfig = {
-		fancybox: <%=theme.fancybox%>,
 		mathjax: <%=theme.mathjax%>,
-		animate: <%=theme.animate%>,
 		isHome: <%=is_home()%>,
 		isPost: <%=is_post()%>,
 		isArchive: <%=is_archive()%>,
 		isTag: <%=is_tag()%>,
 		isCategory: <%=is_category()%>,
-		open_in_new: <%=theme.open_in_new%>
+		open_in_new: <%=theme.open_in_new%>,
+		toc_hide_index: <%=theme.toc_hide_index%>,
+		root: "<%=config.root%>",
+		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
 	}
 </script>
 <%- js('//7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min') %>
 <%- js('js/main') %>
 
-
-<%- partial('google-analytics') %>
+<%- partial('script') %>
 
 <% if (theme.mathjax){ %>
 <%- partial('mathjax') %>
