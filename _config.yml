@@ -22,7 +22,7 @@ subnav:
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-url: //weitianyao.com
+url: https://www.wty90.com/
 root: /
 
 # Content
@@ -59,13 +59,13 @@ duoshuo: tywei90
 smart_menu:
   innerArchive: '所有文章'
   tagcloud: '标签'
-  # friends: '友链'
+  friends: '项目'
   aboutme: '关于我'
 
-# friends:
-#   立马理财: https://www.lmlc.com/
-#   阮一峰博客: http://www.ruanyifeng.com/blog/
-#   张鑫旭博客: http://www.zhangxinxu.com/wordpress/
+friends:
+  前端制作工具: https://pagemaker.wty90.com
+  CMS博客系统: https://cms.wty90.com
+  Hybrid APP: https://ionic.wty90.com
 
 aboutme: Teal</br>西电12级</br>目前是一枚前端</br></br>上海华为工作半年</br>现就职于北京网易</br></br>喜欢打篮球</br>自认为技术还不错
 
