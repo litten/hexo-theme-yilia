@@ -14,9 +14,10 @@
 
 		<nav class="header-menu">
 			<ul>
-			<% for (var i in theme.menu){ %>
-				<li><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
-	        <%}%>
+				<li><a style="text-transform:none;" href="<%- url_for('/') %>">主页</a></li>
+			<% site.categories.forEach(function(item){ %>
+				<li><a style="text-transform:none;" href="<%- url_for(item.path) %>"><%= item.name %></a></li>
+	        <%})%>
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -33,5 +34,5 @@
 		        <%}%>
 			</div>
 		</nav>
-	</header>		
+	</header>
 </div>
