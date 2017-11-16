@@ -31,9 +31,7 @@ function init() {
 	if ($aboutme && $aboutme.length !== 0) {
 		$aboutme.innerHTML = $aboutme.innerText
 	}
-
-	// 畅言的初始化
-	window.YiliaChangyanWrap && window.YiliaChangyanWrap();
+	
 }
 
 module.exports = {
