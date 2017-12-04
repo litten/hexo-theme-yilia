@@ -15,9 +15,10 @@
 		<nav class="header-menu">
 			<ul>
 				<li><a style="text-transform:none;" href="<%- url_for('/') %>">主页</a></li>
-			<% site.categories.forEach(function(item){ %>
-				<li><a style="text-transform:none;" href="<%- url_for(item.path) %>"><%= item.name %></a></li>
-	        <%})%>
+				<% site.categories.forEach(function(item){ %>
+					<li><a style="text-transform:none;" href="<%- url_for(item.path) %>"><%= item.name %></a></li>
+				<%})%>
+				<li><a style="text-transform:none;" href="<%- url_for('/tags') %>">主页</a></li>
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
