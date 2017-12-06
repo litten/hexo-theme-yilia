@@ -37,15 +37,15 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
              
 ## 一、外观
 
-####**常规**
+#### **常规**
 
 ![常规](https://cloud.githubusercontent.com/assets/2024949/19027861/92879edc-8967-11e6-8e60-7987b6507c8d.gif)
 
-####**手机**
+#### **手机**
 
 ![手机](https://cloud.githubusercontent.com/assets/2024949/19027020/1c5b756a-895f-11e6-99bf-ddff9687aee0.gif)   
 
-####**ipad横竖屏切换**
+#### **ipad横竖屏切换**
 
 ![ipad横竖屏切换](https://cloud.githubusercontent.com/assets/2024949/19026392/e74e1816-8957-11e6-8f08-eac9b3c8c036.gif)                    
 
@@ -79,7 +79,7 @@ git pull
 主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
 完整配置例子，可以参考[我的博客备份](https://github.com/litten/BlogBackup)
 
-```
+```yaml
 # Header
 
 menu:
@@ -155,7 +155,7 @@ avatar:
 #是否开启分享
 share_jia: true
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment；6、Valine
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
@@ -178,6 +178,15 @@ gitment_repo: ''          #存储评论的 repo
 gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
+
+#6、Valine https://valine.js.org
+valine: 
+ appid:  #Leancloud应用的appId
+ appkey:  #Leancloud应用的appKey
+ verify: false #验证码
+ notify: false #评论回复提醒
+ avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+ placeholder: Just go go #评论框占位符
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
