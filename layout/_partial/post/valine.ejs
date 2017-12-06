@@ -5,15 +5,13 @@
   var notify = '<%= theme.valine.notify %>' == true ? true : false;
   var verify = '<%= theme.valine.verify %>' == true ? true : false;
     
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "<%= theme.valine.appid %>",
-            app_key: "<%= theme.valine.appkey %>",
-            placeholder: "<%= theme.valine.placeholder %>",
-            avatar:"<%= theme.valine.avatar %>"
-        });
-    }
+new Valine({
+    el: '#vcomment',
+    notify: notify,
+    verify: verify,
+    app_id: "<%= theme.valine.appid %>",
+    app_key: "<%= theme.valine.appkey %>",
+    placeholder: "<%= theme.valine.placeholder %>",
+    avatar:"<%= theme.valine.avatar %>"
+});
 </script>
