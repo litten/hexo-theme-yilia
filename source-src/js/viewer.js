@@ -21,10 +21,13 @@ function init() {
 				let img = $em2.getAttribute('data-idx', i2)
 				let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
 				let title = $em2.getAttribute('alt')
+				// 获得原图尺寸
+				const image = new Image()
+				image.src = src
 				items.push({
 					src: src,
-					w: $em2.width,
-					h: $em2.height,
+					w: image.width || $em2.width,
+					h: image.height || $em2.height,
 					title: title
 				})
 			})
