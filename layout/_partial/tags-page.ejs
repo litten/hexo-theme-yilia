@@ -1,0 +1,46 @@
+<section class="archives-wrap">
+  <div class="archive-year-wrap">
+    <a href="#" class="archive-year">全部标签</a>
+  </div>
+  <div class="archives">
+    <article class="archive-article archive-type-category">
+      <div class="archive-article-inner">
+        <header class="archive-article-header">
+          <div class="article-info">
+            <div class="article-category tagcloud">
+              <ul class="article-tag-list">
+                <% site.tags.each(function(tag, i) { %> 
+                  <li class="article-tag-list-item">
+                    <a href="<%= config.root %><%= tag.path %>/" class="article-tag-list-link color<%= tag.name.length % 5 + 1 %>"><%- tag.name %></a>
+                  </li>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+        </header>
+      </div>
+    </article>
+  </div>
+</section>
+<% site.tags.each(function (tag) { %>
+  <section class="archives-wrap">
+    <div class="archive-year-wrap">
+      <a href="<%- url_for(tag.path) %>" class="archive-year"><%= tag.name %></a>
+    </div>
+    <div class="archives">
+      <% var i = 0 %>
+      <% site.posts.each(function (post) { %>
+        <% var belong = false; %>
+        <% post.tags.each(function (c) { %>
+          <% if (c.name == tag.name) { %>
+            <% belong = true; %>
+          <% } %>
+        <% }) %>
+        <% if (belong) { %>
+          <% i = i+1 %>
+          <%- partial('_partial/archive-post', {post: post, even: i % 2 == 0, index: true}) %>
+        <% } %>
+      <% }) %>
+    </div>
+  </section>
+<% }) %>
