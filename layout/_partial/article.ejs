@@ -84,7 +84,7 @@
   <%- partial('post/duoshuo', {
       key: post.slug,
       title: post.title,
-      url: config.url+url_for(post.path)
+      url: post.permalink
     }) %>
   <% } %>
   
@@ -92,7 +92,7 @@
   <%- partial('post/wangyiyun', {
       key: post.slug,
       title: post.title,
-      url: config.url+url_for(post.path)
+      url: post.permalink
     }) %>
   <% } %>
 
@@ -100,7 +100,7 @@
   <%- partial('post/changyan', {
       key: post.slug,
       title: post.title,
-      url: config.url+url_for(post.path)
+      url: post.permalink
     }) %>
   <% } %>
 
@@ -126,7 +126,7 @@
   <%- partial('post/gitment', {
       key: post.slug,
       title: post.title,
-      url: config.url+url_for(post.path)
+      url: post.permalink
     }) %>
   <% } %>
 <% } %>
