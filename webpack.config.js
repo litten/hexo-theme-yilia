@@ -1,16 +1,15 @@
-var webpack = require("webpack");
-var autoprefixer = require('autoprefixer');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanPlugin = require('clean-webpack-plugin');
-
-// 模板压缩
-// 详见：https://github.com/kangax/html-minifier#options-quick-reference
+const webpack = require("webpack");
+const path = require("path");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const scssLoader = new ExtractTextPlugin('[name].[chunkhash:6].css');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OUTPUT_DIR = 'source';
 
 var minifyHTML = {
   collapseInlineTagWhitespace: true,
   collapseWhitespace: true,
-  minifyJS:true
+  minifyJS: true
 }
 
 module.exports = {
@@ -20,78 +19,87 @@ module.exports = {
     mobile: ["babel-polyfill", "./source-src/js/mobile.js"]
   },
   output: {
-    path: "./source",
+    path: path.resolve(__dirname, OUTPUT_DIR),
     publicPath: "./",
     filename: "[name].[chunkhash:6].js"
   },
-  module: {
-    loaders: [{
-      test: /\.js$/,
-      loader: 'babel-loader?cacheDirectory',
-      exclude: /node_modules/
-    }, {
-      test: /\.html$/,
-      loader: 'html'
-    }, {
-      test: /\.(scss|sass|css)$/,
-      loader: ExtractTextPlugin.extract('style-loader', ['css-loader?-autoprefixer', 'postcss-loader', 'sass-loader'])
-    }, {
-      test: /\.(gif|jpg|png)\??.*$/,
-      loader: 'url-loader?limit=500&name=img/[name].[ext]'
-    }, {
-      test: /\.(woff|svg|eot|ttf)\??.*$/,
-      loader: "file-loader?name=fonts/[name].[hash:6].[ext]"
-    }]
-  },
-  alias: {
-    'vue$': 'vue/dist/vue.js'
-  },
   resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.common.js'
-    }
+    extensions: [
+      '.js', '.json'
+    ],
+    modules: [path.resolve(__dirname, 'node_modules')]
   },
-  // devtool: '#eval-source-map',
-  postcss: function() {
-    return [autoprefixer];
+  watch: process.env.NODE_ENV == "development",
+  module: {
+    rules: [{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['babel-preset-env']
+          }
+        }
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader'
+      },
+      {
+        test: /\.(scss|sass|css)$/,
+        use: ['style-loader'].concat(scssLoader.extract([{
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2
+          }
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            ident: 'postcss',
+            plugins: (loader) => [require('autoprefixer')()]
+          }
+        }, 'sass-loader']))
+      }, {
+        test: /\.(gif|jpg|png)\??.*$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 500,
+            name: 'img/[name].[ext]'
+          }
+        }]
+      }, {
+        test: /\.(woff|svg|eot|ttf)\??.*$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[hash:6].[ext]'
+          }
+        }]
+      }
+    ]
   },
   plugins: [
-    new ExtractTextPlugin('[name].[chunkhash:6].css'),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"production"'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      cache: false,
-      minify: minifyHTML,
-      template: './source-src/script.ejs',
-      filename: '../layout/_partial/script.ejs'
-    }),
-    new HtmlWebpackPlugin({
-      inject: false,
-      cache: false,
-      minify: minifyHTML,
-      template: './source-src/css.ejs',
-      filename: '../layout/_partial/css.ejs'
-    })
-  ],
-  watch: true
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  module.exports.plugins = (module.exports.plugins || []).concat([
+    scssLoader,
+    new CleanWebpackPlugin(OUTPUT_DIR),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"production"'
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
+    new HtmlWebpackPlugin({
+      inject: false,
+      cache: false,
+      minify: minifyHTML,
+      template: path.resolve(__dirname, 'source-src', 'script.ejs'),
+      filename: path.resolve(__dirname, 'layout', '_partial', 'script.ejs')
     }),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new CleanPlugin('builds')
-  ])
-}
+    new HtmlWebpackPlugin({
+      inject: false,
+      cache: false,
+      minify: minifyHTML,
+      template: path.resolve(__dirname, 'source-src', 'css.ejs'),
+      filename: path.resolve(__dirname, 'layout', '_partial', 'css.ejs')
+    })
+  ]
+};
