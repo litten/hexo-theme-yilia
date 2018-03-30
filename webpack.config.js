@@ -1,12 +1,24 @@
 const webpack = require("webpack");
 const path = require("path");
+const fs = require("fs");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const scssLoader = new ExtractTextPlugin('[name].[chunkhash:6].css');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const THEME_NAME = "yilia_temp";
 const OUTPUT_DIR = 'source';
 
-var minifyHTML = {
+// init `yilla_config.yml` in root dir,
+if (!fs.existsSync(path.resolve(__dirname, '..', 'yilla_config.yml'))) {
+  fs.copyFileSync(path.resolve(__dirname, '_config.yml'), path.resolve(__dirname, '..', 'yilla_config.yml'));
+}
+
+
+let target_dir = path.resolve(__dirname, '..', 'themes', THEME_NAME);
+
+let minifyHTML = {
   collapseInlineTagWhitespace: true,
   collapseWhitespace: true,
   minifyJS: true
@@ -19,7 +31,7 @@ module.exports = {
     mobile: ["babel-polyfill", "./source-src/js/mobile.js"]
   },
   output: {
-    path: path.resolve(__dirname, OUTPUT_DIR),
+    path: path.resolve(target_dir, OUTPUT_DIR),
     publicPath: "./",
     filename: "[name].[chunkhash:6].js"
   },
@@ -81,7 +93,27 @@ module.exports = {
   },
   plugins: [
     scssLoader,
-    new CleanWebpackPlugin(OUTPUT_DIR),
+    new CleanWebpackPlugin(path.resolve(target_dir), {
+      root: path.resolve(target_dir, '..')
+    }),
+    new CopyWebpackPlugin([{
+        from: 'languages/**/*',
+        to: path.join(target_dir)
+      },
+      {
+        from: 'layout/**/*',
+        to: path.join(target_dir)
+      }
+    ]),
+    new CopyWebpackPlugin([{
+        from: path.join(__dirname, '..', 'yilla_config.yml'),
+        to: path.join(target_dir, '_config.yml')
+      },
+      {
+        from: 'layout/**/*',
+        to: path.join(target_dir)
+      }
+    ]),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
@@ -92,14 +124,14 @@ module.exports = {
       cache: false,
       minify: minifyHTML,
       template: path.resolve(__dirname, 'source-src', 'script.ejs'),
-      filename: path.resolve(__dirname, 'layout', '_partial', 'script.ejs')
+      filename: path.resolve(target_dir, 'layout', '_partial', 'script.ejs')
     }),
     new HtmlWebpackPlugin({
       inject: false,
       cache: false,
       minify: minifyHTML,
       template: path.resolve(__dirname, 'source-src', 'css.ejs'),
-      filename: path.resolve(__dirname, 'layout', '_partial', 'css.ejs')
+      filename: path.resolve(target_dir, 'layout', '_partial', 'css.ejs')
     })
   ]
 };
