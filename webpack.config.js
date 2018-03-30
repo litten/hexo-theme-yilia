@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const THEME_NAME = "yilia_temp";
+const THEME_NAME = "yilia";
 const OUTPUT_DIR = 'source';
 
 // init `yilla_config.yml` in root dir,
