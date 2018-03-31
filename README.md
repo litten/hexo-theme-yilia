@@ -13,7 +13,7 @@ hexo-theme-yilia
   ## 已用 hexo init 博客 以及 npm install
   cd <path to your blog>
   git submodule add https://github.com/jardenliu/hexo-theme-yilia.git yilia
-  node ./yilia/install.js
+  node ./yilia/install.js  ##如果你有安装cnpm， 可以使用 node ./yilia/install.js --cnpm
 ```
 2. 修改`_config.yml`的配置项 `theme`.
 ```
