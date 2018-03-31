@@ -1,82 +1,39 @@
 hexo-theme-yilia
 ================
 
-Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
-崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://litten.me/) 查看效果。           
- 
-如果想体验手机浏览效果，可以扫一下二维码：
+本主题Fork自从[litten/hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia), 只是出于学习对原主题进行略微修改调整，不用于任何商业用途。请大家支持原作者[litten](https://github.com/litten)的博客和主题。
 
-![litten-qrcode](https://cloud.githubusercontent.com/assets/2024949/6349328/51a067fe-bc64-11e4-881c-f68050c50c28.png)
+若喜欢我的修改也可以一起学习研究，在[Issue](https://github.com/jardenliu/hexo-theme-yilia/issues)提交问题喔。
 
-—————————————————————
 
-**关于主题：**
 
-1. 崇尚简约       
-2. 追求移动端体验     
-3. 希望把加载速度做到极致（努力中）    
-4. 让大家把注意力放到内容上。这是本主题设计初衷      
-5. 主题不支持IE6，7，8。以后也不会     
-
-**近期更新（2017.07.09）：**
-
-2017.07.09
-1. 返回顶部
-2. TOC目录
-
-2016.12.04
-1. 打赏
-2. 搜索
-3. “更好的”标签云
-4. “更好的”分享
-5. 一些动画
-
-**计划中：**
-
-1. 移动端优化
-             
-## 一、外观
-
-####**常规**
-
-![常规](https://cloud.githubusercontent.com/assets/2024949/19027861/92879edc-8967-11e6-8e60-7987b6507c8d.gif)
-
-####**手机**
-
-![手机](https://cloud.githubusercontent.com/assets/2024949/19027020/1c5b756a-895f-11e6-99bf-ddff9687aee0.gif)   
-
-####**ipad横竖屏切换**
-
-![ipad横竖屏切换](https://cloud.githubusercontent.com/assets/2024949/19026392/e74e1816-8957-11e6-8f08-eac9b3c8c036.gif)                    
-
-## 二、开发者
-
-为了性能和开发工程化考虑，Yilia需要使用webpack进行构建生成。
-
-如果您对主题有一些定制化的需求，请参考wiki[《Yilia源码目录结构及构建须知》](https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5)
-
-## 三、使用
-
-#### 安装
-
-``` bash
-$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+## 用法
+1. 在hexo博客项目主目录下, 安装本主题. (后续会提供 npm 版本，敬请关注)
+```bash
+  ## 已用 hexo init 博客 以及 npm install
+  cd <path to your blog>
+  git submodule add https://github.com/jardenliu/hexo-theme-yilia.git yilia
+  node ./yilia/install.js
 ```
-
-#### 配置
-
-修改hexo根目录下的 `_config.yml` ： `theme: yilia`
-
-#### 更新
-
-``` bash
-cd themes/yilia
-git pull
+2. 修改`_config.yml`的配置项 `theme`.
 ```
+  theme: yilia
+```
+3. 启动`webpack dev`以及`hexo server`
+```
+  npm run dev --prefix yilia
+```
+4. 修改 `_config.yml` 以及 `yilia_config.yml`，打开浏览器，`http://localhost:4000/`, 开始你的hexo 之旅吧。
 
-## 四、配置
 
-主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
+## 主题介绍
+
+点击右侧→ [传送门](https://github.com/litten/hexo-theme-yilia) 前往
+
+
+
+## `yilia_config.yml`配置
+主题配置文件在项目主目录下的 `yilia_config.yml` (注意`不是themes/yilia/_config.yml`) 请根据自己需要修改使用。
 完整配置例子，可以参考[我的博客备份](https://github.com/litten/BlogBackup)
 
 ```

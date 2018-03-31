@@ -6,6 +6,7 @@ const scssLoader = new ExtractTextPlugin('[name].[chunkhash:6].css');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 const THEME_NAME = "yilia";
 const OUTPUT_DIR = 'source';
@@ -105,6 +106,10 @@ module.exports = {
         to: path.join(target_dir)
       }
     ]),
+    new WebpackShellPlugin({
+      // onBuildStart: ['echo "Webpack Start"'],
+      onBuildEnd: ['node ./startHexoServer']
+    }),
     new CopyWebpackPlugin([{
         from: path.join(__dirname, '..', 'yilla_config.yml'),
         to: path.join(target_dir, '_config.yml')
