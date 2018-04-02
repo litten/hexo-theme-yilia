@@ -11,11 +11,12 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 const THEME_NAME = "yilia";
 const OUTPUT_DIR = 'source';
 
-// init `yilla_config.yml` in root dir,
-if (!fs.existsSync(path.resolve(__dirname, '..', 'yilla_config.yml'))) {
-  fs.copyFileSync(path.resolve(__dirname, '_config.yml'), path.resolve(__dirname, '..', 'yilla_config.yml'));
+// init `yilia_config.yml` in root dir,
+if (!fs.existsSync(path.resolve(__dirname, '..', 'yilia_config.yml'))) {
+  let theme_config = fs.readFileSync(path.resolve(__dirname, '_config.yml'));
+  fs.writeFileSync(path.resolve(__dirname, '..', 'yilia_config.yml'), theme_config);
+  // node v8.5+ fs.copyFileSync(path.resolve(__dirname, '_config.yml'), path.resolve(__dirname, '..', 'yilia_config.yml'));
 }
-
 
 let target_dir = path.resolve(__dirname, '..', 'themes', THEME_NAME);
 
