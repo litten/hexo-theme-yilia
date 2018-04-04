@@ -26,28 +26,17 @@ function tabActive() {
 }
 
 function getElementLeft(element) {　　　　
-	var actualLeft = element.offsetLeft;　　　　
-	var current = element.offsetParent;　　　　
-	while (current !== null) {　　　　　　
-		actualLeft += current.offsetLeft;　　　　
-		current = current.offsetParent;　　
-	}　　
+	var actualLeft = element.getBoundingClientRect().left;　　
 	return actualLeft;
 }　　
 function getElementTop(element) {　　　　
-	var actualTop = element.offsetTop;　　　　
-	var current = element.offsetParent;　　　　
-	while (current !== null) {　　　　　　
-		actualTop += current.offsetTop;　　　　　　
-		current = current.offsetParent;　　　　
-	}　　　　
+	var actualTop = element.getBoundingClientRect().top;　　　　
 	return actualTop;　　
 }
 
-function scrollStop($dom, top, limit, zIndex, diff) {
+function scrollStop($dom, limit, zIndex, diff) {
 	let nowLeft = getElementLeft($dom)
-	let nowTop = getElementTop($dom) - top
-
+  let nowTop = getElementTop($dom)
 	if (nowTop - limit <= diff) {
 		let $newDom = $dom.$newDom
 		if (!$newDom) {
@@ -75,8 +64,8 @@ function scrollStop($dom, top, limit, zIndex, diff) {
 function handleScroll() {
 	let $overlay = document.querySelector('.js-overlay')
 	let $menu = document.querySelector('.js-header-menu')
-	scrollStop($overlay, document.body.scrollTop, -63, 2, 0)
-	scrollStop($menu, document.body.scrollTop, 1, 3, 0)
+	scrollStop($overlay, -63, 2, 0)
+	scrollStop($menu, 1, 3, 0)
 }
 
 function bindScroll() {
