@@ -46,7 +46,7 @@ function init() {
 	    		e.stopPropagation()
 	    	},
 	    	choseTag: (e, name) => {
-	    		app.$set('search', '#' + (name ? name : e.target.innerHTML))
+	    		app.$set('search', '#' + (name ? name : e.target.innerText))
 	    	},
 	    	clearChose: (e) => {
 	    		app.$set('search', '')
@@ -188,7 +188,7 @@ function init() {
 			app.$set('aboutme', false)
 			app.$set('isShow', true)
 			app.$set('isCtnShow', true)
-			app.$set('search', '#' + $em.innerHTML)
+			app.$set('search', '#' + $em.innerText)
 			setScrollZero()
 			return false
 		}
