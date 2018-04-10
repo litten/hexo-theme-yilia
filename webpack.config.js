@@ -112,7 +112,7 @@ module.exports = {
       onBuildEnd: ['node ./startHexoServer']
     }),
     new CopyWebpackPlugin([{
-        from: path.join(__dirname, '..', 'yilla_config.yml'),
+        from: path.join(__dirname, '..', 'yilia_config.yml'),
         to: path.join(target_dir, '_config.yml')
       },
       {
