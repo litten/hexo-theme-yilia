@@ -2,6 +2,8 @@
   <%- partial('_partial/categories-page', {post: page, index: false}) %>
 <% } else if ('tags' == page.type) { %>
   <%- partial('_partial/tags-page', {post: page, index: false}) %>
+<% } else if ('wechat' == page.type) { %>
+  <%- partial('_partial/wechat', {post: page, index: false}) %>
 <% } else { %>
   <%- partial('_partial/article', {post: page, index: false}) %>
 <% } %>

@@ -130,4 +130,11 @@ friends:
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
+#备案号
 recordNum: '粤ICP备xxxxx号'
+
+#微信分享图片
+#hexo new page wechat
+# 在 source/wechat/index.md 中添加 type: "wechat"
+#s上面的subnav: wechat 设置为 '/wechat'
+wechatQRcode: https://gitee.com/yeliujun/gallery/raw/master/wechat-qrcode.jpg
