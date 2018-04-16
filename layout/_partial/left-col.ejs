@@ -1,5 +1,5 @@
 <% var defaultBg = '#4d4d4d'; %>
-<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div>
+<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>;background-size: 100% 100%;background-image: <%= theme.style && theme.style.headerBg ? 'url('+theme.style.headerBg+')' : '' %>"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="<%=theme.root%>" class="profilepic">
