@@ -2,7 +2,8 @@
 
 menu:
   主页: /
-  随笔: /tags/随笔/
+  标签: /tags/
+  分类: /categories/
 
 # SubNav
 subnav:
@@ -101,6 +102,8 @@ gitment_oauth:
 style:
   # 头像上面的背景颜色
   header: '#4d4d4d'
+  # 头像上面的背景图片
+  headerBg: 
   # 右滑板块背景
   slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
 
@@ -128,3 +131,12 @@ friends:
   友情链接6: http://localhost:4000/
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+
+#备案号
+recordNum: '粤ICP备xxxxx号'
+
+#微信分享图片
+#hexo new page wechat
+# 在 source/wechat/index.md 中添加 type: "wechat"
+#s上面的subnav: wechat 设置为 '/wechat'
+wechatQRcode: https://gitee.com/yeliujun/gallery/raw/master/wechat-qrcode.jpg
