@@ -366,9 +366,9 @@ body,
     li {
       border-color: #fff;
       a {
-        color: #fff;
+        color: #fff !important;
         &.active {
-          background: #81b5cc;
+          background: #888;
         }
       }
     }
