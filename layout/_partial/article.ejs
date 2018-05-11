@@ -8,10 +8,24 @@
         <% } %>
       </header>
     <% } %>
+    <% if (!index){ %>
+      <div class="article-section">
+        <div class="tag-category">
+          <%if(post.top){%>
+            <div class="article-pop-out tagcloud">
+              <i class="icon-tuding"></i>
+              <a class="article-tag-list-link color3">置顶</a>
+            </div>
+          <% } %>
+          <%- partial('post/tag') %>
+          <%- partial('post/category') %>
+        </div>
+      </div>
+    <% } %>
     <div class="article-entry" itemprop="articleBody">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
-        <% if (theme.excerpt_link) { %>
+        <% if (theme.excerpt_link){ %>
           <a class="article-more-a" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %> >></a>
         <% } %>
       <% } else { %>
@@ -50,34 +64,58 @@
           </a>
         </div>
       <% } %>
+      <% if (!index && post.layout == 'post'){ %>
+      	<div class="copyright">
+      	  <ul>
+      		<li class="post-copyright-author">
+      	      <strong>本文作者：</strong>
+      		  <%= theme.author%>
+              </li>
+      		<li class="post-copyright-link">
+      	      <strong>本文链接：</strong>
+      		  <a href="<%= page.permalink%>" title="<%= post.title%>"><%= page.permalink%></a>
+      		</li>
+      		<li class="post-copyright-license">
+      		  <strong>版权声明：</strong>
+      	      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"></a>，转载请注明出处！
+      		</li>
+      	  </ul>
+      	</div>
+      <% } %>
     </div>
-    <div class="article-info article-info-index">
-      <%if(post.top){%>
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
+    <% if (index){ %>
+        <div class="article-info article-info-index">
+          <div class="tag-category">
+          <%if(post.top){%>
+            <div class="article-pop-out tagcloud">
+              <i class="icon-tuding"></i>
+              <a class="article-tag-list-link color3">置顶</a>
+            </div>
+          <% } %>
+            <div class="tag-box">
+              <%- partial('post/tag') %>
+              <%- partial('post/category') %>
+            </div>
+          <% if (index && theme.show_all_link){ %>
+            <p class="article-more-link">
+              <a class="article-more-a" href="<%- url_for(post.path) %>"><%= theme.show_all_link %> >></a>
+            </p>
+          <% } %>
+          </div>
         </div>
-      <% } %>
-      <%- partial('post/tag') %>
-      <%- partial('post/category') %>
-      <% if (index && theme.show_all_link){ %>
-        <p class="article-more-link">
-          <a class="article-more-a" href="<%- url_for(post.path) %>"><%= theme.show_all_link %> >></a>
-        </p>
-      <% } %>
-
-      <% if (!index && theme.share_jia){ %>
-        <%- partial('post/share') %>
-      <% } %>
-      <div class="clearfix"></div>
-    </div>
+    <% } %>
+    <% if (!index && theme.share_jia){ %>
+       <div class="article-section">
+          <%- partial('post/share') %>
+       </div>
+    <% } %>
+    <div class="clearfix"></div>
   </div>
 </article>
 <% if (!index){ %>
   <%- partial('post/nav') %>
 <% } %>
 <%- partial('_partial/aside') %>
-
 
 <% if (!index && post.comments){ %>
   <% if (theme.duoshuo){ %>
@@ -121,12 +159,19 @@
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </section>
   <% } %>
-
-  <% if (theme.gitment_owner && theme.gitment_repo &&theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
-  <%- partial('post/gitment', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
+<% } %>
+<% if (!index){ %>
+  <script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s)
+  })();
+  </script>
 <% } %>
