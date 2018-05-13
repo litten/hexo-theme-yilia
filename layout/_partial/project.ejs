@@ -1,0 +1,59 @@
+<% var projectData = site.data.project;
+    var tabCount = Object.keys(projectData.define).length;
+%>
+<section class="article">
+    <% if (projectData) { %>
+        <div class="article-section">
+            <div class="row">
+                <ul class="tabs ">
+                    <% for (var key in projectData.define) { %>
+                        <li id="<%= key %>-btn" class="tab col s<%= 12 / tabCount %>" style="<% if (key == 'diy') { %> border-bottom:2px solid #08c <% } %>">
+                            <a class="read-btn" onclick="readBtn('<%= key %>')"><%= projectData.define[key] + '(' + projectData.contents[key].length + ')' %></a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <% for (var key in projectData.contents) { %>
+                <div id="<%= key %>" class="row" style="margin-top: 20px; <% if (key != 'diy') { %>display:none <% } %>">
+                    <% var bookList = projectData.contents[key]; %>
+                    <% for (var i in bookList) { %>
+                        <div class="book-item col s12 m6">
+                            <div class="card small hoverable" style="height:330px;">
+                                <div class="card-image waves-effect waves-block waves-light" style="max-height:90%">
+                                    <img class="card-cover-image activator" src="<%= bookList[i].cover %>">
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title truncate activator grey-text text-darken-4"><%= bookList[i].title %>
+                                    <a class="external-link right" href="<%= bookList[i].link %>" target="_blank">
+                                       <i class="fa fa-external-link icon-share"></i>
+                                    </a>
+                                    </span>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4"><%= __('project.comment') %>
+                                        <i class="fa fa-times-circle-o right"></i>
+                                    </span>
+                                    <p><%= bookList[i].review %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
+</section>
+<script type="text/javascript">
+    function hiddenAll() {
+        var obj = ['diy', 'php', 'c'];
+        for (var i in obj) {
+            document.getElementById(obj[i] + '-btn').style.borderBottom = '2px solid #ffffff';
+	        document.getElementById(obj[i]).style.display = 'none';
+        }
+    }
+    function readBtn(id) {
+        hiddenAll();
+        document.getElementById(id + '-btn').style.borderBottom = '2px solid #08c';
+        document.getElementById(id).style.display = 'block';
+    }
+</script>

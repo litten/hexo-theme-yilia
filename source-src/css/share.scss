@@ -6,10 +6,34 @@
     position: relative;
 }
 .share-icons {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin: 20px 0;
+    .weibo {
+        border: 1px solid #ff763b;
+        color: #ff763b;
+    }
+    .qq {
+        border: 1px solid #56b6e7;
+        color: #56b6e7;
+    }
+    .weixin {
+        border: 1px solid #7bc549;
+        color: #7bc549;
+    }
+    .qzone {
+        border: 1px solid #fdbe3d;
+        color: #fdbe3d;
+    }
+    .google {
+        border: 1px solid #db4437;
+        color: #db4437;
+    }
+    i {
+        font-size: 18px;
+    }
     a {
         border: 1px solid #fff;
         border-radius: 50%;
@@ -17,16 +41,15 @@
         display: inline-block;
         vertical-align: middle;
         zoom: 1;
-        margin: 10px;
+        margin-left: 4px;
         -webkit-transition: 0.3s;
         transition: 0.3s;
         text-align: center;
         color: #fff;
         opacity: 0.7;
-        width: 28px;
-        height: 28px;
-        line-height: 26px;
-        text-shadow: 1px 1px 1px #509eb7;
+        width: 32px;
+        height: 32px;
+        line-height: 31px;
         &:active {
             color: #fff;
         }
@@ -73,8 +96,8 @@
 
     .close {
         position: absolute;
-        right: 15px;
-        top: 15px;
+        right: 6px;
+        top: 6px;
         color: rgba(0, 0, 0, .2);
         font-size: 16px;
         line-height: 20px;
@@ -104,4 +127,7 @@
         pointer-events: auto;
         opacity: .3;
     }
+}
+.wx-qrcode img {
+    width: 100%;
 }

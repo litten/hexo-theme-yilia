@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/litten/hexo-theme-yilia#readme",
   "devDependencies": {
-    "autoprefixer": "^6.5.1",
+    "autoprefixer": "^7.0.0",
     "clean-webpack-plugin": "^0.1.15",
     "cross-env": "^1.0.6",
     "css-loader": "^0.25.0",
