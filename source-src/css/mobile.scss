@@ -152,7 +152,7 @@ html, body, #container {
         margin: 0;
     }
     .article-entry{
-        padding: 10px 0 30px 0;
+        padding: 10px 0 10px 0;
     }
     .article-inner h1.article-title, .article-title{
         font-size: 18px;
@@ -222,6 +222,9 @@ html, body, #container {
         display: block;
     }
 }
+.article-section {
+    padding: 0;
+}
 .share{
     padding: 3px 10px;
 }
@@ -229,7 +232,11 @@ html, body, #container {
     padding: 0 13px;
 }
 #disqus_thread {
+    padding: 0px !important;
     padding: 0 13px;
+}
+#SOHUCS, .cloud-tie-wrapper, .duoshuo {
+    padding: 0px !important;
 }
 #article-nav {
     margin: 0;
@@ -375,5 +382,11 @@ html, body, #container {
                 background: #a0a0a0;
             }
         }
+    }
+}
+
+.article-index {
+    img {
+        max-width: 100%;
     }
 }
