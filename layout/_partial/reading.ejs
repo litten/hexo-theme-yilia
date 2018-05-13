@@ -5,7 +5,7 @@
     <% if (readingData) { %>
         <div class="article-section">
             <div class="row">
-                <ul class="tabs ">
+                <ul class="tabs">
                     <% for (var key in readingData.define) { %>
                         <li id="<%= key %>-btn" class="tab col s<%= 12 / tabCount %>" style="<% if (key == 'readed') { %> border-bottom:2px solid #08c <% } %>">
                             <a class="read-btn" onclick="readBtn('<%= key %>')"><%= readingData.define[key] + '(' + readingData.contents[key].length + ')' %></a>
