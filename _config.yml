@@ -72,7 +72,7 @@ google_analytics: ''
 favicon: /favicon.ico
 
 #你的头像url
-avatar: https://img.fanhaobai.com/img/header.jpg
+avatar: https://img.fanhaobai.com/header.jpg
 
 #是否开启分享
 share_jia: true
