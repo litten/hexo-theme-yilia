@@ -22,7 +22,15 @@ html, body, #container {
     }
 }
 .wrap-side-operation {
-    display: none;
+    right: 20px;
+    .jump-container {
+        .icon-back {
+            border-radius: 50%;
+        }
+    }
+    .toc-container {
+        display: none;
+    }
 }
 .cloud-tie-wrapper {
 	padding: 0;
