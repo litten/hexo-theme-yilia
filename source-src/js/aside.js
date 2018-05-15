@@ -1,17 +1,14 @@
 var backTop = function (domE, ctn, distance) {
     if (!domE) return;
     var timer = null;
-    var _onscroll = window.onscroll,
-        _onclick = domE.onclick;
-    (ctn || window).onscroll = throttle(function () {
-        typeof _onscroll === 'function' && _onscroll.apply(this, arguments);
+    var _onclick = domE.onclick;
+    document.addEventListener('scroll', function() {
         toggleDomE();
-    }, 100);
+    }, true);
     domE.onclick = function () {
         typeof _onclick === 'function' && _onclick.apply(this, arguments);
-        var baseCt = ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
         timer = setInterval(function () { //设置一个计时器
-            var ct = ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop; //获取距离顶部的距离
+            var ct = ctn.scrollTop || scollTop(); //获取距离顶部的距离
             var diff = Math.max(10, ct / 6);
             ct -= diff;
             if (ct > 0) {//如果与顶部的距离大于零
@@ -26,17 +23,11 @@ var backTop = function (domE, ctn, distance) {
     };
 
     function toggleDomE() {
-        domE.style.display = (ctn.scrollTop || document.documentElement.scrollTop || document.body.scrollTop) > (distance || 500) ? 'block' : 'none';
+        var height = window.innerHeight / 2;
+        domE.style.display = (ctn.scrollTop || scollTop()) > (distance || height) ? 'block' : 'none';
     }
-    function throttle(func, wait) {
-        var timer = null;
-        return function () {
-            var self = this, args = arguments;
-            if (timer) clearTimeout(timer);
-            timer = setTimeout(function () {
-                return typeof func === 'function' && func.apply(self, args);
-            }, wait);
-        }
+    function scollTop() {
+        return document.documentElement.scrollTop || document.body.scrollTop;
     }
 };
 
