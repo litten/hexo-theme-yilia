@@ -137,7 +137,7 @@
     .tooltip-content {
         position: absolute;
         z-index: 9999;
-        width: 370px;
+        width: 480px;
         left: 50%;
         bottom: 100%;
         font-size: 20px;
@@ -147,7 +147,7 @@
         color: #4d4d4d;
         background: transparent;
         opacity: 0;
-        margin: 0 0 -10px -185px;
+        margin: 0 0 -20px -240px;
         cursor: default;
         pointer-events: none;
         font-family: 'Satisfy', cursive;
@@ -185,7 +185,7 @@
     }
 
     .tooltip-inner {
-        background: rgba(36,193,246,0.9);
+        background: #4d4d4d;
         padding: 40px;
         -webkit-transform: translate3d(0,100%,0);
         transform: translate3d(0,100%,0);
