@@ -77,6 +77,9 @@ share_jia: true
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
+#0、liveRe
+livere_uid: false
+
 #1、多说
 duoshuo: false
 
