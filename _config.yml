@@ -62,6 +62,9 @@ toc_empty_wording: '目录，不存在的…'
 # 是否有快速回到顶部的按钮
 top: true
 
+# 百度推送
+baidu_push: true
+
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
