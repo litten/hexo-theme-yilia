@@ -1,3 +1,27 @@
+### 我做出的一些修改
+
+fix:reward-btn to square
+
+fix:social github & weibo icon color
+
+add:为mobile avatar添加主页跳转链接
+
+add:post-copyright
+
+fix:去掉文章摘要下的more，仅保留文章摘要的展开全文
+
+fix:表头与单元格对齐方式不一致
+
+add:baidu-push
+
+add:livere评论系统
+
+live preview：[https://liziczh.com](https://liziczh.com)
+
+以下为原文
+
+---
+
 hexo-theme-yilia
 ================
 
@@ -37,15 +61,15 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
              
 ## 一、外观
 
-####**常规**
+#### **常规**
 
 ![常规](https://cloud.githubusercontent.com/assets/2024949/19027861/92879edc-8967-11e6-8e60-7987b6507c8d.gif)
 
-####**手机**
+#### **手机**
 
 ![手机](https://cloud.githubusercontent.com/assets/2024949/19027020/1c5b756a-895f-11e6-99bf-ddff9687aee0.gif)   
 
-####**ipad横竖屏切换**
+#### **ipad横竖屏切换**
 
 ![ipad横竖屏切换](https://cloud.githubusercontent.com/assets/2024949/19026392/e74e1816-8957-11e6-8f08-eac9b3c8c036.gif)                    
 
