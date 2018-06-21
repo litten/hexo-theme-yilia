@@ -1,12 +1,19 @@
 ### 我做出的一些修改
 
 fix:reward-btn to square
+
 fix:social github & weibo icon color
+
 add:为mobile avatar添加主页跳转链接
+
 add:post-copyright
+
 fix:去掉文章摘要下的more，仅保留文章摘要的展开全文
+
 fix:表头与单元格对齐方式不一致
+
 add:baidu-push
+
 add:livere评论系统
 
 live preview：[https://liziczh.com](https://liziczh.com)
