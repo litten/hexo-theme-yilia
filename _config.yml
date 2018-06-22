@@ -1,7 +1,7 @@
 # Header
 
 menu:
-  导航: /about/#站点导航
+  主页: /
   归档: /archives/
   读书: /reading/
   关于: /about/
@@ -57,7 +57,7 @@ weixin: ''
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
-toc: 1
+toc: 2
 # 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
 toc_hide_index: false
 # 目录为空时的提示
@@ -72,7 +72,7 @@ google_analytics: ''
 favicon: /favicon.ico
 
 #你的头像url
-avatar: https://img.fanhaobai.com/img/header.jpg
+avatar: https://img.fanhaobai.com/header.jpg
 
 #是否开启分享
 share_jia: true
@@ -128,6 +128,7 @@ friends:
   阿里云中间件: http://jm.taobao.org
   风雪之隅: http://www.laruence.com
   Rango: http://rango.swoole.com
+  老叶茶馆: http://imysql.com
   chenyoubing's Blog: http://youbingchenyoubing.leanote.com
   十年踪迹: https://www.h5jun.com
   小喵爱你: http://www.xiaomlove.com
