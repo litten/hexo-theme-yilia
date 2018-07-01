@@ -88,7 +88,8 @@ a {
     background: transparent; // 1
     text-decoration: none;
     color: nth($colorLink, 1);
-    
+    word-break: break-all;
+
     &:active {
         outline: 0; // 2
     }
@@ -164,8 +165,12 @@ svg:not(:root) {
 pre {
     overflow: auto; // 1
     white-space: pre; // 2
-    white-space: pre-wrap; // 2
-    word-wrap: break-word; // 2
+}
+
+@media screen and (min-width: 800px) {
+    .code pre {
+        word-wrap: break-word
+    }
 }
 
 // 1. Address odd `em`-unit font size rendering in all browsers.

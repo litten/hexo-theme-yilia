@@ -4,7 +4,10 @@ MathJax.Hub.Config({
         inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
         processEscapes: true,
         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
+    },
+	"HTML-CSS": {
+        showMathMenu: false
+	}
 });
 
 MathJax.Hub.Queue(function() {
@@ -15,5 +18,4 @@ MathJax.Hub.Queue(function() {
 });
 </script>
 
-<script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
