@@ -17,5 +17,3 @@ addLoadEvent(function() {
 	Viewer.init()
 	Aside.init()
 })
-
-module.exports = require('./disqus');

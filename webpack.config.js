@@ -17,6 +17,7 @@ module.exports = {
   entry: {
     main: "./source-src/js/main.js",
     slider: "./source-src/js/slider.js",
+    disqus: "./source-src/js/disqus.js",
     mobile: ["babel-polyfill", "./source-src/js/mobile.js"]
   },
   output: {
