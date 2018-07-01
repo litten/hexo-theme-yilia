@@ -2,8 +2,6 @@
 import '../css/main.scss'
 // 上报
 import './report'
-// disqus
-import './disqus'
 
 // 图片查看器
 import Viewer from './viewer'
@@ -19,3 +17,5 @@ addLoadEvent(function() {
 	Viewer.init()
 	Aside.init()
 })
+
+module.exports = require('./disqus');

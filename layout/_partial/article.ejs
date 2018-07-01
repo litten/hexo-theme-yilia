@@ -145,7 +145,7 @@
   <% if (theme.disqus || theme.disqus.shortname){ %>
     <section id="comments">
       <script>
-        var disq = new disqus('comment', {
+        var disq = new iDisqus('comment', {
           forum: '<%= theme.disqus.shortname %>',
           site: '<%= config.url %>',
           api: '<%= theme.disqus.api %>',
