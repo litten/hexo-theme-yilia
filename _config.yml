@@ -94,7 +94,7 @@ changyan_conf: false
 #4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
 disqus:
   shortname: 'fanhaobai'
-  api: 'http://disqus.fanhaobai.com'
+  api: 'https://disqus.fanhaobai.com'
 
 #5、Gitment
 gitment_owner: false      #你的 GitHub ID
