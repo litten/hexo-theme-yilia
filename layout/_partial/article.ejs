@@ -3,6 +3,16 @@
     <% if (post.link || post.title){ %>
       <header class="article-header">
         <%- partial('post/title', {class_name: 'article-title'}) %>
+        <!--显示阅读次数-->
+        <% if (!index && post.comments){ %>
+        <br/>
+        <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+        <span class="icon-sort"></span>
+        <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                  阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+        </span>
+        </a>
+        <% } %>
         <% if (!post.noDate){ %>
         <%- partial('post/date', {class_name: 'archive-article-date', date_format: null}) %>
         <% } %>
@@ -16,6 +26,24 @@
         <% } %>
       <% } else { %>
         <%- post.content %>
+      <% } %>
+
+      <%
+        var sUrl = url.replace(/index\.html$/, '');
+        sUrl = /^(http:|https:)\/\//.test(sUrl) ? sUrl : 'https:' + sUrl;
+      %>
+      <% if ((theme.declare_type === 2 || (theme.declare_type === 1 && post.declare)) && !index){ %>
+        <div class="declare">  
+        <strong>本文作者：</strong>
+        <%= theme.author %>
+        <br>
+        <strong>本文链接：</strong>
+        <%= sUrl%>
+        <br>
+        <strong>版权声明：</strong>本作品采用<a rel="license" href="<%= theme.licensee_url%>"><%= theme.licensee_name%></a>进行许可。转载请注明出处！
+        <br>
+        <a rel="license" href="<%= theme.licensee_url%>"><img alt="知识共享许可协议" style="border-width:0" src="<%= theme.licensee_img%>"/></a>
+        </div>
       <% } %>
 
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
