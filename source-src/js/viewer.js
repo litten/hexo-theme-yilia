@@ -1,4 +1,3 @@
-
 import PhotoSwipe from 'photoswipe'
 import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
 import 'photoswipe/dist/default-skin/default-skin.css'
