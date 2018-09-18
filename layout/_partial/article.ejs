@@ -87,7 +87,7 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
-  
+
   <% if (theme.wangyiyun){ %>
   <%- partial('post/wangyiyun', {
       key: post.slug,
@@ -129,4 +129,13 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
+
+  <% if (theme.gitalk.owner && theme.gitalk.repo && theme.gitalk.enable && theme.gitalk.clientID && theme.gitalk.clientSecret){ %>
+  <%- partial('post/gitalk', {
+      key: post.slug,
+      title: post.title,
+      url: config.url+url_for(post.path)
+    }) %>
+  <% } %>
+
 <% } %>
