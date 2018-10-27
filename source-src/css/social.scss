@@ -1,11 +1,13 @@
-.header-nav{
+#header .header-nav{
     width: 100%;
     position: absolute;
     transition: transform .3s ease-in;
     .social {
-        margin-right:15px;
-        margin-top:10px;
+        margin-top: 10px;
         text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         a {
             border-radius:50%;
             display:-moz-inline-stack;
@@ -14,87 +16,135 @@
             *vertical-align:auto;
             zoom:1;
             *display:inline;
-            text-indent:-9999px;
             margin:0 8px 15px 8px;
-            opacity:0.7;
-            width:28px;
-            height:28px;
             transition:0.3s;
+            text-align: center;
+            color: #fff;
+            opacity: 0.7;
+            width: 28px;
+            height: 28px;
+            line-height: 26px;
             &:hover {
                 opacity:1
             }
         }
-        a:last-of-type {
-            margin-right:0
-        }
         a.weibo {
-            background:url('./img/weibo.png') center no-repeat #aaaaff;
+            background: #aaaaff;
             border:1px solid #aaaaff;
             &:hover {
                 border:1px solid #aaaaff;
             }
         }
+        a.segmentfault {
+            background: #009a61;
+            border:1px solid #009a61;
+            &:hover {
+                border:1px solid #009a61;
+            }
+        }
         a.rss {
-            background:url('./img/rss.png') center no-repeat #ef7522;
+            background: #ef7522;
             border:1px solid #ef7522;
             &:hover {
                 border:1px solid #cf5d0f;
             }
         }
         a.github {
-            background:url('./img/github.png') center no-repeat #afb6ca;
+            background: #afb6ca;
             border:1px solid #afb6ca;
             &:hover {
                 border:1px solid #909ab6;
             }
         }
         a.facebook {
-            background:url('./img/facebook.png') center no-repeat #3b5998;
+            background: #3b5998;
             border:1px solid #3b5998;
             &:hover {
                 border:1px solid #2d4373;
             }
         }
         a.google {
-            background:url('./img/google.png') center no-repeat #c83d20;
+            background: #c83d20;
             border:1px solid #c83d20;
             &:hover {
                 border:1px solid #9c3019;
             }
         }
         a.twitter {
-            background:url('./img/twitter.png') center no-repeat #55cff8;
+            background: #55cff8;
             border:1px solid #55cff8;
             &:hover {
                 border:1px solid #24c1f6;
             }
         }
         a.linkedin {
-            background:url('./img/linkedin.png') center no-repeat #005a87;
+            background: #005a87;
             border:1px solid #005a87;
             &:hover {
                 border:1px solid #006b98;
             }
         }
+        a.acfun {
+            background: #fd4c5d;
+            border:1px solid #fd4c5d;
+            &:hover {
+                border:1px solid #fd4c5d;
+            }
+        }
+        a.bilibili {
+            background: #e15280;
+            border:1px solid #e15280;
+            &:hover {
+                border:1px solid #e15280;
+            }
+        }
         a.zhihu {
-            background:url('./img/zhihu.png') center no-repeat #0078d8;
+            background: #0078d8;
             border:1px solid #0078d8;
             &:hover {
                 border:1px solid #0078d8;
             }
         }
         a.douban {
-            background:url('./img/douban.png') center no-repeat #06c611;
+            background: #06c611;
             border:1px solid #06c611;
             &:hover {
                 border:1px solid #06c611;
             }
         }
         a.mail {
-            background:url('./img/mail.png') center no-repeat #005a87;
+            background: #005a87;
             border:1px solid #005a87;
             &:hover {
                 border:1px solid #006b98;
+            }
+        }
+        a.jianshu {
+            background: #ff5722;
+            border:1px solid #ff5722;
+            &:hover {
+                border:1px solid #ff5722;
+            }
+        }
+        a.weixin {
+            background: #4caf50;
+            border:1px solid #4caf50;
+            &:hover {
+                border:1px solid #4caf50;
+            }
+        }
+        a.qq {
+            background: #34baad;
+            border:1px solid #34baad;
+            &:hover {
+                border:1px solid #34baad;
+            }
+        }
+        a.psn {
+            background: #086ef6;
+            border:1px solid #086ef6;
+            &:hover {
+                border:1px solid #086ef6;
             }
         }
     }

@@ -4,7 +4,6 @@
 .article {
   margin: 30px;
   position: relative;
-  border: 1px solid #ddd;
   background: #fff;
   -webkit-transition: all 0.2s ease-in;
   &.show{
@@ -84,7 +83,7 @@
     padding-left: 2px;
     &:before{
       display: inline-block;
-      content: "“";
+      content: "";
       font-family: serif;
       font-size: 30px;
       float: left;
@@ -179,7 +178,7 @@
   }
   ul,ol{
     font-size: 14px;
-    margin: 10px 0px;  
+    margin: 10px 0px;
   }
   li{
     ul,ol{
@@ -205,7 +204,6 @@
     font-weight: 300;
     color: #574C4C;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
   }
   video{
     max-width: 100%;
@@ -281,7 +279,7 @@
 
 .article-meta{
   width: 150px;
-  font-size: 14;
+  font-size: 14px;
   text-align: right;
   position: absolute;
   right: 0;
@@ -290,28 +288,6 @@
   z-index: 1;
   time{
     color: #aaa;
-  }
-}
-
-.article-more-link{
-  margin-top: 5px;
-  text-align: right;
-  a{
-    background: #4d4d4d;
-    color: #fff;
-    font-size: 12px;
-    padding: 2px 8px 4px;
-    line-height: 16px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    transition: background 0.3s;
-    &:hover{
-      background: #3c3c3c;
-    }
-    &.hidden{
-      visibility: hidden;
-    }
   }
 }
 

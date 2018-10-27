@@ -7,15 +7,28 @@ body, button, input, select, textarea {
 }
 body {
 	overflow-y: hidden;
+	background:#eaeaea;
 }
 html, body, #container {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 }
+#mobile-nav {
+	display: none;
+}
 #container{
 	position:relative;
 	min-height:100%;
+	.anm-canvas {
+		display: none;
+	}
+	&.show {
+		.anm-canvas {
+			display: block;
+			position: fixed;
+		}
+	}
 }
 .body-wrap{
   margin-bottom: 80px;
@@ -29,40 +42,15 @@ html, body, #container {
 	width: auto;
 	@extend %trans;
 	&.show {
-	  transform: translate3d(300px, 0, 0);
-	}
-}
-#mobile-nav{
-	display: none;
-	.overlay{
-		height: 110px;
-		position: absolute;
-		width: 100%;
-		background: #4d4d4d;
-		&.fixed{
-	        position: fixed;
-	        height: 42px;
-	        z-index: 99;
-	    }
-	}
-	#header{
-		padding: 10px 0 0 0;
-		.profilepic{
-			display: block;
-			position: relative;
-			z-index: 100;
+		background: none;
+		opacity: .9;
+		@extend %anmLeftIn;
+		.article {
+			@extend %trans;
+			background: rgba(255,255,255,.3);
 		}
-		.header-menu{
-			height: auto;
-			margin: 10px;
-			ul{
-				text-align: center;
-				cursor: default;
-			}
-			li{
-				display: inline-block;
-				margin: 3px;
-			}
-		}
+	}
+	&.hide {
+		@extend %anmLeftOut;
 	}
 }

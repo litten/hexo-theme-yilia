@@ -16,6 +16,7 @@
     position: absolute;
     padding-top: 15px;
     font-size: 1.8em;
+    z-index: 1;
   }
   .archive-year-wrap a{
     color: #666;
@@ -59,7 +60,7 @@
       padding-left: 2px;
       &:before{
         display: inline-block;
-        content: "“";
+        content: "\"";
         font-family: serif;
         font-size: 30px;
         float: left;

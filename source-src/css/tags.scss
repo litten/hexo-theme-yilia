@@ -47,9 +47,9 @@
         }
     }
     a.color2{
-        background:  #F5C7B7;
+        background:  #cc8167;
         &:before{
-            border-right-color: #F5C7B7;  
+            border-right-color: #cc8167;  
         }
     }
     a.color3{
@@ -59,9 +59,9 @@
         }
     }
     a.color4{
-        background: #CFB7C4;
+        background: #94635c;
         &:before{
-            border-right-color:#CFB7C4;  
+            border-right-color:#94635c;  
         }
     }
     a.color5{
@@ -77,54 +77,36 @@
         float: left;
     }
 }
-.article-tag{
+.article-pop-out{
     float: left;
-    .article-tag-list{
-        float: left;
-    }
-    .icon-price-tags {
+    .icon-tuding {
         color: #999;
         float: left;
         margin-right: 10px;
         margin-top: 6px;
     }
 }
-.article-category{
+.article-tag, .article-category{
     float: left;
-    .icon-file-text {
+    .article-tag-list{
         float: left;
+    }
+    .icon {
         color: #999;
         float: left;
         margin-right: 10px;
-        margin-top: 9px;
+        margin-top: 6px;
     }
 }
 .article-pop-out {
     float: left;
-    &:before{
-        float: left;
-        color: #999;
-        content: "\f08d";
-        font: 16px FontAwesome;
-        float: left;
-        margin-right: 10px;
-        margin-top: 9px;
-    }
-    &:after{
-        float: left;
-        content: "";
-        margin-right: 20px;
-        margin-top: 9px;
-        float: left;
-    }
 }
 
 .archive-article-date {
-    float: left;
     color: #999;
-    margin-right: 20px;
-    .icon-clock {
-        float: left;
-        margin: 5px;
+    margin-right: 7.6923%;
+    float: right;
+    .icon {
+        margin: 5px 5px 5px 0;
     }
 }

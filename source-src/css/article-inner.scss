@@ -6,6 +6,7 @@
 
 .article-inner {
 	border-color: #d1d1d1;
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, .1);
 }
 
 .article-inner h1 {
@@ -44,7 +45,6 @@
 
 .article-inner h4 {
 	letter-spacing: 0.140625em;
-	text-transform: uppercase;
 }
 
 .article-inner h6 {
@@ -71,6 +71,7 @@
 
 .article-inner h1:first-child{
   margin-bottom: 10px;
+  display: inline;
 }
 .article-entry{
   line-height: 1.8em;
@@ -103,7 +104,7 @@
   em {
     font-style: italic;
   }
-  ul, ol{
+  ul {
     li:before{
       content: "";
       width: 6px;
@@ -114,12 +115,20 @@
       display: inline-block;
       margin-right: 10px;
       float: left;
-      margin-top: 12px;
+      margin-top: 10px;
+    }
+  }
+  ol {
+    counter-reset: item;
+    li:before{
+      counter-increment: item;
+	    content: counter(item)".";
+      margin-right: 10px;
     }
   }
   ul,ol{
     font-size: 14px;
-    margin: 10px 0px;  
+    margin: 10px 0px;
   }
   li{
     ul,ol{
@@ -145,7 +154,6 @@
     font-weight: bold;
     color: #574C4C;
     padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
   }
   video{
     max-width: 100%;

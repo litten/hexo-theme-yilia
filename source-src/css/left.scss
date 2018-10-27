@@ -1,30 +1,33 @@
 .left-col {
-	background: #fff;
+  background: #ddeedd;
+  padding-top: 25vh;
 	width: 300px;
 	position:fixed;
 	opacity:1;
 	transition:all .2s ease-in;
 	height:100%;
 	z-index: 999;
+	&.show {
+		@extend %shadow;
+	}
 	.overlay{
 		width: 100%;
-		height: 180px;
-		background-color: black;
+    height: 25vh;
 		position: absolute;
-		opacity: 0.7;
+    top: 0;
 	}
 
 	.intrude-less {
-		width: 76%;
+		width: 75%;
 		text-align: center;
-		margin: 112px auto 0;
+    margin: 0 auto;
 	}
 
 	#header{
 		width:100%;
 		height: 300px;
+    margin-top: -64px;
 		position: relative;
-		border-bottom: 1px solid color-border;
 		a {
 			color: #696969;
 			&:hover {
@@ -35,7 +38,8 @@
 			text-align: center;
 			color:#999;
 			font-size: 14px;
-			line-height: 25px;
+      font-family: segoe-print, sans-serif;
+      line-height: 25px;
 			overflow: hidden;
 			text-overflow: ellipsis;
 			display: -webkit-box;
@@ -45,7 +49,6 @@
 		.header-menu{
 			font-weight: 300;
 			line-height: 31px;
-			cursor: pointer;
 			text-transform: uppercase;
 			float:none;
 			min-height: 150px;
@@ -108,7 +111,7 @@
 		.header-author{
 			text-align: center;
 			margin: 0.67em 0;
-			font-family: Roboto, "Roboto", serif;
+			font-family: segoe-print, sans-serif;
 			font-size: 30px;
 			transition: 0.3s;
 		}
