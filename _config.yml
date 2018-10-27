@@ -3,13 +3,12 @@
 menu:
   主页: /
   随笔: /tags/随笔/
-  防撤回: /anti-recall
 
 # SubNav
 subnav:
-  github: "https://github.com/JasonQS"
-  zhihu: "https://www.zhihu.com/people/qsboy-com"
-#  mail: "qiansheng1998@gmail.com"
+  github: "#"
+  zhihu: "#"
+#  mail: "#"
 #  weibo: "#"
 #  rss: "#"
 #  weixin: "#"
