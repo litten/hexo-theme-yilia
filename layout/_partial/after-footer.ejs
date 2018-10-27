@@ -1,19 +1,20 @@
 <script>
 	var yiliaConfig = {
-		fancybox: <%=theme.fancybox%>,
 		mathjax: <%=theme.mathjax%>,
-		animate: <%=theme.animate%>,
 		isHome: <%=is_home()%>,
 		isPost: <%=is_post()%>,
 		isArchive: <%=is_archive()%>,
 		isTag: <%=is_tag()%>,
 		isCategory: <%=is_category()%>,
 		open_in_new: <%=theme.open_in_new%>,
-		root: "<%=config.root%>"
+		toc_hide_index: <%=theme.toc_hide_index%>,
+		root: "<%=config.root%>",
+		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
 	}
 </script>
 
-<%- js('./main') %>
+<%- partial('script') %>
 
 <% if (theme.mathjax){ %>
 <%- partial('mathjax') %>

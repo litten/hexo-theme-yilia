@@ -1,56 +1,44 @@
-require('../fancybox/jquery.fancybox')
-require('../fancybox/jquery.fancybox.scss')
 
-var fancyInit = function(){
-	var isFancy = $(".isFancy");
-	if(isFancy.length != 0){
-		var imgArr = $(".article-inner img");
-		for(var i=0,len=imgArr.length;i<len;i++){
-			var src = imgArr.eq(i).attr("src");
-			var title = imgArr.eq(i).attr("alt");
-			imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' title='"+title+"'></a>");
-		}
-		$(".article-inner .fancy-ctn").fancybox();
-	}
-}
+import PhotoSwipe from 'photoswipe'
+import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default'
+import 'photoswipe/dist/default-skin/default-skin.css'
+import 'photoswipe/dist/photoswipe.css'
 
-module.exports = {
-	init: fancyInit
-}
+window.PhotoSwipe = PhotoSwipe
+window.PhotoSwipeUI_Default = PhotoSwipeUI_Default
 
-/*var PhotoSwipe = require('../photoSwipe/photoswipe')
-var PhotoSwipeUI_Default = require('../photoSwipe/photoswipe-ui-default')
-require('../photoSwipe/default-skin/default-skin.scss')
-require('../photoSwipe/photoswipe.scss')
+function init() {
+	let pswpElement = document.querySelectorAll('.pswp')[0];
+	let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
 
-module.exports = {
-	init: function() {
-		var pswpElement = document.querySelectorAll('.pswp')[0];
-		// build items array
-		var imgArr = $(".body-wrap img");
-		var items = []
-		for(var i=0,len=imgArr.length;i<len;i++){
-			var img = imgArr.eq(i).attr('data-idx', i)
-			var src = img.attr("data-target") || img.attr("src");
-			var title = img.attr("alt");
-			items.push({
-				src: src,
-				w: img.width(),
-				h: img.height(),
-				title: title
+	$imgArr.forEach(($em, i) => {
+		$em.onclick = () => {
+			// slider展开状态
+			// todo: 这样不好，后面改成状态
+			if (document.querySelector('.left-col.show')) return
+			let items = []
+			$imgArr.forEach(($em2, i2) => {
+				let img = $em2.getAttribute('data-idx', i2)
+				let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+				let title = $em2.getAttribute('alt')
+				// 获得原图尺寸
+				const image = new Image()
+				image.src = src
+				items.push({
+					src: src,
+					w: image.width || $em2.width,
+					h: image.height || $em2.height,
+					title: title
+				})
 			})
-		}
-
-		// Initializes and opens PhotoSwipe
-		
-		imgArr.click(function(e) {
-			var idx = $(this).attr('data-idx')
-			console.log(idx)
 			var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
-				index: parseInt(idx)
+				index: parseInt(i)
 			});
 			gallery.init()
-		})
-		
-	}
-}*/
+		}
+	})
+}
+
+module.exports = {
+	init: init
+}

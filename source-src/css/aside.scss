@@ -1,0 +1,123 @@
+.wrap-side-operation {
+    position: fixed;
+    right: 40px;
+    bottom: 50px;
+    z-index: 999;
+    font-size: 14px;
+    .icon-plane {
+        color: #fff;
+        text-shadow: 1px 1px 1px #509eb7;
+        opacity: 0.7;
+        font-size: 52px;
+        line-height: 40px;
+        width: 40px;
+        text-align: center;
+        display: block;
+    }
+}
+.mod-side-operation {
+    width: 40px;
+    text-align: center;
+}
+.jump-container {
+    &:hover {
+        .icon-back {
+            background: rgba(36, 193, 246, 0.9);
+        }
+    }
+}
+.jump-container, .toc-container {
+    position: relative;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    opacity: .8;
+}
+.jump-plan-container {
+    position: absolute;
+    top: -11px;
+    left: -4px;
+    width: 50px;
+    height: 61px;
+    overflow: hidden;
+    .jump-plane {
+        display: block;
+        position: absolute;
+        width: 42px;
+        height: 66px;
+        transform: translateY(68px);
+        left: -2px;
+    }
+}
+.mod-side-operation__jump-to-top {
+    .icon-back {
+        transition: 0.3s;
+        color: #fff;
+        background: #ccc;
+        transform: rotate(90deg);
+        font-size: 32px;
+        line-height: 40px;
+        width: 40px;
+        text-align: center;
+        display: block;
+        &:hover {
+            background: #24c1f6;
+            color: #24c1f6;
+        }
+    }
+}
+
+.toc-container.tooltip-left{
+    background: #ccc;
+    margin-top: 10px;
+    transition: 0.3s;
+    &:hover {
+        background: rgba(36, 193, 246, 0.9);
+    }
+    .icon-font {
+        font-size: 22px;
+        line-height: 40px;
+        color: #fff;
+    }
+    .tooltip {
+        width: 40px;
+        height: 40px;
+        top: 0;
+        left: 0;
+    }
+    .tooltip-east .tooltip-content {
+        min-height: 100px;
+        text-align: left;
+        padding: 5px 0 5px 20px;
+        right: 4.7em;
+        min-width: 200px;
+        width: initial;
+        font-size: 14px;
+        text-shadow: 1px 1px 1px #398199;
+        bottom: -10px;
+        transform-origin: 100% 100%;
+        transform: translate3d(0, -10px, 0) rotate3d(1, 1, 1, -30deg);
+        a {
+            color: #fff;
+        }
+        &::after {
+            top: initial;
+            bottom: 23px;
+        }
+        .toc-article {
+            max-height: 500px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .toc-article li ol, .toc-article li ul {
+            margin-left: 30px;
+        }
+        .toc-article li {
+            white-space: nowrap;
+        }
+    }
+    .tooltip:hover .tooltip-content {
+        bottom: -10px;
+        transform: translate(0);
+    }
+}

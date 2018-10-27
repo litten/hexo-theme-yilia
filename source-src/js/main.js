@@ -1,34 +1,18 @@
-require('./jquery')
+// 样式
+import '../css/main.scss'
+// 上报
+import './report'
+// 图片查看器
+import Viewer from './viewer'
+// 分享
+import Share from './share'
+// 边缘
+import Aside from './aside'
 
-var tags = require('./tags')
-var archiveInner = require('./archive-inner')
-var tools = require('./tools')
-var browser = require('./browser')
-var fixPage = require('./fix-page')
-var mobile = require('./mobile')
-var viewer = require('./viewer')
-var ins = require('./ins')
+import {addLoadEvent} from './util'
 
-$(function() {
-	viewer.init()
-	archiveInner.init()
-	fixPage.init()
-	tags.init()
-	// todo: resize destrop
-	if(browser.versions.mobile === true && $(window).width() < 800){
-		mobile.init()
-	}else{
-		tools.init()
-		$('.js-smart-menu').click(function(e) {
-			e.stopPropagation()
-			tools.show($(this).data('idx'))
-		})
-		$('.left-col,.mid-col').click(function() {
-			tools.hide()
-		})
-	}
-
-	if (window.location.pathname === '/instagram/') {
-		ins.init()
-	}
+addLoadEvent(function() {
+	Share.init()
+	Viewer.init()
+	Aside.init()
 })

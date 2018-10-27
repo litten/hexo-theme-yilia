@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-//----------------------------------------------------- 
+//-----------------------------------------------------
 // media queries scss
 // author: Rafal Bromirski
 // github: http://github.com/paranoida/sass-mediaqueries
@@ -28,7 +28,7 @@
     }
   }
 
-  @media #{$media-type} #{$expr} {
+  @media #{$media-type} and #{$expr} {
     @content;
   }
 }

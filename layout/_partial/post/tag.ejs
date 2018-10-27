@@ -1,9 +1,12 @@
 <% if (post.tags && post.tags.length){ %>
 	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<%- list_tags(post.tags, {
-		    show_count: false,
-		    class: 'article-tag'
-		  }) %>
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			<% post.tags.forEach(function(tag, i){ %> 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
+        		</li>
+      		<% }) %>
+		</ul>
 	</div>
 <% } %>

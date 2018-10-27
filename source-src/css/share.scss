@@ -1,0 +1,107 @@
+.share-wrap {
+	min-height: 20px;
+}
+.share-btn {
+    float: right;
+    position: relative;
+}
+.share-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+        border: 1px solid #fff;
+        border-radius: 50%;
+        display: -moz-inline-stack;
+        display: inline-block;
+        vertical-align: middle;
+        zoom: 1;
+        margin: 10px;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        text-align: center;
+        color: #fff;
+        opacity: 0.7;
+        width: 28px;
+        height: 28px;
+        line-height: 26px;
+        text-shadow: 1px 1px 1px #509eb7;
+        &:active {
+            color: #fff;
+        }
+        &:hover {
+            transform: scale(1.2);
+        }
+        &.share-outer {
+            border: none;
+            color: #fff;
+            background: #4d4d4d;
+            text-shadow: none;
+        }
+    }
+}
+.page-modal {
+    //display: none;
+    position: fixed;
+    top: 24%;
+    left: 50%;
+    z-index: 1001;
+    padding: 20px;
+    text-align: center;
+    color: #727272;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    opacity: 0;
+    transform: translate(-50%, -200%);
+    p {
+        margin-bottom: 10px; 
+    }
+    &.ready {
+        visibility: hidden;
+        display: block;
+        transform: translate(-50%, -100%);
+        transition: .3s;
+    }
+
+    &.in {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, .2);
+        font-size: 16px;
+        line-height: 20px;
+        &:hover, &:active {
+            color: rgba(0, 0, 0, .4);
+        }
+    }
+}
+
+.mask {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    pointer-events: none;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    &.in {
+        visibility: visible;
+        pointer-events: auto;
+        opacity: .3;
+    }
+}
