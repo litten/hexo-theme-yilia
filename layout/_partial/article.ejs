@@ -80,6 +80,15 @@
 
 
 <% if (!index && post.comments){ %>
+  <% if (theme.gittalk
+    && theme.gittalk_clientID && theme.gittalk_clientSecret && theme.gittalk_repo && theme.gittalk_owner && theme.gittalk_admin){ %>
+  <%- partial('post/gittalk', {
+    key: post.slug,
+    title: post.title,
+    url: config.url+url_for(post.path)
+  }) %>
+  <% } %>
+
   <% if (theme.duoshuo){ %>
   <%- partial('post/duoshuo', {
       key: post.slug,
@@ -87,7 +96,7 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
-  
+
   <% if (theme.wangyiyun){ %>
   <%- partial('post/wangyiyun', {
       key: post.slug,
