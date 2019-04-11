@@ -53,7 +53,9 @@ module.exports = {
   },
   // devtool: '#eval-source-map',
   postcss: function() {
-    return [autoprefixer];
+    return [autoprefixer({
+      remove:false
+    })];
   },
   plugins: [
     new ExtractTextPlugin('[name].[chunkhash:6].css'),
