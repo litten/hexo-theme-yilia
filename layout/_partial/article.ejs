@@ -87,7 +87,7 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
-  
+
   <% if (theme.wangyiyun){ %>
   <%- partial('post/wangyiyun', {
       key: post.slug,
@@ -123,7 +123,15 @@
   <% } %>
 
   <% if (theme.gitment_owner && theme.gitment_repo &&theme.gitment_oauth && theme.gitment_oauth.client_id && theme.gitment_oauth.client_secret){ %>
-  <%- partial('post/gitment', {
+    <%- partial('post/gitment', {
+      key: post.slug,
+      title: post.title,
+      url: config.url+url_for(post.path)
+    }) %>
+  <% } %>
+
+  <% if (theme.gitalk && theme.gitalk_config && theme.gitalk_config.clientID && theme.gitalk_config.clientSecret && theme.gitalk_config.repo && theme.gitalk_config.owner && theme.gitalk_config.admin){ %>
+    <%- partial('post/gitalk', {
       key: post.slug,
       title: post.title,
       url: config.url+url_for(post.path)
