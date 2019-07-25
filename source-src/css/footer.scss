@@ -3,7 +3,7 @@
 	font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
 	text-shadow: 0 1px #fff;
 	position: absolute;
-	bottom: 30px;
+  margin-bottom: 10px;
 	opacity: 0.6;
 	width: 100%;
 	text-align: center;
@@ -16,4 +16,16 @@
 }
 .footer-right{
   float: right;
+}
+.footer-center{
+  width: 80%;
+  margin: auto;
+}
+#busuanzi{
+  width: 80%;
+  margin: 0 auto;
+}
+#icp_info{
+  width: 80%;
+  margin: 0 auto;
 }

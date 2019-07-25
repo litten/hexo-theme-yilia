@@ -1,0 +1,357 @@
+<div id="comment">
+  <div class="comment-list">
+    <div class="comment-list-item" v-for="item in comments.commentVOs">
+      <div class="user-head">
+        <img src="<%= config.root !== '/'?config.root:'' %>/img/user-head.png" alt="">
+      </div>
+      <div class="comment">
+        <div class="user">
+          <span class="username">{{ item.comment.username }}</span>
+        </div>
+        <p class="content">
+          {{ item.comment.content }}
+        </p>
+        <div class="info">
+          <span class="time">{{ item.comment.createTime }}</span>
+          <span class="reply btn-hover" :data-parent-id="item.comment.id" :data-username="item.comment.username"
+                :data-user-id="item.comment.userId" @click="reply">回复</span>
+        </div>
+        <div class="reply-box" v-for="item1 in item.childComment">
+          <div class="reply-item">
+            <img src="<%= config.root !== '/'?config.root:'' %>/img/user-head.png" alt="">
+            <div class="content">
+              <span class="username" v-if="item1.parentId != 0 && item1.replyUserId !== null">{{ item1.username }} <span>回复</span> {{ item1.replyUserName }}</span>
+              <span class="username" v-else>{{ item1.username }}</span>
+              <span>{{ item1.content }}</span>
+            </div>
+            <div class="info">
+              <span class="time">{{ item1.createTime }}</span>
+              <span class="reply btn-hover" :data-parent-id="item1.parentId" :data-user-id="item1.userId"
+                    :data-username="item1.username"
+                    :data-reply-user-id="item1.replyUserId" @click="reply">回复</span>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+  <div class="comment-send">
+    <div class="user-face">
+      <img class="user-head" src="<%= config.root !== '/'?config.root:'' %>/img/user-head.png" alt="">
+    </div>
+    <div class="comment-send-user-form">
+      <div class="comment-send-user-name">
+        <label for="username">
+          昵称
+          <span class="require">*</span>
+        </label>
+        <input type="text" name="username" id="username" v-model="commentCommitForm.username">
+      </div>
+      <div class="comment-send-user-email">
+        <label for="email">
+          邮箱
+          <span class="require">*</span>
+        </label>
+        <input type="text" name="email" id="email" v-model="commentCommitForm.userMail">
+      </div>
+      <div class="comment-send-user-website">
+        <label for="website">
+          网站
+        </label>
+        <input type="text" name="website" id="website" v-model="commentCommitForm.website">
+      </div>
+    </div>
+    <div class="textarea-container">
+        <textarea cols="80" name="msg" rows="5" placeholder="请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。"
+                  class="ipt-txt" v-model="commentCommitForm.content"></textarea>
+      <button type="submit" class="comment-submit" @click="commitComment">发表评论</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/toastr.min.js"></script>
+<link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
+<script>
+  let title = '<%= post.title %>';
+  let custom_comment_url = '<%= theme.custom_comment_url %>';
+  let vue = new Vue({
+    el: '#comment',
+    data: {
+      comments: {},
+      commentCommitForm: {
+        articleTitle: title,
+        username: '',
+        userMail: '',
+        website: '',
+        content: '',
+        replyUserId: 0,
+        parentId: 0
+      },
+      placeholderText: '请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。',
+      e: {}
+    },
+    methods: {
+      reply: function (e) {
+        let $e = $(e.target);
+        let $comment = $('.comment-submit');
+        $comment.attr('data-reply-user-id', $e.data('userId'));
+        $comment.attr('data-parent-id', $e.data('parentId'));
+        let $textarea = $('.textarea-container textarea');
+
+        if ($e.html() === '回复') {
+          $e.html('取消回复');
+          $textarea.attr('placeholder', `回复 @${$e.data('username')}:`);
+
+          // 点击回复时滚动条滚动到回复框处
+          let container = $('#container');
+          let scrollDuration = container[0].scrollHeight;
+          if (container[0].offsetHeight + container[0].scrollTop < scrollDuration) {
+            container.animate({"scrollTop": scrollDuration}, 500);
+          }
+        } else {
+          $e.html('回复');
+          $textarea.attr('placeholder', this.placeholderText);
+        }
+
+      },
+      commitComment: function (e) {
+        let replyUserId = $(e.target).data('replyUserId');
+        let parentId = $(e.target).data('parentId');
+        if (replyUserId) {
+          this.commentCommitForm.replyUserId = replyUserId;
+        }
+        if (parentId) {
+          this.commentCommitForm.parentId = parentId;
+        }
+        if (this.commentCommitForm.articleTitle !== title) {
+          this.commentCommitForm.articleTitle = title
+        }
+        if (this.commentCommitForm.content !== '' && this.commentCommitForm.username !== '' && this.commentCommitForm.userMail !== '') {
+          axios.post('/comment/create', this.commentCommitForm)
+            .then(response => {
+              let code = response.data.code;
+              if (code === 0) {
+                this.commentCommitForm.articleTitle = '';
+                this.commentCommitForm.content = '';
+                this.commentCommitForm.parentId = 0;
+                this.commentCommitForm.replyUserId = 0;
+                localStorage.setItem('userInfo', JSON.stringify(this.commentCommitForm));
+                toastr.success('提交成功！请耐心等待审核通过...').attr('style', 'width: 22em');
+              } else {
+                toastr.error(response.data.message).attr('style', 'width: 22em');
+              }
+            });
+        } else {
+          toastr.error('请输入内容!');
+        }
+
+      }
+    },
+    mounted: function () {
+      if (localStorage.getItem('userInfo')) {
+        this.commentCommitForm = JSON.parse(localStorage.getItem('userInfo'))
+      }
+      // axios.defaults.baseURL = 'http://localhost:8866';
+      axios.defaults.baseURL = custom_comment_url;
+      let _this = this
+      axios.get('/comment/list?articleTitle=' + title)
+        .then(response => {
+          _this.comments = response.data.data;
+        })
+    }
+  })
+  window.onload = function () {
+    toastr.options.escapeHtml = true;
+    toastr.options.closeButton = true;
+    toastr.options.timeOut = 2000;
+    // toastr.options.progressBar = true;
+    let commentElementHeight = $('#comment')[0].offsetHeight;
+    let $footer = $('#footer');
+    $footer[0].style.bottom = '-' + commentElementHeight + 'px';
+  }
+</script>
+<style>
+  #comment {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif, "Microsoft YaHei UI";
+  }
+
+  .btn-hover {
+    padding: 0 5px;
+    border-radius: 4px;
+    margin-right: 15px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .btn-hover:hover {
+    color: #00a1d6;
+  }
+
+  .info {
+    color: #99a2aa;
+    line-height: 26px;
+    font-size: 12px;
+  }
+
+  .username {
+    font-size: 14px;
+    color: #6d757a;
+  }
+
+  .content {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .user-head img,
+  .comment-send img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .reply-item img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .comment-list-item {
+    position: relative;
+    margin-bottom: -40px;
+  }
+
+  .comment {
+    position: relative;
+    left: 70px;
+    bottom: 55px;
+  }
+
+  .reply-box {
+    margin-top: 5px;
+  }
+
+  .reply-box .reply-item {
+    margin-bottom: -25px;
+  }
+
+  .reply-box .reply-item .content {
+    position: relative;
+    left: 35px;
+    bottom: 25px;
+  }
+
+  .reply-box .reply-item .content .username + span {
+    margin-left: 5px;
+  }
+
+  .reply-box .reply-item .username span {
+    color: #222222;
+  }
+
+  .reply-box .reply-item p {
+    display: block;
+    position: relative;
+    left: 35px;
+    bottom: 50px;
+  }
+
+  .reply-box .reply-item .info {
+    position: relative;
+    bottom: 22px;
+  }
+
+  .comment-send .comment-send-user-form {
+    position: relative;
+    left: 70px;
+    bottom: 50px;
+    width: 40%;
+  }
+
+  .comment-send .comment-send-user-form .comment-send-user-name,
+  .comment-send .comment-send-user-form .comment-send-user-email,
+  .comment-send .comment-send-user-form .comment-send-user-website {
+    margin-bottom: -15px;
+  }
+
+  .comment-send .comment-send-user-form label {
+    display: inline-block;
+    width: 75px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    z-index: 8;
+    background: #f1f1f1;
+  }
+
+  .comment-send .comment-send-user-form input {
+    font-size: 16px;
+    text-indent: 8px;
+    border: solid 1px #ccc;
+    position: relative;
+    bottom: 40px;
+    left: 65px;
+    border-radius: 2px;
+    width: 100%;
+    height: 40px;
+    z-index: 2;
+    background: #fff;
+  }
+
+  .comment-send .comment-send-user-form .require {
+    color: red;
+  }
+
+  .comment-send .textarea-container {
+    position: relative;
+    left: 70px;
+    bottom: 45px;
+  }
+
+  .comment-send .textarea-container textarea {
+    width: 80%;
+    font-size: 14px;
+    line-height: 18px;
+    background-color: #f4f5f7;
+    height: 66px;
+    border: 1px solid #e5e9ef;
+    overflow: auto;
+    border-radius: 4px;
+    padding: 5px 10px;
+    resize: none;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif, "Microsoft YaHei UI";
+  }
+
+  .comment-send .textarea-container .comment-submit {
+    width: 70px;
+    height: 64px;
+    margin-left: 4px;
+    padding: 4px 15px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 60px;
+    vertical-align: top;
+    cursor: pointer;
+    background-color: #00a1d6;
+    border: 1px solid #00a1d6;
+    transition: .1s;
+    user-select: none;
+    outline: none;
+  }
+
+  .comment-send .textarea-container textarea:hover {
+    background-color: #ffffff;
+    border-color: #00a1d6;
+  }
+
+  .comment-send .textarea-container .comment-submit:hover {
+    background-color: #00b5e5;
+  }
+
+</style>
