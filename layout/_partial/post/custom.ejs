@@ -8,7 +8,7 @@
         <div class="user">
           <span class="username">{{ item.comment.username }}</span>
         </div>
-        <p class="content">
+        <p class="content" :id="'comment-'+item.comment.id">
           {{ item.comment.content }}
         </p>
         <div class="info">
@@ -19,7 +19,7 @@
         <div class="reply-box" v-for="item1 in item.childComment">
           <div class="reply-item">
             <img src="<%= config.root !== '/'?config.root:'' %>/img/user-head.png" alt="">
-            <div class="content">
+            <div class="content" :id="'comment-'+item1.id">
               <span class="username" v-if="item1.parentId != 0 && item1.replyUserId !== null">{{ item1.username }} <span>回复</span> {{ item1.replyUserName }}</span>
               <span class="username" v-else>{{ item1.username }}</span>
               <span>{{ item1.content }}</span>
@@ -76,6 +76,7 @@
 <link href="https://cdn.bootcss.com/toastr.js/latest/toastr.min.css" rel="stylesheet">
 <script>
   let title = '<%= post.title %>';
+  let path = '<%= post.path %>';
   let custom_comment_url = '<%= theme.custom_comment_url %>';
   let vue = new Vue({
     el: '#comment',
@@ -131,19 +132,19 @@
         }
         if (this.commentCommitForm.content !== '' && this.commentCommitForm.username !== '' && this.commentCommitForm.userMail !== '') {
           axios.post('/comment/create', this.commentCommitForm)
-            .then(response => {
-              let code = response.data.code;
-              if (code === 0) {
-                this.commentCommitForm.articleTitle = '';
-                this.commentCommitForm.content = '';
-                this.commentCommitForm.parentId = 0;
-                this.commentCommitForm.replyUserId = 0;
-                localStorage.setItem('userInfo', JSON.stringify(this.commentCommitForm));
-                toastr.success('提交成功！请耐心等待审核通过...').attr('style', 'width: 22em');
-              } else {
-                toastr.error(response.data.message).attr('style', 'width: 22em');
-              }
-            });
+                  .then(response => {
+                    let code = response.data.code;
+                    if (code === 0) {
+                      this.commentCommitForm.articleTitle = '';
+                      this.commentCommitForm.content = '';
+                      this.commentCommitForm.parentId = 0;
+                      this.commentCommitForm.replyUserId = 0;
+                      localStorage.setItem('userInfo', JSON.stringify(this.commentCommitForm));
+                      toastr.success('提交成功！请耐心等待审核通过...').attr('style', 'width: 22em');
+                    } else {
+                      toastr.error(response.data.message).attr('style', 'width: 22em');
+                    }
+                  });
         } else {
           toastr.error('请输入内容!');
         }
@@ -158,16 +159,23 @@
       axios.defaults.baseURL = custom_comment_url;
       let _this = this
       axios.get('/comment/list?articleTitle=' + title)
-        .then(response => {
-          _this.comments = response.data.data;
-        })
+              .then(response => {
+                _this.comments = response.data.data;
+              })
+      axios.post('/article/update',{title: title, path: path})
+      // 评论框div添加domInsert事件监听，当评论渲染完成时调整 footer div距离页面底端的距离
+      $('#comment').on('DOMNodeInserted', function () {
+        let commentElementHeight = $('#comment')[0].offsetHeight;
+        let $footer = $('#footer');
+        $footer[0].style.bottom = '-' + commentElementHeight + 'px';
+      })
     }
   })
   window.onload = function () {
     toastr.options.escapeHtml = true;
     toastr.options.closeButton = true;
     toastr.options.timeOut = 2000;
-    // toastr.options.progressBar = true;
+    toastr.options.progressBar = true;
     let commentElementHeight = $('#comment')[0].offsetHeight;
     let $footer = $('#footer');
     $footer[0].style.bottom = '-' + commentElementHeight + 'px';
@@ -213,11 +221,13 @@
   .comment-send img {
     width: 50px;
     height: 50px;
+    border-radius: 5px;
   }
 
   .reply-item img {
     width: 25px;
     height: 25px;
+    border-radius: 5px;
   }
 
   .comment-list-item {

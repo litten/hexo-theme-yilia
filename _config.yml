@@ -118,6 +118,8 @@ style:
 slider:
   # 是否默认展开tags板块
   showTags: false
+  # 是否展示气泡动态效果
+  showAnm: false
 
 # 智能菜单
 # 如不需要，将该对应项置为false

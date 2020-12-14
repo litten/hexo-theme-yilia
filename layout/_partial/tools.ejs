@@ -32,11 +32,13 @@
         </div>
         <div class="widget tagcloud search-tag">
           <p class="search-tag-wording">tag:</p>
+          <p class="search-tag-wording">animation:</p>
           <label class="search-switch">
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+            <input type="checkbox" q-on="click:anmChange(e)" q-attr="checked:showAnm" style="right: 125px;">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-            <% site.tags.forEach(function(tag, i){ %> 
+            <% site.tags.forEach(function(tag, i){ %>
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color<%= tag.name.length % 5 + 1 %>"><%-tag.name%></a>
               </li>
@@ -106,5 +108,5 @@
     	</section>
     <%}%>
   </div>
-  
+
 </div>
