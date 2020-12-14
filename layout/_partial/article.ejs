@@ -79,7 +79,12 @@
 <%- partial('_partial/aside') %>
 
 
-<% if (!index && post.comments){ %>
+<% if (!index && post.comments) { %>
+
+  <% if (theme.custom_comment){ %>
+    <%- partial('post/custom') %>
+  <% } %>
+
   <% if (theme.duoshuo){ %>
   <%- partial('post/duoshuo', {
       key: post.slug,
@@ -87,7 +92,7 @@
       url: config.url+url_for(post.path)
     }) %>
   <% } %>
-  
+
   <% if (theme.wangyiyun){ %>
   <%- partial('post/wangyiyun', {
       key: post.slug,
