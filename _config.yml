@@ -112,9 +112,6 @@ utterance:
   # 映射配置
   issue_term: 'title'
 
-#建站时间 
-SetUpTime: "#"
-
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色

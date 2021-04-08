@@ -19,7 +19,7 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，现�
 1. 修复hexo3.0下作者名及简介栏不显示的问题
 2. 删除了已关停的多说及网易云评论，添加utterance评论系统(基于Github Apps)
 3. 添加文章底部的版权声明栏
-4. 添加不蒜子访问量统计及网站运行时间(于footer.ejs中，建站时间已暴露接口于config.yml中，未验证，若有问题可自行修改footer.ejs)
+4. 添加不蒜子访问量统计及网站运行时间(于footer.ejs中，请自行修改)
 5. 解决了微信分享生成二维码功能失效的问题
 6. 添加subNav栏gitee图标链接
 
