@@ -6,10 +6,10 @@
 			<img src="<%=theme.avatar%>" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="<%=theme.root%>"><%=theme.author%></a></h1>
+		  <h1 class="header-author"><a href="<%=theme.root%>"><%=config.author %></a></h1>
 		</hgroup>
-		<% if (theme.subtitle){ %>
-		<p class="header-subtitle"><%=theme.subtitle%></p>
+		<% if (config.subtitle){ %>
+		<p class="header-subtitle"><%=config.subtitle %></p>
 		<%}%>
 
 		<nav class="header-menu">

@@ -7,6 +7,7 @@ menu:
 # SubNav
 subnav:
   github: "#"
+  gitee: "#"
   weibo: "#"
   rss: "#"
   zhihu: "#"
@@ -32,8 +33,8 @@ root: /
 
 # Content
 
-# 文章太长，截断按钮文字
-excerpt_link: more
+# 文章太长，截断按钮文字，建议直接使用show_all_link展开全文阅读，此处设为false表示截断按钮隐藏，截断功能仍保留
+excerpt_link: false
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
 # 数学公式
@@ -43,13 +44,23 @@ open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 1
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
 alipay: 
 # 微信二维码图片地址
-weixin: 
+weixin:
+
+# 版权声明
+#在需要进行版权声明的文章的md文件头部，设置属性declare: true。
+#版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明
+declare:
+  declare_type: 1
+  licensee_url: https://creativecommons.org/licenses/by-nc-sa/4.0/        #当前应用的版权协议地址。
+  licensee_name: 'CC BY-NC-SA 4.0'                                        #版权协议的名称
+  licensee_alias: '知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议'       # alias别名
+  licensee_img:    #版权协议的Logo
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
@@ -67,35 +78,39 @@ baidu_analytics: ''
 google_analytics: ''
 favicon: /favicon.png
 
-#你的头像url
+#你的头像url，存放在当前主体下的/source/img文件夹中
 avatar:
 
 #是否开启分享
 share_jia: true
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
+#评论：1、畅言；2、Disqus；3、Gitment；4、utterance
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
-#1、多说
-duoshuo: false
-
-#2、网易云跟帖
-wangyiyun: false
-
-#3、畅言
+#1、畅言，使用需备案
 changyan_appid: false
 changyan_conf: false
 
-#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+#2、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的，国外评论软件，需科学上网使用
 disqus: false
 
-#5、Gitment
+#3、Gitment，项目停更4年
 gitment_owner: false      #你的 GitHub ID
 gitment_repo: ''          #存储评论的 repo
 gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
+
+#4、utterance
+utterance:
+  enable: true
+  # 仓库名字，格式：你的用户ID/仓库名称
+  repo: '#'
+  # 主题
+  theme: 'github-light'
+  # 映射配置
+  issue_term: 'title'
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
