@@ -20,9 +20,12 @@
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
-    		<% for (var i in theme.smart_menu){ %>
-    			<% if(theme.smart_menu[i]){ %>
-    			<a q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
+			<% for (var i in theme.smart_menu.link){ %>
+				<a href="<%- url_for(theme.smart_menu.link[i]) %>"><%= i %></a>
+	        <%}%>
+    		<% for (var i in theme.smart_menu.menu){ %>
+    			<% if(theme.smart_menu.menu[i]){ %>
+    			<a q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu.menu[i] %></a>
     			<% } %>
             <%}%>
 		</nav>

@@ -128,11 +128,16 @@ slider:
 # 如不需要，将该对应项置为false
 # 比如
 #smart_menu:
-#  friends: false
+#  link: false
+#  menu:
+#    friends: false
 smart_menu:
-  innerArchive: '所有文章'
-  friends: '友链'
-  aboutme: '关于我'
+  link:
+    笔记: /tags/笔记/
+  menu:
+    innerArchive: '所有文章'
+    friends: '友链'
+    aboutme: '关于我'
 
 friends:
   友情链接1: http://localhost:4000/
