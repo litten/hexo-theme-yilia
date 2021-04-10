@@ -2,7 +2,7 @@ hexo-theme-yilia
 ================
 
 Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，现支持hexo3.0，category分类页仍存在问题(个人未使用分类页所以没有解决)。
-崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://www.luhawxem.cn:4000/) 查看效果。           
+崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](https://www.luhawxem.com:4000/) 查看效果。           
 
 —————————————————————
 
@@ -51,7 +51,7 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，现�
 #### 安装
 
 ``` bash
-$ git clone https://github.com/LuHawXem/hexo-theme-yilia.git themes/yilia
+$ git clone https://github.com/LuHawXem/hexo-theme-yilia-luhawxem.git themes/yilia
 ```
 
 #### 配置
