@@ -1,7 +1,7 @@
 hexo-theme-yilia
 ================
 
-Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，现支持hexo3.0，category分类页仍存在问题(个人未使用分类页所以没有解决)。
+Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改进后支持hexo3.0，category分类页仍存在问题(个人未使用分类页所以没有解决)。
 崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](https://www.luhawxem.com:4000/) 查看效果。           
 
 —————————————————————
@@ -15,9 +15,13 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，现�
 5. 主题不支持IE6，7，8。以后也不会     
 
 **最近更新:**
+
 **2021.04.10**
+
 1. 向smart_menu中添加链接功能
+
 **2021.04.08**
+
 1. 修复hexo3.0下作者名及简介栏不显示的问题
 2. 删除了已关停的多说及网易云评论，添加utterance评论系统(基于Github Apps)
 3. 添加文章底部的版权声明栏
