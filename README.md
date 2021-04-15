@@ -1,7 +1,7 @@
 hexo-theme-yilia
 ================
 
-Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改进后支持hexo3.0，category分类页仍存在问题(个人未使用分类页所以没有解决)。
+Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改进后支持hexo3.0(个人改进均以PC端页面优先)。
 崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](https://www.luhawxem.com:4000/) 查看效果。           
 
 —————————————————————
@@ -15,6 +15,16 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改�
 5. 主题不支持IE6，7，8。以后也不会     
 
 **最近更新:**
+
+**2021.04.15**
+
+1. 添加categories分类页(原yilia无法支持分类页)，使用方法：
+
+   ```shell
+   hexo new page "categories"
+   ```
+
+   然后在生成的index.md文件头部新增行`layout: categories`即可
 
 **2021.04.10**
 

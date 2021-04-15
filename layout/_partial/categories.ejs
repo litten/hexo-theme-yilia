@@ -1,0 +1,53 @@
+<article class="article archive-type-<%= page.layout %>">
+  <div class="article-inner">
+    <header class="article-header">
+      <h1 class="article-title" itemprop="name">
+        <%= page.title %>
+      </h1>          
+    </header>
+    <div class="article-entry">
+
+      <% if (site.categories.length){ %>
+        <h3>共计 <%= site.categories.length %> 个分类</h3>
+        <div class="article-tag tagcloud">
+          <ul class="article-tag-list">
+            <% site.categories.sort('name').each(function(item){ %>
+              <% if(item.posts.length){ %>
+                <li class="article-tag-list-item" style="float: none;">
+                  <a href="<%- config.root %><%- item.path %>" title="<%= item.name %>" class="article-tag-list-link color<%= item.name.length % 5 + 1 %>">
+                    <%= item.name %>
+                  </a>
+                  <span style="color: #BBB;  margin-right: 8px">
+                    (<%= item.posts.length %>)
+                  </span>
+                </li>
+              <% } %>
+            <% }) %>
+          </ul>
+        </div>
+      <% } %>
+      <div class="clearfix"></div>
+      <% if (site.tags.length){ %>
+        <h3 style="margin-bottom: 20px;">共计 <%= site.tags.length %> 个标签</h3>
+        <div class="article-tag tagcloud">
+          <ul class="article-tag-list">
+            <% site.tags.sort('name').each(function(item){ %>
+              <% if(item.posts.length){ %>
+                <li class="article-tag-list-item" style="float: none">
+                  <a href="<%- config.root %><%- item.path %>" title="<%= item.name %>" class="article-tag-list-link color<%= item.name.length % 5 + 1 %>">
+                    <%= item.name %> 
+                  </a>
+                  <span style="color: #BBB;  margin-right: 8px">
+                    (<%= item.posts.length %>)
+                  </span>
+                </li>
+              <% } %>
+            <% }) %>
+          </ul>
+        </div>
+      <% } %>
+    </div>
+    <div class="clearfix"></div>
+    <div class="article-info article-info-index"></div>
+  </div>
+</article>
