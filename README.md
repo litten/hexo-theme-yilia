@@ -16,7 +16,7 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改�
 
 **存在问题**
 
-1. 置顶功能无效
+1. 置顶功能无效(generator生成器问题)
 2. 手机横屏观看网页时left-col无法完全显示
 3. left-col为固定大小300px，在某些屏幕比例下显得mid-col过小，但若改动left-col大小，由于smart_menu功能为绝对定位(这个没找到在哪改，如果有同样使用yilia主题的朋友知道的话可以告诉我一下)，会导致错位。
 
