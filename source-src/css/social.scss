@@ -147,5 +147,40 @@
                 border:1px solid #086ef6;
             }
         }
+        a.youtube-play {
+            background: #ff0000;
+            border:1px solid #ff0000;
+            &:hover {
+                border:1px solid #ff0000;
+            }
+        }
+        a.steam {
+            background: #002077;
+            border:1px solid #002077;
+            &:hover {
+                border:1px solid #002077;
+            }
+        }
+        a.twitch {
+            background: #b700ff;
+            border:1px solid #b700ff;
+            &:hover {
+                border:1px solid #b700ff;
+            }
+        }
+        a.gitlab {
+            background: #ff7b00;
+            border:1px solid #ff7b00;
+            &:hover {
+                border:1px solid #ff7b00;
+            }
+        }
+        a.telegram {
+            background: #00aeff;
+            border:1px solid #00aeff;
+            &:hover {
+                border:1px solid #00aeff;
+            }
+        }
     }
 }
