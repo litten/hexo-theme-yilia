@@ -24,7 +24,7 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改�
 
 **2021.05.21**
 
-1.添加telegram、steam、twitch、youtube、gitlab图标
+1. 添加telegram、steam、twitch、youtube、gitlab图标
 
 **2021.04.16**
 
