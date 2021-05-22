@@ -22,6 +22,11 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改�
 
 **最近更新:**
 
+**2021.05.22**
+
+1. left-col头像上方现在可以使用图片作为背景了(推荐使用宽高比为5:3的图片)
+2. 添加LOL图标
+
 **2021.05.21**
 
 1. 添加telegram、steam、twitch、youtube、gitlab图标
@@ -250,5 +255,4 @@ friends:
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 ```
-
 
