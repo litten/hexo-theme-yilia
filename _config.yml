@@ -28,6 +28,7 @@ subnav:
   twitch: "#"
   youtube-play: "#"
   gitlab: "#"
+  lol: "#"
 
 rss: /atom.xml
 
