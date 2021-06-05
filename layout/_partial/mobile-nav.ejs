@@ -15,16 +15,16 @@
 			<% if (config.subtitle){ %>
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i><%=config.subtitle%><i class="icon icon-quo-right"></i></p>
 			<% } %>
-			<% var count = 0%>
+			<% var count1 = 0%>
 			<% for (var i in theme.menu){ %>
-				<% count++ %>
+				<% count1++ %>
 			<% } %>
-			<% var ulWidth = count > 2 ? '70%' : '50%' %>
-			<% var count = 0%>
+			<% var ulWidth1 = count1 > 2 ? '70%' : '50%' %>
+			<% var count2 = 0%>
 			<% for (var i in theme.smart_menu.link){ %>
-				<% count++ %>
+				<% count2++ %>
 			<% } %>
-			<% var ulWidth = count > 2 ? '70%' : '50%' %>
+			<% var ulWidth2 = count2 > 2 ? '70%' : '50%' %>
 
 			<nav class="header-nav">
 				<div class="social">
@@ -35,14 +35,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: <%= ulWidth %>">
-				<% var divide = 100 / count + '%' %>
+				<ul style="width: <%= ulWidth1 %>">
+				<% var divide = 100 / count1 + '%' %>
 				<% for (var i in theme.menu){ %>
 					<li style="width: <%= divide %>"><a href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
 		        <%}%>
 				</ul>
-				<ul style="width: <%= ulWidth %>">
-					<% var divide = 100 / count + '%' %>
+				<ul style="width: <%= ulWidth2 %>">
+					<% var divide = 100 / count2 + '%' %>
 					<% for (var i in theme.smart_menu.link){ %>
 						<li style="width: <%= divide %>"><a href="<%- url_for(theme.smart_menu.link[i]) %>"><%= i %></a></li>
 					<%}%>
