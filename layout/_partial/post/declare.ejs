@@ -1,0 +1,42 @@
+<!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+<%
+  var sUrl = url.replace(/index\.html$/, '');
+  sUrl = /^(http:|https:)\/\//.test(sUrl) ? sUrl : 'https:' + sUrl;
+%>
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+<% if ((theme.declare.declare_type === 2 || (theme.declare.declare_type === 1 && post.declare)) && !index){ %>
+  <div class="declare">
+    <strong class="author">本文作者：</strong>
+    <% if(config.author != undefined){ %>
+      <%= config.author%>
+    <% }else{%>
+      <font color="red">请在博客根目录“_config.yml”中填入正确的“author”</font>
+    <%}%>
+    <br>
+    <strong class="create-time">发布时间：</strong>
+    <%- date(post.date, 'YYYY-MM-DD') %>
+    <br>
+    <strong class="update-time">最后更新：</strong>
+    <%- date(post.updated, 'YYYY-MM-DD') %>
+    <br>
+    <strong class="article-titles">本文标题：</strong>
+    <a href="<%= config.url %>/<%= post.path %>" title="<%= post.title %>" target="_blank"><%= post.title %></a>
+    <br>
+    <strong class="article-url">本文链接：</strong>
+    <a href="<%= config.url %>/<%= post.path %>" title="<%= post.title %>" target="_blank"><%= config.url %>/<%= post.path %></a>
+    <br>
+    <strong class="copyright">版权声明：</strong>
+    本作品采用
+    <a rel="license" href="<%= theme.declare.licensee_url%>" title="<%= theme.declare.licensee_alias %>"><%= theme.declare.licensee_name%></a>
+    许可协议进行许可。转载请注明出处！
+    <% if(theme.declare.licensee_img != undefined){ %>
+      <br>
+      <a rel="license" href="<%= theme.declare.licensee_url%>"><img alt="知识共享许可协议" style="border-width:0" src="<%= theme.declare.licensee_img%>"/></a>
+    <% } %>
+  </div>
+<% } else {%>
+  <div class="declare" hidden="hidden"></div>
+<% } %>
+<!-- 添加版权声明》 -->

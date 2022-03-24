@@ -5,9 +5,9 @@
       <h1 id="logo-wrap">
         <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
       </h1>
-      <% if (theme.subtitle){ %>
+      <% if (config.subtitle) { %>
         <h2 id="subtitle-wrap">
-          <a href="<%- url_for() %>" id="subtitle"><%= theme.subtitle %></a>
+          <a href="<%- url_for() %>" id="subtitle"><%= config.subtitle %></a>
         </h2>
       <% } %>
     </div>

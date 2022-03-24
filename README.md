@@ -1,40 +1,71 @@
 hexo-theme-yilia
 ================
 
-Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
-崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](http://litten.me/) 查看效果。           
- 
-如果想体验手机浏览效果，可以扫一下二维码：
-
-![litten-qrcode](https://cloud.githubusercontent.com/assets/2024949/6349328/51a067fe-bc64-11e4-881c-f68050c50c28.png)
+Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题，改进后支持hexo3.0(个人改进均以PC端页面优先)。
+崇尚简约优雅，以及极致的性能。 你可以点击 [我的博客](https://luhawxem.github.io) 查看效果。           
 
 —————————————————————
 
 **关于主题：**
 
-1. 崇尚简约       
+1. 崇尚简约(个人的修改仍基于崇尚简约的目的)       
 2. 追求移动端体验     
 3. 希望把加载速度做到极致（努力中）    
 4. 让大家把注意力放到内容上。这是本主题设计初衷      
-5. 主题不支持IE6，7，8。以后也不会     
+5. 主题不支持IE6，7，8。以后也不会
 
-**近期更新（2017.07.09）：**
+**存在问题**
 
-2017.07.09
-1. 返回顶部
-2. TOC目录
+1. 置顶功能无效(generator生成器问题)
+2. 手机横屏观看网页时left-col无法完全显示
+3. left-col为固定大小300px，在某些屏幕比例下显得mid-col过小，但若改动left-col大小，由于smart_menu功能为绝对定位(这个没找到在哪改，如果有同样使用yilia主题的朋友知道的话可以告诉我一下)，会导致错位。
 
-2016.12.04
-1. 打赏
-2. 搜索
-3. “更好的”标签云
-4. “更好的”分享
-5. 一些动画
+**最近更新:**
+
+**2022.03.24**
+
+1. 添加网易云外链播放器,left-col下方现在可以添加外链音乐了
+
+**2021.05.22**
+
+1. left-col头像上方现在可以使用图片作为背景了(推荐使用宽高比为5:3的图片)
+2. 添加LOL图标
+
+**2021.05.21**
+
+1. 添加telegram、steam、twitch、youtube、gitlab图标
+
+**2021.04.16**
+
+1. 点击移动端头像现在可以返回首页了
+2. 将PC端的smart_menu中的link一并添加到移动端header-menu中
+
+**2021.04.15**
+
+1. 添加categories分类页(原yilia无法支持分类页)，使用方法：
+
+   ```shell
+   hexo new page "categories"
+   ```
+
+   然后在生成的index.md文件头部新增行`layout: categories`即可
+
+**2021.04.10**
+
+1. 向smart_menu中添加链接功能
+
+**2021.04.08**
+
+1. 修复hexo3.0下作者名及简介栏不显示的问题
+2. 删除了已关停的多说及网易云评论，添加utterance评论系统(基于Github Apps)
+3. 添加文章底部的版权声明栏
+4. 添加不蒜子访问量统计及网站运行时间(于footer.ejs中，请自行修改)
+5. 解决了微信分享生成二维码功能失效的问题
+6. 添加subNav栏gitee图标链接
 
 **计划中：**
 
-1. 移动端优化
-             
+没有计划，用到什么功能就改什么。如果有需要可以在issue中提出，会尽力解决。
 ## 一、外观
 
 ####**常规**
@@ -60,7 +91,7 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
 #### 安装
 
 ``` bash
-$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia
+$ git clone https://github.com/LuHawXem/hexo-theme-yilia-luhawxem.git themes/yilia
 ```
 
 #### 配置
@@ -77,7 +108,6 @@ git pull
 ## 四、配置
 
 主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
-完整配置例子，可以参考[我的博客备份](https://github.com/litten/BlogBackup)
 
 ```
 # Header
@@ -89,6 +119,7 @@ menu:
 # SubNav
 subnav:
   github: "#"
+  gitee: "#"
   weibo: "#"
   rss: "#"
   zhihu: "#"
@@ -110,12 +141,12 @@ rss: /atom.xml
 # 是否需要修改 root 路径
 # 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
 # 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
-root: 
+root: /
 
 # Content
 
-# 文章太长，截断按钮文字
-excerpt_link: more
+# 文章太长，截断按钮文字，建议直接使用show_all_link展开全文阅读，此处设为false表示截断按钮隐藏，截断功能仍保留
+excerpt_link: false
 # 文章卡片右下角常驻链接，不需要请设置为false
 show_all_link: '展开全文'
 # 数学公式
@@ -125,13 +156,23 @@ open_in_new: false
 
 # 打赏
 # 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
-reward_type: 2
+reward_type: 1
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
 alipay: 
 # 微信二维码图片地址
-weixin: 
+weixin:
+
+# 版权声明
+#在需要进行版权声明的文章的md文件头部，设置属性declare: true。
+#版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明
+declare:
+  declare_type: 1
+  licensee_url: https://creativecommons.org/licenses/by-nc-sa/4.0/        #当前应用的版权协议地址。
+  licensee_name: 'CC BY-NC-SA 4.0'                                        #版权协议的名称
+  licensee_alias: '知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议'       # alias别名
+  licensee_img:    #版权协议的Logo
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
@@ -149,35 +190,42 @@ baidu_analytics: ''
 google_analytics: ''
 favicon: /favicon.png
 
-#你的头像url
+#你的头像url，存放在当前主体下的/source/img文件夹中
 avatar:
 
 #是否开启分享
 share_jia: true
 
-#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
+#评论：1、畅言；2、Disqus；3、Gitment；4、utterance
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
 
-#1、多说
-duoshuo: false
-
-#2、网易云跟帖
-wangyiyun: false
-
-#3、畅言
+#1、畅言，使用需备案
 changyan_appid: false
 changyan_conf: false
 
-#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+#2、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的，国外评论软件，需科学上网使用
 disqus: false
 
-#5、Gitment
+#3、Gitment，项目停更4年
 gitment_owner: false      #你的 GitHub ID
 gitment_repo: ''          #存储评论的 repo
 gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
+
+#4、utterance
+utterance:
+  enable: true
+  # 仓库名字，格式：你的用户ID/仓库名称
+  repo: '#'
+  # 主题
+  theme: 'github-light'
+  # 映射配置
+  issue_term: 'title'
+
+#建站时间 
+SetUpTime: "#"
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
@@ -211,5 +259,4 @@ friends:
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 ```
-
 

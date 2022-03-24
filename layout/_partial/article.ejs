@@ -18,6 +18,12 @@
         <%- post.content %>
       <% } %>
 
+      <!-- 《添加版权声明 -->
+      <% if(theme.declare){%>
+        <%- partial('post/declare') %>
+      <% } %>
+      <!-- 添加版权声明》 -->
+
       <% if ((theme.reward_type === 2 || (theme.reward_type === 1 && post.reward)) && !index){ %>
         <div class="page-reward">
           <a href="javascript:;" class="page-reward-btn tooltip-top">
@@ -80,21 +86,22 @@
 
 
 <% if (!index && post.comments){ %>
-  <% if (theme.duoshuo){ %>
-  <%- partial('post/duoshuo', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
+  <!-- 《utteranc评论：基于github issue的评论系统 -->
+  <% if (theme.utterance && theme.utterance.enable){ %>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+      <script src="https://utteranc.es/client.js"
+        repo="<%= theme.utterance.repo %>"
+        issue-term="<%= theme.utterance.issue_term %>"
+        theme="<%= theme.utterance.theme %>"
+        crossorigin="anonymous"
+        async>
+      </script>
+    </section>
   <% } %>
-  
-  <% if (theme.wangyiyun){ %>
-  <%- partial('post/wangyiyun', {
-      key: post.slug,
-      title: post.title,
-      url: config.url+url_for(post.path)
-    }) %>
-  <% } %>
+  <!-- utteranc评论》 -->
 
   <% if (theme.changyan_appid && theme.changyan_conf){ %>
   <%- partial('post/changyan', {

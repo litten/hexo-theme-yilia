@@ -1,15 +1,19 @@
 <% var defaultBg = '#4d4d4d'; %>
-<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>"></div>
+<div class="overlay" style="background: <%= theme.style && theme.style.header ? theme.style.header : defaultBg %>">
+	<% if (theme.style.gif && theme.style.gif.enable && theme.style.gif.path){ %>
+		<img src="<%=theme.style.gif.path%>" style="width: 300px;height: 180px;">
+	<%}%>
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="<%=theme.root%>" class="profilepic">
 			<img src="<%=theme.avatar%>" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="<%=theme.root%>"><%=theme.author%></a></h1>
+		  <h1 class="header-author"><a href="<%=theme.root%>"><%=config.author %></a></h1>
 		</hgroup>
-		<% if (theme.subtitle){ %>
-		<p class="header-subtitle"><%=theme.subtitle%></p>
+		<% if (config.subtitle){ %>
+		<p class="header-subtitle"><%=config.subtitle %></p>
 		<%}%>
 
 		<nav class="header-menu">
@@ -20,9 +24,12 @@
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
-    		<% for (var i in theme.smart_menu){ %>
-    			<% if(theme.smart_menu[i]){ %>
-    			<a q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu[i] %></a>
+			<% for (var i in theme.smart_menu.link){ %>
+				<a href="<%- url_for(theme.smart_menu.link[i]) %>"><%= i %></a>
+	        <%}%>
+    		<% for (var i in theme.smart_menu.menu){ %>
+    			<% if(theme.smart_menu.menu[i]){ %>
+    			<a q-on="click: openSlider(e, '<%-i%>')" href="javascript:void(0)"><%= theme.smart_menu.menu[i] %></a>
     			<% } %>
             <%}%>
 		</nav>
@@ -35,3 +42,8 @@
 		</nav>
 	</header>		
 </div>
+<% if (theme.music.enable){ %>
+<div class="inner-player">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=110 src="//music.163.com/outchain/player?height=90&type=<%= theme.music.type %>&id=<%= theme.music.id %>&auto=<%= theme.music.auto %>"></iframe>
+</div>
+<%}%> 

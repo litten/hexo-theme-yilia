@@ -1,13 +1,13 @@
 <%
-  var hasInnerArchive = theme.smart_menu.innerArchive
-  var hasFriends = theme.smart_menu.friends
-  var hasAboutme = theme.smart_menu.aboutme
+  var hasInnerArchive = theme.smart_menu.menu.innerArchive
+  var hasFriends = theme.smart_menu.menu.friends
+  var hasAboutme = theme.smart_menu.menu.aboutme
 %>
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
     <% var count = 0%>
-    <% for (var i in theme.smart_menu){ %>
-      <% if (theme.smart_menu[i]) { %>
+    <% for (var i in theme.smart_menu.menu){ %>
+      <% if (theme.smart_menu.menu[i]) { %>
       <% count++ %>
       <% } %>
     <% } %>
@@ -15,9 +15,9 @@
 
     <ul style="width: <%= ulWidth %>">
     <% var divide = 100 / count + '%' %>
-    <% for (var i in theme.smart_menu){ %>
-      <% if(theme.smart_menu[i]){ %>
-      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)" q-class="active:<%-i%>"><%= theme.smart_menu[i] %></a></li>
+    <% for (var i in theme.smart_menu.menu){ %>
+      <% if(theme.smart_menu.menu[i]){ %>
+      <li style="width: <%= divide %>" q-on="click: openSlider(e, '<%-i%>')"><a href="javascript:void(0)" q-class="active:<%-i%>"><%= theme.smart_menu.menu[i] %></a></li>
       <% } %>
         <%}%>
     </ul>
