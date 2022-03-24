@@ -42,3 +42,8 @@
 		</nav>
 	</header>		
 </div>
+<% if (theme.music.enable){ %>
+<div class="inner-player">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=110 src="//music.163.com/outchain/player?height=90&type=<%= theme.music.type %>&id=<%= theme.music.id %>&auto=<%= theme.music.auto %>"></iframe>
+</div>
+<%}%> 

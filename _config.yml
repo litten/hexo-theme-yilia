@@ -84,8 +84,15 @@ baidu_analytics: ''
 google_analytics: ''
 favicon: /favicon.png
 
-#你的头像url，存放在当前主体下的/source/img文件夹中
+# 你的头像url，存放在当前主体下的/source/img文件夹中
 avatar:
+
+# 网易云外链播放器的相关参数
+music:
+  enable: false # 是否启用
+  type: # type为0即为歌单播放器,为2即为单曲播放器
+  id: # id为歌单或单曲id
+  auto: # 0-不自动播放, 1-自动播放
 
 #是否开启分享
 share_jia: true
