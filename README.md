@@ -37,15 +37,15 @@ Yilia 是为 [hexo](https://github.com/tommy351/hexo) 2.4+制作的主题。
              
 ## 一、外观
 
-####**常规**
+#### **常规**
 
 ![常规](https://cloud.githubusercontent.com/assets/2024949/19027861/92879edc-8967-11e6-8e60-7987b6507c8d.gif)
 
-####**手机**
+#### **手机**
 
 ![手机](https://cloud.githubusercontent.com/assets/2024949/19027020/1c5b756a-895f-11e6-99bf-ddff9687aee0.gif)   
 
-####**ipad横竖屏切换**
+#### **ipad横竖屏切换**
 
 ![ipad横竖屏切换](https://cloud.githubusercontent.com/assets/2024949/19026392/e74e1816-8957-11e6-8f08-eac9b3c8c036.gif)                    
 
